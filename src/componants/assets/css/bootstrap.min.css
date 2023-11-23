@@ -96,6 +96,9 @@ img {
 }
 svg:not(:root) {
   overflow: hidden;
+  margin-top: 20px;
+    font-size: 40px;
+    COLOR:WHITE
 }
 figure {
   margin: 1em 40px;
@@ -1692,7 +1695,7 @@ pre code {
   float: left;
 }
 .col-xs-12 {
-  width: 100%;
+  width: 69%;
 }
 .col-xs-11 {
   width: 91.66666667%;
@@ -2218,11 +2221,13 @@ pre code {
   .col-lg-6 {
     width: 50%;
   }
+ 
   .col-lg-5 {
     width: 41.66666667%;
   }
   .col-lg-4 {
-    width: 33.33333333%;
+    /* width: 33.33333333%; */
+    width: 369px;
   }
   .col-lg-3 {
     width: 25%;
