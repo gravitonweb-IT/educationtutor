@@ -32,6 +32,7 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import close from "./assets/images/icons/close-icon.png";
 import { IoIosArrowUp } from "react-icons/io";
+import logo from "../componants/assets/images/logo3.png"
 // import anime from 'animejs';
 const Home = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -107,7 +108,7 @@ const Home = () => {
                 </button>
                 {/* 5* Logo */}
                 <a href="#education-home" className="brand-logo">
-                  <img src="./assets/images/logo.png" alt="karbar logo" />
+                  <img src={logo} alt="karbar logo"  className="header-logo-section"/>
                 </a>
               </div>
               <div className="collapse navbar-collapse" id="myNavbar">
@@ -1251,7 +1252,7 @@ const Home = () => {
                 alt=""
                 className="teacher-section-image"
               />
-              <div>
+              <div className="david">
                 <h3>David Nihero</h3>
                 <p>Consultant Architect</p>
               </div>
@@ -1263,7 +1264,7 @@ const Home = () => {
                 alt=""
                 className="teacher-section-image"
               />
-              <div className="contcts-teachers1">
+              <div className="david">
                 <h3>Sara Nihero</h3>
                 <p>Consultant Architect</p>
               </div>
@@ -1275,7 +1276,7 @@ const Home = () => {
                 alt=""
                 className="teacher-section-image"
               />
-              <div className="contcts-teachers2">
+              <div className="david">
                 <h3>Sara Nihero</h3>
                 <p>Consultant Architect</p>
               </div>
@@ -1459,7 +1460,7 @@ const Home = () => {
             </div>
 
             {/*  */}
-            <div class="testimonials__container">
+            <div class="testimonials__container ">
               <Slider {...settings1}>
                 <div className="testimonials__item ">
                   <div
@@ -1471,7 +1472,7 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="orchestra.png" alt="image" />
+                        <img decoding="async" src="https://media.istockphoto.com/id/1301397300/photo/portrait-of-young-woman-stock-photo.jpg?s=612x612&w=0&k=20&c=Xvgo-k58_woBTuQaRNZ4JXP2SQsw_RSbrlSbt7XbQlU=" alt="image"  className="student-images" />
                       </div>
                       <div className="testimonials__text">
                         <p>
@@ -1539,7 +1540,7 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="orchestra.png" alt="image" />
+                        <img decoding="async" src="orchestra.png" alt="image"  className="student-images"/>
                       </div>
                       <div className="testimonials__text">
                         <p>
@@ -1848,7 +1849,7 @@ const Home = () => {
                   </a>
 
                   <a href="mailto:inquiries@edufusion.co.in">
-                    <p>Email: inquiries@edufusion.co.in</p>
+                    <p>Email: Inquiries@edufusion.co.in</p>
                   </a>
                 </div>
               </div>

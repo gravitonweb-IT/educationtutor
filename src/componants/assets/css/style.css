@@ -1,3 +1,8 @@
+/* logo */
+.header-logo-section{
+  height: 68px;
+}
+
 /* techer section */
 .teacher-section {
   display: flex;
@@ -21,7 +26,7 @@
   margin-top: 2%;
 }
 .teacher-section-content {
-border: 1px solid #00cad6;
+border: 1px solid #2f384a;
 }
 
 .main-teacher-section {
@@ -31,7 +36,8 @@ border: 1px solid #00cad6;
   .teacher-section {
     display: grid;
     grid-template-columns: 1fr; /* Display one column by default */
-    gap: 20px; /* Default gap between cards */
+    gap: 20px;
+     /* Default gap between cards */
   }
   
   .teacher-section-content {
@@ -44,12 +50,33 @@ border: 1px solid #00cad6;
     object-fit: cover; /* Ensure the image covers the entire container */
     border-radius: 8px; /* Optional: Add some border-radius for a rounded look */
   }
+  .david{
+    background: white;
+    color: #2f384a;
+    padding: 10px;
+
+  }
   
   .teacher-section-content h3,
   .teacher-section-content p {
     margin: 10px 0; /* Add margin for the heading and paragraph */
   }
-  
+  @media (max-width:300px){
+    .david{
+      width: 323px;
+    }
+  }
+  @media (max-width:390px){
+    .david{
+      width: 350px;
+    }
+  }
+  @media (max-width:440px){
+    .david{
+      width: 380px;
+    }
+  }
+  /* R
   /* Responsive styles for small screens */
   @media (max-width: 767px) {
     .teacher-section {
@@ -86,6 +113,9 @@ border: 1px solid #00cad6;
   }
   
 /* techer section end*/
+
+
+
 
 /*   13 - Preloder    */
 .testimonials__item {
@@ -1942,7 +1972,7 @@ nav.top-nav-collapse {
 .price-holder {
   margin-bottom: 50px;
   width: 350px;
-  margin-left: -9px;
+  margin-left: -3px;
 }
 
 .price-title {
