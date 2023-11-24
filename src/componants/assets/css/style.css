@@ -1,3 +1,5 @@
+
+
 /* logo */
 .header-logo-section{
   height: 68px;
@@ -115,7 +117,14 @@ border: 1px solid #2f384a;
 /* techer section end*/
 
 
-
+/* our vision */
+.mission{
+  margin-top: 80px;
+}
+.VISION{
+  margin-top: 100px;
+}
+/* our vision */
 
 /*   13 - Preloder    */
 .testimonials__item {
@@ -1218,6 +1227,7 @@ img {
 
 .lheight-30 {
   line-height: 30px;
+  margin-top: -33px;
 }
 
 .lheight-38 {
@@ -1475,7 +1485,7 @@ nav.top-nav-collapse {
   -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
-  margin-top: -24px;
+  margin-top: 21px;
 }
 
 .banner-area .banner-txt .app-media .single-media a i {
@@ -2198,13 +2208,16 @@ nav.top-nav-collapse {
 .progress-bar-number {
   text-align: center;
   font-weight: 500;
+  margin-top: 23px;
 }
 
 .progress-bar-number .num {
   position: relative;
   margin-bottom: 12px;
 }
-
+.mission-content{
+  justify-content: end;
+}
 .progress-bar-number .num:after {
   content: "+";
   margin-left: 5px;

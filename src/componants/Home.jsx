@@ -71,7 +71,7 @@ const Home = () => {
   useEffect(() => {
     const animateCounter = (setter, to) => {
       let currentCount = 0;
-      const increment = to / 40;
+      const increment = to / 1200;
 
       const interval = setInterval(() => {
         currentCount += increment;
@@ -87,6 +87,35 @@ const Home = () => {
     animateCounter(setCoursesCount, 56);
     animateCounter(setMembersCount, 15);
     animateCounter(setCountriesCount, 15);
+  }, []);
+
+
+
+  // counter start
+
+  const [studentsCount, setStudentsCount] = useState(0);
+  const [classesCount, setclassesCount] = useState(0);
+  const [registeredCount, setRegisteredCount] = useState(0);
+  const [countryCount, setCountryCount] = useState(0);
+  useEffect(() => {
+    const animateCounter = (setter, to) => {
+      let currentCount = 0;
+      const increment = to / 120;
+
+      const interval = setInterval(() => {
+        currentCount += increment;
+        setter(Math.min(Math.round(currentCount), to));
+
+        if (currentCount >= to) {
+          clearInterval(interval);
+        }
+      }, 16);
+    };
+
+    animateCounter(setStudentsCount, 1000);
+    animateCounter(setclassesCount, 10000);
+    animateCounter(setRegisteredCount, 100);
+    animateCounter(setCountryCount, 15);
   }, []);
   return (
     <div>
@@ -258,9 +287,11 @@ const Home = () => {
                           >
                             <div
                               className="ia-icon theme-bg-gradient mt25"
-                              style={{ transform: "rotate(-44deg)" }}
+                              
                             >
-                              <FaRegSnowflake />
+                              <h1
+                                style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
+                              >Maths</h1>
                             </div>
                           </a>
                         </li>
@@ -272,9 +303,9 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                              <FaFileCode
-                                style={{ transform: "rotate(-44deg)" }}
-                              />
+                              <h1
+                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
+                              >Science</h1>
                             </div>
                           </a>
                         </li>
@@ -286,7 +317,9 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                              <FaCode style={{ transform: "rotate(-44deg)" }} />
+                            <h1
+                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
+                              >Coding</h1>
                             </div>
                           </a>
                         </li>
@@ -298,9 +331,9 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                              <BiSolidCertification
-                                style={{ transform: "rotate(-44deg)" }}
-                              />
+                            <h1
+                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
+                              >SAT</h1>
                             </div>
                           </a>
                         </li>
@@ -312,9 +345,9 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                              <FaRegCreditCard
-                                style={{ transform: "rotate(-44deg)" }}
-                              />
+                            <h1
+                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
+                              >PSAT</h1>
                             </div>
                           </a>
                         </li>
@@ -326,9 +359,9 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                              <FaCamera
-                                style={{ transform: "rotate(-44deg)" }}
-                              />
+                            <h1
+                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
+                              >MORE</h1>
                             </div>
                           </a>
                         </li>
@@ -345,44 +378,46 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>Nural Networking</span>
+                                <span>Mathematics Learning Platform</span>
                               </div>
-                              <div className="subtitle fweight-600 color-4">
-                                Make your courses standout
+                              <div className="subtitle fweight-600 color-4 mt20">
+                              <h5>We take care of all your child’s math needs </h5>
                               </div>
                             </div>
                           </div>
-                          <p className="lheight-30">
-                            Hamburger pork beef shank turducken drumstick pork
-                            loin. Pork short ribs rump fatback capicola ham
-                            strip steak jowl filet mignon buffalo alcatra swine
-                            t-bone. Alcatra capicola tenderloin, jerky filet
-                            mignon pancetta.
+                          <h1></h1>
+                          <p className="lheight-30 mt20" >
+                          Individualized Learning Paths for Each Child's Unique Math Requirements:
                           </p>
                           <ul className="list1">
                             <li>
                               <span className="table-cell valign-middle">
-                                Pig swine prosciutto rump pork chop
+                              Personalised  Learning 
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Tail spare ribs capicola flank shank
+                                live sessions
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Beef ribs sirloin cupim frankfurter
+                              Classwork Help 
+                              </span>
+                            </li>
+                            <li>
+                              <span className="table-cell valign-middle">
+                              Advance Learning
                               </span>
                             </li>
                           </ul>
                           {/* button */}
                           <div className="flex-1">
-                            <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
                               <span className="color-2 button-text">
                                 START LEARN NOW
                               </span>
-                            </button>
+                            </button> */}
                           </div>
                         </div>
                         <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -454,44 +489,50 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>Learning PHP</span>
+                                <span>Discover the Wonders of Science</span>
                               </div>
-                              <div className="subtitle fweight-600 color-4">
-                                Make your courses standout
+                              <div className="subtitle fweight-600 color-4 mt20">
+                              online science tuition offer an unparalleled learning experience that goes beyond the ordinary
                               </div>
                             </div>
                           </div>
-                          <p className="lheight-30">
-                            Hamburger pork beef shank turducken drumstick pork
-                            loin. Pork short ribs rump fatback capicola ham
-                            strip steak jowl filet mignon buffalo alcatra swine
-                            t-bone. Alcatra capicola tenderloin, jerky filet
-                            mignon pancetta.
+                          <p className="lheight-30 mt20">
+                          Our curriculum doesn't just teach science; it propels you toward promising careers! Consider the following career pathways awaiting our students: 
                           </p>
                           <ul className="list1">
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                                Pig swine prosciutto rump pork chop
+                              Data Scientist
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                                Tail spare ribs capicola flank shank
+                              AI and Machine Learning Engineer
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                                Beef ribs sirloin cupim frankfurter
+                              Biotechnology Researcher
+                              </span>
+                            </li>
+                            <li className="list-theme-color">
+                              <span className="table-cell valign-middle">
+                              Environmental Scientist
+                              </span>
+                            </li>
+                            <li className="list-theme-color">
+                              <span className="table-cell valign-middle">
+                              Space Scientist/Astronomer
                               </span>
                             </li>
                           </ul>
                           {/* button */}
                           <div className="flex-1">
-                            <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
                               <span className="color-2 button-text">
                                 START LEARN NOW
                               </span>
-                            </button>
+                            </button> */}
                           </div>
                         </div>
                         <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -563,44 +604,46 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>Learning Python</span>
+                                <span>Embrace Online Coding </span>
                               </div>
-                              <div className="subtitle fweight-600 color-4">
-                                Make your courses standout
+                              <div className="subtitle fweight-600 color-4 mt20">
+                              Explore the world of coding from the comfort of your home with our Online Coding Tutorials
                               </div>
                             </div>
                           </div>
-                          <p className="lheight-30">
-                            Hamburger pork beef shank turducken drumstick pork
-                            loin. Pork short ribs rump fatback capicola ham
-                            strip steak jowl filet mignon buffalo alcatra swine
-                            t-bone. Alcatra capicola tenderloin, jerky filet
-                            mignon pancetta.
+                          <p className="lheight-30 mt30">
+                          Embrace Online Coding Tutorials for a dynamic learning experience. Dive into a world of interactive lessons, expert guidance, and flexible accessibility. Whether you're a beginner or aiming to refine your skills, our tutorials empower you with the knowledge needed for success. Transform your coding journey from the comfort of your screen.
                           </p>
                           <ul className="list1">
                             <li>
                               <span className="table-cell valign-middle">
-                                Pig swine prosciutto rump pork chop
+                              Coding
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Tail spare ribs capicola flank shank
+                              Explore Endless Possibilities
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Beef ribs sirloin cupim frankfurter
+                              Expert Tutors, Real-World Insight
                               </span>
                             </li>
+                            <li>
+                              <span className="table-cell valign-middle">
+                              Flexible Scheduling, Boundless Opportunities
+                              </span>
+                            </li>
+                            
                           </ul>
                           {/* button */}
                           <div className="flex-1">
-                            <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
                               <span className="color-2 button-text">
                                 START LEARN NOW
                               </span>
-                            </button>
+                            </button> */}
                           </div>
                         </div>
                         <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -672,7 +715,7 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>Creative Design</span>
+                                <span>SAT for Global Academic Success</span>
                               </div>
                               <div className="subtitle fweight-600 color-4">
                                 Make your courses standout
@@ -680,11 +723,7 @@ const Home = () => {
                             </div>
                           </div>
                           <p className="lheight-30">
-                            Hamburger pork beef shank turducken drumstick pork
-                            loin. Pork short ribs rump fatback capicola ham
-                            strip steak jowl filet mignon buffalo alcatra swine
-                            t-bone. Alcatra capicola tenderloin, jerky filet
-                            mignon pancetta.
+                          Unlock global opportunities with Edufusion Tutor's dedicated SAT preparation. The Scholastic Assessment Test (SAT) is a pivotal step for those aspiring to pursue undergraduate studies abroad. Our expert guidance ensures you're well-prepared for success, opening doors to acceptance in over 800 universities worldwide, including the USA, UK, Germany, Australia, and Canada. Join Edufusion Tutor and embark on your journey to academic excellence
                           </p>
                           <ul className="list1">
                             <li>
@@ -1063,71 +1102,39 @@ const Home = () => {
                                 </div>
                               </div>
                             </div>
-                            <p className="d-sm-none">
+                            <h5 className="d-sm-none">
                               {/* Visible on devices smaller than or equal to small (sm) */}
-                              Doner t-bone meatball buffalo bresaola, cow
-                              kielbasa short ribs beef
-                              <a href="#" className="color-17 td-underline">
-                                andouille ground
-                              </a>{" "}
-                              round cupim prosciutto swine.
-                            </p>
-                            <p className="d-sm-none">
-                              {/* Visible on devices smaller than or equal to small (sm) */}
-                              Leberkas drumstick venison kielbasa, shoulder
-                              salami picanha frankfurter cupim andouille
-                              tenderloin kevin jowl meatloaf. Shoulder
-                              landjaeger beef chicken
-                              <a href="#" className="color-17 td-underline">
-                                ball tip andouille
-                              </a>
-                              , cow hamburger bresaola swine pork belly chuck
-                              short ribs.
-                            </p>
-                            <p className="d-none d-sm-block">
-                              {/* Hidden on devices smaller than small (sm) */}
-                              Doner t-bone meatball buffalo bresaola, cow
-                              kielbasa short ribs beef
-                              <a href="#" className="color-17 td-underline">
-                                andouille ground
-                              </a>{" "}
-                              round cupim prosciutto swine.
-                              <br />
-                              Leberkas drumstick venison kielbasa, shoulder
-                              salami picanha frankfurter cupim andouille
-                              tenderloin kevin jowl meatloaf. Shoulder
-                              landjaeger beef chicken
-                              <a href="#" className="color-17 td-underline">
-                                ball tip andouille
-                              </a>
-                              , cow hamburger bresaola swine pork belly chuck
-                              short ribs.
-                            </p>
+                              Proven Track Record
+                            </h5>
+                            <p>Join a legacy of success! Our experienced tutors boast a track record of helping students excel in competitive exams, opening doors to top-tier universities and scholarship opportunities. </p>
+                            <h5>Comprehensive Exam Coverage</h5>
+                              <p>PSAT, SAT, ACT, NAPLAN, Olympiads – we cover them all! Our comprehensive exam preparation ensures that students are well-equipped to face the unique challenges of each test. </p>
+                           <h5> Expert Tutors with Specialized Knowledge:</h5>
+                           <p>Benefit from the expertise of tutors who specialize in the intricacies of each exam. Our team is dedicated to staying abreast of the latest trends and updates to provide the most relevant guidance. </p>
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Reliable and Secure Platform
+                                Inclusive Learning Environment
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Everything is perfectly organized for the
-                                  future
+                                Innovative Teaching Methods
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Attach large file easily
+                                Dedicated Educators
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Tons of courses and easy to use and customize
+                                Accessible Learning
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Reliable and easy setup
+                                Transformative Learning Experience
                                 </span>
                               </li>
                             </ul>
@@ -1167,49 +1174,41 @@ const Home = () => {
                             </div>
                           </div>
                         </div>
-                        <p>
-                          Doner t-bone meatball buffalo bresaola, cow kielbasa
-                          short ribs beef
-                          <a href="#" className="color-17 td-underline">
-                            andouille ground
-                          </a>{" "}
-                          round cupim prosciutto swine.
-                        </p>
-                        <p>
-                          Leberkas drumstick venison kielbasa, shoulder salami
-                          picanha frankfurter cupim andouille tenderloin kevin
-                          jowl meatloaf. Shoulder landjaeger beef chicken
-                          <a href="#" className="color-17 td-underline">
-                            ball tip andouille
-                          </a>
-                          , cow hamburger bresaola swine pork belly chuck short
-                          ribs.
-                        </p>
+                        <h5>
+                        Strategic Test-Taking Strategies:
+                        </h5>
+                        <p>It's not just about knowing the content; it's about mastering the art of test-taking. Our tutors impart strategic approaches that help students navigate exams with confidence. </p>
+                        <h5>Tailored Approach:</h5>
+                        <p>Personalized learning plans that address individual strengths and areas for improvement. </p>
+                        <h5>Innovative Teaching Methods:</h5>
+                        <p>Engaging lessons that go beyond textbooks, fostering a deep understanding of exam concepts. </p>
+                        <h5>Adaptive Learning:</h5>
+                        <p>Evolving with the dynamic nature of exams, ensuring students are well-prepared for any changes in format or content.</p>
                         <ul className="list1">
                           <li>
                             <span className="table-cell valign-middle">
-                              Reliable and Secure Platform
+                            Proven Track Record
                             </span>
                           </li>
                           <li>
                             <span className="table-cell valign-middle">
-                              Everything is perfectly orgainized for future
+                            Holistic Learning
                             </span>
                           </li>
                           <li>
                             <span className="table-cell valign-middle">
-                              Attach large file easily
+                            Flexible Learning Options
                             </span>
                           </li>
                           <li>
                             <span className="table-cell valign-middle">
-                              Tons of courses and easy to use and customize
+                            Constant Improvement
                             </span>
                           </li>
                           <li>
                             <span className="table-cell valign-middle">
                               {" "}
-                              Reliable and easy setup
+                              Parental Involvement
                             </span>
                           </li>
                         </ul>
@@ -1242,7 +1241,7 @@ const Home = () => {
                       START Our Teachers
     ==================================================================================*/}
 
-        <div className="main-teacher-section">
+        <div className="main-teacher-section" id="education-teachers">
           <h1 className="text-center">Our Teachers</h1>
           <hr className="teacher-horizontal-section" />
           <div className="teacher-section ">
@@ -1287,7 +1286,44 @@ const Home = () => {
         {/*================================================================================= 
        END TEACHERS
    ==================================================================================*/}
+{/* our mission  start*/}
+<div className="mission">
+<h1 className="text-center ">OUR MISSION</h1>
+<div class="container mx-auto">
+    <div class="row  mt30">
+    <div className="mission-content">
+        <div class="col-lg-6 col-md-6 col-sm-1">
+         <img src="https://www.codeyoung.com/_nuxt/img/our_mission.017c97b.png" alt="image" style={{height:"300px",}}/>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-1  mt50" style={{lineHeight: "2"}}>
+        At Edufusion Tutor, we're on a mission to make learning accessible to everyone. We're creating a welcoming and inclusive space where every student is supported and valued. Through easy-to-access learning opportunities, we want to help individuals grow, celebrate diversity, and ensure that education is a positive experience for everyone. Our goal is to break down barriers and make knowledge accessible to all
+        </div>
+        </div>
+    </div>
+</div>
 
+</div>
+{/* our mission end */}
+
+
+
+{/* our vission start */}
+<div className="VISION">
+<h1 className="text-center" style={{marginTop:"90px"}}>OUR VISION</h1>
+<div class="container mx-auto">
+    <div class="row  mt30">
+    
+        
+        <div class="col-lg-6 col-md-6 col-sm-1  mt50" style={{lineHeight: "2.5"}}>
+        At EDUFUSION TUTOR, we envision a world where every learner, regardless of background or circumstance, has the opportunity to unlock their full potential through personalized education. We aspire to be a guiding light on the educational journey, fostering a love for learning that transcends boundaries. 
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-1">
+         <img src="https://www.codeyoung.com/_nuxt/img/our_vision.0088ebd.png" alt="image" style={{height:"300px"}}/>
+        </div>
+    </div>
+</div>
+</div>
+{/* our vision end */}
         {/*================================================================================= 
                           START PRICE  
     ==================================================================================*/}
@@ -1405,13 +1441,53 @@ const Home = () => {
         {/*================================================================================= 
                           END PRICE  
     ==================================================================================*/}
+{/* counterstart */}
 
+<div className="section progress-bars section-padding" style={{ background: '#2f384a' }}>
+  <div className="progress-bars-content">
+    <div className="progress-bar-wrapper">
+      <div className="row">
+        <div className="content mb40">
+          <div className="col-sm-3 col-xs-6">
+            <div className="progress-bar-number"  style={{marginTop:"20px"}}>
+              <div className="fsize-40 num" style={{ color: 'white' }}>{studentsCount}</div>
+              <p className="name-inner" style={{ color: 'white' }}>students taught </p>
+            </div>
+          </div>
+         
+          <div className="col-sm-3 col-xs-6">
+            <div className="progress-bar-number" style={{marginTop:"20px"}}>
+              <div className="fsize-40 num" style={{ color: 'white' }}>{classesCount}</div>
+              <p className="name-inner" style={{ color: 'white' }}>classes taken </p>
+            </div>
+          </div>
+          <div className="col-sm-3 col-xs-6">
+            <div className="progress-bar-number" style={{marginTop:"20px"}}>
+              <div className="fsize-40 num" style={{ color: 'white' }}>{registeredCount}</div>
+              <p className="name-inner" style={{ color: 'white' }}>registered mentors </p>
+            </div>
+          </div>
+          <div className="col-sm-3 col-xs-6">
+            <div className="progress-bar-number" >
+              <div className="fsize-40 num" style={{ color: 'white' }}>{countryCount}</div>
+              <p className="name-inner" style={{ color: 'white' }}>country presence</p>
+            </div>
+          </div>
+          {/* New Progress Bars */}
+         
+        </div>
+      </div>
+    </div>{" "}
+  </div>
+</div>
+
+{/* counter end */}
         {/*================================================================================= 
                           START TESTIMONIALS  
     ==================================================================================*/}
-        <section className=" testimonials__area-2 fix p-relative pt-120 pb-120 ">
+        <section className=" testimonials__area-2 fix p-relative pt-120 pb-120  " id="education-testimonial" style={{    marginTop: "86px"}}>
           <div className="testimonials__shape"></div>
-          <div className="container mt-60">
+          <div className="container mt-80">
             <div className="row mb-65">
               <div className="col-xl-12">
                 <div className="testimonials__title text-center">
@@ -1439,7 +1515,7 @@ const Home = () => {
                       "animation-name": "_fadeInUp",
                     }}
                   >
-                    <span>What people say</span>
+                    <span> Empowering Every Child for Success</span>
                   </h2>
                   <p
                     className="wow fadeInUp"
@@ -1452,15 +1528,14 @@ const Home = () => {
                       "animation-name": "_fadeInUp",
                     }}
                   >
-                    Draw a line in the sand quick win. My capacity is full. Keep
-                    it lean gain alignment we need to future-proof this plan.
+                    Instilling inclusive ownership empowers every child to confidently shape their narrative
                   </p>
                 </div>
               </div>
             </div>
 
             {/*  */}
-            <div class="testimonials__container ">
+            <div class="testimonials__container " style={{marginTop:"20px"}}>
               <Slider {...settings1}>
                 <div className="testimonials__item ">
                   <div
@@ -1472,21 +1547,18 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="orga.png" alt="image"  className="student-images" />
+                        <img decoding="async" src="https://static.qumath.in/static/next/_next/static/images/seema-kumar-66548f290543027f2b6ed670fc8ff779.webp" alt="image"  className="student-images" />
                       </div>
                       <div className="testimonials__text">
                         <p>
-                          Synophic system company I'm worked him big experience
-                          in company so nice company in word fully maintenance
-                          work already done so I'm happy to experience in
-                          synophic system company and thanks for synophic.
+                        Edufusion has innovatively incorporated technology, leading to significant advancements in my child's math learning. Once a source of fear, math has now become her favorite subject. The foundational concepts are developing impressively, evident in my daughter's ability to solve complex problems effortlessly and swiftly. Thanks to Edufusion for facilitating conceptual learning and helping my child thrive in math. 
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          <h4>Alima Alisha</h4>
-                          <span>CEO</span>
+                          {/* <h4>Alima Alisha</h4>
+                          <span>CEO</span> */}
                         </div>
                       </div>
                     </div>
@@ -1505,25 +1577,22 @@ const Home = () => {
                       <div className="testimonials__logo">
                         <img
                           decoding="async"
-                          src="orchestra.png"
+                          src="https://static.qumath.in/static/next/_next/static/images/poonam-agarwal-eba13ce175078b4020d21bc217031a6c.webp"
                           alt="image"
-                          style={{ width: "300px" }}
+                          
+                          className="student-images"
                         />
                       </div>
                       <div className="testimonials__text">
                         <p>
-                          A professional notary, a pleasant and punctual person,
-                          always in a good mood, he will always tell and explain
-                          everything intelligently. Pretty good prices. It's
-                          always a pleasure to work. It doesn’t require any
-                          extra documents.
+                        "The SAT online class with Edufusion Tutor was a game-changer, boosting my confidence and refining my test-taking skills. The convenience of online learning and insightful feedback from Edufusion's instructors significantly contributed to my success. The personalized support and targeted practice provided by Edufusion were key factors in my score improvement. I highly recommend Edufusion Tutor's ."
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          <h4>David Clark</h4>
-                          <span>Marketing Manager</span>
+                          {/* <h4>David Clark</h4>
+                          <span>Marketing Manager</span> */}
                         </div>
                       </div>
                     </div>
@@ -1540,22 +1609,18 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="orchestra.png" alt="image"  className="student-images"/>
+                        <img decoding="async" src="https://static.qumath.in/static/next/_next/static/images/sharada-adhikari-dd24e8e222ffb9d196e1fa4b9e9c0a6c.webp" alt="image"  className="student-images"/>
                       </div>
                       <div className="testimonials__text">
                         <p>
-                          Very friendly attitude towards the client and his
-                          problems - you can always ask for advice and help even
-                          on related issues, and on top of that, high-quality
-                          advice on inheritance issues. Never expected to get
-                          such a powerful theme
+                        "The coding online class with Edufusion Tutor has been an enriching experience for my child. The curriculum is well-structured, offering a comprehensive understanding of coding concepts. Edufusion's instructors are knowledgeable and provide effective guidance, making complex coding principles accessible.   which has ignited a genuine interest and proficiency in coding for my child." 
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          <h4>Moran Sham</h4>
-                          <span>Team Leader</span>
+                          {/* <h4>Moran Sham</h4>
+                          <span>Team Leader</span> */}
                         </div>
                       </div>
                     </div>
@@ -1572,22 +1637,19 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="orchestra.png" alt="image" />
+                        <img decoding="async" src="https://blog.kaplanco.com/hubfs/Imported_Blog_Media/first-day-of-school-anxiety_a.jpg" alt="image" className="student-images" />
                       </div>
                       <div className="testimonials__text">
                         <p>
-                          Synophic system company I'm worked him big experience
-                          in company so nice company in word fully maintenance
-                          work already done so I'm happy to experience in
-                          synophic system company and thanks for synophic.
+                        The science online class with Edufusion Tutor has exceeded my expectations. The curriculum is engaging, covering diverse topics with depth and clarity. Edufusion's instructors demonstrate a passion for science and facilitate interactive discussions that enhance understanding. The use of multimedia resources adds a dynamic element to the learning experience.My child's interest in science has flourished. 
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
 
                         <div className="testimonials__client-text">
-                          <h4>Alima Alisha</h4>
-                          <span>CEO</span>
+                          {/* <h4>Alima Alisha</h4>
+                          <span>CEO</span> */}
                         </div>
                       </div>
                     </div>
@@ -1604,22 +1666,18 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="orchestra.png" alt="image" />
+                        <img decoding="async" src="https://cdn-gdkcp.nitrocdn.com/pXiSTObAtzysxTBOnDEDVAOrTkEKIOld/assets/images/optimized/rev-af4bb28/www.jackrabbitcare.com/wp-content/uploads/2016/07/young-boy-looking-smiling-adult.png" alt="image"  className="student-images" />
                       </div>
                       <div className="testimonials__text">
                         <p>
-                          A professional notary, a pleasant and punctual person,
-                          always in a good mood, he will always tell and explain
-                          everything intelligently. Pretty good prices. It's
-                          always a pleasure to work. It doesn’t require any
-                          extra documents.
+                        Edufusion has innovatively incorporated technology, leading to significant advancements in my child's math learning. Once a source of fear, math has now become her favorite subject. The foundational concepts are developing impressively, evident in my daughter's ability to solve complex problems effortlessly and swiftly. Thanks to Edufusion for facilitating conceptual learning and helping my child thrive in math. 
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          <h4>David Clark</h4>
-                          <span>Marketing Manager</span>
+                          {/* <h4>David Clark</h4>
+                          <span>Marketing Manager</span> */}
                         </div>
                       </div>
                     </div>
@@ -1636,22 +1694,18 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="orchestra.png" alt="image" />
+                        <img decoding="async" src="https://lh4.googleusercontent.com/urW4ghCPCb2Q0hKDP6EcJiSVjN8_AcebCvqSGXDb1fGzDl03fIuYt56jAorJOzx23_Fnxn_fUHbz39HsoHEgeMFIV1hvjKAXXVS-Gw-TFTH1VBpyCAFXkpznF-QD44Adyj3K2IQr" alt="image"  className="student-images"/>
                       </div>
                       <div className="testimonials__text">
                         <p>
-                          Very friendly attitude towards the client and his
-                          problems - you can always ask for advice and help even
-                          on related issues, and on top of that, high-quality
-                          advice on inheritance issues. Never expected to get
-                          such a powerful theme
+                        "The SAT online class with Edufusion Tutor was a game-changer, boosting my confidence and refining my test-taking skills. The convenience of online learning and insightful feedback from Edufusion's instructors significantly contributed to my success. The personalized support and targeted practice provided by Edufusion were key factors in my score improvement. I highly recommend Edufusion Tutor's ."
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          <h4>Moran Sham</h4>
-                          <span>Team Leader</span>
+                          {/* <h4>Moran Sham</h4>
+                          <span>Team Leader</span> */}
                         </div>
                       </div>
                     </div>
@@ -2064,6 +2118,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/*  */}
+     
       </>
     </div>
   );
