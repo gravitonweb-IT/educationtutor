@@ -32,7 +32,14 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import close from "./assets/images/icons/close-icon.png";
 import { IoIosArrowUp } from "react-icons/io";
-import logo from "../componants/assets/images/logo3.png"
+import logo from "../componants/assets/images/logo3.png";
+import WhatsAppButton from "../componants/WhatsAppButton";
+import test from "../componants/assets/images/testmonialimages/t1.png";
+import test1 from "../componants/assets/images/testmonialimages/t2.jpg";
+import test2 from "../componants/assets/images/testmonialimages/t3.jpg";
+import test3 from "../componants/assets/images/testmonialimages/t4.jpg";
+import m1image from "../componants/assets/images/m1.png";
+import mathsvideo from "../componants/assets/mathsvideo.mp4";
 // import anime from 'animejs';
 const Home = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -89,8 +96,6 @@ const Home = () => {
     animateCounter(setCountriesCount, 15);
   }, []);
 
-
-
   // counter start
 
   const [studentsCount, setStudentsCount] = useState(0);
@@ -137,7 +142,11 @@ const Home = () => {
                 </button>
                 {/* 5* Logo */}
                 <a href="#education-home" className="brand-logo">
-                  <img src={logo} alt="karbar logo"  className="header-logo-section"/>
+                  <img
+                    src={logo}
+                    alt="karbar logo"
+                    className="header-logo-section"
+                  />
                 </a>
               </div>
               <div className="collapse navbar-collapse" id="myNavbar">
@@ -202,9 +211,9 @@ const Home = () => {
                       ...
                     </h1>
                     <p className="color-white lheight-30">
-                      A modern and unique style to make your Educational
-                      platform standout. natoque penatibus et magnis dis
-                      parturient montes, nascetur ridiculus mus.
+                    Unlock the Power of Numbers,
+                     Discover the wonders of science,
+                     and Dive into the World of Coding with Us!
                     </p>
                   </div>
                   <div className="app-media">
@@ -285,13 +294,16 @@ const Home = () => {
                             className="fsize-12 uppercase"
                             aria-expanded="true"
                           >
-                            <div
-                              className="ia-icon theme-bg-gradient mt25"
-                              
-                            >
+                            <div className="ia-icon theme-bg-gradient mt25">
                               <h1
-                                style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
-                              >Maths</h1>
+                                style={{
+                                  transform: "rotate(-44deg)",
+                                  fontSize: "19px",
+                                  marginTop: "34px",
+                                }}
+                              >
+                                Maths
+                              </h1>
                             </div>
                           </a>
                         </li>
@@ -304,8 +316,14 @@ const Home = () => {
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
                               <h1
-                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
-                              >Science</h1>
+                                style={{
+                                  transform: "rotate(-44deg)",
+                                  fontSize: "19px",
+                                  marginTop: "34px",
+                                }}
+                              >
+                                Science
+                              </h1>
                             </div>
                           </a>
                         </li>
@@ -317,9 +335,15 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                            <h1
-                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
-                              >Coding</h1>
+                              <h1
+                                style={{
+                                  transform: "rotate(-44deg)",
+                                  fontSize: "19px",
+                                  marginTop: "34px",
+                                }}
+                              >
+                                Coding
+                              </h1>
                             </div>
                           </a>
                         </li>
@@ -331,9 +355,15 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                            <h1
-                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
-                              >SAT</h1>
+                              <h1
+                                style={{
+                                  transform: "rotate(-44deg)",
+                                  fontSize: "19px",
+                                  marginTop: "34px",
+                                }}
+                              >
+                                SAT
+                              </h1>
                             </div>
                           </a>
                         </li>
@@ -345,9 +375,15 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                            <h1
-                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
-                              >PSAT</h1>
+                              <h1
+                                style={{
+                                  transform: "rotate(-44deg)",
+                                  fontSize: "19px",
+                                  marginTop: "34px",
+                                }}
+                              >
+                                PSAT
+                              </h1>
                             </div>
                           </a>
                         </li>
@@ -359,9 +395,15 @@ const Home = () => {
                             aria-expanded="false"
                           >
                             <div className="ia-icon theme-bg-gradient mt25">
-                            <h1
-                               style={{ transform: "rotate(-44deg)",fontSize: "19px",marginTop: "34px"}}
-                              >MORE</h1>
+                              <h1
+                                style={{
+                                  transform: "rotate(-44deg)",
+                                  fontSize: "19px",
+                                  marginTop: "34px",
+                                }}
+                              >
+                                MORE
+                              </h1>
                             </div>
                           </a>
                         </li>
@@ -381,18 +423,21 @@ const Home = () => {
                                 <span>Mathematics Learning Platform</span>
                               </div>
                               <div className="subtitle fweight-600 color-4 mt20">
-                              <h5>We take care of all your child’s math needs </h5>
+                                <h5>
+                                  We take care of all your child’s math needs{" "}
+                                </h5>
                               </div>
                             </div>
                           </div>
                           <h1></h1>
-                          <p className="lheight-30 mt20" >
-                          Individualized Learning Paths for Each Child's Unique Math Requirements:
+                          <p className="lheight-30 mt20">
+                            Individualized Learning Paths for Each Child's
+                            Unique Math Requirements:
                           </p>
                           <ul className="list1">
                             <li>
                               <span className="table-cell valign-middle">
-                              Personalised  Learning 
+                                Personalised Learning
                               </span>
                             </li>
                             <li>
@@ -402,12 +447,12 @@ const Home = () => {
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                              Classwork Help 
+                                Classwork Help
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                              Advance Learning
+                                Advance Learning
                               </span>
                             </li>
                           </ul>
@@ -446,15 +491,15 @@ const Home = () => {
                                 <div
                                   className="course-slider-img slick-slide slick-current slick-active"
                                   style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
+                                    backgroundImage: `url(${m1image})`,
+                                    width: "500px",
                                   }}
+                                  
                                   data-slick-index={0}
                                   aria-hidden="false"
                                   tabIndex={0}
                                 />
-                                <div
+                                {/* <div
                                   className="course-slider-img slick-slide"
                                   style={{
                                     "background-image":
@@ -464,7 +509,7 @@ const Home = () => {
                                   data-slick-index={1}
                                   aria-hidden="true"
                                   tabIndex={-1}
-                                />
+                                /> */}
                               </div>
                             </div>
                             {/* <button
@@ -492,37 +537,41 @@ const Home = () => {
                                 <span>Discover the Wonders of Science</span>
                               </div>
                               <div className="subtitle fweight-600 color-4 mt20">
-                              online science tuition offer an unparalleled learning experience that goes beyond the ordinary
+                                online science tuition offer an unparalleled
+                                learning experience that goes beyond the
+                                ordinary
                               </div>
                             </div>
                           </div>
                           <p className="lheight-30 mt20">
-                          Our curriculum doesn't just teach science; it propels you toward promising careers! Consider the following career pathways awaiting our students: 
+                            Our curriculum doesn't just teach science; it
+                            propels you toward promising careers! Consider the
+                            following career pathways awaiting our students:
                           </p>
                           <ul className="list1">
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Data Scientist
+                                Data Scientist
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              AI and Machine Learning Engineer
+                                AI and Machine Learning Engineer
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Biotechnology Researcher
+                                Biotechnology Researcher
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Environmental Scientist
+                                Environmental Scientist
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Space Scientist/Astronomer
+                                Space Scientist/Astronomer
                               </span>
                             </li>
                           </ul>
@@ -607,35 +656,40 @@ const Home = () => {
                                 <span>Embrace Online Coding </span>
                               </div>
                               <div className="subtitle fweight-600 color-4 mt20">
-                              Explore the world of coding from the comfort of your home with our Online Coding Tutorials
+                                Explore the world of coding from the comfort of
+                                your home with our Online Coding Tutorials
                               </div>
                             </div>
                           </div>
                           <p className="lheight-30 mt30">
-                          Embrace Online Coding Tutorials for a dynamic learning experience. Dive into a world of interactive lessons, expert guidance, and flexible accessibility. Whether you're a beginner or aiming to refine your skills, our tutorials empower you with the knowledge needed for success. Transform your coding journey from the comfort of your screen.
+                            Embrace Online Coding Tutorials for a dynamic
+                            learning experience. Dive into a world of
+                            interactive lessons, expert guidance, and flexible
+                            accessibility. Whether you're a beginner or aiming
+                            to refine your skills, our tutorials empower you
+                            with the knowledge needed for success.
                           </p>
                           <ul className="list1">
                             <li>
                               <span className="table-cell valign-middle">
-                              Coding
+                                Coding
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                              Explore Endless Possibilities
+                                Explore Endless Possibilities
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                              Expert Tutors, Real-World Insight
+                                Expert Tutors, Real-World Insight
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                              Flexible Scheduling, Boundless Opportunities
+                                Flexible Scheduling, Boundless Opportunities
                               </span>
                             </li>
-                            
                           </ul>
                           {/* button */}
                           <div className="flex-1">
@@ -717,38 +771,64 @@ const Home = () => {
                               <div className="title color-2">
                                 <span>SAT for Global Academic Success</span>
                               </div>
-                              <div className="subtitle fweight-600 color-4">
+                              <div className="subtitle fweight-600 color-4 mt30">
                                 Make your courses standout
                               </div>
                             </div>
                           </div>
-                          <p className="lheight-30">
-                          Unlock global opportunities with Edufusion Tutor's dedicated SAT preparation. The Scholastic Assessment Test (SAT) is a pivotal step for those aspiring to pursue undergraduate studies abroad. Our expert guidance ensures you're well-prepared for success, opening doors to acceptance in over 800 universities worldwide, including the USA, UK, Germany, Australia, and Canada. Join Edufusion Tutor and embark on your journey to academic excellence
+                          <p className="lheight-30 mt30">
+                            At EDUFUSION TUTOR, our success is rooted in a
+                            student-centric philosophy that recognizes the
+                            uniqueness of each learner. Our seasoned educators
+                            understand the specific requirements of exams like
+                            PSAT, SAT, ACT, NAPLAN, and Olympiads, tailoring
+                            their guidance to address individual strengths and
+                            areas for improvement. 
                           </p>
                           <ul className="list1">
                             <li>
                               <span className="table-cell valign-middle">
-                                Pig swine prosciutto rump pork chop
+                                Proven Track Record
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Tail spare ribs capicola flank shank
+                                Comprehensive Exam Coverage
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Beef ribs sirloin cupim frankfurter
+                                Expert Tutors with Specialized Knowledge
                               </span>
                             </li>
+                            <li>
+                              <span className="table-cell valign-middle">
+                                Strategic Test-Taking Strategies
+                              </span>
+                            </li>
+                            {/* <li>
+                              <span className="table-cell valign-middle">
+                                Tailored Approach
+                              </span>
+                            </li> */}
+                            {/* <li>
+                              <span className="table-cell valign-middle">
+                                innovative Teaching Methods
+                              </span>
+                            </li>
+                            <li>
+                              <span className="table-cell valign-middle">
+                                Adaptive Learning
+                              </span>
+                            </li> */}
                           </ul>
                           {/* button */}
                           <div className="flex-1">
-                            <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
                               <span className="color-2 button-text">
                                 START LEARN NOW
                               </span>
-                            </button>
+                            </button> */}
                           </div>
                         </div>
                         <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -820,44 +900,58 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>HTML5/CSS3 Essentials</span>
+                                <span>
+                                  Master the PSAT with EDUFUSION TUTOR
+                                </span>
                               </div>
-                              <div className="subtitle fweight-600 color-4">
-                                Make your courses standout
+                              <div className="subtitle fweight-600 color-4 mt30">
+                                EDUFUSION TUTOR: PSAT success through expert
+                                guidance and personalized strategies.
                               </div>
                             </div>
                           </div>
-                          <p className="lheight-30">
-                            Hamburger pork beef shank turducken drumstick pork
-                            loin. Pork short ribs rump fatback capicola ham
-                            strip steak jowl filet mignon buffalo alcatra swine
-                            t-bone. Alcatra capicola tenderloin, jerky filet
-                            mignon pancetta.
+                          <p className="lheight-30 mt30">
+                            Elevate your academic journey with EDUFUSION TUTOR.
+                            With over 12 years of expertise, we specialize in
+                            guiding students to success in PSAT, SAT, ACT,
+                            NAPLAN, and Olympiads. Our tailored programs, led by
+                            experienced educators, blend content mastery with
+                            strategic test-taking skills. 
                           </p>
-                          <ul className="list1">
+                          <ul className="list1 mt30">
                             <li>
                               <span className="table-cell valign-middle">
-                                Pig swine prosciutto rump pork chop
+                                Expert Guidance
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Tail spare ribs capicola flank shank
+                                Tailored Programs
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Beef ribs sirloin cupim frankfurter
+                                PSAT Confidence
+                              </span>
+                            </li>
+                            <li>
+                              <span className="table-cell valign-middle">
+                                Top Scores Assurance
+                              </span>
+                            </li>
+                            <li>
+                              <span className="table-cell valign-middle">
+                                Academic Opportunities
                               </span>
                             </li>
                           </ul>
                           {/* button */}
                           <div className="flex-1">
-                            <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
                               <span className="color-2 button-text">
                                 START LEARN NOW
                               </span>
-                            </button>
+                            </button> */}
                           </div>
                         </div>
                         <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -929,7 +1023,8 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>Art of Photography</span>
+                                <span>
+Unlocking the Nexus of Knowledge</span>
                               </div>
                               <div className="subtitle fweight-600 color-4">
                                 Make your courses standout
@@ -937,36 +1032,32 @@ const Home = () => {
                             </div>
                           </div>
                           <p className="lheight-30">
-                            Hamburger pork beef shank turducken drumstick pork
-                            loin. Pork short ribs rump fatback capicola ham
-                            strip steak jowl filet mignon buffalo alcatra swine
-                            t-bone. Alcatra capicola tenderloin, jerky filet
-                            mignon pancetta.
+                          Embark on a journey where mathematical principles intertwine with scientific wonders, converging seamlessly with the intricate dance of coding languages. Discover the synergy that propels innovation and shapes the future.
                           </p>
                           <ul className="list1">
                             <li>
                               <span className="table-cell valign-middle">
-                                Pig swine prosciutto rump pork chop
+                              Solving Complex Puzzles with Precision
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Tail spare ribs capicola flank shank
+                              Exploring Phenomena Through Inquiry and Experimentation
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                                Beef ribs sirloin cupim frankfurter
+                              Crafting Algorithms, Transforming Ideas into Digital Realities
                               </span>
                             </li>
                           </ul>
                           {/* button */}
                           <div className="flex-1">
-                            <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
                               <span className="color-2 button-text">
                                 START LEARN NOW
                               </span>
-                            </button>
+                            </button> */}
                           </div>
                         </div>
                         <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -1106,35 +1197,51 @@ const Home = () => {
                               {/* Visible on devices smaller than or equal to small (sm) */}
                               Proven Track Record
                             </h5>
-                            <p>Join a legacy of success! Our experienced tutors boast a track record of helping students excel in competitive exams, opening doors to top-tier universities and scholarship opportunities. </p>
+                            <p>
+                              Join a legacy of success! Our experienced tutors
+                              boast a track record of helping students excel in
+                              competitive exams, opening doors to top-tier
+                              universities and scholarship opportunities.{" "}
+                            </p>
                             <h5>Comprehensive Exam Coverage</h5>
-                              <p>PSAT, SAT, ACT, NAPLAN, Olympiads – we cover them all! Our comprehensive exam preparation ensures that students are well-equipped to face the unique challenges of each test. </p>
-                           <h5> Expert Tutors with Specialized Knowledge:</h5>
-                           <p>Benefit from the expertise of tutors who specialize in the intricacies of each exam. Our team is dedicated to staying abreast of the latest trends and updates to provide the most relevant guidance. </p>
+                            <p>
+                              PSAT, SAT, ACT, NAPLAN, Olympiads – we cover them
+                              all! Our comprehensive exam preparation ensures
+                              that students are well-equipped to face the unique
+                              challenges of each test.{" "}
+                            </p>
+                            <h5> Expert Tutors with Specialized Knowledge:</h5>
+                            <p>
+                              Benefit from the expertise of tutors who
+                              specialize in the intricacies of each exam. Our
+                              team is dedicated to staying abreast of the latest
+                              trends and updates to provide the most relevant
+                              guidance.{" "}
+                            </p>
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                Inclusive Learning Environment
+                                  Inclusive Learning Environment
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Innovative Teaching Methods
+                                  Innovative Teaching Methods
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Dedicated Educators
+                                  Dedicated Educators
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Accessible Learning
+                                  Accessible Learning
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Transformative Learning Experience
+                                  Transformative Learning Experience
                                 </span>
                               </li>
                             </ul>
@@ -1174,35 +1281,48 @@ const Home = () => {
                             </div>
                           </div>
                         </div>
-                        <h5>
-                        Strategic Test-Taking Strategies:
-                        </h5>
-                        <p>It's not just about knowing the content; it's about mastering the art of test-taking. Our tutors impart strategic approaches that help students navigate exams with confidence. </p>
+                        <h5>Strategic Test-Taking Strategies:</h5>
+                        <p>
+                          It's not just about knowing the content; it's about
+                          mastering the art of test-taking. Our tutors impart
+                          strategic approaches that help students navigate exams
+                          with confidence.{" "}
+                        </p>
                         <h5>Tailored Approach:</h5>
-                        <p>Personalized learning plans that address individual strengths and areas for improvement. </p>
+                        <p>
+                          Personalized learning plans that address individual
+                          strengths and areas for improvement.{" "}
+                        </p>
                         <h5>Innovative Teaching Methods:</h5>
-                        <p>Engaging lessons that go beyond textbooks, fostering a deep understanding of exam concepts. </p>
+                        <p>
+                          Engaging lessons that go beyond textbooks, fostering a
+                          deep understanding of exam concepts.{" "}
+                        </p>
                         <h5>Adaptive Learning:</h5>
-                        <p>Evolving with the dynamic nature of exams, ensuring students are well-prepared for any changes in format or content.</p>
+                        <p>
+                          Evolving with the dynamic nature of exams, ensuring
+                          students are well-prepared for any changes in format
+                          or content.
+                        </p>
                         <ul className="list1">
                           <li>
                             <span className="table-cell valign-middle">
-                            Proven Track Record
+                              Proven Track Record
                             </span>
                           </li>
                           <li>
                             <span className="table-cell valign-middle">
-                            Holistic Learning
+                              Holistic Learning
                             </span>
                           </li>
                           <li>
                             <span className="table-cell valign-middle">
-                            Flexible Learning Options
+                              Flexible Learning Options
                             </span>
                           </li>
                           <li>
                             <span className="table-cell valign-middle">
-                            Constant Improvement
+                              Constant Improvement
                             </span>
                           </li>
                           <li>
@@ -1218,7 +1338,7 @@ const Home = () => {
                           <iframe
                             width="100%"
                             height={400}
-                            src="https://www.youtube.com/embed/0fp60iHV7Rk"
+                            src={mathsvideo}
                             frameBorder={0}
                             allow="autoplay; encrypted-media"
                             allowFullScreen=""
@@ -1286,44 +1406,69 @@ const Home = () => {
         {/*================================================================================= 
        END TEACHERS
    ==================================================================================*/}
-{/* our mission  start*/}
-<div className="mission">
-<h1 className="text-center ">OUR MISSION</h1>
-<div class="container mx-auto">
-    <div class="row  mt30">
-    <div className="mission-content">
-        <div class="col-lg-6 col-md-6 col-sm-1">
-         <img src="https://www.codeyoung.com/_nuxt/img/our_mission.017c97b.png" alt="image" style={{height:"300px",}}/>
+  {/* our vission start */}
+  <div className="VISION">
+          <h1 className="text-center" style={{ marginTop: "90px" }}>
+            OUR VISION
+          </h1>
+          <div class="container mx-auto">
+            <div class="row  mt30">
+              <div
+                class="col-lg-6 col-md-6 col-sm-1  mt50"
+                style={{ lineHeight: "2.5" }}
+              >
+                At EDUFUSION TUTOR, we envision a world where every learner,
+                regardless of background or circumstance, has the opportunity to
+                unlock their full potential through personalized education. We
+                aspire to be a guiding light on the educational journey,
+                fostering a love for learning that transcends boundaries.
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-1">
+                <img
+                  src="https://www.codeyoung.com/_nuxt/img/our_vision.0088ebd.png"
+                  alt="image"
+                  style={{ height: "300px" }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-1  mt50" style={{lineHeight: "2"}}>
-        At Edufusion Tutor, we're on a mission to make learning accessible to everyone. We're creating a welcoming and inclusive space where every student is supported and valued. Through easy-to-access learning opportunities, we want to help individuals grow, celebrate diversity, and ensure that education is a positive experience for everyone. Our goal is to break down barriers and make knowledge accessible to all
+        {/* our vision end */}
+
+
+        {/* our mission  start*/}
+        <div className="mission">
+  <h1 className="text-center">OUR MISSION</h1>
+  <div class="container mx-auto">
+    <div class="row mt30">
+      <div className="mission-content">
+        <div class="col-lg-5 col-md-6 col-sm-1 gap0">
+          <img
+            src="https://www.codeyoung.com/_nuxt/img/our_mission.017c97b.png"
+            alt="image"
+            style={{ height: "327px" ,maxWidth:"100%"}}
+          />
         </div>
+        <div
+          class="col-lg-7 col-md-6 col-sm-1 mt50"
+          style={{ lineHeight: "2" }}
+        >
+          At Edufusion Tutor, we're on a mission to make learning accessible
+          to everyone. We're creating a welcoming and inclusive space where
+          every student is supported and valued. Through easy-to-access
+          learning opportunities, we want to help individuals grow, celebrate
+          diversity, and ensure that education is a positive experience for
+          everyone. Our goal is to break down barriers and make knowledge
+          accessible to all
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
-</div>
-{/* our mission end */}
-
-
-
-{/* our vission start */}
-<div className="VISION">
-<h1 className="text-center" style={{marginTop:"90px"}}>OUR VISION</h1>
-<div class="container mx-auto">
-    <div class="row  mt30">
-    
+        {/* our mission end */}
         
-        <div class="col-lg-6 col-md-6 col-sm-1  mt50" style={{lineHeight: "2.5"}}>
-        At EDUFUSION TUTOR, we envision a world where every learner, regardless of background or circumstance, has the opportunity to unlock their full potential through personalized education. We aspire to be a guiding light on the educational journey, fostering a love for learning that transcends boundaries. 
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-1">
-         <img src="https://www.codeyoung.com/_nuxt/img/our_vision.0088ebd.png" alt="image" style={{height:"300px"}}/>
-        </div>
-    </div>
-</div>
-</div>
-{/* our vision end */}
+      
         {/*================================================================================= 
                           START PRICE  
     ==================================================================================*/}
@@ -1441,51 +1586,186 @@ const Home = () => {
         {/*================================================================================= 
                           END PRICE  
     ==================================================================================*/}
-{/* counterstart */}
+        {/* counterstart */}
 
-<div className="section progress-bars section-padding" style={{ background: '#2f384a' }}>
-  <div className="progress-bars-content">
-    <div className="progress-bar-wrapper">
-      <div className="row">
-        <div className="content mb40">
-          <div className="col-sm-3 col-xs-6">
-            <div className="progress-bar-number"  style={{marginTop:"20px"}}>
-              <div className="fsize-40 num" style={{ color: 'white' }}>{studentsCount}</div>
-              <p className="name-inner" style={{ color: 'white' }}>students taught </p>
-            </div>
+        <div
+          className="section progress-bars section-padding"
+          style={{ background: "#2f384a" }}
+        >
+          <div className="progress-bars-content">
+            <div className="progress-bar-wrapper">
+              <div className="row">
+                <div className="content mb40">
+                  <div className="col-sm-3 col-xs-6">
+                    <div
+                      className="progress-bar-number"
+                      style={{ marginTop: "20px" }}
+                    >
+                      <div className="fsize-40 num" style={{ color: "white" }}>
+                        {studentsCount}
+                      </div>
+                      <p className="name-inner" style={{ color: "white" }}>
+                        students taught{" "}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-sm-3 col-xs-6">
+                    <div
+                      className="progress-bar-number"
+                      style={{ marginTop: "20px" }}
+                    >
+                      <div className="fsize-40 num" style={{ color: "white" }}>
+                        {classesCount}
+                      </div>
+                      <p className="name-inner" style={{ color: "white" }}>
+                        classes taken{" "}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-sm-3 col-xs-6">
+                    <div
+                      className="progress-bar-number"
+                      style={{ marginTop: "20px" }}
+                    >
+                      <div className="fsize-40 num" style={{ color: "white" }}>
+                        {registeredCount}
+                      </div>
+                      <p className="name-inner" style={{ color: "white" }}>
+                        registered mentors{" "}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-sm-3 col-xs-6">
+                    <div className="progress-bar-number">
+                      <div className="fsize-40 num" style={{ color: "white" }}>
+                        {countryCount}
+                      </div>
+                      <p className="name-inner" style={{ color: "white" }}>
+                        country presence
+                      </p>
+                    </div>
+                  </div>
+                  {/* New Progress Bars */}
+                </div>
+              </div>
+            </div>{" "}
           </div>
-         
-          <div className="col-sm-3 col-xs-6">
-            <div className="progress-bar-number" style={{marginTop:"20px"}}>
-              <div className="fsize-40 num" style={{ color: 'white' }}>{classesCount}</div>
-              <p className="name-inner" style={{ color: 'white' }}>classes taken </p>
-            </div>
-          </div>
-          <div className="col-sm-3 col-xs-6">
-            <div className="progress-bar-number" style={{marginTop:"20px"}}>
-              <div className="fsize-40 num" style={{ color: 'white' }}>{registeredCount}</div>
-              <p className="name-inner" style={{ color: 'white' }}>registered mentors </p>
-            </div>
-          </div>
-          <div className="col-sm-3 col-xs-6">
-            <div className="progress-bar-number" >
-              <div className="fsize-40 num" style={{ color: 'white' }}>{countryCount}</div>
-              <p className="name-inner" style={{ color: 'white' }}>country presence</p>
-            </div>
-          </div>
-          {/* New Progress Bars */}
-         
         </div>
+
+        {/* counter end */}
+
+
+        <div className="container">
+      {/* Row with three columns */}
+      <div className="row">
+        {/* Column 1 */}
+        <div className="col-md-4 col-sm-6">
+          <div className="single-blog-item">
+            <div className="teachingfiled-section">
+              <h3>Handpicked Teachers</h3>
+              <ul className="text-left mr50">
+                <li>Mapped to your child's unique needs</li>
+                <li>6,000+ Expert teachers</li>
+                <li>CBSE, ICSE, State Boards, IB</li>
+                <li>Personalized learning plans</li>
+                <li>Flexible scheduling options</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Column 2 */}
+        <div className="col-md-4 col-sm-6">
+          <div className="single-blog-item">
+            <div className="teachingfiled-section">
+              <h3>Personalised Learning</h3>
+              <ul className="text-left mr50">
+                <li>A custom-made path for every child's unique maths needs</li>
+                <li>The child progresses at their own pace and skill level</li>
+                <li>Ensure conceptual understanding and mastery</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Column 3 */}
+        <div className="col-md-4 col-sm-6">
+          <div className="single-blog-item">
+            <div className="teachingfiled-section">
+              <h3>1-to-1 Live Tutoring</h3>
+              <ul className="text-left mr50">
+                <li>Undivided attention to your child with live teachers </li>
+                <li>1.1 instant doubt solving for concept clarity</li>
+                <li>No pre-recorded sessions, ever</li>
+                <li>Dedicated supports</li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+        <div className="row " style={{ marginTop: "-60px"}}>
+  
+  <div className="col-md-4 col-sm-6 mx-auto">
+    <div className="single-blog-item">
+      <div className="teachingfiled-section">
+        <h3>Class work Help</h3>
+        <ul className="text-left mr50">
+          <li>Completely synced with school curriculum</li>
+          <li>End-to-end homework help</li>
+          <li>Complete support for exams</li>
+          <li>Personalized tutoring </li>
+        </ul>
       </div>
-    </div>{" "}
+    </div>
+  </div>
+
+  
+  <div className="col-md-4 col-sm-6 mx-auto">
+    <div className="single-blog-item">
+      <div className="teachingfiled-section">
+        <h3>Advanced Learning</h3>
+        <ul className="text-left mr50">
+          <li>Full support for students looking to go a grade up</li>
+          <li>Comprehensive prep for competitive exams and Olympiads</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
-{/* counter end */}
+
+        {/* Column 3 */}
+        {/* <div className="col-md-4 col-sm-6">
+          <div className="single-blog-item">
+            <div className="teachingfiled-section">
+              <h3>1-to-1 Live Tutoring</h3>
+              <ul className="text-left mr50">
+                <li>Undivided attention to your child with live teachers </li>
+                <li>1.1 instant doubt solving for concept clarity</li>
+                <li>No pre-recorded sessions, ever</li>
+            
+              </ul>
+            </div>
+            
+          </div>
+        </div> */}
+      </div>
+
+      {/* Row with two columns */}
+      
+    </div>
+
+   
+
         {/*================================================================================= 
                           START TESTIMONIALS  
     ==================================================================================*/}
-        <section className=" testimonials__area-2 fix p-relative pt-120 pb-120  " id="education-testimonial" style={{    marginTop: "86px"}}>
+        <section
+          className=" testimonials__area-2 fix p-relative pt-120 pb-120  "
+          id="education-testimonial"
+          style={{ marginTop: "86px" }}
+        >
           <div className="testimonials__shape"></div>
           <div className="container mt-80">
             <div className="row mb-65">
@@ -1528,14 +1808,15 @@ const Home = () => {
                       "animation-name": "_fadeInUp",
                     }}
                   >
-                    Instilling inclusive ownership empowers every child to confidently shape their narrative
+                    Instilling inclusive ownership empowers every child to
+                    confidently shape their narrative
                   </p>
                 </div>
               </div>
             </div>
 
             {/*  */}
-            <div class="testimonials__container " style={{marginTop:"20px"}}>
+            <div class="testimonials__container mt50 ">
               <Slider {...settings1}>
                 <div className="testimonials__item ">
                   <div
@@ -1547,11 +1828,24 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="https://static.qumath.in/static/next/_next/static/images/seema-kumar-66548f290543027f2b6ed670fc8ff779.webp" alt="image"  className="student-images" />
+                        <img
+                          decoding="async"
+                          src={test}
+                          alt="image"
+                          className="student-images"
+                        />
                       </div>
-                      <div className="testimonials__text">
+                      <div className="testimonials__text  mt20 ">
                         <p>
-                        Edufusion has innovatively incorporated technology, leading to significant advancements in my child's math learning. Once a source of fear, math has now become her favorite subject. The foundational concepts are developing impressively, evident in my daughter's ability to solve complex problems effortlessly and swiftly. Thanks to Edufusion for facilitating conceptual learning and helping my child thrive in math. 
+                          Edufusion has innovatively incorporated technology,
+                          leading to significant advancements in my child's math
+                          learning. Once a source of fear, math has now become
+                          her favorite subject. The foundational concepts are
+                          developing impressively, evident in my daughter's
+                          ability to solve complex problems effortlessly and
+                          swiftly. Thanks to Edufusion for facilitating
+                          conceptual learning and helping my child thrive in
+                          math.
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
@@ -1577,15 +1871,21 @@ const Home = () => {
                       <div className="testimonials__logo">
                         <img
                           decoding="async"
-                          src="https://static.qumath.in/static/next/_next/static/images/poonam-agarwal-eba13ce175078b4020d21bc217031a6c.webp"
+                          src={test1}
                           alt="image"
-                          
                           className="student-images"
                         />
                       </div>
-                      <div className="testimonials__text">
+                      <div className="testimonials__text  mt20">
                         <p>
-                        "The SAT online class with Edufusion Tutor was a game-changer, boosting my confidence and refining my test-taking skills. The convenience of online learning and insightful feedback from Edufusion's instructors significantly contributed to my success. The personalized support and targeted practice provided by Edufusion were key factors in my score improvement. I highly recommend Edufusion Tutor's ."
+                          "The SAT online class with Edufusion Tutor was a
+                          game-changer, boosting my confidence and refining my
+                          test-taking skills. The convenience of online learning
+                          and insightful feedback from Edufusion's instructors
+                          significantly contributed to my success. The
+                          personalized support and targeted practice provided by
+                          Edufusion were key factors in my score improvement. I
+                          highly recommend Edufusion Tutor's ."
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
@@ -1609,11 +1909,23 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="https://static.qumath.in/static/next/_next/static/images/sharada-adhikari-dd24e8e222ffb9d196e1fa4b9e9c0a6c.webp" alt="image"  className="student-images"/>
+                        <img
+                          decoding="async"
+                          src={test2}
+                          alt="image"
+                          className="student-images"
+                        />
                       </div>
-                      <div className="testimonials__text">
+                      <div className="testimonials__text  mt20">
                         <p>
-                        "The coding online class with Edufusion Tutor has been an enriching experience for my child. The curriculum is well-structured, offering a comprehensive understanding of coding concepts. Edufusion's instructors are knowledgeable and provide effective guidance, making complex coding principles accessible.   which has ignited a genuine interest and proficiency in coding for my child." 
+                          "The coding online class with Edufusion Tutor has been
+                          an enriching experience for my child. The curriculum
+                          is well-structured, offering a comprehensive
+                          understanding of coding concepts. Edufusion's
+                          instructors are knowledgeable and provide effective
+                          guidance, making complex coding principles accessible.
+                          which has ignited a genuine interest and proficiency
+                          in coding for my child."
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
@@ -1637,26 +1949,37 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="https://blog.kaplanco.com/hubfs/Imported_Blog_Media/first-day-of-school-anxiety_a.jpg" alt="image" className="student-images" />
+                        <img
+                          decoding="async"
+                          src={test3}
+                          alt="image"
+                          className="student-images"
+                        />
                       </div>
-                      <div className="testimonials__text">
+                      <div className="testimonials__text mt20">
                         <p>
-                        The science online class with Edufusion Tutor has exceeded my expectations. The curriculum is engaging, covering diverse topics with depth and clarity. Edufusion's instructors demonstrate a passion for science and facilitate interactive discussions that enhance understanding. The use of multimedia resources adds a dynamic element to the learning experience.My child's interest in science has flourished. 
+                          The science online class with Edufusion Tutor has
+                          exceeded my expectations. The curriculum is engaging,
+                          covering diverse topics with depth and clarity.
+                          Edufusion's instructors demonstrate a passion for
+                          science and facilitate interactive discussions that
+                          enhance understanding. The use of multimedia resources
+                          adds a dynamic element to the learning experience.My
+                          child's interest in science has flourished.
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
 
                         <div className="testimonials__client-text">
-                          {/* <h4>Alima Alisha</h4>
-                          <span>CEO</span> */}
+                      
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 {/* 4th */}
-                <div>
+                {/* <div>
                   <div
                     className="testimonials__item swiper-slide swiper-slide-active"
                     data-swiper-slide-index={1}
@@ -1666,25 +1989,37 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="https://cdn-gdkcp.nitrocdn.com/pXiSTObAtzysxTBOnDEDVAOrTkEKIOld/assets/images/optimized/rev-af4bb28/www.jackrabbitcare.com/wp-content/uploads/2016/07/young-boy-looking-smiling-adult.png" alt="image"  className="student-images" />
+                        <img
+                          decoding="async"
+                          src={test3}
+                          alt="image"
+                          className="student-images"
+                        />
                       </div>
                       <div className="testimonials__text">
                         <p>
-                        Edufusion has innovatively incorporated technology, leading to significant advancements in my child's math learning. Once a source of fear, math has now become her favorite subject. The foundational concepts are developing impressively, evident in my daughter's ability to solve complex problems effortlessly and swiftly. Thanks to Edufusion for facilitating conceptual learning and helping my child thrive in math. 
+                          Edufusion has innovatively incorporated technology,
+                          leading to significant advancements in my child's math
+                          learning. Once a source of fear, math has now become
+                          her favorite subject. The foundational concepts are
+                          developing impressively, evident in my daughter's
+                          ability to solve complex problems effortlessly and
+                          swiftly. Thanks to Edufusion for facilitating
+                          conceptual learning and helping my child thrive in
+                          math.
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          {/* <h4>David Clark</h4>
-                          <span>Marketing Manager</span> */}
+                       
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* 5th */}
-                <div>
+                {/* <div>
                   <div
                     className="testimonials__item swiper-slide swiper-slide-next"
                     data-swiper-slide-index={2}
@@ -1694,23 +2029,34 @@ const Home = () => {
                   >
                     <div className="testimonials__item-content">
                       <div className="testimonials__logo">
-                        <img decoding="async" src="https://lh4.googleusercontent.com/urW4ghCPCb2Q0hKDP6EcJiSVjN8_AcebCvqSGXDb1fGzDl03fIuYt56jAorJOzx23_Fnxn_fUHbz39HsoHEgeMFIV1hvjKAXXVS-Gw-TFTH1VBpyCAFXkpznF-QD44Adyj3K2IQr" alt="image"  className="student-images"/>
+                        <img
+                          decoding="async"
+                          src={test}
+                          alt="image"
+                          className="student-images"
+                        />
                       </div>
                       <div className="testimonials__text">
                         <p>
-                        "The SAT online class with Edufusion Tutor was a game-changer, boosting my confidence and refining my test-taking skills. The convenience of online learning and insightful feedback from Edufusion's instructors significantly contributed to my success. The personalized support and targeted practice provided by Edufusion were key factors in my score improvement. I highly recommend Edufusion Tutor's ."
+                          "The SAT online class with Edufusion Tutor was a
+                          game-changer, boosting my confidence and refining my
+                          test-taking skills. The convenience of online learning
+                          and insightful feedback from Edufusion's instructors
+                          significantly contributed to my success. The
+                          personalized support and targeted practice provided by
+                          Edufusion were key factors in my score improvement. I
+                          highly recommend Edufusion Tutor's ."
                         </p>
                       </div>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          {/* <h4>Moran Sham</h4>
-                          <span>Team Leader</span> */}
+                         
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </Slider>
             </div>
             {/*  */}
@@ -1719,7 +2065,8 @@ const Home = () => {
         {/*================================================================================= 
                           END TESTIMONIALS   
     ==================================================================================*/}
-
+              
+    
         {/*================================================================================= 
                           START BLOG  
     ==================================================================================*/}
@@ -1898,16 +2245,17 @@ const Home = () => {
                   <h2 className="color-white fsize-40 mb15">Contacts</h2>
                   <a href="tel:8469092774">
                     <p className="text-white lheight-30 pb40 ">
-                      Phone: 8469092774
+                      Phone: +918469092774<br/>
+                      Phone:+91-6006474119
                     </p>
                   </a>
 
-                  <a href="mailto:inquiries@edufusion.co.in">
+                  <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
                   </a>
                 </div>
               </div>
-              <div className="subscribe-form">
+              <div className="subscribe-form mt30">
                 <div className="subscribe-form-inner">
                   {/* Newsletter form */}
                   <form className="form-inline dv-form" id="mc-form">
@@ -1966,7 +2314,7 @@ const Home = () => {
               <div className="copyright mt20">
                 <p className="color-white fsize-16">
                   Copyright@2020 All Rights Reserved By
-                  <span className="font-bold">
+                  <span className="font-bold" style={{color:"#2f384a"}}>
                     <a href="#">:Edufusion Tutor</a>
                   </span>
                 </p>
@@ -1988,6 +2336,10 @@ const Home = () => {
           <IoIosArrowUp style={{ marginTop: "6px" }} />
         </a>
         {/* End Scroll to top */}
+
+        {/* whats app */}
+
+        <WhatsAppButton />
         {/*================================================================================= 
                           START CONTACT POP-UP  
     ==================================================================================*/}
@@ -2120,7 +2472,6 @@ const Home = () => {
         </div>
 
         {/*  */}
-     
       </>
     </div>
   );

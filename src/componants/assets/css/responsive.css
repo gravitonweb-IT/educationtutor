@@ -598,8 +598,18 @@
   /* course Section */
   .course .course-slider-bl .course-slider .course-slider-img {
     height: 300px;
-    width: 406px;
+    width: 386px;
   }
+  /* Your other styles for larger screens can go here */
+
+/* Small screen styles for course section */
+@media only screen and (max-width: 375px) {
+  .course-slider-img.slick-slide.slick-current.slick-active {
+    /* height: 300px; */
+    width: 320px;
+  }
+}
+
   /* Testimonial Section */
   .testimonial-author .author-col {
     display: block;
