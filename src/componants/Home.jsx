@@ -40,6 +40,11 @@ import test2 from "../componants/assets/images/testmonialimages/t3.jpg";
 import test3 from "../componants/assets/images/testmonialimages/t4.jpg";
 import m1image from "../componants/assets/images/m1.png";
 import mathsvideo from "../componants/assets/mathsvideo.mp4";
+import learningmath from "../componants/assets/learningmath.mp4";
+import grade2 from "../componants/assets/grade2.mp4";
+import grade8 from "../componants/assets/grade8.mp4";
+import grade6 from "../componants/assets/grade6.mp4";
+import mario from "../componants/assets/mario.webm";
 // import anime from 'animejs';
 const Home = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -158,9 +163,9 @@ const Home = () => {
                   <li>
                     <a href="#education-courses">Courses</a>
                   </li>
-                  <li>
-                    <a href="#education-teachers">Teachers</a>
-                  </li>
+                  {/* <li>
+                    <a href="#education-teachers ">Teachers</a>
+                  </li> */}
                   <li>
                     <a href="#education-price">Price</a>
                   </li>
@@ -211,9 +216,8 @@ const Home = () => {
                       ...
                     </h1>
                     <p className="color-white lheight-30">
-                    Unlock the Power of Numbers,
-                     Discover the wonders of science,
-                     and Dive into the World of Coding with Us!
+                      Unlock the Power of Numbers, Discover the wonders of
+                      science, and Dive into the World of Coding with Us!
                     </p>
                   </div>
                   <div className="app-media">
@@ -494,7 +498,6 @@ const Home = () => {
                                     backgroundImage: `url(${m1image})`,
                                     width: "500px",
                                   }}
-                                  
                                   data-slick-index={0}
                                   aria-hidden="false"
                                   tabIndex={0}
@@ -534,7 +537,7 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>Discover the Wonders of Science</span>
+                                <span>Unlock the Wonders of Science with Our Exclusive</span>
                               </div>
                               <div className="subtitle fweight-600 color-4 mt20">
                                 online science tuition offer an unparalleled
@@ -551,29 +554,25 @@ const Home = () => {
                           <ul className="list1">
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                                Data Scientist
+                              Top-notch Tutors:
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                                AI and Machine Learning Engineer
+                              Flexibility in Scheduling
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                                Biotechnology Researcher
+                              Interactive Learning Tools
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                                Environmental Scientist
+                              Boost Your Confidence
                               </span>
                             </li>
-                            <li className="list-theme-color">
-                              <span className="table-cell valign-middle">
-                                Space Scientist/Astronomer
-                              </span>
-                            </li>
+                           
                           </ul>
                           {/* button */}
                           <div className="flex-1">
@@ -783,7 +782,7 @@ const Home = () => {
                             understand the specific requirements of exams like
                             PSAT, SAT, ACT, NAPLAN, and Olympiads, tailoring
                             their guidance to address individual strengths and
-                            areas for improvement. 
+                            areas for improvement.
                           </p>
                           <ul className="list1">
                             <li>
@@ -916,7 +915,7 @@ const Home = () => {
                             guiding students to success in PSAT, SAT, ACT,
                             NAPLAN, and Olympiads. Our tailored programs, led by
                             experienced educators, blend content mastery with
-                            strategic test-taking skills. 
+                            strategic test-taking skills.
                           </p>
                           <ul className="list1 mt30">
                             <li>
@@ -1023,8 +1022,7 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>
-Unlocking the Nexus of Knowledge</span>
+                                <span>Unlocking the Nexus of Knowledge</span>
                               </div>
                               <div className="subtitle fweight-600 color-4">
                                 Make your courses standout
@@ -1032,22 +1030,28 @@ Unlocking the Nexus of Knowledge</span>
                             </div>
                           </div>
                           <p className="lheight-30">
-                          Embark on a journey where mathematical principles intertwine with scientific wonders, converging seamlessly with the intricate dance of coding languages. Discover the synergy that propels innovation and shapes the future.
+                            Embark on a journey where mathematical principles
+                            intertwine with scientific wonders, converging
+                            seamlessly with the intricate dance of coding
+                            languages. Discover the synergy that propels
+                            innovation and shapes the future.
                           </p>
                           <ul className="list1">
                             <li>
                               <span className="table-cell valign-middle">
-                              Solving Complex Puzzles with Precision
+                                Solving Complex Puzzles with Precision
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                              Exploring Phenomena Through Inquiry and Experimentation
+                                Exploring Phenomena Through Inquiry and
+                                Experimentation
                               </span>
                             </li>
                             <li>
                               <span className="table-cell valign-middle">
-                              Crafting Algorithms, Transforming Ideas into Digital Realities
+                                Crafting Algorithms, Transforming Ideas into
+                                Digital Realities
                               </span>
                             </li>
                           </ul>
@@ -1128,6 +1132,78 @@ Unlocking the Nexus of Knowledge</span>
             </div>
           </div>
         </section>
+
+
+
+        <div className="container">
+  <h1 className="text-center">Video'S Section </h1>
+  <div className="row mt40">
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <iframe
+                            width="100%"
+                            height={400}
+                            src={mathsvideo}
+                            frameBorder={0}
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen=""
+                          />
+  </div>
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <iframe
+                            width="100%"
+                            height={400}
+                            src={learningmath}
+                            frameBorder={0}
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen=""
+                          />
+  </div>
+  </div>
+  <div className="row mt40">
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <iframe
+                            width="100%"
+                            height={400}
+                            src={grade2}
+                            frameBorder={0}
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen=""
+                          />
+  </div>
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <iframe
+                            width="100%"
+                            height={400}
+                            src={grade6}
+                            frameBorder={0}
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen=""
+                          />
+  </div>
+  </div>
+  <div className="row mt40">
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <iframe
+                            width="100%"
+                            height={400}
+                            src={grade8}
+                            frameBorder={0}
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen=""
+                          />
+  </div>
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <iframe
+                            width="100%"
+                            height={400}
+                            src={mario}
+                            frameBorder={0}
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen=""
+                          />
+  </div>
+  </div>
+</div>
         {/*================================================================================= 
                           END courses
     ==================================================================================*/}
@@ -1361,7 +1437,7 @@ Unlocking the Nexus of Knowledge</span>
                       START Our Teachers
     ==================================================================================*/}
 
-        <div className="main-teacher-section" id="education-teachers">
+        {/* <div className="main-teacher-section" id="education-teachers ">
           <h1 className="text-center">Our Teachers</h1>
           <hr className="teacher-horizontal-section" />
           <div className="teacher-section ">
@@ -1401,13 +1477,13 @@ Unlocking the Nexus of Knowledge</span>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/*================================================================================= 
        END TEACHERS
    ==================================================================================*/}
-  {/* our vission start */}
-  <div className="VISION">
+        {/* our vission start */}
+        <div className="VISION">
           <h1 className="text-center" style={{ marginTop: "90px" }}>
             OUR VISION
           </h1>
@@ -1435,40 +1511,38 @@ Unlocking the Nexus of Knowledge</span>
         </div>
         {/* our vision end */}
 
-
         {/* our mission  start*/}
         <div className="mission">
-  <h1 className="text-center">OUR MISSION</h1>
-  <div class="container mx-auto">
-    <div class="row mt30">
-      <div className="mission-content">
-        <div class="col-lg-5 col-md-6 col-sm-1 gap0">
-          <img
-            src="https://www.codeyoung.com/_nuxt/img/our_mission.017c97b.png"
-            alt="image"
-            style={{ height: "327px" ,maxWidth:"100%"}}
-          />
+          <h1 className="text-center">OUR MISSION</h1>
+          <div class="container mx-auto">
+            <div class="row mt30">
+              <div className="mission-content">
+                <div class="col-lg-5 col-md-6 col-sm-1 gap0">
+                  <img
+                    src="https://www.codeyoung.com/_nuxt/img/our_mission.017c97b.png"
+                    alt="image"
+                    style={{ height: "327px", maxWidth: "100%" }}
+                  />
+                </div>
+                <div
+                  class="col-lg-7 col-md-6 col-sm-1 mt50"
+                  style={{ lineHeight: "2.5" }}
+                >
+                  At Edufusion Tutor, we're on a mission to make learning
+                  accessible to everyone. We're creating a welcoming and
+                  inclusive space where every student is supported and valued.
+                  Through easy-to-access learning opportunities, we want to help
+                  individuals grow, celebrate diversity, and ensure that
+                  education is a positive experience for everyone. Our goal is
+                  to break down barriers and make knowledge accessible to all.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div
-          class="col-lg-7 col-md-6 col-sm-1 mt50"
-          style={{ lineHeight: "2" }}
-        >
-          At Edufusion Tutor, we're on a mission to make learning accessible
-          to everyone. We're creating a welcoming and inclusive space where
-          every student is supported and valued. Through easy-to-access
-          learning opportunities, we want to help individuals grow, celebrate
-          diversity, and ensure that education is a positive experience for
-          everyone. Our goal is to break down barriers and make knowledge
-          accessible to all
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         {/* our mission end */}
-        
-      
+
         {/*================================================================================= 
                           START PRICE  
     ==================================================================================*/}
@@ -1655,88 +1729,95 @@ Unlocking the Nexus of Knowledge</span>
 
         {/* counter end */}
 
-
         <div className="container">
-      {/* Row with three columns */}
-      <div className="row">
-        {/* Column 1 */}
-        <div className="col-md-4 col-sm-6">
-          <div className="single-blog-item">
-            <div className="teachingfiled-section">
-              <h3>Handpicked Teachers</h3>
-              <ul className="text-left mr50">
-                <li>Mapped to your child's unique needs</li>
-                <li>6,000+ Expert teachers</li>
-                <li>CBSE, ICSE, State Boards, IB</li>
-                <li>Personalized learning plans</li>
-                <li>Flexible scheduling options</li>
-              </ul>
+          {/* Row with three columns */}
+          <div className="row">
+            {/* Column 1 */}
+            <div className="col-md-4 col-sm-6">
+              <div className="single-blog-item">
+                <div className="teachingfiled-section">
+                  <h3>Handpicked Teachers</h3>
+                  <ul className="text-left mr50">
+                    <li>Mapped to your child's unique needs</li>
+                    <li>6,000+ Expert teachers</li>
+                    <li>CBSE, ICSE, State Boards, IB</li>
+                    <li>Personalized learning plans</li>
+                    <li>Flexible scheduling options</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* Column 2 */}
-        <div className="col-md-4 col-sm-6">
-          <div className="single-blog-item">
-            <div className="teachingfiled-section">
-              <h3>Personalised Learning</h3>
-              <ul className="text-left mr50">
-                <li>A custom-made path for every child's unique maths needs</li>
-                <li>The child progresses at their own pace and skill level</li>
-                <li>Ensure conceptual understanding and mastery</li>
-              </ul>
+            {/* Column 2 */}
+            <div className="col-md-4 col-sm-6">
+              <div className="single-blog-item">
+                <div className="teachingfiled-section">
+                  <h3>Personalised Learning</h3>
+                  <ul className="text-left mr50">
+                    <li>
+                      A custom-made path for every child's unique maths needs
+                    </li>
+                    <li>
+                      The child progresses at their own pace and skill level
+                    </li>
+                    <li>Ensure conceptual understanding and mastery</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* Column 3 */}
-        <div className="col-md-4 col-sm-6">
-          <div className="single-blog-item">
-            <div className="teachingfiled-section">
-              <h3>1-to-1 Live Tutoring</h3>
-              <ul className="text-left mr50">
-                <li>Undivided attention to your child with live teachers </li>
-                <li>1.1 instant doubt solving for concept clarity</li>
-                <li>No pre-recorded sessions, ever</li>
-                <li>Dedicated supports</li>
-              </ul>
+            {/* Column 3 */}
+            <div className="col-md-4 col-sm-6">
+              <div className="single-blog-item">
+                <div className="teachingfiled-section">
+                  <h3>1-to-1 Live Tutoring</h3>
+                  <ul className="text-left mr50">
+                    <li>
+                      Undivided attention to your child with live teachers{" "}
+                    </li>
+                    <li>1.1 instant doubt solving for concept clarity</li>
+                    <li>No pre-recorded sessions, ever</li>
+                    <li>Dedicated supports</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            
-          </div>
-        </div>
-        <div className="row " style={{ marginTop: "-60px"}}>
-  
-  <div className="col-md-4 col-sm-6 mx-auto">
-    <div className="single-blog-item">
-      <div className="teachingfiled-section">
-        <h3>Class work Help</h3>
-        <ul className="text-left mr50">
-          <li>Completely synced with school curriculum</li>
-          <li>End-to-end homework help</li>
-          <li>Complete support for exams</li>
-          <li>Personalized tutoring </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+            <div className="row " style={{ marginTop: "-60px" }}>
+              <div className="col-md-3 col-sm-6 mx-auto"></div>
+              <div className="col-md-4 col-sm-6 mx-auto">
+                <div className="single-blog-item">
+                  <div className="teachingfiled-section">
+                    <h3>Class work Help</h3>
+                    <ul className="text-left mr50">
+                      <li>Completely synced with school curriculum</li>
+                      <li>End-to-end homework help</li>
+                      <li>Complete support for exams</li>
+                      <li>Personalized tutoring </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-  
-  <div className="col-md-4 col-sm-6 mx-auto">
-    <div className="single-blog-item">
-      <div className="teachingfiled-section">
-        <h3>Advanced Learning</h3>
-        <ul className="text-left mr50">
-          <li>Full support for students looking to go a grade up</li>
-          <li>Comprehensive prep for competitive exams and Olympiads</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+              <div className="col-md-4 col-sm-6 mx-auto">
+                <div className="single-blog-item">
+                  <div className="teachingfiled-section">
+                    <h3>Advanced Learning</h3>
+                    <ul className="text-left mr50">
+                      <li>
+                        Full support for students looking to go a grade up
+                      </li>
+                      <li>
+                        Comprehensive prep for competitive exams and Olympiads
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-3 col-sm-6 mx-auto"></div>
+            </div>
 
-
-        {/* Column 3 */}
-        {/* <div className="col-md-4 col-sm-6">
+            {/* Column 3 */}
+            {/* <div className="col-md-4 col-sm-6">
           <div className="single-blog-item">
             <div className="teachingfiled-section">
               <h3>1-to-1 Live Tutoring</h3>
@@ -1750,13 +1831,10 @@ Unlocking the Nexus of Knowledge</span>
             
           </div>
         </div> */}
-      </div>
+          </div>
 
-      {/* Row with two columns */}
-      
-    </div>
-
-   
+          {/* Row with two columns */}
+        </div>
 
         {/*================================================================================= 
                           START TESTIMONIALS  
@@ -1971,9 +2049,7 @@ Unlocking the Nexus of Knowledge</span>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
 
-                        <div className="testimonials__client-text">
-                      
-                        </div>
+                        <div className="testimonials__client-text"></div>
                       </div>
                     </div>
                   </div>
@@ -2065,8 +2141,7 @@ Unlocking the Nexus of Knowledge</span>
         {/*================================================================================= 
                           END TESTIMONIALS   
     ==================================================================================*/}
-              
-    
+
         {/*================================================================================= 
                           START BLOG  
     ==================================================================================*/}
@@ -2188,9 +2263,7 @@ Unlocking the Nexus of Knowledge</span>
                     Some important facts
                   </h2>
                   <p className="color-white lheight-30 pb30">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                  Step into a world of possibilities with us! Explore the magic of numbers, unravel scientific wonders, and dive deep into coding. Join us on this incredible journey.
                   </p>
                   {/* PROGRESS BARS*/}
                   <div className="section progress-bars section-padding">
@@ -2245,7 +2318,8 @@ Unlocking the Nexus of Knowledge</span>
                   <h2 className="color-white fsize-40 mb15">Contacts</h2>
                   <a href="tel:8469092774">
                     <p className="text-white lheight-30 pb40 ">
-                      Phone: +918469092774<br/>
+                      Phone: +918469092774
+                      <br />
                       Phone:+91-6006474119
                     </p>
                   </a>
@@ -2314,7 +2388,7 @@ Unlocking the Nexus of Knowledge</span>
               <div className="copyright mt20">
                 <p className="color-white fsize-16">
                   Copyright@2020 All Rights Reserved By
-                  <span className="font-bold" style={{color:"#2f384a"}}>
+                  <span className="font-bold" style={{ color: "#2f384a" }}>
                     <a href="#">:Edufusion Tutor</a>
                   </span>
                 </p>
