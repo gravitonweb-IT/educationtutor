@@ -127,7 +127,7 @@ const Home = () => {
       <>
         <header>
           {/* Nav Menu Starts */}
-          <nav className="navbar default nav-mob">
+          <nav className="navbar navbar-default navbar-fixed-top">
             <div className="container mob-logo">
               <div className="navbar-header col-sm-2 tablet-logo">
                 <button
