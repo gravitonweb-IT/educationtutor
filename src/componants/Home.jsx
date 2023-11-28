@@ -496,7 +496,7 @@ const Home = () => {
                                   className="course-slider-img slick-slide slick-current slick-active"
                                   style={{
                                     backgroundImage: `url(${m1image})`,
-                                    width: "500px",
+                                   
                                   }}
                                   data-slick-index={0}
                                   aria-hidden="false"
@@ -572,7 +572,11 @@ const Home = () => {
                               Boost Your Confidence
                               </span>
                             </li>
-                           
+                            <li className="list-theme-color">
+                              <span className="table-cell valign-middle">
+                                Space Scientist/Astronomer
+                              </span>
+                            </li>
                           </ul>
                           {/* button */}
                           <div className="flex-1">
@@ -1137,8 +1141,8 @@ const Home = () => {
 
         <div className="container">
   <h1 className="text-center">Video'S Section </h1>
-  <div className="row mt40">
-  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <div className="row mt40" id="videos">
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
   <iframe
                             width="100%"
                             height={400}
@@ -1159,7 +1163,7 @@ const Home = () => {
                           />
   </div>
   </div>
-  <div className="row mt40">
+  <div className="row mt40" id="videos">
   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
   <iframe
                             width="100%"
@@ -1181,7 +1185,7 @@ const Home = () => {
                           />
   </div>
   </div>
-  <div className="row mt40">
+  <div className="row mt40" id="videos">
   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
   <iframe
                             width="100%"

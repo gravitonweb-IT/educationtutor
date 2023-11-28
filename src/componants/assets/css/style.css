@@ -1709,8 +1709,38 @@ nav.top-nav-collapse {
   height: 420px;
   background-size: cover;
   background-position: center center;
-  width: 354px;
+  width: 468px;
 }
+#videos {
+  width: 100%; /* Default width for larger screens */
+}
+  /* Media query for small screens */
+  @media only screen and (max-width: 767px) {
+    #videos {
+      width: 100%; /* Adjust the width for small screens, e.g., full width */
+    }
+  }
+
+  /* Media query for medium screens */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    #videos {
+      width: 70%; /* Adjust the width for medium screens, e.g., 70% of the viewport width */
+    }
+  }
+
+  /* Media query for screens starting at 300px */
+  @media only screen and (max-width: 375px) {
+    #videos {
+      width: 554px; /* Adjust the width for screens starting at 300px */
+    }
+  }
+  @media only screen and (max-width: 375px) {
+
+    .course-slider-img.slick-slide.slick-current.slick-active {
+      width: 357px;
+     
+    }
+  }
 
 .course .ia-icon,
 .course .light .ia-icon {
