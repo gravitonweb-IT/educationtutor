@@ -56,7 +56,15 @@ const Home = () => {
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
   };
+  const [activeTab, setActiveTab] = useState('course-item-1'); // Initial active tab
 
+  useEffect(()=>{
+console.log("this is ")
+  },[activeTab])
+  const handleTabClick = (tabId) => {
+    
+    setActiveTab(tabId);
+  };
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 768) {
@@ -80,6 +88,61 @@ const Home = () => {
   const [coursesCount, setCoursesCount] = useState(0);
   const [membersCount, setMembersCount] = useState(0);
   const [countriesCount, setCountriesCount] = useState(0);
+
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    message: '',
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    // Clear the error message when the user starts typing
+    setErrors({
+      ...errors,
+      [name]: '',
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Add your validation logic here
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    }
+
+    // Add more validation rules for other fields
+
+    setErrors(newErrors);
+
+    // Return true if there are no errors
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // You can access the form data in the 'formData' object
+      console.log('Form Data:', formData);
+    } else {
+      console.log('Form validation failed.');
+    }
+  };
   useEffect(() => {
     const animateCounter = (setter, to) => {
       let currentCount = 0;
@@ -293,7 +356,8 @@ const Home = () => {
                         {/* Start course tab button */}
                         <li className="col-lg-2 col-md-2 active">
                           <a
-                            href="#course-item-1"
+                           
+                            onClick={() => handleTabClick('course-item-1')}
                             data-toggle="tab"
                             className="fsize-12 uppercase"
                             aria-expanded="true"
@@ -313,7 +377,8 @@ const Home = () => {
                         </li>
                         <li className="col-lg-2 col-md-2">
                           <a
-                            href="#course-item-2"
+                           
+                            onClick={() => handleTabClick('course-item-2')}
                             data-toggle="tab"
                             className="fsize-12 uppercase"
                             aria-expanded="false"
@@ -333,7 +398,8 @@ const Home = () => {
                         </li>
                         <li className="col-lg-2 col-md-2">
                           <a
-                            href="#course-item-3"
+                            
+                            onClick={() => handleTabClick('course-item-3')}
                             data-toggle="tab"
                             className="fsize-12 uppercase"
                             aria-expanded="false"
@@ -353,7 +419,8 @@ const Home = () => {
                         </li>
                         <li className="col-lg-2 col-md-2">
                           <a
-                            href="#course-item-4"
+                           
+                            onClick={() => handleTabClick('course-item-4')}
                             data-toggle="tab"
                             className="fsize-12 uppercase"
                             aria-expanded="false"
@@ -373,7 +440,8 @@ const Home = () => {
                         </li>
                         <li className="col-lg-2 col-md-2">
                           <a
-                            href="#course-item-5"
+                           
+                            onClick={() => handleTabClick('course-item-5')}
                             data-toggle="tab"
                             className="fsize-12 uppercase"
                             aria-expanded="false"
@@ -393,7 +461,8 @@ const Home = () => {
                         </li>
                         <li className="col-lg-2 col-md-2">
                           <a
-                            href="#course-item-6"
+                           
+                            onClick={() => handleTabClick('course-item-6')}
                             data-toggle="tab"
                             className="fsize-12 uppercase"
                             aria-expanded="false"
@@ -416,713 +485,731 @@ const Home = () => {
                     </div>
                     <div className="tab-content relative background-white mt100 bdrs-10">
                       {/* Start Single tab content */}
-                      <div
-                        className="tab-pane fade text-left clearfix active in"
-                        id="course-item-1"
-                      >
-                        <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
-                          <div className="table mb40">
-                            <div className="title-bl table-cell valign-middle">
-                              <div className="title color-2">
-                                <span>Mathematics Learning Platform</span>
-                              </div>
-                              <div className="subtitle fweight-600 color-4 mt20">
-                                <h5>
-                                  We take care of all your child’s math needs{" "}
-                                </h5>
-                              </div>
-                            </div>
-                          </div>
-                          <h1></h1>
-                          <p className="lheight-30 mt20">
-                            Individualized Learning Paths for Each Child's
-                            Unique Math Requirements:
-                          </p>
-                          <ul className="list1">
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Personalised Learning
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                live sessions
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Classwork Help
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Advance Learning
-                              </span>
-                            </li>
-                          </ul>
-                          {/* button */}
-                          <div className="flex-1">
-                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                              <span className="color-2 button-text">
-                                START LEARN NOW
-                              </span>
-                            </button> */}
-                          </div>
-                        </div>
-                        <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                          <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            {/* <button
-                              className="slick-prev slick-arrow slick-disabled"
-                              aria-label="Previous"
-                              type="button"
-                              aria-disabled="true"
-                              style={{}}
-                            >
-                              Previous
-                            </button> */}
-                            <div className="slick-list draggable">
-                              <div
-                                className="slick-track"
-                                style={{
-                                  opacity: "1",
-                                  width: "1170px",
-                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                  transform: "translate3d(0px, 0px, 0px)",
-                                }}
-                              >
-                                <div
-                                  className="course-slider-img slick-slide slick-current slick-active"
-                                  style={{
-                                    backgroundImage: `url(${m1image})`,
-                                  }}
-                                  data-slick-index={0}
-                                  aria-hidden="false"
-                                  tabIndex={0}
-                                />
-                                {/* <div
-                                  className="course-slider-img slick-slide"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={1}
-                                  aria-hidden="true"
-                                  tabIndex={-1}
-                                /> */}
-                              </div>
-                            </div>
-                            {/* <button
-                              className="slick-next slick-arrow"
-                              aria-label="Next"
-                              type="button"
-                              style={{}}
-                              aria-disabled="false"
-                            >
-                              Next
-                            </button> */}
-                          </div>
-                        </div>
-                      </div>
+                      {activeTab === 'course-item-1' && (
+          <div
+          className={`tab-pane fade text-left clearfix ${activeTab === 'course-item-1' ? 'active in' : ''}`}
+           id="course-item-1"
+         >
+           <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
+             <div className="table mb40">
+               <div className="title-bl table-cell valign-middle">
+                 <div className="title color-2">
+                   <span>Mathematics Learning Platform</span>
+                 </div>
+                 <div className="subtitle fweight-600 color-4 mt20">
+                   <h5>
+                     We take care of all your child’s math needs{" "}
+                   </h5>
+                 </div>
+               </div>
+             </div>
+             <h1></h1>
+             <p className="lheight-30 mt20">
+               Individualized Learning Paths for Each Child's
+               Unique Math Requirements:
+             </p>
+             <ul className="list1">
+               <li>
+                 <span className="table-cell valign-middle">
+                   Personalised Learning
+                 </span>
+               </li>
+               <li>
+                 <span className="table-cell valign-middle">
+                   live sessions
+                 </span>
+               </li>
+               <li>
+                 <span className="table-cell valign-middle">
+                   Classwork Help
+                 </span>
+               </li>
+               <li>
+                 <span className="table-cell valign-middle">
+                   Advance Learning
+                 </span>
+               </li>
+             </ul>
+             {/* button */}
+             <div className="flex-1">
+               {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                 <span className="color-2 button-text">
+                   START LEARN NOW
+                 </span>
+               </button> */}
+             </div>
+           </div>
+           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
+             <div className="course-slider arrow-btn slick-initialized slick-slider">
+               {/* <button
+                 className="slick-prev slick-arrow slick-disabled"
+                 aria-label="Previous"
+                 type="button"
+                 aria-disabled="true"
+                 style={{}}
+               >
+                 Previous
+               </button> */}
+               <div className="slick-list draggable">
+                 <div
+                   className="slick-track"
+                   style={{
+                     opacity: "1",
+                     width: "1170px",
+                     WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                     MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
+                     transform: "translate3d(0px, 0px, 0px)",
+                   }}
+                 >
+                   <div
+                     className="course-slider-img slick-slide slick-current slick-active"
+                     style={{
+                       backgroundImage: `url(${m1image})`,
+                     }}
+                     data-slick-index={0}
+                     aria-hidden="false"
+                     tabIndex={0}
+                   />
+                   {/* <div
+                     className="course-slider-img slick-slide"
+                     style={{
+                       "background-image":
+                         'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                       width: "585px",
+                     }}
+                     data-slick-index={1}
+                     aria-hidden="true"
+                     tabIndex={-1}
+                   /> */}
+                 </div>
+               </div>
+               {/* <button
+                 className="slick-next slick-arrow"
+                 aria-label="Next"
+                 type="button"
+                 style={{}}
+                 aria-disabled="false"
+               >
+                 Next
+               </button> */}
+             </div>
+           </div>
+         </div>
+        )}
+         {activeTab == 'course-item-2' &&   (
+          <div
+          className={`tab-pane fade text-left clearfix ${activeTab === 'course-item-2' ? 'active in' : ''}`}
+          id="course-item-2"
+        >
+          <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
+            <div className="table mb40">
+              <div className="title-bl table-cell valign-middle">
+                <div className="title color-2">
+                  <span>
+                    Unlock the Wonders of Science with Our
+                    Exclusive
+                  </span>
+                </div>
+                <div className="subtitle fweight-600 color-4 mt20">
+                  online science tuition offer an unparalleled
+                  learning experience that goes beyond the
+                  ordinary
+                </div>
+              </div>
+            </div>
+            <p className="lheight-30 mt20">
+              Our curriculum doesn't just teach science; it
+              propels you toward promising careers! Consider the
+              following career pathways awaiting our students:
+            </p>
+            <ul className="list1">
+              <li className="list-theme-color">
+                <span className="table-cell valign-middle">
+                  Top-notch Tutors:
+                </span>
+              </li>
+              <li className="list-theme-color">
+                <span className="table-cell valign-middle">
+                  Flexibility in Scheduling
+                </span>
+              </li>
+              <li className="list-theme-color">
+                <span className="table-cell valign-middle">
+                  Interactive Learning Tools
+                </span>
+              </li>
+              <li className="list-theme-color">
+                <span className="table-cell valign-middle">
+                  Boost Your Confidence
+                </span>
+              </li>
+              <li className="list-theme-color">
+                <span className="table-cell valign-middle">
+                  Space Scientist/Astronomer
+                </span>
+              </li>
+            </ul>
+            {/* button */}
+            <div className="flex-1">
+              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                <span className="color-2 button-text">
+                  START LEARN NOW
+                </span>
+              </button> */}
+            </div>
+          </div>
+          <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div className="course-slider arrow-btn slick-initialized slick-slider">
+              {/* <button
+                className="slick-prev slick-arrow slick-disabled"
+                aria-label="Previous"
+                type="button"
+                aria-disabled="true"
+                style={{}}
+              >
+                Previous
+              </button> */}
+              <div className="slick-list draggable">
+                <div
+                  className="slick-track"
+                  style={{
+                    opacity: "1",
+                    width: "1170px",
+                    WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
+                    transform: "translate3d(0px, 0px, 0px)",
+                  }}
+                >
+                  <div
+                    className="course-slider-img slick-slide slick-current slick-active"
+                    style={{
+                      "background-image":
+                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                      width: "585px",
+                    }}
+                    data-slick-index={0}
+                    aria-hidden="false"
+                    tabIndex={0}
+                  />
+                  <div
+                    className="course-slider-img slick-slide"
+                    style={{
+                      "background-image":
+                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                      width: "585px",
+                    }}
+                    data-slick-index={1}
+                    aria-hidden="true"
+                    tabIndex={-1}
+                  />
+                </div>
+              </div>
+              {/* <button
+                className="slick-next slick-arrow"
+                aria-label="Next"
+                type="button"
+                style={{}}
+                aria-disabled="false"
+              >
+                Next
+              </button> */}
+            </div>
+          </div>
+        </div>
+         )}
+          {activeTab === 'course-item-3' && (
+          <div
+          className={`tab-pane fade text-left clearfix ${activeTab === 'course-item-3' ? 'active in' : ''}`}
+          id="course-item-3"
+        >
+          <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
+            <div className="table mb40">
+              <div className="title-bl table-cell valign-middle">
+                <div className="title color-2">
+                  <span>Embrace Online Coding </span>
+                </div>
+                <div className="subtitle fweight-600 color-4 mt20">
+                  Explore the world of coding from the comfort of
+                  your home with our Online Coding Tutorials
+                </div>
+              </div>
+            </div>
+            <p className="lheight-30 mt30">
+              Embrace Online Coding Tutorials for a dynamic
+              learning experience. Dive into a world of
+              interactive lessons, expert guidance, and flexible
+              accessibility. Whether you're a beginner or aiming
+              to refine your skills, our tutorials empower you
+              with the knowledge needed for success.
+            </p>
+            <ul className="list1">
+              <li>
+                <span className="table-cell valign-middle">
+                  Coding
+                </span>
+              </li>
+              <li>
+                <span className="table-cell valign-middle">
+                  Explore Endless Possibilities
+                </span>
+              </li>
+              <li>
+                <span className="table-cell valign-middle">
+                  Expert Tutors, Real-World Insight
+                </span>
+              </li>
+              <li>
+                <span className="table-cell valign-middle">
+                  Flexible Scheduling, Boundless Opportunities
+                </span>
+              </li>
+            </ul>
+            {/* button */}
+            <div className="flex-1">
+              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                <span className="color-2 button-text">
+                  START LEARN NOW
+                </span>
+              </button> */}
+            </div>
+          </div>
+          <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div className="course-slider arrow-btn slick-initialized slick-slider">
+              {/* <button
+                className="slick-prev slick-arrow slick-disabled"
+                aria-label="Previous"
+                type="button"
+                aria-disabled="true"
+                style={{}}
+              >
+                Previous
+              </button> */}
+              <div className="slick-list draggable">
+                <div
+                  className="slick-track"
+                  style={{
+                    opacity: "1",
+                    width: "1170px",
+                    WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
+                    transform: "translate3d(0px, 0px, 0px)",
+                  }}
+                >
+                  <div
+                    className="course-slider-img slick-slide slick-current slick-active"
+                    style={{
+                      "background-image":
+                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                      width: "585px",
+                    }}
+                    data-slick-index={0}
+                    aria-hidden="false"
+                    tabIndex={0}
+                  />
+                  <div
+                    className="course-slider-img slick-slide"
+                    style={{
+                      "background-image":
+                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                      width: "585px",
+                    }}
+                    data-slick-index={1}
+                    aria-hidden="true"
+                    tabIndex={-1}
+                  />
+                </div>
+              </div>
+              {/* <button
+                className="slick-next slick-arrow"
+                aria-label="Next"
+                type="button"
+                style={{}}
+                aria-disabled="false"
+              >
+                Next
+              </button> */}
+            </div>
+          </div>
+        </div>
+         )}
+          {activeTab === 'course-item-4' && (
+          <div
+          className={`tab-pane fade text-left clearfix ${activeTab === 'course-item-4' ? 'active in' : ''}`}
+          id="course-item-4"
+        >
+          <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
+            <div className="table mb40">
+              <div className="title-bl table-cell valign-middle">
+                <div className="title color-2">
+                  <span>SAT for Global Academic Success</span>
+                </div>
+                <div className="subtitle fweight-600 color-4 mt30">
+                  Make your courses standout
+                </div>
+              </div>
+            </div>
+            <p className="lheight-30 mt30">
+              At EDUFUSION TUTOR, our success is rooted in a
+              student-centric philosophy that recognizes the
+              uniqueness of each learner. Our seasoned educators
+              understand the specific requirements of exams like
+              PSAT, SAT, ACT, NAPLAN, and Olympiads, tailoring
+              their guidance to address individual strengths and
+              areas for improvement.
+            </p>
+            <ul className="list1">
+              <li>
+                <span className="table-cell valign-middle">
+                  Proven Track Record
+                </span>
+              </li>
+              <li>
+                <span className="table-cell valign-middle">
+                  Comprehensive Exam Coverage
+                </span>
+              </li>
+              <li>
+                <span className="table-cell valign-middle">
+                  Expert Tutors with Specialized Knowledge
+                </span>
+              </li>
+              <li>
+                <span className="table-cell valign-middle">
+                  Strategic Test-Taking Strategies
+                </span>
+              </li>
+              {/* <li>
+                <span className="table-cell valign-middle">
+                  Tailored Approach
+                </span>
+              </li> */}
+              {/* <li>
+                <span className="table-cell valign-middle">
+                  innovative Teaching Methods
+                </span>
+              </li>
+              <li>
+                <span className="table-cell valign-middle">
+                  Adaptive Learning
+                </span>
+              </li> */}
+            </ul>
+            {/* button */}
+            <div className="flex-1">
+              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                <span className="color-2 button-text">
+                  START LEARN NOW
+                </span>
+              </button> */}
+            </div>
+          </div>
+          <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div className="course-slider arrow-btn slick-initialized slick-slider">
+              {/* <button
+                className="slick-prev slick-arrow slick-disabled"
+                aria-label="Previous"
+                type="button"
+                aria-disabled="true"
+                style={{}}
+              >
+                Previous
+              </button> */}
+              <div className="slick-list draggable">
+                <div
+                  className="slick-track"
+                  style={{
+                    opacity: "1",
+                    width: "1170px",
+                    WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
+                    transform: "translate3d(0px, 0px, 0px)",
+                  }}
+                >
+                  <div
+                    className="course-slider-img slick-slide slick-current slick-active"
+                    style={{
+                      "background-image":
+                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                      width: "585px",
+                    }}
+                    data-slick-index={0}
+                    aria-hidden="false"
+                    tabIndex={0}
+                  />
+                  <div
+                    className="course-slider-img slick-slide"
+                    style={{
+                      "background-image":
+                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                      width: "585px",
+                    }}
+                    data-slick-index={1}
+                    aria-hidden="true"
+                    tabIndex={-1}
+                  />
+                </div>
+              </div>
+              {/* <button
+                className="slick-next slick-arrow"
+                aria-label="Next"
+                type="button"
+                style={{}}
+                aria-disabled="false"
+              >
+                Next
+              </button> */}
+            </div>
+          </div>
+        </div>
+         )}
+         {activeTab === 'course-item-5' && (
+            <div
+            className={`tab-pane fade text-left clearfix ${activeTab === 'course-item-5' ? 'active in' : ''}`}
+            id="course-item-5"
+          >
+            <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
+              <div className="table mb40">
+                <div className="title-bl table-cell valign-middle">
+                  <div className="title color-2">
+                    <span>
+                      Master the PSAT with EDUFUSION TUTOR
+                    </span>
+                  </div>
+                  <div className="subtitle fweight-600 color-4 mt30">
+                    EDUFUSION TUTOR: PSAT success through expert
+                    guidance and personalized strategies.
+                  </div>
+                </div>
+              </div>
+              <p className="lheight-30 mt30">
+                Elevate your academic journey with EDUFUSION TUTOR.
+                With over 12 years of expertise, we specialize in
+                guiding students to success in PSAT, SAT, ACT,
+                NAPLAN, and Olympiads. Our tailored programs, led by
+                experienced educators, blend content mastery with
+                strategic test-taking skills.
+              </p>
+              <ul className="list1 mt30">
+                <li>
+                  <span className="table-cell valign-middle">
+                    Expert Guidance
+                  </span>
+                </li>
+                <li>
+                  <span className="table-cell valign-middle">
+                    Tailored Programs
+                  </span>
+                </li>
+                <li>
+                  <span className="table-cell valign-middle">
+                    PSAT Confidence
+                  </span>
+                </li>
+                <li>
+                  <span className="table-cell valign-middle">
+                    Top Scores Assurance
+                  </span>
+                </li>
+                <li>
+                  <span className="table-cell valign-middle">
+                    Academic Opportunities
+                  </span>
+                </li>
+              </ul>
+              {/* button */}
+              <div className="flex-1">
+                {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                  <span className="color-2 button-text">
+                    START LEARN NOW
+                  </span>
+                </button> */}
+              </div>
+            </div>
+            <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
+              <div className="course-slider arrow-btn slick-initialized slick-slider">
+                <button
+                  className="slick-prev slick-arrow slick-disabled"
+                  aria-label="Previous"
+                  type="button"
+                  aria-disabled="true"
+                  style={{}}
+                >
+                  Previous
+                </button>
+                <div className="slick-list draggable">
+                  <div
+                    className="slick-track"
+                    style={{
+                      opacity: "1",
+                      width: "1170px",
+                      WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                      MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
+                      transform: "translate3d(0px, 0px, 0px)",
+                    }}
+                  >
+                    <div
+                      className="course-slider-img slick-slide slick-current slick-active"
+                      style={{
+                        "background-image":
+                          'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                        width: "585px",
+                      }}
+                      data-slick-index={0}
+                      aria-hidden="false"
+                      tabIndex={0}
+                    />
+                    <div
+                      className="course-slider-img slick-slide"
+                      style={{
+                        "background-image":
+                          'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                        width: "585px",
+                      }}
+                      data-slick-index={1}
+                      aria-hidden="true"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                {/* <button
+                  className="slick-next slick-arrow"
+                  aria-label="Next"
+                  type="button"
+                  style={{}}
+                  aria-disabled="false"
+                >
+                  Next
+                </button> */}
+              </div>
+            </div>
+          </div>
+         )}
+         {activeTab === 'course-item-6' && (
+            <div
+            className={`tab-pane fade text-left clearfix ${activeTab === 'course-item-6' ? 'active in' : ''}`}
+            id="course-item-6"
+          >
+            <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
+              <div className="table mb40">
+                <div className="title-bl table-cell valign-middle">
+                  <div className="title color-2">
+                    <span>Unlocking the Nexus of Knowledge</span>
+                  </div>
+                  <div className="subtitle fweight-600 color-4">
+                    Make your courses standout
+                  </div>
+                </div>
+              </div>
+              <p className="lheight-30">
+                Embark on a journey where mathematical principles
+                intertwine with scientific wonders, converging
+                seamlessly with the intricate dance of coding
+                languages. Discover the synergy that propels
+                innovation and shapes the future.
+              </p>
+              <ul className="list1">
+                <li>
+                  <span className="table-cell valign-middle">
+                    Solving Complex Puzzles with Precision
+                  </span>
+                </li>
+                <li>
+                  <span className="table-cell valign-middle">
+                    Exploring Phenomena Through Inquiry and
+                    Experimentation
+                  </span>
+                </li>
+                <li>
+                  <span className="table-cell valign-middle">
+                    Crafting Algorithms, Transforming Ideas into
+                    Digital Realities
+                  </span>
+                </li>
+              </ul>
+              {/* button */}
+              <div className="flex-1">
+                {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
+                  <span className="color-2 button-text">
+                    START LEARN NOW
+                  </span>
+                </button> */}
+              </div>
+            </div>
+            <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
+              <div className="course-slider arrow-btn slick-initialized slick-slider">
+                <button
+                  className="slick-prev slick-arrow slick-disabled"
+                  aria-label="Previous"
+                  type="button"
+                  aria-disabled="true"
+                  style={{}}
+                >
+                  Previous
+                </button>
+                <div className="slick-list draggable">
+                  <div
+                    className="slick-track"
+                    style={{
+                      opacity: "1",
+                      width: "1170px",
+                      WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                      MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
+                      transform: "translate3d(0px, 0px, 0px)",
+                    }}
+                  >
+                    <div
+                      className="course-slider-img slick-slide slick-current slick-active"
+                      style={{
+                        "background-image":
+                          'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                        width: "585px",
+                      }}
+                      data-slick-index={0}
+                      aria-hidden="false"
+                      tabIndex={0}
+                    />
+                    <div
+                      className="course-slider-img slick-slide"
+                      style={{
+                        "background-image":
+                          'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
+                        width: "585px",
+                      }}
+                      data-slick-index={1}
+                      aria-hidden="true"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                {/* <button
+                  className="slick-next slick-arrow"
+                  aria-label="Next"
+                  type="button"
+                  style={{}}
+                  aria-disabled="false"
+                >
+                  Next
+                </button> */}
+              </div>
+            </div>
+          </div>
+         )}
+                     
                       {/* End Single tab content */}
                       {/* Start Single tab content */}
-                      <div
-                        className="tab-pane fade text-left clearfix"
-                        id="course-item-2"
-                      >
-                        <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
-                          <div className="table mb40">
-                            <div className="title-bl table-cell valign-middle">
-                              <div className="title color-2">
-                                <span>
-                                  Unlock the Wonders of Science with Our
-                                  Exclusive
-                                </span>
-                              </div>
-                              <div className="subtitle fweight-600 color-4 mt20">
-                                online science tuition offer an unparalleled
-                                learning experience that goes beyond the
-                                ordinary
-                              </div>
-                            </div>
-                          </div>
-                          <p className="lheight-30 mt20">
-                            Our curriculum doesn't just teach science; it
-                            propels you toward promising careers! Consider the
-                            following career pathways awaiting our students:
-                          </p>
-                          <ul className="list1">
-                            <li className="list-theme-color">
-                              <span className="table-cell valign-middle">
-                                Top-notch Tutors:
-                              </span>
-                            </li>
-                            <li className="list-theme-color">
-                              <span className="table-cell valign-middle">
-                                Flexibility in Scheduling
-                              </span>
-                            </li>
-                            <li className="list-theme-color">
-                              <span className="table-cell valign-middle">
-                                Interactive Learning Tools
-                              </span>
-                            </li>
-                            <li className="list-theme-color">
-                              <span className="table-cell valign-middle">
-                                Boost Your Confidence
-                              </span>
-                            </li>
-                            <li className="list-theme-color">
-                              <span className="table-cell valign-middle">
-                                Space Scientist/Astronomer
-                              </span>
-                            </li>
-                          </ul>
-                          {/* button */}
-                          <div className="flex-1">
-                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                              <span className="color-2 button-text">
-                                START LEARN NOW
-                              </span>
-                            </button> */}
-                          </div>
-                        </div>
-                        <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                          <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            {/* <button
-                              className="slick-prev slick-arrow slick-disabled"
-                              aria-label="Previous"
-                              type="button"
-                              aria-disabled="true"
-                              style={{}}
-                            >
-                              Previous
-                            </button> */}
-                            <div className="slick-list draggable">
-                              <div
-                                className="slick-track"
-                                style={{
-                                  opacity: "1",
-                                  width: "1170px",
-                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                  transform: "translate3d(0px, 0px, 0px)",
-                                }}
-                              >
-                                <div
-                                  className="course-slider-img slick-slide slick-current slick-active"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={0}
-                                  aria-hidden="false"
-                                  tabIndex={0}
-                                />
-                                <div
-                                  className="course-slider-img slick-slide"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={1}
-                                  aria-hidden="true"
-                                  tabIndex={-1}
-                                />
-                              </div>
-                            </div>
-                            {/* <button
-                              className="slick-next slick-arrow"
-                              aria-label="Next"
-                              type="button"
-                              style={{}}
-                              aria-disabled="false"
-                            >
-                              Next
-                            </button> */}
-                          </div>
-                        </div>
-                      </div>
+                     
                       {/* End Single tab content */}
                       {/* Start Single tab content */}
-                      <div
-                        className="tab-pane fade text-left clearfix"
-                        id="course-item-3"
-                      >
-                        <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
-                          <div className="table mb40">
-                            <div className="title-bl table-cell valign-middle">
-                              <div className="title color-2">
-                                <span>Embrace Online Coding </span>
-                              </div>
-                              <div className="subtitle fweight-600 color-4 mt20">
-                                Explore the world of coding from the comfort of
-                                your home with our Online Coding Tutorials
-                              </div>
-                            </div>
-                          </div>
-                          <p className="lheight-30 mt30">
-                            Embrace Online Coding Tutorials for a dynamic
-                            learning experience. Dive into a world of
-                            interactive lessons, expert guidance, and flexible
-                            accessibility. Whether you're a beginner or aiming
-                            to refine your skills, our tutorials empower you
-                            with the knowledge needed for success.
-                          </p>
-                          <ul className="list1">
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Coding
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Explore Endless Possibilities
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Expert Tutors, Real-World Insight
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Flexible Scheduling, Boundless Opportunities
-                              </span>
-                            </li>
-                          </ul>
-                          {/* button */}
-                          <div className="flex-1">
-                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                              <span className="color-2 button-text">
-                                START LEARN NOW
-                              </span>
-                            </button> */}
-                          </div>
-                        </div>
-                        <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                          <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            {/* <button
-                              className="slick-prev slick-arrow slick-disabled"
-                              aria-label="Previous"
-                              type="button"
-                              aria-disabled="true"
-                              style={{}}
-                            >
-                              Previous
-                            </button> */}
-                            <div className="slick-list draggable">
-                              <div
-                                className="slick-track"
-                                style={{
-                                  opacity: "1",
-                                  width: "1170px",
-                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                  transform: "translate3d(0px, 0px, 0px)",
-                                }}
-                              >
-                                <div
-                                  className="course-slider-img slick-slide slick-current slick-active"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={0}
-                                  aria-hidden="false"
-                                  tabIndex={0}
-                                />
-                                <div
-                                  className="course-slider-img slick-slide"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={1}
-                                  aria-hidden="true"
-                                  tabIndex={-1}
-                                />
-                              </div>
-                            </div>
-                            {/* <button
-                              className="slick-next slick-arrow"
-                              aria-label="Next"
-                              type="button"
-                              style={{}}
-                              aria-disabled="false"
-                            >
-                              Next
-                            </button> */}
-                          </div>
-                        </div>
-                      </div>
+                     
                       {/* End Single tab content */}
                       {/* Start Single tab content */}
-                      <div
-                        className="tab-pane fade text-left clearfix"
-                        id="course-item-4"
-                      >
-                        <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
-                          <div className="table mb40">
-                            <div className="title-bl table-cell valign-middle">
-                              <div className="title color-2">
-                                <span>SAT for Global Academic Success</span>
-                              </div>
-                              <div className="subtitle fweight-600 color-4 mt30">
-                                Make your courses standout
-                              </div>
-                            </div>
-                          </div>
-                          <p className="lheight-30 mt30">
-                            At EDUFUSION TUTOR, our success is rooted in a
-                            student-centric philosophy that recognizes the
-                            uniqueness of each learner. Our seasoned educators
-                            understand the specific requirements of exams like
-                            PSAT, SAT, ACT, NAPLAN, and Olympiads, tailoring
-                            their guidance to address individual strengths and
-                            areas for improvement.
-                          </p>
-                          <ul className="list1">
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Proven Track Record
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Comprehensive Exam Coverage
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Expert Tutors with Specialized Knowledge
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Strategic Test-Taking Strategies
-                              </span>
-                            </li>
-                            {/* <li>
-                              <span className="table-cell valign-middle">
-                                Tailored Approach
-                              </span>
-                            </li> */}
-                            {/* <li>
-                              <span className="table-cell valign-middle">
-                                innovative Teaching Methods
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Adaptive Learning
-                              </span>
-                            </li> */}
-                          </ul>
-                          {/* button */}
-                          <div className="flex-1">
-                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                              <span className="color-2 button-text">
-                                START LEARN NOW
-                              </span>
-                            </button> */}
-                          </div>
-                        </div>
-                        <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                          <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            {/* <button
-                              className="slick-prev slick-arrow slick-disabled"
-                              aria-label="Previous"
-                              type="button"
-                              aria-disabled="true"
-                              style={{}}
-                            >
-                              Previous
-                            </button> */}
-                            <div className="slick-list draggable">
-                              <div
-                                className="slick-track"
-                                style={{
-                                  opacity: "1",
-                                  width: "1170px",
-                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                  transform: "translate3d(0px, 0px, 0px)",
-                                }}
-                              >
-                                <div
-                                  className="course-slider-img slick-slide slick-current slick-active"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={0}
-                                  aria-hidden="false"
-                                  tabIndex={0}
-                                />
-                                <div
-                                  className="course-slider-img slick-slide"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={1}
-                                  aria-hidden="true"
-                                  tabIndex={-1}
-                                />
-                              </div>
-                            </div>
-                            {/* <button
-                              className="slick-next slick-arrow"
-                              aria-label="Next"
-                              type="button"
-                              style={{}}
-                              aria-disabled="false"
-                            >
-                              Next
-                            </button> */}
-                          </div>
-                        </div>
-                      </div>
+                     
                       {/* End Single tab content */}
                       {/* Start Single tab content */}
-                      <div
-                        className="tab-pane fade text-left clearfix"
-                        id="course-item-5"
-                      >
-                        <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
-                          <div className="table mb40">
-                            <div className="title-bl table-cell valign-middle">
-                              <div className="title color-2">
-                                <span>
-                                  Master the PSAT with EDUFUSION TUTOR
-                                </span>
-                              </div>
-                              <div className="subtitle fweight-600 color-4 mt30">
-                                EDUFUSION TUTOR: PSAT success through expert
-                                guidance and personalized strategies.
-                              </div>
-                            </div>
-                          </div>
-                          <p className="lheight-30 mt30">
-                            Elevate your academic journey with EDUFUSION TUTOR.
-                            With over 12 years of expertise, we specialize in
-                            guiding students to success in PSAT, SAT, ACT,
-                            NAPLAN, and Olympiads. Our tailored programs, led by
-                            experienced educators, blend content mastery with
-                            strategic test-taking skills.
-                          </p>
-                          <ul className="list1 mt30">
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Expert Guidance
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Tailored Programs
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                PSAT Confidence
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Top Scores Assurance
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Academic Opportunities
-                              </span>
-                            </li>
-                          </ul>
-                          {/* button */}
-                          <div className="flex-1">
-                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                              <span className="color-2 button-text">
-                                START LEARN NOW
-                              </span>
-                            </button> */}
-                          </div>
-                        </div>
-                        <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                          <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            <button
-                              className="slick-prev slick-arrow slick-disabled"
-                              aria-label="Previous"
-                              type="button"
-                              aria-disabled="true"
-                              style={{}}
-                            >
-                              Previous
-                            </button>
-                            <div className="slick-list draggable">
-                              <div
-                                className="slick-track"
-                                style={{
-                                  opacity: "1",
-                                  width: "1170px",
-                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                  transform: "translate3d(0px, 0px, 0px)",
-                                }}
-                              >
-                                <div
-                                  className="course-slider-img slick-slide slick-current slick-active"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={0}
-                                  aria-hidden="false"
-                                  tabIndex={0}
-                                />
-                                <div
-                                  className="course-slider-img slick-slide"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={1}
-                                  aria-hidden="true"
-                                  tabIndex={-1}
-                                />
-                              </div>
-                            </div>
-                            {/* <button
-                              className="slick-next slick-arrow"
-                              aria-label="Next"
-                              type="button"
-                              style={{}}
-                              aria-disabled="false"
-                            >
-                              Next
-                            </button> */}
-                          </div>
-                        </div>
-                      </div>
+                   
                       {/* End Single tab content */}
                       {/* Start Single tab content */}
-                      <div
-                        className="tab-pane fade text-left clearfix"
-                        id="course-item-6"
-                      >
-                        <div className="course-info-header col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb60 pl60">
-                          <div className="table mb40">
-                            <div className="title-bl table-cell valign-middle">
-                              <div className="title color-2">
-                                <span>Unlocking the Nexus of Knowledge</span>
-                              </div>
-                              <div className="subtitle fweight-600 color-4">
-                                Make your courses standout
-                              </div>
-                            </div>
-                          </div>
-                          <p className="lheight-30">
-                            Embark on a journey where mathematical principles
-                            intertwine with scientific wonders, converging
-                            seamlessly with the intricate dance of coding
-                            languages. Discover the synergy that propels
-                            innovation and shapes the future.
-                          </p>
-                          <ul className="list1">
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Solving Complex Puzzles with Precision
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Exploring Phenomena Through Inquiry and
-                                Experimentation
-                              </span>
-                            </li>
-                            <li>
-                              <span className="table-cell valign-middle">
-                                Crafting Algorithms, Transforming Ideas into
-                                Digital Realities
-                              </span>
-                            </li>
-                          </ul>
-                          {/* button */}
-                          <div className="flex-1">
-                            {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                              <span className="color-2 button-text">
-                                START LEARN NOW
-                              </span>
-                            </button> */}
-                          </div>
-                        </div>
-                        <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                          <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            <button
-                              className="slick-prev slick-arrow slick-disabled"
-                              aria-label="Previous"
-                              type="button"
-                              aria-disabled="true"
-                              style={{}}
-                            >
-                              Previous
-                            </button>
-                            <div className="slick-list draggable">
-                              <div
-                                className="slick-track"
-                                style={{
-                                  opacity: "1",
-                                  width: "1170px",
-                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                  transform: "translate3d(0px, 0px, 0px)",
-                                }}
-                              >
-                                <div
-                                  className="course-slider-img slick-slide slick-current slick-active"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={0}
-                                  aria-hidden="false"
-                                  tabIndex={0}
-                                />
-                                <div
-                                  className="course-slider-img slick-slide"
-                                  style={{
-                                    "background-image":
-                                      'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                    width: "585px",
-                                  }}
-                                  data-slick-index={1}
-                                  aria-hidden="true"
-                                  tabIndex={-1}
-                                />
-                              </div>
-                            </div>
-                            {/* <button
-                              className="slick-next slick-arrow"
-                              aria-label="Next"
-                              type="button"
-                              style={{}}
-                              aria-disabled="false"
-                            >
-                              Next
-                            </button> */}
-                          </div>
-                        </div>
-                      </div>
+                   
                       {/* End Single tab content */}
                     </div>
                   </div>
@@ -2436,115 +2523,133 @@ const Home = () => {
                 <h4 className="modal-title">Get In Touch</h4>
               </div>
               <div className="modal-body">
-                {/* contact form */}
-                <div className="contact-section">
-                  <form
-                    method="post"
-                    action="assets/bin/mailer.php"
-                    className="contact-form signup-form"
-                    id="ajax-contact"
-                  >
-                    <div className="row section-signup semitrans">
-                      <div className="col-md-12">
-                        {/* name */}
-                        <div className="form-group has-icon-left form-control-name">
-                          <label className="sr-only" htmlFor="name">
-                            Your name
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="name"
-                            id="name"
-                            placeholder="Your name"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        {/* email */}
-                        <div className="form-group has-icon-left form-control-email">
-                          <label className="sr-only" htmlFor="email">
-                            Email address
-                          </label>
-                          <input
-                            type="email"
-                            className="form-control form-control-lg"
-                            name="email"
-                            id="email"
-                            placeholder="Email address"
-                            autoComplete="off"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        {/* phone number */}
-                        <div className="form-group has-icon-left form-control-phone">
-                          <label className="sr-only" htmlFor="phone">
-                            Phone Number
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="phone"
-                            id="phone"
-                            placeholder="Phone Number"
-                            autoComplete="off"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        {/* address */}
-                        <div className="form-group has-icon-left form-control-address">
-                          <label className="sr-only" htmlFor="address">
-                            Address
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="address"
-                            id="address"
-                            placeholder="Your Address"
-                            autoComplete="off"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        {/* text message */}
-                        <div className="form-group has-icon-left form-control-message">
-                          <label className="sr-only" htmlFor="message">
-                            Enter your message
-                          </label>
-                          <textarea
-                            className="form-control form-control-lg home-textarea"
-                            name="message"
-                            id="message"
-                            placeholder="Enter your message"
-                            autoComplete="off"
-                            defaultValue={""}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        {/* submit button */}
-                        <div className="form-group">
-                          <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
-                            Send Message
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <p className="submit-btn-bottom-text">
-                          Your email is safe with us and we hate spam as much as
-                          you do.
-                        </p>
-                      </div>
-                    </div>
-                    {/*Result notification */}
-                    <div id="error-message" className="text-center" />
-                    <div id="form-messages" />
-                  </form>
-                </div>
+      <div className="contact-section">
+        <form
+          onSubmit={handleSubmit}
+          className="contact-form signup-form"
+          id="ajax-contact"
+        >
+          <div className="row section-signup semitrans">
+            <div className="col-md-12">
+              {/* name */}
+              <div className="form-group has-icon-left form-control-name">
+                <label className="sr-only" htmlFor="name">
+                  Your name
+                </label>
+                <input
+                  type="text"
+                  className="form-control form-control-lg"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+                {errors.name && <p className="error-message">{errors.name}</p>}
               </div>
+            </div>
+
+            <div className="col-md-12">
+              {/* email */}
+              <div className="form-group has-icon-left form-control-email">
+                <label className="sr-only" htmlFor="email">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  className="form-control form-control-lg"
+                  name="email"
+                  id="email"
+                  placeholder="Email address"
+                  autoComplete="off"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                {errors.email && <p className="error-message">{errors.email}</p>}
+              </div>
+            </div>
+
+            <div className="col-md-12">
+              {/* phone number */}
+              <div className="form-group has-icon-left form-control-phone">
+                <label className="sr-only" htmlFor="phone">
+                  Phone Number
+                </label>
+                <input
+                  type="text"
+                  className="form-control form-control-lg"
+                  name="phone"
+                  id="phone"
+                  placeholder="Phone Number"
+                  autoComplete="off"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                {errors.phone && <p className="error-message">{errors.phone}</p>}
+              </div>
+            </div>
+
+            <div className="col-md-12">
+              {/* address */}
+              <div className="form-group has-icon-left form-control-address">
+                <label className="sr-only" htmlFor="address">
+                  Address
+                </label>
+                <input
+                  type="text"
+                  className="form-control form-control-lg"
+                  name="address"
+                  id="address"
+                  placeholder="Your Address"
+                  autoComplete="off"
+                  value={formData.address}
+                  onChange={handleChange}
+                />
+                {errors.address && <p className="error-message">{errors.address}</p>}
+              </div>
+            </div>
+
+            <div className="col-md-12">
+              {/* text message */}
+              <div className="form-group has-icon-left form-control-message">
+                <label className="sr-only" htmlFor="message">
+                  Enter your message
+                </label>
+                <textarea
+                  className="form-control form-control-lg home-textarea"
+                  name="message"
+                  id="message"
+                  placeholder="Enter your message"
+                  autoComplete="off"
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+                {errors.message && <p className="error-message">{errors.message}</p>}
+              </div>
+            </div>
+
+            <div className="col-md-12">
+              {/* submit button */}
+              <div className="form-group">
+                <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
+                  Send Message
+                </button>
+              </div>
+            </div>
+
+            <div className="col-md-12">
+              <p className="submit-btn-bottom-text">
+                Your email is safe with us and we hate spam as much as you do.
+              </p>
+            </div>
+          </div>
+
+          {/*Result notification */}
+          <div id="error-message" className="text-center" />
+          <div id="form-messages" />
+        </form>
+      </div>
+    </div>
             </div>
           </div>
         </div>
