@@ -200,7 +200,7 @@ const Home = () => {
             <div className="row">
               <div className="col-lg-4 col-sm-4">
                 <div className="banner-device">
-                  <img src={main} alt />
+                  <img src={main} alt="main" />
                 </div>
               </div>
               <div className="col-lg-8 col-sm-8">
@@ -269,10 +269,10 @@ const Home = () => {
                   data-wow-duration="2s"
                   style={{
                     visibility: "visible",
-                    "-webkit-animation-duration": "2s",
-                    "animation-duration": "2s",
-                    "-webkit-animation-name": "_fadeIn",
-                    "animation-name": "_fadeIn",
+                    WebkitAnimationDuration: "2s", // Use camelCase for the prefixed version
+                    animationDuration: "2s",
+                    WebkitAnimationName: "_fadeIn", // Use camelCase for the prefixed version
+                    animationName: "_fadeIn",
                   }}
                 >
                   <div className="subtitle color-7">
@@ -486,9 +486,8 @@ const Home = () => {
                                 style={{
                                   opacity: "1",
                                   width: "1170px",
-                                  "-webkit-transform":
-                                    "translate3d(0px, 0px, 0px)",
-                                  "-ms-transform": "translate3d(0px, 0px, 0px)",
+                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
                                   transform: "translate3d(0px, 0px, 0px)",
                                 }}
                               >
@@ -496,7 +495,6 @@ const Home = () => {
                                   className="course-slider-img slick-slide slick-current slick-active"
                                   style={{
                                     backgroundImage: `url(${m1image})`,
-                                   
                                   }}
                                   data-slick-index={0}
                                   aria-hidden="false"
@@ -537,7 +535,10 @@ const Home = () => {
                           <div className="table mb40">
                             <div className="title-bl table-cell valign-middle">
                               <div className="title color-2">
-                                <span>Unlock the Wonders of Science with Our Exclusive</span>
+                                <span>
+                                  Unlock the Wonders of Science with Our
+                                  Exclusive
+                                </span>
                               </div>
                               <div className="subtitle fweight-600 color-4 mt20">
                                 online science tuition offer an unparalleled
@@ -554,22 +555,22 @@ const Home = () => {
                           <ul className="list1">
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Top-notch Tutors:
+                                Top-notch Tutors:
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Flexibility in Scheduling
+                                Flexibility in Scheduling
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Interactive Learning Tools
+                                Interactive Learning Tools
                               </span>
                             </li>
                             <li className="list-theme-color">
                               <span className="table-cell valign-middle">
-                              Boost Your Confidence
+                                Boost Your Confidence
                               </span>
                             </li>
                             <li className="list-theme-color">
@@ -604,9 +605,8 @@ const Home = () => {
                                 style={{
                                   opacity: "1",
                                   width: "1170px",
-                                  "-webkit-transform":
-                                    "translate3d(0px, 0px, 0px)",
-                                  "-ms-transform": "translate3d(0px, 0px, 0px)",
+                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
                                   transform: "translate3d(0px, 0px, 0px)",
                                 }}
                               >
@@ -720,9 +720,8 @@ const Home = () => {
                                 style={{
                                   opacity: "1",
                                   width: "1170px",
-                                  "-webkit-transform":
-                                    "translate3d(0px, 0px, 0px)",
-                                  "-ms-transform": "translate3d(0px, 0px, 0px)",
+                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
                                   transform: "translate3d(0px, 0px, 0px)",
                                 }}
                               >
@@ -851,9 +850,8 @@ const Home = () => {
                                 style={{
                                   opacity: "1",
                                   width: "1170px",
-                                  "-webkit-transform":
-                                    "translate3d(0px, 0px, 0px)",
-                                  "-ms-transform": "translate3d(0px, 0px, 0px)",
+                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
                                   transform: "translate3d(0px, 0px, 0px)",
                                 }}
                               >
@@ -974,9 +972,8 @@ const Home = () => {
                                 style={{
                                   opacity: "1",
                                   width: "1170px",
-                                  "-webkit-transform":
-                                    "translate3d(0px, 0px, 0px)",
-                                  "-ms-transform": "translate3d(0px, 0px, 0px)",
+                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
                                   transform: "translate3d(0px, 0px, 0px)",
                                 }}
                               >
@@ -1085,9 +1082,8 @@ const Home = () => {
                                 style={{
                                   opacity: "1",
                                   width: "1170px",
-                                  "-webkit-transform":
-                                    "translate3d(0px, 0px, 0px)",
-                                  "-ms-transform": "translate3d(0px, 0px, 0px)",
+                                  WebkitTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
+                                  MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
                                   transform: "translate3d(0px, 0px, 0px)",
                                 }}
                               >
@@ -1137,77 +1133,75 @@ const Home = () => {
           </div>
         </section>
 
-
-
         <div className="container">
-  <h1 className="text-center">Video'S Section </h1>
-  <div className="row mt40" id="videos">
-  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-  <iframe
-                            width="100%"
-                            height={400}
-                            src={mathsvideo}
-                            frameBorder={0}
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen=""
-                          />
-  </div>
-  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-  <iframe
-                            width="100%"
-                            height={400}
-                            src={learningmath}
-                            frameBorder={0}
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen=""
-                          />
-  </div>
-  </div>
-  <div className="row mt40" id="videos">
-  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-  <iframe
-                            width="100%"
-                            height={400}
-                            src={grade2}
-                            frameBorder={0}
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen=""
-                          />
-  </div>
-  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-  <iframe
-                            width="100%"
-                            height={400}
-                            src={grade6}
-                            frameBorder={0}
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen=""
-                          />
-  </div>
-  </div>
-  <div className="row mt40" id="videos">
-  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-  <iframe
-                            width="100%"
-                            height={400}
-                            src={grade8}
-                            frameBorder={0}
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen=""
-                          />
-  </div>
-  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-  <iframe
-                            width="100%"
-                            height={400}
-                            src={mario}
-                            frameBorder={0}
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen=""
-                          />
-  </div>
-  </div>
-</div>
+          <h1 className="text-center">Video'S Section </h1>
+          <div className="row mt40" id="videos">
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+              <iframe
+                width="100%"
+                height={400}
+                src={mathsvideo}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <iframe
+                width="100%"
+                height={400}
+                src={learningmath}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+            </div>
+          </div>
+          <div className="row mt40" id="videos">
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <iframe
+                width="100%"
+                height={400}
+                src={grade2}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <iframe
+                width="100%"
+                height={400}
+                src={grade6}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+            </div>
+          </div>
+          <div className="row mt40" id="videos">
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <iframe
+                width="100%"
+                height={400}
+                src={grade8}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <iframe
+                width="100%"
+                height={400}
+                src={mario}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+            </div>
+          </div>
+        </div>
         {/*================================================================================= 
                           END courses
     ==================================================================================*/}
@@ -1328,7 +1322,11 @@ const Home = () => {
                           </div>
                           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="img-exp">
-                              <img src={choose} alt="" className="img-fluid" />
+                              <img
+                                src={choose}
+                                alt="choose"
+                                className="img-fluid"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1491,10 +1489,10 @@ const Home = () => {
           <h1 className="text-center" style={{ marginTop: "90px" }}>
             OUR VISION
           </h1>
-          <div class="container mx-auto">
-            <div class="row  mt30">
+          <div className="container mx-auto">
+            <div className="row  mt30">
               <div
-                class="col-lg-6 col-md-6 col-sm-1  mt50"
+                className="col-lg-6 col-md-6 col-sm-1  mt50"
                 style={{ lineHeight: "2.5" }}
               >
                 At EDUFUSION TUTOR, we envision a world where every learner,
@@ -1503,7 +1501,7 @@ const Home = () => {
                 aspire to be a guiding light on the educational journey,
                 fostering a love for learning that transcends boundaries.
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-1">
+              <div className="col-lg-6 col-md-6 col-sm-1">
                 <img
                   src="https://www.codeyoung.com/_nuxt/img/our_vision.0088ebd.png"
                   alt="image"
@@ -1518,10 +1516,10 @@ const Home = () => {
         {/* our mission  start*/}
         <div className="mission">
           <h1 className="text-center">OUR MISSION</h1>
-          <div class="container mx-auto">
-            <div class="row mt30">
+          <div className="container mx-auto">
+            <div className="row mt30">
               <div className="mission-content">
-                <div class="col-lg-5 col-md-6 col-sm-1 gap0">
+                <div className="col-lg-5 col-md-6 col-sm-1 gap0">
                   <img
                     src="https://www.codeyoung.com/_nuxt/img/our_mission.017c97b.png"
                     alt="image"
@@ -1529,7 +1527,7 @@ const Home = () => {
                   />
                 </div>
                 <div
-                  class="col-lg-7 col-md-6 col-sm-1 mt50"
+                  className="col-lg-7 col-md-6 col-sm-1 mt50"
                   style={{ lineHeight: "2.5" }}
                 >
                   At Edufusion Tutor, we're on a mission to make learning
@@ -1858,10 +1856,10 @@ const Home = () => {
                     data-wow-delay=".2s"
                     style={{
                       visibility: "visible",
-                      "-webkit-animation-delay": "0.2s",
-                      "animation-delay": "0.2s",
-                      "-webkit-animation-name": "_fadeInUp",
-                      "animation-name": "_fadeInUp",
+                      WebkitAnimationDelay: "0.2s",
+                      animationDelay: "0.2s",
+                      WebkitAnimationName: "_fadeInUp",
+                      animationName: "_fadeInUp",
                     }}
                   >
                     Testimonials{" "}
@@ -1871,10 +1869,10 @@ const Home = () => {
                     data-wow-delay=".3s"
                     style={{
                       visibility: "visible",
-                      "-webkit-animation-delay": "0.3s",
-                      "animation-delay": "0.3s",
-                      "-webkit-animation-name": "_fadeInUp",
-                      "animation-name": "_fadeInUp",
+                      WebkitAnimationDelay: "0.3s",
+                      animationDelay: "0.3s",
+                      WebkitAnimationName: "_fadeInUp",
+                      animationName: "_fadeInUp",
                     }}
                   >
                     <span> Empowering Every Child for Success</span>
@@ -1884,10 +1882,10 @@ const Home = () => {
                     data-wow-delay=".5s"
                     style={{
                       visibility: "visible",
-                      "-webkit-animation-delay": "0.5s",
-                      "animation-delay": "0.5s",
-                      "-webkit-animation-name": "_fadeInUp",
-                      "animation-name": "_fadeInUp",
+                      WebkitAnimationDelay: "0.5s",
+                      animationDelay: "0.5s",
+                      WebkitAnimationName: "_fadeInUp",
+                      animationName: "_fadeInUp",
                     }}
                   >
                     Instilling inclusive ownership empowers every child to
@@ -1898,7 +1896,7 @@ const Home = () => {
             </div>
 
             {/*  */}
-            <div class="testimonials__container mt50 ">
+            <div className="testimonials__container mt50 ">
               <Slider {...settings1}>
                 <div className="testimonials__item ">
                   <div
@@ -2178,7 +2176,7 @@ const Home = () => {
                       <div className="blog-photo">
                         <img
                           src="https://codestar.xyz/demo/education/assets/images/blog/blog-01.jpg"
-                          alt=""
+                          alt="blog"
                         />
                         <div className="blog-post-date theme-bg-gradient">
                           <h3 className="color-white fsize-16 plr30">
@@ -2201,7 +2199,7 @@ const Home = () => {
                       <div className="blog-photo">
                         <img
                           src="https://codestar.xyz/demo/education/assets/images/blog/blog-01.jpg"
-                          alt=""
+                          alt="blog"
                         />
                         <div className="blog-post-date theme-bg-gradient">
                           <h3 className="color-white fsize-16 plr30">
@@ -2224,7 +2222,7 @@ const Home = () => {
                       <div className="blog-photo">
                         <img
                           src="https://codestar.xyz/demo/education/assets/images/blog/blog-01.jpg"
-                          alt=""
+                          alt="blog"
                         />
                         <div className="blog-post-date theme-bg-gradient">
                           <h3 className="color-white fsize-16 plr30">
@@ -2267,7 +2265,9 @@ const Home = () => {
                     Some important facts
                   </h2>
                   <p className="color-white lheight-30 pb30">
-                  Step into a world of possibilities with us! Explore the magic of numbers, unravel scientific wonders, and dive deep into coding. Join us on this incredible journey.
+                    Step into a world of possibilities with us! Explore the
+                    magic of numbers, unravel scientific wonders, and dive deep
+                    into coding. Join us on this incredible journey.
                   </p>
                   {/* PROGRESS BARS*/}
                   <div className="section progress-bars section-padding">
