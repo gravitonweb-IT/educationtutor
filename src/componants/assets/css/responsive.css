@@ -1,9 +1,7 @@
 /*   RESPONSIVE STYLE */
 /* why coose */
 /* Default styles for all screen sizes */
-.your-element {
-    /* Your other styles here */
-  }
+
   
   /* Styles for small screens */
   @media only screen and (max-width: 767px) {
@@ -477,13 +475,8 @@
     margin-right: 0 !important;
   }
   .nav-mob {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#0098d6),
-      to(#00cbd6)
-    );
+    background-image: linear-gradient(to right, #0098d6, #00cbd6);
+
     background-image: linear-gradient(to right, #0098d6 0%, #00cbd6 100%);
     -webkit-box-shadow: 0 5px 29px rgba(0, 205, 214, 0.3);
     box-shadow: 0 5px 29px rgba(0, 205, 214, 0.3);
@@ -504,7 +497,26 @@
   section.pb80 {
     padding-bottom: 60px;
   }
-
+  @media screen and (max-width: 441px) {
+  section.pb80 {
+  margin-left: 14px;
+}
+}
+@media screen and (max-width: 390px) {
+  section.pb80 {
+  margin-left: -2px;
+}
+}
+@media screen and (max-width: 375px) {
+  section.pb80 {
+  margin-left: -1px
+}
+}
+@media screen and (max-width: 441px) {
+#education-blog{
+  margin-left: -9px;
+}
+}
   .container {
     max-width: 500px;
   }

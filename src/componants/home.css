@@ -1,6 +1,7 @@
 /*! CSS Used from: Embedded */
 a {
     background-color: transparent;
+    text-decoration: none;
   }
   img {
     border-style: none;
@@ -291,4 +292,3 @@ a {
       margin-top: 40px;
     }
   }
-  

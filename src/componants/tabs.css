@@ -1,6 +1,10 @@
+
+
+
 /*! CSS Used from: Embedded */
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 img {
   border-style: none;
@@ -603,7 +607,7 @@ button:not(:disabled) {
     color: #474747;
   }
   .course-step-container[data-v-eb8371ae] {
-    width: 339px;
+    min-width: 360px;
     height: 340px;
     background: #fff;
     border: 1px solid #cce7ff;
@@ -611,7 +615,14 @@ button:not(:disabled) {
     border-radius: 12px;
     padding: 2% 4%;
     margin-left: 0;
+    padding: 19px;
+    margin-top: 15px;
   }
+  @media screen and (max-width: 441px) {
+  .course-step-container[data-v-eb8371ae] {
+    margin-left: 11px;
+  }
+}
   .course-step-inner-container[data-v-eb8371ae] {
     display: flex;
     margin-top: 35px;
@@ -649,6 +660,22 @@ button:not(:disabled) {
     justify-content: center;
     box-shadow: 0 4px 4px rgba(255, 113, 45, 0.2) !important;
   }
+
+
+  @media screen and (max-width: 414px) {
+    .curriculum-explore-btn-grade[data-v-eb8371ae] {
+  width: 180px;
+    margin-right: 195px!important;
+    color: rgb(255, 113, 45);
+
+}}
+@media screen and (max-width: 390px) {
+    .curriculum-explore-btn-grade[data-v-eb8371ae] {
+width: 180px;
+    color: rgb(255, 113, 45);
+    margin-top: 10px;
+}
+}
   .course-step-info[data-v-eb8371ae] {
     font-size: 14px;
   }
@@ -681,9 +708,8 @@ button:not(:disabled) {
     padding-top: 20px;
   }
 }
-.course-heading-section .tabs[data-v-0a33574d] {
-  max-width: 100%;
-}
+
+
 .course-heading-section .tabs span.active[data-v-0a33574d] {
   background-color: #fff0cc;
   color: #000;
@@ -749,49 +775,25 @@ button:not(:disabled) {
   }
 }
 /*! CSS Used fontfaces */
-@font-face {
-  font-family: "slick";
-  src: url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAATsAA0AAAAAB2wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAE0AAAABoAAAAcdIcYB0dERUYAAAS0AAAAHAAAAB4AJwANT1MvMgAAAZwAAABRAAAAYFAQ/45jbWFwAAACAAAAAFcAAAFiIhFFt2dhc3AAAASsAAAACAAAAAj//wADZ2x5ZgAAAmgAAAE1AAACLD+btmBoZWFkAAABMAAAAC8AAAA2AAEx+2hoZWEAAAFgAAAAHAAAACQD5QIFaG10eAAAAfAAAAAQAAAAFgZKAEpsb2NhAAACWAAAABAAAAAQATYBoG1heHAAAAF8AAAAHQAAACAASwBHbmFtZQAAA6AAAADcAAABbgUngcJwb3N0AAAEfAAAAC4AAABFOXjBpHjaY2BkYGAA4vMGfuHx/DZfGbiZGEDgfGFFPZxWZVBlvM14G8jlYABLAwAT1QnNAHjaY2BkYGC8zcDAoMfEAAJANiMDKmABADBkAe942mNgZGBgYGdwYWBiAAEQycgAEnMA8xkACcgAkwAAAHjaY2BmYmCcwMDKwMDow5jGwMDgDqW/MkgytDAwMDGwcjKAQQNQCZBSYICCgDTXFAYHhkTFSYwP/j9g0GO8/f82A0QNA+NtsBIFBkYANHMN4wAAAHjaY2KAACYIVoVAAALCAJt42mNgYGBmgGAZBkYGEIgB8hjBfBYGByDNw8DBwARkMzAkKigpTlCc9P8/WB0S7/+i+4/uld4rgZoAB4xsDHAhRiYgwcSApoCBcsBMBTNYGGgGAEdEDyUAAAAAAAAAAAAAZgCKANABFnjadZBdToNAEMd3CrtAl5TQLtS0LCoN0A8SGkBI+mAfPET75B1896HppfQcvnII4w3cLYpW6k4ymdn9z8xvBwEKUQg11OgBIXAYWUEQR1uIZoFGpLGxKy3PqrIq8+waXIfJ+5mQSSvkvXwRqqocu1D39QMl2JgvN9zzhsyk1GRDz+OBfzMioCqx0rtdLYo0SiZTZttsOkmidBkveKibFF4Oep9SI46bqk3Twhp4iihUemrMWFPy2NRbthfqKkHi/PxlJLITZdAiSj6ouZ+tn9eZz78DuD9LZYB6bZ8rlCAUVuVdkULjxV4sIEysIc/KSyPmnJDdjhCOdQ0fCTliTX/tjH3ysWao+71qaNjHQjcQwrcuyl+WLZQthCMotJP/h+Xjazz+hfTeRWmG4zOiSyif/q1OtAAAAHjabY49asNAEIU/2ZJDfkiRIvXapUFCEqpcptABUrg3ZhEiQoKVfY9UqVLlGDlADpAT5e16IUWysMz3hjfzBrjjjQT/EjKpCy+4YhN5yZoxcirPe+SMWz4jr6S+5UzSa3VuwpTnBfc8RF7yxDZyKs9r5IxHPiKv1P9iZqDnyAvMQ39UecbScVb/gJO03Xk4CFom3XYK1clhMdQUlKo7/d9NF13RkIdfy+MV7TSe2sl11tRFaXYmJKpWTd7kdVnJ8veevZKc+n3I93t9Jnvr5n4aTVWU/0z9AI2qMkV42mNgYkAGjAzogB0sysTgwtDOyMTIzJlYVJRfnpOaVsIFZhVlpmeUAABuKQkSAAAAAAAB//8AAnjaY2BkYGDgAWIxIGZiYARCNiBmAfMYAAPgADV42mNgYGBkAIKrS9Q5QPT5wop6GA0APf8GGAAA)
-    format("woff");
-}
+
 @font-face {
   font-family: "Gilroy-Medium";
-  src: url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Medium.ffab80a.eot);
-  src: local("Gilroy Medium"), local("Gilroy-Medium"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Medium.ffab80a.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Medium.ed333b5.woff)
-      format("woff"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Medium.7f90435.ttf)
-      format("truetype");
+  
+      
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilroy-SemiBold";
-  src: url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-SemiBold.3be3224.eot);
-  src: local("Gilroy SemiBold"), local("Gilroy-SemiBold"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-SemiBold.3be3224.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-SemiBold.75f552c.woff)
-      format("woff"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-SemiBold.1b0052b.ttf)
-      format("truetype");
+  
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilroy-Bold";
-  src: url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Bold.b33d746.eot);
-  src: local("Gilroy Bold"), local("Gilroy-Bold"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Bold.b33d746.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Bold.164bd83.woff)
-      format("woff"),
-    url(https://www.codeyoung.com/_nuxt/fonts/Gilroy-Bold.6884672.ttf)
-      format("truetype");
+ 
   font-weight: 700;
   font-style: normal;
   font-display: swap;
