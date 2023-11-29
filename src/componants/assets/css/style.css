@@ -147,8 +147,8 @@ border: 1px solid #2f384a;
 
 }
 .testimonials__item-content {
-  padding: 30px;
-  border: 1px solid f9f9f9;
+  padding: 38px;
+  border: 1px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* Add a margin between testimonials items for small screens */
