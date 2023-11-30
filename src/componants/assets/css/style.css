@@ -1,7 +1,119 @@
+.brand-logo img {
+  left: 0;
+  position: absolute;
+  min-width: 100px;
+  margin-top: -8px;
+}
 
+/* header li:hover > a {
+  color: #00cad6 !important;
+}
 
+header li.active > a {
+  color: #00cad6 !important;
+} */
+
+nav {
+  background: rgba(35, 36, 36, 0);
+  padding: 10px 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border-radius: 0px !important;
+}
+
+.nav-background {
+  background: rgba(32, 152, 245, 1);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+  border-radius: 0px !important;
+}
+
+.navbar-nav li a {
+  /* color: #fff; */
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav > li > a:focus,
+.nav > li > a:hover {
+  background: transparent;
+}
+
+.active {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.default {
+  top: 0;
+}
+
+.navbar {
+  position: fixed;
+  background-color: #00b1d6;
+}
+
+nav {
+  left: 0;
+  top: -80px;
+  right: 0;
+  padding: 10px 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  height: auto;
+  z-index: 99;
+}
+
+nav.top-nav-collapse {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 0px !important;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.navbar-toggle span {
+  background: #fff;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the dropdown links */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style for the individual dropdown items */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+/* .dropdown-content a:hover {
+  background-color: #f1f1f1;
+} */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ---- */
 /* logo */
-.header-logo-section{
+.header-logo-section {
   height: 68px;
 }
 /* cards 5  */
@@ -12,7 +124,7 @@
   padding: 27px;
   margin-top: 100px;
 }
-.teachingfiled-section2{
+.teachingfiled-section2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 33px;
   margin-top: 100px;
@@ -25,7 +137,7 @@
   padding-top: 5%;
   padding-bottom: 5%;
   text-align: center;
-  gap:20px
+  gap: 20px;
 }
 
 .main-teacher-section {
@@ -41,104 +153,108 @@
   margin-top: 2%;
 }
 .teacher-section-content {
-border: 1px solid #2f384a;
+  border: 1px solid #2f384a;
 }
 
 .main-teacher-section {
-    text-align: center;
-  }
-  
-  .teacher-section {
-    display: grid;
-    grid-template-columns: 1fr; /* Display one column by default */
-    gap: 20px;
-     /* Default gap between cards */
-  }
-  
-  .teacher-section-content {
-    text-align: center;
-  }
-  
-  .teacher-section-image {
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire container */
-    border-radius: 8px; /* Optional: Add some border-radius for a rounded look */
-  }
-  .david{
-    background: white;
-    color: #2f384a;
-    padding: 10px;
+  text-align: center;
+}
 
+.teacher-section {
+  display: grid;
+  grid-template-columns: 1fr; /* Display one column by default */
+  gap: 20px;
+  /* Default gap between cards */
+}
+
+.teacher-section-content {
+  text-align: center;
+}
+
+.teacher-section-image {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  border-radius: 8px; /* Optional: Add some border-radius for a rounded look */
+}
+.david {
+  background: white;
+  color: #2f384a;
+  padding: 10px;
+}
+
+.teacher-section-content h3,
+.teacher-section-content p {
+  margin: 10px 0; /* Add margin for the heading and paragraph */
+}
+@media (max-width: 300px) {
+  .david {
+    width: 323px;
   }
-  
+}
+@media (max-width: 390px) {
+  .david {
+    width: 350px;
+  }
+}
+@media (max-width: 440px) {
+  .david {
+    width: 380px;
+  }
+}
+/* R
+  /* Responsive styles for small screens */
+@media (max-width: 767px) {
+  .teacher-section {
+    margin-top: 69px; /* Add margin-top for small screens */
+    gap: 15px; /* Adjust gap for small screens */
+  }
+
+  .teacher-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .teacher-section-content h3,
   .teacher-section-content p {
     margin: 10px 0; /* Add margin for the heading and paragraph */
   }
-  @media (max-width:300px){
-    .david{
-      width: 323px;
-    }
+}
+
+/* Responsive styles for medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+  .teacher-section {
+    gap: 20px; /* Adjust gap for medium screens */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Display two columns on medium screens */
   }
-  @media (max-width:390px){
-    .david{
-      width: 350px;
-    }
+}
+
+/* Responsive styles for large screens */
+@media (min-width: 992px) {
+  .teacher-section {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Display three columns on large screens */
   }
-  @media (max-width:440px){
-    .david{
-      width: 380px;
-    }
-  }
-  /* R
-  /* Responsive styles for small screens */
-  @media (max-width: 767px) {
-    .teacher-section {
-      margin-top: 69px; /* Add margin-top for small screens */
-      gap: 15px; /* Adjust gap for small screens */
-    }
-  
-    .teacher-section-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .teacher-section-content h3,
-    .teacher-section-content p {
-      margin: 10px 0; /* Add margin for the heading and paragraph */
-    }
-  }
-  
-  /* Responsive styles for medium screens */
-  @media (min-width: 768px) and (max-width: 991px) {
-    .teacher-section {
-      gap: 20px; /* Adjust gap for medium screens */
-      grid-template-columns: repeat(2, 1fr); /* Display two columns on medium screens */
-    }
-  }
-  
-  /* Responsive styles for large screens */
-  @media (min-width: 992px) {
-    .teacher-section {
-      grid-template-columns: repeat(3, 1fr); /* Display three columns on large screens */
-    }
-  }
-  
+}
+
 /* techer section end*/
-a{
-  text-decoration: none!important;
+a {
+  text-decoration: none !important;
   /* color: white!important; */
 }
 
-
 /* our vision */
-.mission{
+.mission {
   margin-top: 80px;
 }
-.VISION{
+.VISION {
   margin-top: 100px;
 }
 /* our vision */
@@ -148,7 +264,6 @@ a{
   width: 100%;
   display: inline-block;
   margin-left: 6px;
-
 }
 .testimonials__item-content {
   padding: 38px;
@@ -157,17 +272,17 @@ a{
 }
 /* Add a margin between testimonials items for small screens */
 @media (max-width: 767px) {
-    .testimonials__item {
-      margin-right: 10px; /* Adjust the margin for small screens */
-      width: 100%; /* Make each item full width to stack them vertically */
-    }
-  
-    /* Ensure the last item still has no right margin */
-    .testimonials__item:last-child {
-      margin-right: 0;
-    }
+  .testimonials__item {
+    margin-right: 10px; /* Adjust the margin for small screens */
+    width: 100%; /* Make each item full width to stack them vertically */
   }
-  
+
+  /* Ensure the last item still has no right margin */
+  .testimonials__item:last-child {
+    margin-right: 0;
+  }
+}
+
 /* ==========================================================================
    01. General & Basic Styles
    ========================================================================== */
@@ -1346,86 +1461,6 @@ a:focus {
    02. Main Header style
    ========================================================================== */
 
-.brand-logo img {
-  left: 0;
-  position: absolute;
-  min-width: 240px;
-  margin-top: -8px;
-}
-
-header li:hover > a {
-  color: #00cad6 !important;
-}
-
-header li.active > a {
-  color: #00cad6 !important;
-}
-
-nav {
-  background: rgba(35, 36, 36, 0);
-  padding: 10px 0;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  border-radius: 0px !important;
-}
-
-.nav-background {
-  background: rgba(32, 152, 245, 1);
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
-  border-radius: 0px !important;
-}
-
-.navbar-nav li a {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.nav > li > a:focus,
-.nav > li > a:hover {
-  background: transparent;
-}
-
-.active {
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-}
-
-.default {
-  top: 0;
-}
-
-.navbar {
-  /* position: fixed; */
-  background-color: #00b1d6;
-}
-
-nav {
-  left: 0;
-  top: -80px;
-  right: 0;
-  padding: 10px 0;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  height: auto;
-  z-index: 99;
-}
-
-nav.top-nav-collapse {
-  padding-bottom: 10px;
-  padding-top: 10px;
-  border-radius: 0px !important;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-.navbar-toggle span {
-  background: #fff;
-}
-
 /* ==========================================================================
    03. Home Banner Area style
    ========================================================================== */
@@ -1503,7 +1538,7 @@ nav.top-nav-collapse {
   -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
-  margin-top: 55px;
+  /* margin-top: 55px; */
 }
 
 .banner-area .banner-txt .app-media .single-media a i {
@@ -1718,41 +1753,38 @@ nav.top-nav-collapse {
 }
 #videos {
   width: 100%;
-   /* Default width for larger screens */
+  /* Default width for larger screens */
 }
-  /* Media query for small screens */
-  @media only screen and (max-width: 767px) {
-    #videos {
-      width: 100%; /* Adjust the width for small screens, e.g., full width */
-    }
+/* Media query for small screens */
+@media only screen and (max-width: 767px) {
+  #videos {
+    width: 100%; /* Adjust the width for small screens, e.g., full width */
   }
+}
 
-  /* Media query for medium screens */
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    #videos {
-      width: 70%; /* Adjust the width for medium screens, e.g., 70% of the viewport width */
-    }
+/* Media query for medium screens */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #videos {
+    width: 70%; /* Adjust the width for medium screens, e.g., 70% of the viewport width */
   }
-  @media only screen and (max-width: 441px) {
-    #videos {
-    
-      margin-left: 1px;/* Adjust the width for screens starting at 300px */
-    }
+}
+@media only screen and (max-width: 441px) {
+  #videos {
+    margin-left: 1px; /* Adjust the width for screens starting at 300px */
   }
-  /* Media query for screens starting at 300px */
-  @media only screen and (max-width: 375px) {
-    #videos {
-      width: 554px; 
-      margin-left: 1px;/* Adjust the width for screens starting at 300px */
-    }
+}
+/* Media query for screens starting at 300px */
+@media only screen and (max-width: 375px) {
+  #videos {
+    width: 554px;
+    margin-left: 1px; /* Adjust the width for screens starting at 300px */
   }
-  @media only screen and (max-width: 375px) {
-
-    .course-slider-img.slick-slide.slick-current.slick-active {
-      width: 357px;
-     
-    }
+}
+@media only screen and (max-width: 375px) {
+  .course-slider-img.slick-slide.slick-current.slick-active {
+    width: 357px;
   }
+}
 
 .course .ia-icon,
 .course .light .ia-icon {
@@ -2270,7 +2302,7 @@ nav.top-nav-collapse {
   position: relative;
   margin-bottom: 12px;
 }
-.mission-content{
+.mission-content {
   justify-content: end;
 }
 .progress-bar-number .num:after {
@@ -2303,7 +2335,7 @@ nav.top-nav-collapse {
 .subscribe-content-inner p {
   max-width: 600px;
   margin: 0 auto;
-  color:white
+  color: white;
 }
 
 .subscribe-form-inner .form-inline {

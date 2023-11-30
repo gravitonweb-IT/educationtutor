@@ -45,16 +45,17 @@ import grade2 from "../componants/assets/grade2.mp4";
 import grade8 from "../componants/assets/grade8.mp4";
 import grade6 from "../componants/assets/grade6.mp4";
 import mario from "../componants/assets/mario.webm";
+import kids from "../componants/assets/kids.png";
+import p2 from "../componants/assets/p2.png";
 import "./home.css";
 import "./tabs.css";
+
 // import anime from 'animejs';
 const Home = () => {
-
-
   const [showForm, setShowForm] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const toggleForm = () => {
     setShowForm(!showForm);
@@ -72,7 +73,7 @@ const Home = () => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit1= (e) => {
+  const handleSubmit1 = (e) => {
     e.preventDefault();
     // Add your form submission logic here
     // Access the values using the state variables (name, email, message)
@@ -200,8 +201,6 @@ const Home = () => {
     });
   };
 
-
-
   useEffect(() => {
     const animateCounter = (setter, to) => {
       let currentCount = 0;
@@ -252,72 +251,66 @@ const Home = () => {
   return (
     <div>
       <>
-     
-      <header>
-  {/* Nav Menu Starts */}
-  <nav className="navbar navbar-default navbar-fixed-top">
-    <div className="container mob-logo">
-      <div className="navbar-header col-sm-2 tablet-logo">
-        <button
-          type="button"
-          className="navbar-toggle mob-menu"
-          data-toggle="collapse"
-          data-target="#myNavbar"
-        >
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-        </button>
-        {/* 5* Logo */}
-        <a href="#education-home" className="brand-logo">
-          <img
-            src={logo}
-            alt="karbar logo"
-            className="header-logo-section"
-          />
-        </a>
-      </div>
-      <div className="collapse navbar-collapse" id="myNavbar">
-        {/* Menu items */}
-        <ul className="nav navbar-nav pull-right">
-          <li className="active">
-            <a href="#education-home">Home</a>
-          </li>
-          <li>
-            <a href="#education-courses">Courses</a>
-          </li>
-          <li>
-            <a href="#education-price">Price</a>
-          </li>
-          <li>
-            <a href="#education-testimonial">Testimonial</a>
-          </li>
-          <li>
-            <a href="#education-blog">Blog</a>
-          </li>
-          <li>
-            <a href="#education-footer">Facts</a>
-          </li>
-          <li>
-         
-            <a
-              data-toggle="modal"
-              data-target="#education-contact"
-             
-            >
-              Contact
-            </a>
-       
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+        <header>
+          <nav className="navbar navbar-default navbar-fixed-top">
+            <div className="container mob-logo">
+              <div className="navbar-header col-sm-2 tablet-logo">
+                <button
+                  type="button"
+                  className="navbar-toggle mob-menu"
+                  data-toggle="collapse"
+                  data-target="#myNavbar"
+                >
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
 
+                <a href="#education-home" className="brand-logo">
+                  <img
+                    src={p2}
+                    alt="karbar logo"
+                    className="header-logo-section"
+                  />
+                </a>
+              </div>
+              <div className="collapse navbar-collapse" id="myNavbar">
+                <ul className="nav navbar-nav pull-right">
+                  <li className="active">
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#education-courses">Courses</a>
+                    <div class="dropdown-content">
+                      <Link to="/Maths">Maths</Link>
+                      <Link to="/Science">Science</Link>
+                      <Link to="/Coding">Coding</Link>
+                      <Link to="/Competative">Competative</Link>
+                    </div>
+                  </li>
+                  {/* <li>
+                  <a href="#education-price">Price</a>
+                </li> */}
+                  <li>
+                    <a href="#education-testimonial">Testimonial</a>
+                  </li>
+                  <li>
+                    <a href="#education-blog">Blog</a>
+                  </li>
+                  <li>
+                    <a href="#education-footer">Facts</a>
+                  </li>
+                  <li>
+                    <a data-toggle="modal" data-target="#education-contact">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
 
-
-        
         {/*================================================================================= 
                           END HEADER
     ==================================================================================*/}
@@ -330,7 +323,7 @@ const Home = () => {
             <div className="row">
               <div className="col-lg-4 col-sm-4">
                 <div className="banner-device">
-                  <img src={main} alt="main" />
+                  <img src="https://media.istockphoto.com/id/484053608/photo/kids-having-fun.jpg?s=612x612&w=0&k=20&c=WZbJwPcHSfP-clsJab13ZPh3ss_559FKSIh_sre_2jI=" alt="main" />
                 </div>
               </div>
               <div className="col-lg-8 col-sm-8">
@@ -338,17 +331,15 @@ const Home = () => {
                 <div className="banner-txt">
                   <div className="banner-intro">
                     <h1 className="banner-title">
-                      Present Education in beautiful way with{" "}
-                      <span id="area">Landing Page</span>
-                      <span id="cursor" style={{ opacity: "1" }}>
-                        |
-                      </span>
-                      ...
+                    Unlock the Power of Numbers, Discover the wonders of
+                      science, and Dive into the World of 
+                      <span id="area"> Coding with Us</span>
+                      
                     </h1>
-                    <p className="color-white lheight-30">
+                    {/* <p className="color-white lheight-30">
                       Unlock the Power of Numbers, Discover the wonders of
                       science, and Dive into the World of Coding with Us!
-                    </p>
+                    </p> */}
                   </div>
                   <div className="app-media">
                     <div className="single-media">
@@ -567,94 +558,55 @@ const Home = () => {
                             </div>
                             <h1></h1>
                             <p className="lheight-30 mt20">
-                              Individualized Learning Paths for Each Child's
-                              Unique Math Requirements:
+                            Are you grappling with Math Anxiety, facing Learning Gaps, and desiring mastery in Conceptual Learning, Mental Math’s, and Advanced Math? Look no further – our online math tutoring service is designed just for you! 
                             </p>
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Personalised Learning
+                                Math Anxiety Support: Conquer math anxiety with our supportive environment, ensuring a positive and enjoyable learning experience.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  live sessions
+                                Bridge Learning Gaps: Personalized lessons fill gaps, providing a solid foundation for mathematical success
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Classwork Help
+                                Conceptual Learning: Dive into concepts, transforming math into a captivating journey of understanding.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Advance Learning
+                                Mental Math’s Mastery: Practical strategies enhance mental math skills, boosting confidence in everyday calculations.
+                                </span>
+                              </li>
+                              <li>
+                                <span className="table-cell valign-middle">
+                                Advanced Math Support: From calculus to trigonometry, our tutors guide you through advanced math challenges with patience and expertise.
                                 </span>
                               </li>
                             </ul>
                             {/* button */}
-                            <div className="flex-1">
-                              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                 <span className="color-2 button-text">
-                   START LEARN NOW
-                 </span>
-               </button> */}
-                            </div>
+                         
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                              {/* <button
-                 className="slick-prev slick-arrow slick-disabled"
-                 aria-label="Previous"
-                 type="button"
-                 aria-disabled="true"
-                 style={{}}
-               >
-                 Previous
-               </button> */}
-                              <div className="slick-list draggable">
-                                <div
-                                  className="slick-track"
-                                  style={{
-                                    opacity: "1",
-                                    width: "1170px",
-                                    WebkitTransform:
-                                      "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                    transform: "translate3d(0px, 0px, 0px)",
-                                  }}
-                                >
-                                  <div
-                                    className="course-slider-img slick-slide slick-current slick-active"
-                                    style={{
-                                      backgroundImage: `url(${m1image})`,
-                                    }}
-                                    data-slick-index={0}
-                                    aria-hidden="false"
-                                    tabIndex={0}
-                                  />
-                                  {/* <div
-                     className="course-slider-img slick-slide"
-                     style={{
-                       "background-image":
-                         'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                       width: "585px",
-                     }}
-                     data-slick-index={1}
-                     aria-hidden="true"
-                     tabIndex={-1}
-                   /> */}
-                                </div>
+                      
+                           <div className="slick-list draggable">
+                                
+                                   <iframe
+                width="100%"
+                height={300}
+                src={learningmath}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+                                 
+                                
                               </div>
-                              {/* <button
-                 className="slick-next slick-arrow"
-                 aria-label="Next"
-                 type="button"
-                 style={{}}
-                 aria-disabled="false"
-               >
-                 Next
-               </button> */}
+                            
                             </div>
                           </div>
                         </div>
@@ -676,9 +628,7 @@ const Home = () => {
                                   </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt20">
-                                  online science tuition offer an unparalleled
-                                  learning experience that goes beyond the
-                                  ordinary
+                                Embark on a dynamic learning experience with our science online tutoring! Dive into virtual labs, explore real-life examples, and engage with interactive videos, making complex concepts come alive. Our comprehensive approach ensures a deeper understanding of science. Ready to evaluate your learning journey? Join us today!
                                 </div>
                               </div>
                             </div>
@@ -716,69 +666,20 @@ const Home = () => {
                             </ul>
                             {/* button */}
                             <div className="flex-1">
-                              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                <span className="color-2 button-text">
-                  START LEARN NOW
-                </span>
-              </button> */}
+                            
                             </div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                              {/* <button
-                className="slick-prev slick-arrow slick-disabled"
-                aria-label="Previous"
-                type="button"
-                aria-disabled="true"
-                style={{}}
-              >
-                Previous
-              </button> */}
-                              <div className="slick-list draggable">
-                                <div
-                                  className="slick-track"
-                                  style={{
-                                    opacity: "1",
-                                    width: "1170px",
-                                    WebkitTransform:
-                                      "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                    transform: "translate3d(0px, 0px, 0px)",
-                                  }}
-                                >
-                                  <div
-                                    className="course-slider-img slick-slide slick-current slick-active"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={0}
-                                    aria-hidden="false"
-                                    tabIndex={0}
-                                  />
-                                  <div
-                                    className="course-slider-img slick-slide"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={1}
-                                    aria-hidden="true"
-                                    tabIndex={-1}
-                                  />
-                                </div>
-                              </div>
-                              {/* <button
-                className="slick-next slick-arrow"
-                aria-label="Next"
-                type="button"
-                style={{}}
-                aria-disabled="false"
-              >
-                Next
-              </button> */}
+                            <iframe
+                width="100%"
+                height={300}
+                src={grade6}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+                          
                             </div>
                           </div>
                         </div>
@@ -794,7 +695,7 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>Embrace Online Coding </span>
+                                  <span>Supercharge Your Child's Future with Coding! </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt20">
                                   Explore the world of coding from the comfort
@@ -813,90 +714,62 @@ const Home = () => {
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Coding
+                                Boosts Critical Thinking: Develops logical and analytical skills for academic excellence.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Explore Endless Possibilities
+                                Math Made Fun: Coding enhances math proficiency in an engaging way.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Expert Tutors, Real-World Insight
+                                Creative Exploration: Unleash creativity through coding adventures. 
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Flexible Scheduling, Boundless Opportunities
+                                Confidence Building: Conquer coding challenges for increased self-assurance. 
+                                </span>
+                              </li>
+                              <li>
+                                <span className="table-cell valign-middle">
+                                Expert-Led Sessions: Learn from experienced educators in convenient online sessions. 
+                                </span>
+                              </li>
+                              <li>
+                                <span className="table-cell valign-middle">
+                                Life-Long Benefits: Instill problem-solving, resilience, and a love for learning. 
+                                </span>
+                              </li>
+                              <li>
+                                <span className="table-cell valign-middle">
+                                Accessible Learning: Flexible online tutoring tailored to your child's schedule.
+                                </span>
+                              </li>
+                              <li>
+                                <span className="table-cell valign-middle">
+                                Success Shapers: Empower your child to shape the future with coding superpowers.
                                 </span>
                               </li>
                             </ul>
                             {/* button */}
                             <div className="flex-1">
-                              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                <span className="color-2 button-text">
-                  START LEARN NOW
-                </span>
-              </button> */}
+                             
                             </div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                              {/* <button
-                className="slick-prev slick-arrow slick-disabled"
-                aria-label="Previous"
-                type="button"
-                aria-disabled="true"
-                style={{}}
-              >
-                Previous
-              </button> */}
-                              <div className="slick-list draggable">
-                                <div
-                                  className="slick-track"
-                                  style={{
-                                    opacity: "1",
-                                    width: "1170px",
-                                    WebkitTransform:
-                                      "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                    transform: "translate3d(0px, 0px, 0px)",
-                                  }}
-                                >
-                                  <div
-                                    className="course-slider-img slick-slide slick-current slick-active"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={0}
-                                    aria-hidden="false"
-                                    tabIndex={0}
-                                  />
-                                  <div
-                                    className="course-slider-img slick-slide"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={1}
-                                    aria-hidden="true"
-                                    tabIndex={-1}
-                                  />
-                                </div>
-                              </div>
-                              {/* <button
-                className="slick-next slick-arrow"
-                aria-label="Next"
-                type="button"
-                style={{}}
-                aria-disabled="false"
-              >
-                Next
-              </button> */}
+                              
+                            <iframe
+                width="100%"
+                height={300}
+                src={grade8}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+                             
                             </div>
                           </div>
                         </div>
@@ -912,21 +785,15 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>SAT for Global Academic Success</span>
+                                  <span>Excel in Competitive Exams with Our Proven Expertise</span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt30">
-                                  Make your courses standout
+                                Your success in PSAT, SAT, ACT, NAPLAN, and Olympiads begins with EDUFUSION TUTOR - Your Trusted Guide to Academic Excellence! 
                                 </div>
                               </div>
                             </div>
                             <p className="lheight-30 mt30">
-                              At EDUFUSION TUTOR, our success is rooted in a
-                              student-centric philosophy that recognizes the
-                              uniqueness of each learner. Our seasoned educators
-                              understand the specific requirements of exams like
-                              PSAT, SAT, ACT, NAPLAN, and Olympiads, tailoring
-                              their guidance to address individual strengths and
-                              areas for improvement.
+                            Unlock the door to success in competitive exams such as PSAT, SAT, ACT, NAPLAN, and Olympiads with EDUFUSION TUTOR. With over 12 years of unparalleled experience, we have been guiding students towards academic excellence and achieving top scores in these prestigious examinations. 
                             </p>
                             <ul className="list1">
                               <li>
@@ -949,87 +816,25 @@ const Home = () => {
                                   Strategic Test-Taking Strategies
                                 </span>
                               </li>
-                              {/* <li>
-                <span className="table-cell valign-middle">
-                  Tailored Approach
-                </span>
-              </li> */}
-                              {/* <li>
-                <span className="table-cell valign-middle">
-                  innovative Teaching Methods
-                </span>
-              </li>
-              <li>
-                <span className="table-cell valign-middle">
-                  Adaptive Learning
-                </span>
-              </li> */}
+                    
                             </ul>
                             {/* button */}
                             <div className="flex-1">
-                              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                <span className="color-2 button-text">
-                  START LEARN NOW
-                </span>
-              </button> */}
+                            
                             </div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                              {/* <button
-                className="slick-prev slick-arrow slick-disabled"
-                aria-label="Previous"
-                type="button"
-                aria-disabled="true"
-                style={{}}
-              >
-                Previous
-              </button> */}
-                              <div className="slick-list draggable">
-                                <div
-                                  className="slick-track"
-                                  style={{
-                                    opacity: "1",
-                                    width: "1170px",
-                                    WebkitTransform:
-                                      "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                    transform: "translate3d(0px, 0px, 0px)",
-                                  }}
-                                >
-                                  <div
-                                    className="course-slider-img slick-slide slick-current slick-active"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={0}
-                                    aria-hidden="false"
-                                    tabIndex={0}
-                                  />
-                                  <div
-                                    className="course-slider-img slick-slide"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={1}
-                                    aria-hidden="true"
-                                    tabIndex={-1}
-                                  />
-                                </div>
-                              </div>
-                              {/* <button
-                className="slick-next slick-arrow"
-                aria-label="Next"
-                type="button"
-                style={{}}
-                aria-disabled="false"
-              >
-                Next
-              </button> */}
+                            
+                            <iframe
+                width="100%"
+                height={300}
+                src={learningmath}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+                           
                             </div>
                           </div>
                         </div>
@@ -1050,18 +855,12 @@ const Home = () => {
                                   </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt30">
-                                  EDUFUSION TUTOR: PSAT success through expert
-                                  guidance and personalized strategies.
+                                Your success in PSAT, SAT, ACT, NAPLAN, and Olympiads begins with EDUFUSION TUTOR - Your Trusted Guide to Academic Excellence! 
                                 </div>
                               </div>
                             </div>
                             <p className="lheight-30 mt30">
-                              Elevate your academic journey with EDUFUSION
-                              TUTOR. With over 12 years of expertise, we
-                              specialize in guiding students to success in PSAT,
-                              SAT, ACT, NAPLAN, and Olympiads. Our tailored
-                              programs, led by experienced educators, blend
-                              content mastery with strategic test-taking skills.
+                            Unlock Your Potential with PSAT Online Tutoring! 🌟 Are you ready to ace the PSAT and set the stage for your academic success? Look no further! Our PSAT Online Tutoring program is designed to empower students like you to confidently tackle the exam and achieve outstanding results. can you add more features or information about psat 
                             </p>
                             <ul className="list1 mt30">
                               <li>
@@ -1101,60 +900,15 @@ const Home = () => {
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                              <button
-                                className="slick-prev slick-arrow slick-disabled"
-                                aria-label="Previous"
-                                type="button"
-                                aria-disabled="true"
-                                style={{}}
-                              >
-                                Previous
-                              </button>
-                              <div className="slick-list draggable">
-                                <div
-                                  className="slick-track"
-                                  style={{
-                                    opacity: "1",
-                                    width: "1170px",
-                                    WebkitTransform:
-                                      "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                    transform: "translate3d(0px, 0px, 0px)",
-                                  }}
-                                >
-                                  <div
-                                    className="course-slider-img slick-slide slick-current slick-active"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={0}
-                                    aria-hidden="false"
-                                    tabIndex={0}
-                                  />
-                                  <div
-                                    className="course-slider-img slick-slide"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={1}
-                                    aria-hidden="true"
-                                    tabIndex={-1}
-                                  />
-                                </div>
-                              </div>
-                              {/* <button
-                  className="slick-next slick-arrow"
-                  aria-label="Next"
-                  type="button"
-                  style={{}}
-                  aria-disabled="false"
-                >
-                  Next
-                </button> */}
+                            <iframe
+                width="100%"
+                height={300}
+                src={learningmath}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+                            
                             </div>
                           </div>
                         </div>
@@ -1170,20 +924,17 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>Unlocking the Nexus of Knowledge</span>
+                                  <span>Other competitive exam </span>
                                 </div>
-                                <div className="subtitle fweight-600 color-4">
-                                  Make your courses standout
+                                <div className="subtitle fweight-600 color-4" style={{marginTop:"20px"}}>
+                                Embark on a Journey to Academic Excellence with edufusion  ACADEMY!
                                 </div>
                               </div>
                             </div>
                             <p className="lheight-30">
-                              Embark on a journey where mathematical principles
-                              intertwine with scientific wonders, converging
-                              seamlessly with the intricate dance of coding
-                              languages. Discover the synergy that propels
-                              innovation and shapes the future.
+                            Are you ready to conquer a myriad of competitive exams, from PSAT, SAT, ACT, NAPLAN, Olympiads, to AP courses and beyond? Look no further! ACCELERATE ACADEMY is your one-stop destination for comprehensive exam preparation, guiding you towards success in every academic endeavor 
                             </p>
+                            <p className="lheight-30">Master a spectrum of exams including PSAT, SAT, ACT, NAPLAN, Olympiads, AP courses, and various university-level exams. Our expert tutors are well-versed in diverse curricula, ensuring you're prepared for any challenge. </p>
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
@@ -1205,90 +956,27 @@ const Home = () => {
                             </ul>
                             {/* button */}
                             <div className="flex-1">
-                              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                  <span className="color-2 button-text">
-                    START LEARN NOW
-                  </span>
-                </button> */}
+                           
                             </div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                              <button
-                                className="slick-prev slick-arrow slick-disabled"
-                                aria-label="Previous"
-                                type="button"
-                                aria-disabled="true"
-                                style={{}}
-                              >
-                                Previous
-                              </button>
-                              <div className="slick-list draggable">
-                                <div
-                                  className="slick-track"
-                                  style={{
-                                    opacity: "1",
-                                    width: "1170px",
-                                    WebkitTransform:
-                                      "translate3d(0px, 0px, 0px)", // Correct camelCase for -webkit-transform
-                                    MsTransform: "translate3d(0px, 0px, 0px)", // Correct camelCase for -ms-transform
-                                    transform: "translate3d(0px, 0px, 0px)",
-                                  }}
-                                >
-                                  <div
-                                    className="course-slider-img slick-slide slick-current slick-active"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={0}
-                                    aria-hidden="false"
-                                    tabIndex={0}
-                                  />
-                                  <div
-                                    className="course-slider-img slick-slide"
-                                    style={{
-                                      "background-image":
-                                        'url("https://codestar.xyz/demo/education/assets/images/course/course-img-1.jpg")',
-                                      width: "585px",
-                                    }}
-                                    data-slick-index={1}
-                                    aria-hidden="true"
-                                    tabIndex={-1}
-                                  />
-                                </div>
-                              </div>
-                              {/* <button
-                  className="slick-next slick-arrow"
-                  aria-label="Next"
-                  type="button"
-                  style={{}}
-                  aria-disabled="false"
-                >
-                  Next
-                </button> */}
+                            <iframe
+                width="100%"
+                height={300}
+                src={learningmath}
+                frameBorder={0}
+                allow="autoplay; encrypted-media"
+                allowFullScreen=""
+              />
+                          
                             </div>
                           </div>
                         </div>
                       )}
 
                       {/* End Single tab content */}
-                      {/* Start Single tab content */}
-
-                      {/* End Single tab content */}
-                      {/* Start Single tab content */}
-
-                      {/* End Single tab content */}
-                      {/* Start Single tab content */}
-
-                      {/* End Single tab content */}
-                      {/* Start Single tab content */}
-
-                      {/* End Single tab content */}
-                      {/* Start Single tab content */}
-
-                      {/* End Single tab content */}
+                   
                     </div>
                   </div>
                 </div>
@@ -1298,10 +986,10 @@ const Home = () => {
           </div>
         </section>
 
-        <div className="container" style={{ marginRight: "52px" }}>
+        {/* <div className="container" style={{ marginRight: "52px" }}>
           <h1 className="text-center">Video'S Section </h1>
           <div className="row mt40" id="videos">
-            {/* Video 1 */}
+       
             <div className="col-lg-4 col-md-4 mx-auto">
               <iframe
                 width="100%"
@@ -1313,7 +1001,7 @@ const Home = () => {
               />
             </div>
 
-            {/* Video 2 */}
+    
             <div className="col-lg-4 col-md-4  mx-auto">
               <iframe
                 width="100%"
@@ -1325,7 +1013,7 @@ const Home = () => {
               />
             </div>
 
-            {/* Video 3 */}
+       
             <div className="col-lg-4 col-md-4  mx-auto">
               <iframe
                 width="100%"
@@ -1338,8 +1026,7 @@ const Home = () => {
             </div>
           </div>
           <div className="row mt40" id="videos">
-            {/* Video 1 */}
-            <div className="col-lg-4 col-md-4  mx-auto">
+                <div className="col-lg-4 col-md-4  mx-auto">
               <iframe
                 width="100%"
                 height={300}
@@ -1350,7 +1037,7 @@ const Home = () => {
               />
             </div>
 
-            {/* Video 2 */}
+        
             <div className="col-lg-4 col-md-4  mx-auto">
               <iframe
                 width="100%"
@@ -1362,7 +1049,7 @@ const Home = () => {
               />
             </div>
 
-            {/* Video 3 */}
+        
             <div className="col-lg-4 col-md-4 mx-auto">
               <iframe
                 width="100%"
@@ -1374,7 +1061,7 @@ const Home = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* tabs */}
         <div className="enroll-wrapper" data-v-0a6dbf09>
@@ -1481,1841 +1168,12 @@ const Home = () => {
           </div>
         </div>
 
-        {/*  */}
-
-        <div
-          data-v-0a33574d
-          className="container course-section-container my-24"
-        >
-          <div data-v-0a33574d className="course-heading-section">
-            <div
-              data-v-0a33574d
-              className="w-full flex flex-col-reverse md:flex-row"
-            >
-              <div data-v-0a33574d className="w-full relative">
-                <div data-v-0a33574d className="course-title">
-                  <h2 data-v-0a33574d className="heading">
-                    Maths Courses for Every Grade
-                  </h2>
-                </div>{" "}
-                <div data-v-0a33574d className="stepper-wrapper">
-                  <span data-v-0a33574d className="course-subtitle sub-heading">
-                    Our Focused Curriculum ensures Academic Excellence
-                  </span>{" "}
-                  <div data-v-0a33574d className="course-stepper tabs">
-                    <span
-                      data-v-0a33574d
-                      className={` step tab ${
-                        activeTab2 === 1 ? "active" : ""
-                      }`}
-                      onClick={() => handleTabClick2(1)}
-                    >
-                      Kindergarten
-                    </span>
-                    <span
-                      data-v-0a33574d
-                      className={` step tab ${
-                        activeTab2 === 2 ? "active" : ""
-                      }`}
-                      onClick={() => handleTabClick2(2)}
-                    >
-                      Grade 1 - 3
-                    </span>
-                    <span
-                      data-v-0a33574d
-                      className={` step tab ${
-                        activeTab2 === 3 ? "active" : ""
-                      }`}
-                      onClick={() => handleTabClick2(3)}
-                    >
-                      Grade 4 - 6
-                    </span>
-                    <span
-                      data-v-0a33574d
-                      className={` step tab ${
-                        activeTab2 === 4 ? "active" : ""
-                      }`}
-                      onClick={() => handleTabClick2(4)}
-                    >
-                      Grade 7 - 9
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>{" "}
-          <div
-            data-v-0a33574d
-            className="lg:-mx-4 mt-2 accordionItemContent course-web"
-          >
-            <div data-v-eb8371ae data-v-0a33574d className="course-card">
-              {activeTab2 === 1 && (
-                <div data-v-eb8371ae className="maths-topic-container">
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          School Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div data-v-eb8371ae className="grid-container">
-                      <div
-                        data-v-eb8371ae
-                        className="course-step-inner-container"
-                      >
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://cdn-icons-png.flaticon.com/512/2038/2038806.png"
-                          alt="teacher"
-                          className="course-img"
-                        />{" "}
-                        <div data-v-eb8371ae className="course-step-info">
-                          Count, Compare and Write Numbers 0 to 10
-                        </div>
-                      </div>
-                      <div
-                        data-v-eb8371ae
-                        className="course-step-inner-container"
-                      >
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
-                          alt="teacher"
-                          className="course-img"
-                        />{" "}
-                        <div data-v-eb8371ae className="course-step-info">
-                          Sorting
-                        </div>
-                      </div>
-                      <div
-                        data-v-eb8371ae
-                        className="course-step-inner-container"
-                      >
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://i.pinimg.com/564x/8b/04/12/8b04124be0a29312eccc0798dc232ffe.jpg"
-                          alt="teacher"
-                          className="course-img"
-                        />{" "}
-                        <div data-v-eb8371ae className="course-step-info">
-                          Two-Dimensional Shapes
-                        </div>
-                      </div>
-                      <div
-                        data-v-eb8371ae
-                        className="course-step-inner-container"
-                      >
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaKs8EArLUmhS_Fq28x-fM9vsfkzDXlFb62A&usqp=CAU"
-                          alt="teacher"
-                          className="course-img"
-                        />{" "}
-                        <div data-v-eb8371ae className="course-step-info">
-                          Position and Location
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {activeTab2 === 2 && (
-                <div data-v-eb8371ae className="maths-topic-container">
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          School Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtW6EgLP0gBKRFrbaayWBR81A2kUcXH2jPBQ&usqp=CAU"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Number systems
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Arithmetic operations
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/6555/6555320.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Factors, Multiples &amp; Primes
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/Tips-And-Tricks-And-Shortcuts-Of-Decimals-And-Fractions.webp"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Fractions and Decimals
-                      </div>
-                    </div>
-                  </div>
-
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          Vedic Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Multiplication Tricks
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMVSURBVHgBxVe/T9tAFH52nET5IZQgdWLxAAMSUsMCA0OSqUJqJTp1YICFsZBOnSpI/4A2KFuHQgeGMjG0YiRIXeiQpqgVQkStRRVBWkEikRAlUZK+d8SRE+zknB/wSSff2c/3fffe+b2zAJzIZDIeq9U6Z7FY/LVazYdNFgTBQ8+wn8W+gtcEtv1yubzj9XqzPPMKHMSy3W5fwYkXVUIeoP1mqVQKoxAFuhFAK0biVeyGoDdEisVi2MgjggE5rXoPuzL0BwqKCOp5Q9Qh9/WZnMAWlMvlfK0PhBZyeQDkWtzyhKAhp5h/GyC5VsSkuick9W59w8l6b/y9uIB329tQKpfBLF4uLYHL4dDekutcLxoCyPXQZrf/u7yE+NERPJudBV7kCwX4FIuxa4sAQgg51ykUTIDNZlvVmyR7dQWp83P4lUqx8cToKPDgwfAwBldgAoyASY0WHJIo9phgFvWM3mxswI9ksjF+FY0CD4LT0x29JYriAnKvSZRe2xnSRGZcH93a4jVlqV3E1fvhnkB1hRKRz+yLqXQavh4eQq+gokYCZDCJL/F42w1mArJopsINAB6J1/LP2RkkT09Z/zd+lmnMDXsHB2zsHRoC3/g4dAOpfpjo6IXE8TF8rrs9h8mF8HF3l13lkZFuBWTJAwpwbMQngQBrKvHPkxN4vbwMPUKhTfgd7gno+QSFIIadBTMvejDm+A0bPifvvL++hk6oVCr7Eh0gsRa8NfM1PJqZYc0INWxUgIJTUzd1wQDELVFdxpPKBxSwomdE1YzKMS/IfmJsDJ7Pz7e1Q75N4mafIbozgqG4JcDpdLKEYzbpPPZzZfcwE6KO0AsRrFBNImg1eY5YtsKFwnXOAA1Uq9V1t9sdahJwl0cyh8MxiSFgR7LGqZjigTeDcJMXBkZOHCp5kwACKlPQPU8HJILNTRzam7o/JoVCQcZN2dcfE1p5KzlB1LMmQzo602aBHkFzUMz1yAkdf07JGzjJmplsWS9wlFsiRsTcAjSTevL5/BxOGsDhQ2xNv+dAhUUUE5ReXS7XjnajtcN/o4pYKqInmPUAAAAASUVORK5CYII="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Series Addition
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Division Tricks
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Mental Subtraction Tricks
-                      </div>
-                    </div>
-                  </div>
-
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          Logical Reasoning
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://i.pinimg.com/736x/2a/c0/05/2ac005d6dcb04dbfa6591bffd68b227b.jpg"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Geometrical Shapes &amp; Solids
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/3521/3521095.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Coding Decoding
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Ranking Test
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://i.pinimg.com/474x/65/4f/81/654f81cdff9000eed53c9e1877eee55f.jpg"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Direction Sense Test
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {activeTab2 === 3 && (
-                <div data-v-eb8371ae className="maths-topic-container">
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          School Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtW6EgLP0gBKRFrbaayWBR81A2kUcXH2jPBQ&usqp=CAU"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Number systems
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Arithmetic operations
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/6555/6555320.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Factors, Multiples &amp; Primes
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/Tips-And-Tricks-And-Shortcuts-Of-Decimals-And-Fractions.webp"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Fractions and Decimals
-                      </div>
-                    </div>
-                  </div>
-
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          Vedic Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Multiplication Tricks
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMVSURBVHgBxVe/T9tAFH52nET5IZQgdWLxAAMSUsMCA0OSqUJqJTp1YICFsZBOnSpI/4A2KFuHQgeGMjG0YiRIXeiQpqgVQkStRRVBWkEikRAlUZK+d8SRE+zknB/wSSff2c/3fffe+b2zAJzIZDIeq9U6Z7FY/LVazYdNFgTBQ8+wn8W+gtcEtv1yubzj9XqzPPMKHMSy3W5fwYkXVUIeoP1mqVQKoxAFuhFAK0biVeyGoDdEisVi2MgjggE5rXoPuzL0BwqKCOp5Q9Qh9/WZnMAWlMvlfK0PhBZyeQDkWtzyhKAhp5h/GyC5VsSkuick9W59w8l6b/y9uIB329tQKpfBLF4uLYHL4dDekutcLxoCyPXQZrf/u7yE+NERPJudBV7kCwX4FIuxa4sAQgg51ykUTIDNZlvVmyR7dQWp83P4lUqx8cToKPDgwfAwBldgAoyASY0WHJIo9phgFvWM3mxswI9ksjF+FY0CD4LT0x29JYriAnKvSZRe2xnSRGZcH93a4jVlqV3E1fvhnkB1hRKRz+yLqXQavh4eQq+gokYCZDCJL/F42w1mArJopsINAB6J1/LP2RkkT09Z/zd+lmnMDXsHB2zsHRoC3/g4dAOpfpjo6IXE8TF8rrs9h8mF8HF3l13lkZFuBWTJAwpwbMQngQBrKvHPkxN4vbwMPUKhTfgd7gno+QSFIIadBTMvejDm+A0bPifvvL++hk6oVCr7Eh0gsRa8NfM1PJqZYc0INWxUgIJTUzd1wQDELVFdxpPKBxSwomdE1YzKMS/IfmJsDJ7Pz7e1Q75N4mafIbozgqG4JcDpdLKEYzbpPPZzZfcwE6KO0AsRrFBNImg1eY5YtsKFwnXOAA1Uq9V1t9sdahJwl0cyh8MxiSFgR7LGqZjigTeDcJMXBkZOHCp5kwACKlPQPU8HJILNTRzam7o/JoVCQcZN2dcfE1p5KzlB1LMmQzo602aBHkFzUMz1yAkdf07JGzjJmplsWS9wlFsiRsTcAjSTevL5/BxOGsDhQ2xNv+dAhUUUE5ReXS7XjnajtcN/o4pYKqInmPUAAAAASUVORK5CYII="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Series Addition
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Division Tricks
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Mental Subtraction Tricks
-                      </div>
-                    </div>
-                  </div>
-
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          Logical Reasoning
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://i.pinimg.com/736x/2a/c0/05/2ac005d6dcb04dbfa6591bffd68b227b.jpg"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Geometrical Shapes &amp; Solids
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/3521/3521095.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Coding Decoding
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Ranking Test
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://i.pinimg.com/474x/65/4f/81/654f81cdff9000eed53c9e1877eee55f.jpg"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Direction Sense Test
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {activeTab2 === 4 && (
-                <div data-v-eb8371ae className="maths-topic-container">
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          School Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://thumbs.dreamstime.com/b/linear-function-equation-mathematics-icon-vector-image-can-also-be-used-math-symbols-suitable-use-web-apps-mobile-apps-97721965.jpg"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Two Variable Linear Equations
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Exponents
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://w7.pngwing.com/pngs/41/897/png-transparent-mathematics-rational-number-mathematics-text-numerical-digit-cartoon-thumbnail.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Rational Numbers
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/4133/4133386.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Coordinate Geometry
-                      </div>
-                    </div>
-                  </div>
-
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          Vedic Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://images.twinkl.co.uk/tr/image/upload/t_illustration/illustation/18-maths.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Quick Algebraic Multiplication
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMVSURBVHgBxVe/T9tAFH52nET5IZQgdWLxAAMSUsMCA0OSqUJqJTp1YICFsZBOnSpI/4A2KFuHQgeGMjG0YiRIXeiQpqgVQkStRRVBWkEikRAlUZK+d8SRE+zknB/wSSff2c/3fffe+b2zAJzIZDIeq9U6Z7FY/LVazYdNFgTBQ8+wn8W+gtcEtv1yubzj9XqzPPMKHMSy3W5fwYkXVUIeoP1mqVQKoxAFuhFAK0biVeyGoDdEisVi2MgjggE5rXoPuzL0BwqKCOp5Q9Qh9/WZnMAWlMvlfK0PhBZyeQDkWtzyhKAhp5h/GyC5VsSkuick9W59w8l6b/y9uIB329tQKpfBLF4uLYHL4dDekutcLxoCyPXQZrf/u7yE+NERPJudBV7kCwX4FIuxa4sAQgg51ykUTIDNZlvVmyR7dQWp83P4lUqx8cToKPDgwfAwBldgAoyASY0WHJIo9phgFvWM3mxswI9ksjF+FY0CD4LT0x29JYriAnKvSZRe2xnSRGZcH93a4jVlqV3E1fvhnkB1hRKRz+yLqXQavh4eQq+gokYCZDCJL/F42w1mArJopsINAB6J1/LP2RkkT09Z/zd+lmnMDXsHB2zsHRoC3/g4dAOpfpjo6IXE8TF8rrs9h8mF8HF3l13lkZFuBWTJAwpwbMQngQBrKvHPkxN4vbwMPUKhTfgd7gno+QSFIIadBTMvejDm+A0bPifvvL++hk6oVCr7Eh0gsRa8NfM1PJqZYc0INWxUgIJTUzd1wQDELVFdxpPKBxSwomdE1YzKMS/IfmJsDJ7Pz7e1Q75N4mafIbozgqG4JcDpdLKEYzbpPPZzZfcwE6KO0AsRrFBNImg1eY5YtsKFwnXOAA1Uq9V1t9sdahJwl0cyh8MxiSFgR7LGqZjigTeDcJMXBkZOHCp5kwACKlPQPU8HJILNTRzam7o/JoVCQcZN2dcfE1p5KzlB1LMmQzo602aBHkFzUMz1yAkdf07JGzjJmplsWS9wlFsiRsTcAjSTevL5/BxOGsDhQ2xNv+dAhUUUE5ReXS7XjnajtcN/o4pYKqInmPUAAAAASUVORK5CYII="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Fast LCM Tricks
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Multiplication Tricks
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/How-to-solve-Calendar-Problems.webp"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Calendar Tricks
-                      </div>
-                    </div>
-                  </div>
-
-                  <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          Logical Reasoning
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="/_nuxt/img/Frame 5456.b851463.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Coding and Decoding
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="/_nuxt/img/Frame 5460.4b01e0d.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Verbal & Non-Verbal Series
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Mathematical Operations
-                      </div>
-                    </div>
-                    <div
-                      data-v-eb8371ae
-                      className="course-step-inner-container"
-                    >
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://i.pinimg.com/474x/65/4f/81/654f81cdff9000eed53c9e1877eee55f.jpg"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Direction Sense Test
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              <div data-v-eb8371ae className="mentor-mobile-section">
-                <div
-                  data-v-3d1a4f76
-                  data-v-eb8371ae
-                  dir="ltr"
-                  // className="slick-slider slick-initialized"
-                >
-                  {/* <button
-                    data-v-21137603
-                    data-v-3d1a4f76
-                    type="button"
-                    data-role="none"
-                    className="slick-arrow slick-prev"
-                    style={{ display: "block" }}
-                  >
-                    Previous
-                  </button> */}
-                  <div data-v-3d1a4f76 className="slick-list">
-                    <div
-                      data-v-e4caeaf8
-                      data-v-3d1a4f76
-                      // className="slick-track"
-                      style={{
-                        opacity: "1",
-                        WebkitTransform: "translate3d(0px, 0px, 0px)",
-                        msTransform: "translate3d(0px, 0px, 0px)",
-                        transform: "translate3d(0px, 0px, 0px)",
-                      }}
-                    >
-                      <div
-                        data-v-e4caeaf8
-                        className="slick-slide slick-cloned"
-                        style={{ width: "0px" }}
-                      >
-                        <div data-v-e4caeaf8>
-                          <div
-                            data-v-eb8371ae
-                            data-v-e4caeaf8
-                            className="course-step-container"
-                            style={{ width: "100%", display: "inline-block" }}
-                          >
-                            <center data-v-eb8371ae data-v-e4caeaf8>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-header-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                                  alt="teacher"
-                                  className="topic-img"
-                                />{" "}
-                                <span
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="topic-title"
-                                >
-                                  Logical Reasoning
-                                </span>
-                              </div>
-                            </center>{" "}
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://i.pinimg.com/736x/2a/c0/05/2ac005d6dcb04dbfa6591bffd68b227b.jpg"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Geometrical Shapes &amp; Solids
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://cdn-icons-png.flaticon.com/512/3521/3521095.png"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Coding Decoding
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Ranking Test
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://i.pinimg.com/474x/65/4f/81/654f81cdff9000eed53c9e1877eee55f.jpg"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Direction Sense Test
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        data-v-e4caeaf8
-                        // className="slick-slide slick-active slick-current"
-                        style={{ outline: "none", width: "0px" }}
-                      >
-                        <div data-v-e4caeaf8>
-                          <div
-                            data-v-eb8371ae
-                            data-v-e4caeaf8
-                            tabIndex={-1}
-                            className="course-step-container"
-                            style={{ width: "100%", display: "inline-block" }}
-                          >
-                            <center data-v-eb8371ae data-v-e4caeaf8>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-header-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
-                                  alt="teacher"
-                                  className="topic-img"
-                                />{" "}
-                                <span
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="topic-title"
-                                >
-                                  School Math
-                                </span>
-                              </div>
-                            </center>{" "}
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtW6EgLP0gBKRFrbaayWBR81A2kUcXH2jPBQ&usqp=CAU"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Number systems
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Arithmetic operations
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://cdn-icons-png.flaticon.com/512/6555/6555320.png"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Factors, Multiples &amp; Primes
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/Tips-And-Tricks-And-Shortcuts-Of-Decimals-And-Fractions.webp"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Fractions and Decimals
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        data-v-e4caeaf8
-                        aria-hidden="true"
-                        className="slick-slide"
-                        style={{ outline: "none", width: "0px" }}
-                      >
-                        <div data-v-e4caeaf8>
-                          <div
-                            data-v-eb8371ae
-                            data-v-e4caeaf8
-                            className="course-step-container"
-                            style={{ width: "100%", display: "inline-block" }}
-                          >
-                            <center data-v-eb8371ae data-v-e4caeaf8>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-header-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
-                                  alt="teacher"
-                                  className="topic-img"
-                                />{" "}
-                                <span
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="topic-title"
-                                >
-                                  Vedic Math
-                                </span>
-                              </div>
-                            </center>{" "}
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Multiplication Tricks
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMVSURBVHgBxVe/T9tAFH52nET5IZQgdWLxAAMSUsMCA0OSqUJqJTp1YICFsZBOnSpI/4A2KFuHQgeGMjG0YiRIXeiQpqgVQkStRRVBWkEikRAlUZK+d8SRE+zknB/wSSff2c/3fffe+b2zAJzIZDIeq9U6Z7FY/LVazYdNFgTBQ8+wn8W+gtcEtv1yubzj9XqzPPMKHMSy3W5fwYkXVUIeoP1mqVQKoxAFuhFAK0biVeyGoDdEisVi2MgjggE5rXoPuzL0BwqKCOp5Q9Qh9/WZnMAWlMvlfK0PhBZyeQDkWtzyhKAhp5h/GyC5VsSkuick9W59w8l6b/y9uIB329tQKpfBLF4uLYHL4dDekutcLxoCyPXQZrf/u7yE+NERPJudBV7kCwX4FIuxa4sAQgg51ykUTIDNZlvVmyR7dQWp83P4lUqx8cToKPDgwfAwBldgAoyASY0WHJIo9phgFvWM3mxswI9ksjF+FY0CD4LT0x29JYriAnKvSZRe2xnSRGZcH93a4jVlqV3E1fvhnkB1hRKRz+yLqXQavh4eQq+gokYCZDCJL/F42w1mArJopsINAB6J1/LP2RkkT09Z/zd+lmnMDXsHB2zsHRoC3/g4dAOpfpjo6IXE8TF8rrs9h8mF8HF3l13lkZFuBWTJAwpwbMQngQBrKvHPkxN4vbwMPUKhTfgd7gno+QSFIIadBTMvejDm+A0bPifvvL++hk6oVCr7Eh0gsRa8NfM1PJqZYc0INWxUgIJTUzd1wQDELVFdxpPKBxSwomdE1YzKMS/IfmJsDJ7Pz7e1Q75N4mafIbozgqG4JcDpdLKEYzbpPPZzZfcwE6KO0AsRrFBNImg1eY5YtsKFwnXOAA1Uq9V1t9sdahJwl0cyh8MxiSFgR7LGqZjigTeDcJMXBkZOHCp5kwACKlPQPU8HJILNTRzam7o/JoVCQcZN2dcfE1p5KzlB1LMmQzo602aBHkFzUMz1yAkdf07JGzjJmplsWS9wlFsiRsTcAjSTevL5/BxOGsDhQ2xNv+dAhUUUE5ReXS7XjnajtcN/o4pYKqInmPUAAAAASUVORK5CYII="
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Series Addition
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Division Tricks
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Mental Subtraction Tricks
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        data-v-e4caeaf8
-                        // className="slick-slide"
-                        style={{ outline: "none", width: "0px" }}
-                      >
-                        <div data-v-e4caeaf8>
-                          <div
-                            data-v-eb8371ae
-                            data-v-e4caeaf8
-                            tabIndex={-1}
-                            className="course-step-container"
-                            style={{ width: "100%", display: "inline-block" }}
-                          >
-                            <center data-v-eb8371ae data-v-e4caeaf8>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-header-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                                  alt="teacher"
-                                  className="topic-img"
-                                />{" "}
-                                <span
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="topic-title"
-                                >
-                                  Logical Reasoning
-                                </span>
-                              </div>
-                            </center>{" "}
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://i.pinimg.com/736x/2a/c0/05/2ac005d6dcb04dbfa6591bffd68b227b.jpg"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Geometrical Shapes &amp; Solids
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://cdn-icons-png.flaticon.com/512/3521/3521095.png"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Coding Decoding
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Ranking Test
-                              </div>
-                            </div>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-inner-container"
-                            >
-                              <img
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                src="https://i.pinimg.com/474x/65/4f/81/654f81cdff9000eed53c9e1877eee55f.jpg"
-                                alt="teacher"
-                                className="course-img"
-                              />{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-info"
-                              >
-                                Direction Sense Test
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      {activeTab2 === 1 && (
-                        <div
-                          data-v-e4caeaf8
-                          // className="slick-slide slick-cloned"
-                          style={{ width: "0px" }}
-                        >
-                          <div data-v-e4caeaf8>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              tabIndex={-1}
-                              className="course-step-container"
-                              style={{ width: "100%", display: "inline-block" }}
-                            >
-                              <center data-v-eb8371ae data-v-e4caeaf8>
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-header-container"
-                                >
-                                  <img
-                                    data-v-eb8371ae
-                                    data-v-e4caeaf8
-                                    sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                    src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
-                                    alt="teacher"
-                                    className="topic-img"
-                                  />{" "}
-                                  <span
-                                    data-v-eb8371ae
-                                    data-v-e4caeaf8
-                                    className="topic-title"
-                                  >
-                                    School Math
-                                  </span>
-                                </div>
-                              </center>{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtW6EgLP0gBKRFrbaayWBR81A2kUcXH2jPBQ&usqp=CAU"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Number systems
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Arithmetic operations
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://cdn-icons-png.flaticon.com/512/6555/6555320.png"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Factors, Multiples &amp; Primes
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/Tips-And-Tricks-And-Shortcuts-Of-Decimals-And-Fractions.webp"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Fractions and Decimals
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {activeTab2 === 2 && (
-                        <div data-v-e4caeaf8 style={{ width: "0px" }}>
-                          <div data-v-e4caeaf8>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              tabIndex={-1}
-                              className="course-step-container"
-                              style={{ width: "100%", display: "inline-block" }}
-                            >
-                              <center data-v-eb8371ae data-v-e4caeaf8>
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-header-container"
-                                >
-                                  <img
-                                    data-v-eb8371ae
-                                    data-v-e4caeaf8
-                                    sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                    src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
-                                    alt="teacher"
-                                    className="topic-img"
-                                  />{" "}
-                                  <span
-                                    data-v-eb8371ae
-                                    data-v-e4caeaf8
-                                    className="topic-title"
-                                  >
-                                    Vedic Math
-                                  </span>
-                                </div>
-                              </center>{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Multiplication Tricks
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMVSURBVHgBxVe/T9tAFH52nET5IZQgdWLxAAMSUsMCA0OSqUJqJTp1YICFsZBOnSpI/4A2KFuHQgeGMjG0YiRIXeiQpqgVQkStRRVBWkEikRAlUZK+d8SRE+zknB/wSSff2c/3fffe+b2zAJzIZDIeq9U6Z7FY/LVazYdNFgTBQ8+wn8W+gtcEtv1yubzj9XqzPPMKHMSy3W5fwYkXVUIeoP1mqVQKoxAFuhFAK0biVeyGoDdEisVi2MgjggE5rXoPuzL0BwqKCOp5Q9Qh9/WZnMAWlMvlfK0PhBZyeQDkWtzyhKAhp5h/GyC5VsSkuick9W59w8l6b/y9uIB329tQKpfBLF4uLYHL4dDekutcLxoCyPXQZrf/u7yE+NERPJudBV7kCwX4FIuxa4sAQgg51ykUTIDNZlvVmyR7dQWp83P4lUqx8cToKPDgwfAwBldgAoyASY0WHJIo9phgFvWM3mxswI9ksjF+FY0CD4LT0x29JYriAnKvSZRe2xnSRGZcH93a4jVlqV3E1fvhnkB1hRKRz+yLqXQavh4eQq+gokYCZDCJL/F42w1mArJopsINAB6J1/LP2RkkT09Z/zd+lmnMDXsHB2zsHRoC3/g4dAOpfpjo6IXE8TF8rrs9h8mF8HF3l13lkZFuBWTJAwpwbMQngQBrKvHPkxN4vbwMPUKhTfgd7gno+QSFIIadBTMvejDm+A0bPifvvL++hk6oVCr7Eh0gsRa8NfM1PJqZYc0INWxUgIJTUzd1wQDELVFdxpPKBxSwomdE1YzKMS/IfmJsDJ7Pz7e1Q75N4mafIbozgqG4JcDpdLKEYzbpPPZzZfcwE6KO0AsRrFBNImg1eY5YtsKFwnXOAA1Uq9V1t9sdahJwl0cyh8MxiSFgR7LGqZjigTeDcJMXBkZOHCp5kwACKlPQPU8HJILNTRzam7o/JoVCQcZN2dcfE1p5KzlB1LMmQzo602aBHkFzUMz1yAkdf07JGzjJmplsWS9wlFsiRsTcAjSTevL5/BxOGsDhQ2xNv+dAhUUUE5ReXS7XjnajtcN/o4pYKqInmPUAAAAASUVORK5CYII="
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Series Addition
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Division Tricks
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Mental Subtraction Tricks
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {activeTab2 === 3 && (
-                        <div
-                          data-v-e4caeaf8
-                          // className="slick-slide slick-cloned"
-                          style={{ width: "0px" }}
-                        >
-                          <div data-v-e4caeaf8>
-                            <div
-                              data-v-eb8371ae
-                              data-v-e4caeaf8
-                              className="course-step-container"
-                              style={{ width: "100%", display: "inline-block" }}
-                            >
-                              <center data-v-eb8371ae data-v-e4caeaf8>
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-header-container"
-                                >
-                                  <img
-                                    data-v-eb8371ae
-                                    data-v-e4caeaf8
-                                    sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                                    alt="teacher"
-                                    className="topic-img"
-                                  />{" "}
-                                  <span
-                                    data-v-eb8371ae
-                                    data-v-e4caeaf8
-                                    className="topic-title"
-                                  >
-                                    Logical Reasoning
-                                  </span>
-                                </div>
-                              </center>{" "}
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://i.pinimg.com/736x/2a/c0/05/2ac005d6dcb04dbfa6591bffd68b227b.jpg"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Geometrical Shapes &amp; Solids
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://cdn-icons-png.flaticon.com/512/3521/3521095.png"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Coding Decoding
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Ranking Test
-                                </div>
-                              </div>
-                              <div
-                                data-v-eb8371ae
-                                data-v-e4caeaf8
-                                className="course-step-inner-container"
-                              >
-                                <img
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                                  src="https://thumbs.dreamstime.com/b/linear-function-equation-mathematics-icon-vector-image-can-also-be-used-math-symbols-suitable-use-web-apps-mobile-apps-97721965.jpg"
-                                  alt="teacher"
-                                  className="course-img"
-                                />{" "}
-                                <div
-                                  data-v-eb8371ae
-                                  data-v-e4caeaf8
-                                  className="course-step-info"
-                                >
-                                  Direction Sense Test
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  {/* <button
-                    data-v-21137603
-                    data-v-3d1a4f76
-                    type="button"
-                    data-role="none"
-                    className="slick-arrow slick-next"
-                    style={{ display: "block" }}
-                  >
-                    Next
-                  </button> */}
-                </div>
-              </div>{" "}
-              <center data-v-eb8371ae>
-                <div data-v-eb8371ae className="pricing sub-heading">
-                  <p data-v-eb8371ae className="pricing-text">
-                    Classes start at just
-                    <span
-                      data-v-eb8371ae
-                      style={{
-                        color: "rgb(253, 141, 13)",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      $30
-                    </span>{" "}
-                    per class
-                  </p>
-                </div>
-              </center>{" "}
-              <div data-v-eb8371ae>
-                <h3
-                  data-v-eb8371ae
-                  className="title small-text"
-                  style={{
-                    textAlign: "center",
-                    fontSize: "20px",
-                    marginTop: "30px",
-                    WebkitTransform: "your-transform-value", // Replace with your actual transform value
-                  }}
-                >
-                  Explore curriculums for different grades
-                </h3>
-              </div>
-              <div data-v-eb8371ae className="md:flex  gradeBtnBox">
-                <div className="md:flex  grade-btn">
-                  <a
-                    href="https://cy-assets.s3.ap-south-1.amazonaws.com/Codeyoung/Maths+Curriculum+GRADE+4.pdf"
-                    className="curriculum-explore-btn-grade small-text"
-                    style={{ width: "180px", color: "#ff712d" }}
-                    data-v-eb8371ae
-                  >
-                    Grade 4 &gt;
-                  </a>
-                </div>
-
-                <div className="md:flex  grade-btn">
-                  <a
-                    href="https://cy-assets.s3.ap-south-1.amazonaws.com/Codeyoung/Maths+Curriculum+GRADE+5.pdf"
-                    className="curriculum-explore-btn-grade small-text"
-                    data-v-eb8371ae
-                    style={{ width: "180px", color: "#ff712d" }}
-                  >
-                    Grade 5 &gt;
-                  </a>
-                </div>
-                <div data-v-eb8371ae className="md:flex  grade-btn">
-                  <a
-                    data-v-eb8371ae
-                    href="https://cy-assets.s3.ap-south-1.amazonaws.com/Codeyoung/Maths+Curriculum+GRADE+6.pdf"
-                    className="curriculum-explore-btn-grade small-text"
-                    style={{
-                      width: "180px",
-                      marginRight: "68px",
-                      color: "#ff712d",
-                    }}
-                  >
-                    Grade 6 &gt;
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/*================================================================================= 
-                          END courses
-    ==================================================================================*/}
+    
 
         {/*================================================================================= 
                           START why-choose 
     ==================================================================================*/}
-        <section id="education-why-choose" className="why-choose pt100 pb80">
+        <section id="education-why-choose" className="why-choose  pb80">
           <div className="container">
             <div className="row">
               <div className="why-choose-items">
@@ -3531,7 +1389,6 @@ const Home = () => {
                             frameBorder={0}
                             allow="autoplay; encrypted-media"
                             allowFullScreen=""
-                            
                           />
                         </div>
                       </div>
@@ -3548,58 +1405,9 @@ const Home = () => {
                           END why-choose 
     ==================================================================================*/}
 
-        {/*================================================================================= 
-                      START Our Teachers
-    ==================================================================================*/}
-
-        {/* <div className="main-teacher-section" id="education-teachers ">
-          <h1 className="text-center">Our Teachers</h1>
-          <hr className="teacher-horizontal-section" />
-          <div className="teacher-section ">
-            <div className="teacher-section-content">
-              <img
-                src="https://codestar.xyz/demo/education/assets/images/teachers/teacher-1.jpg"
-                alt=""
-                className="teacher-section-image"
-              />
-              <div className="david">
-                <h3>David Nihero</h3>
-                <p>Consultant Architect</p>
-              </div>
-            </div>
-
-            <div className="teacher-section-content">
-              <img
-                src="https://codestar.xyz/demo/education/assets/images/teachers/teacher-1.jpg"
-                alt=""
-                className="teacher-section-image"
-              />
-              <div className="david">
-                <h3>Sara Nihero</h3>
-                <p>Consultant Architect</p>
-              </div>
-            </div>
-
-            <div className="teacher-section-content">
-              <img
-                src="https://codestar.xyz/demo/education/assets/images/teachers/teacher-1.jpg"
-                alt=""
-                className="teacher-section-image"
-              />
-              <div className="david">
-                <h3>Sara Nihero</h3>
-                <p>Consultant Architect</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
-        {/*================================================================================= 
-       END TEACHERS
-   ==================================================================================*/}
         {/* our vission start */}
         <div className="VISION">
-          <h1 className="text-center" style={{ marginTop: "90px" }}>
+          <h1 className="text-center" style={{ marginTop: "20px" }}>
             OUR VISION
           </h1>
           <div className="container mx-auto">
@@ -3661,7 +1469,7 @@ const Home = () => {
         {/*================================================================================= 
                           START PRICE  
     ==================================================================================*/}
-        <section id="education-price" className="prices pt100 pb80">
+        {/* <section id="education-price" className="prices pt100 pb80">
           <div className="container">
             <div className="row">
               <div className="text-center">
@@ -3674,7 +1482,7 @@ const Home = () => {
                 <div className="spliter mb70" />
               </div>
               <div className="price-wrapper">
-                {/* Start Single price */}
+                
                 <div
                   className="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center wow fadeInLeft"
                   data-wow-duration="2s"
@@ -3702,8 +1510,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                {/* End Singel price */}
-                {/* Start Single price */}
+              
                 <div
                   className="price-center col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center wow fadeInDown"
                   data-wow-duration="1s"
@@ -3738,8 +1545,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                {/* End Singel price */}
-                {/* Start Single price */}
+                
                 <div
                   className="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center wow fadeInRight"
                   data-wow-duration="2s"
@@ -3767,11 +1573,11 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                {/* End Singel price */}
+            
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/*================================================================================= 
                           END PRICE  
     ==================================================================================*/}
@@ -3779,7 +1585,7 @@ const Home = () => {
 
         <div
           className="section progress-bars section-padding"
-          style={{ background: "#2f384a" }}
+          style={{ background: "#2f384a" , marginTop:"30px" }}
         >
           <div className="progress-bars-content">
             <div className="progress-bar-wrapper">
@@ -4325,10 +2131,13 @@ const Home = () => {
                 <div className="subscribe-content-inner text-white">
                   <h2 className="color-white fsize-40 mb15">Contacts</h2>
                   <a href="tel:8469092774">
-                    <p className="text-white lheight-30 pb40  " style={{color:"white"}}>
-                      Phone1: +918469092774
+                    <p
+                      className="text-white lheight-30 pb40  "
+                      style={{ color: "white" }}
+                    >
+                      Phone1: +91-8735820099
                       <br />
-                      Phone2:+91-6006474119
+                      Phone2: +91-6006474119
                     </p>
                   </a>
 
@@ -4422,136 +2231,156 @@ const Home = () => {
         {/* whats app */}
 
         <WhatsAppButton />
-      
+
         {/*================================================================================= 
                           START CONTACT POP-UP  
     ==================================================================================*/}
         {/* Modal */}
 
         <div id="education-contact" className="modal fade" role="dialog">
-        <div className="modal-dialog">
-          {/* Modal content*/}
-          <div className="modal-content">
-            <div className="modal-header">
-              <button onClick={closePopup}>
-                <img className="close" data-dismiss="modal" src={close} alt="close" />
-              </button>
-              <h4 className="modal-title">Get In Touch</h4>
-            </div>
-            <div className="modal-body">
-              <div className="contact-section">
-                <form onSubmit={handleSubmit} className="contact-form signup-form" id="ajax-contact">
-                  <div className="row section-signup semitrans">
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-name">
-                        <label className="sr-only" htmlFor="name">
-                          Your name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control form-control-lg"
-                          name="name"
-                          id="name"
-                          placeholder="Your name"
-                          value={formData.name}
-                          onChange={handleChange}
-                        />
-                        {errors.name && <p className="error-message">{errors.name}</p>}
+          <div className="modal-dialog">
+            {/* Modal content*/}
+            <div className="modal-content">
+              <div className="modal-header">
+                <button onClick={closePopup}>
+                  <img
+                    className="close"
+                    data-dismiss="modal"
+                    src={close}
+                    alt="close"
+                  />
+                </button>
+                <h4 className="modal-title">Get In Touch</h4>
+              </div>
+              <div className="modal-body">
+                <div className="contact-section">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="contact-form signup-form"
+                    id="ajax-contact"
+                  >
+                    <div className="row section-signup semitrans">
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-name">
+                          <label className="sr-only" htmlFor="name">
+                            Your name
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="name"
+                            id="name"
+                            placeholder="Your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                          />
+                          {errors.name && (
+                            <p className="error-message">{errors.name}</p>
+                          )}
+                        </div>
+                      </div>
+                      {/* Add other form fields */}
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-email">
+                          <label className="sr-only" htmlFor="email">
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            className="form-control form-control-lg"
+                            name="email"
+                            id="email"
+                            placeholder="Email address"
+                            autoComplete="off"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && (
+                            <p className="error-message">{errors.email}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-phone">
+                          <label className="sr-only" htmlFor="phone">
+                            Phone Number
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="phone"
+                            id="phone"
+                            placeholder="Phone Number"
+                            autoComplete="off"
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                          {errors.phone && (
+                            <p className="error-message">{errors.phone}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-address">
+                          <label className="sr-only" htmlFor="address">
+                            Address
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="address"
+                            id="address"
+                            placeholder="Your Address"
+                            autoComplete="off"
+                            value={formData.address}
+                            onChange={handleChange}
+                          />
+                          {errors.address && (
+                            <p className="error-message">{errors.address}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-message">
+                          <label className="sr-only" htmlFor="message">
+                            Enter your message
+                          </label>
+                          <textarea
+                            className="form-control form-control-lg home-textarea"
+                            name="message"
+                            id="message"
+                            placeholder="Enter your message"
+                            autoComplete="off"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && (
+                            <p className="error-message">{errors.message}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group">
+                          <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <p className="submit-btn-bottom-text">
+                          Your email is safe with us and we hate spam as much as
+                          you do.
+                        </p>
                       </div>
                     </div>
-                    {/* Add other form fields */}
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-email">
-                        <label className="sr-only" htmlFor="email">
-                          Email address
-                        </label>
-                        <input
-                          type="email"
-                          className="form-control form-control-lg"
-                          name="email"
-                          id="email"
-                          placeholder="Email address"
-                          autoComplete="off"
-                          value={formData.email}
-                          onChange={handleChange}
-                        />
-                        {errors.email && <p className="error-message">{errors.email}</p>}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-phone">
-                        <label className="sr-only" htmlFor="phone">
-                          Phone Number
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control form-control-lg"
-                          name="phone"
-                          id="phone"
-                          placeholder="Phone Number"
-                          autoComplete="off"
-                          value={formData.phone}
-                          onChange={handleChange}
-                        />
-                        {errors.phone && <p className="error-message">{errors.phone}</p>}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-address">
-                        <label className="sr-only" htmlFor="address">
-                          Address
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control form-control-lg"
-                          name="address"
-                          id="address"
-                          placeholder="Your Address"
-                          autoComplete="off"
-                          value={formData.address}
-                          onChange={handleChange}
-                        />
-                        {errors.address && <p className="error-message">{errors.address}</p>}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-message">
-                        <label className="sr-only" htmlFor="message">
-                          Enter your message
-                        </label>
-                        <textarea
-                          className="form-control form-control-lg home-textarea"
-                          name="message"
-                          id="message"
-                          placeholder="Enter your message"
-                          autoComplete="off"
-                          value={formData.message}
-                          onChange={handleChange}
-                        />
-                        {errors.message && <p className="error-message">{errors.message}</p>}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
-                          Send Message
-                        </button>
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <p className="submit-btn-bottom-text">
-                        Your email is safe with us and we hate spam as much as you do.
-                      </p>
-                    </div>
-                  </div>
-                  <div id="error-message" className="text-center" />
-                  <div id="form-messages" />
-                </form>
+                    <div id="error-message" className="text-center" />
+                    <div id="form-messages" />
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
         {/*  */}
       </>
