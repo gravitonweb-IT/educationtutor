@@ -191,7 +191,17 @@ const Home = () => {
     } else {
       console.log("Form validation failed.");
     }
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      message: "",
+    });
   };
+
+
+
   useEffect(() => {
     const animateCounter = (setter, to) => {
       let currentCount = 0;
@@ -289,15 +299,15 @@ const Home = () => {
             <a href="#education-footer">Facts</a>
           </li>
           <li>
-          <button onClick={toggleForm}> 
+         
             <a
               data-toggle="modal"
               data-target="#education-contact"
-              style={{ marginTop: '10px' }}
+             
             >
               Contact
             </a>
-          </button>
+       
           </li>
         </ul>
       </div>
@@ -3521,6 +3531,7 @@ const Home = () => {
                             frameBorder={0}
                             allow="autoplay; encrypted-media"
                             allowFullScreen=""
+                            
                           />
                         </div>
                       </div>
@@ -4314,10 +4325,10 @@ const Home = () => {
                 <div className="subscribe-content-inner text-white">
                   <h2 className="color-white fsize-40 mb15">Contacts</h2>
                   <a href="tel:8469092774">
-                    <p className="text-white lheight-30 pb40  ">
-                      Phone: +918469092774
+                    <p className="text-white lheight-30 pb40  " style={{color:"white"}}>
+                      Phone1: +918469092774
                       <br />
-                      Phone:+91-6006474119
+                      Phone2:+91-6006474119
                     </p>
                   </a>
 

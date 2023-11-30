@@ -156,8 +156,15 @@
     width: 100px;
     height: 100px;
   }
+ 
 }
-
+@media only screen and (max-width: 412px) {
+  .banner-area .banner-txt .banner-intro {
+    max-width: 565px;
+    margin-left: 0 !important;
+    padding: 29px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .banner-area::before {
     bottom: -185px;
