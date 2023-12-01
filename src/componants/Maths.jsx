@@ -5,7 +5,7 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
-
+import p2 from "../componants/assets/p2.png"
 const Maths = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -80,7 +80,7 @@ const Maths = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src="logo.JPG"
+                  src={p2}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
@@ -123,6 +123,10 @@ const Maths = () => {
         </nav>
       </header>
 
+
+
+
+
       {/* banner part */}
       <div className="container">
         <div className="row">
@@ -132,7 +136,7 @@ const Maths = () => {
           >
             <h1 style={{ marginTop: "90px", padding: "20px" ,fontSize: "38px",
             fontWeight: "800",marginTop: "133px"}}>
-              Online Math Classes <br /> for Kids
+              Online Live Classes for Kids
             </h1>
             <p>Introduce your kids to a new way of learning Maths</p>
             <button type="button">Enquire Now</button>
@@ -146,7 +150,7 @@ const Maths = () => {
             }}
           >
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsMcKuvWz__7yRiCZIoG23JUJTjuUsuLd5l4kWv8huKxQ2D7GumHVGyjG7BlONRqgv8R4&usqp=CAU"
+              src="https://media.istockphoto.com/id/1464312572/vector/math-science-concept-with-characters-people-gaining-education-outline-design-style-minimal.jpg?s=612x612&w=0&k=20&c=ICSDmh1OAVRewY7gttPUXieLIBiRI7DrX2PfURgj3Go="
               alt="Image"
             />
           </div>
@@ -487,7 +491,7 @@ const Maths = () => {
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
-                      sizes="https://i.pinimg.com/736x/f2/c2/63/f2c2631d469db9d9f08ac76a17c3f910.jpg"
+                      src="https://cdn.vectorstock.com/i/preview-1x/08/99/plus-symbol-icon-add-addition-additional-positive-vector-48600899.jpg"
                       alt="teacher"
                       className="course-img"
                     />{" "}

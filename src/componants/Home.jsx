@@ -49,7 +49,7 @@ import kids from "../componants/assets/kids.png";
 import p2 from "../componants/assets/p2.png";
 import "./home.css";
 import "./tabs.css";
-
+import sat from "../componants/assets/sat.mp4"
 // import anime from 'animejs';
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
@@ -323,7 +323,7 @@ const Home = () => {
             <div className="row">
               <div className="col-lg-4 col-sm-4">
                 <div className="banner-device">
-                  <img src="https://media.istockphoto.com/id/484053608/photo/kids-having-fun.jpg?s=612x612&w=0&k=20&c=WZbJwPcHSfP-clsJab13ZPh3ss_559FKSIh_sre_2jI=" alt="main" />
+                  <img src={kids} alt="main" />
                 </div>
               </div>
               <div className="col-lg-8 col-sm-8">
@@ -331,15 +331,14 @@ const Home = () => {
                 <div className="banner-txt">
                   <div className="banner-intro">
                     <h1 className="banner-title">
-                    Unlock the Power of Numbers, Discover the wonders of
-                      science, and Dive into the World of 
-                      <span id="area"> Coding with Us</span>
+                    Welcome to Edufusion Tutors - Breaking 
+                      <span id="area"> Learning Boundaries! </span>
                       
                     </h1>
-                    {/* <p className="color-white lheight-30">
-                      Unlock the Power of Numbers, Discover the wonders of
-                      science, and Dive into the World of Coding with Us!
-                    </p> */}
+                    <p className="color-white lheight-30">
+                      At Edufusion, we're passionate about transforming education. With a dedicated team of experienced educators more than 15 years and tech enthusiasts, we're redefining online learning to make it accessible, engaging, and empowering for every student.
+Experience personalized excellence with our exclusive 1:1 sessions in math, science, and coding. Join Edufusion, where education transcends boundaries!
+                    </p>
                   </div>
                   <div className="app-media">
                     <div className="single-media">
@@ -568,15 +567,15 @@ const Home = () => {
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Bridge Learning Gaps: Personalized lessons fill gaps, providing a solid foundation for mathematical success
+                                Bridge Learning Gaps: Personalized lessons fill gaps, providing a solid foundation for mathematical success.
                                 </span>
                               </li>
-                              <li>
+                              {/* <li>
                                 <span className="table-cell valign-middle">
                                 Conceptual Learning: Dive into concepts, transforming math into a captivating journey of understanding.
                                 </span>
-                              </li>
-                              <li>
+                              </li> */}
+                              {/* <li>
                                 <span className="table-cell valign-middle">
                                 Mental Math’s Mastery: Practical strategies enhance mental math skills, boosting confidence in everyday calculations.
                                 </span>
@@ -585,7 +584,7 @@ const Home = () => {
                                 <span className="table-cell valign-middle">
                                 Advanced Math Support: From calculus to trigonometry, our tutors guide you through advanced math challenges with patience and expertise.
                                 </span>
-                              </li>
+                              </li> */}
                             </ul>
                             {/* button */}
                          
@@ -628,7 +627,8 @@ const Home = () => {
                                   </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt20">
-                                Embark on a dynamic learning experience with our science online tutoring! Dive into virtual labs, explore real-life examples, and engage with interactive videos, making complex concepts come alive. Our comprehensive approach ensures a deeper understanding of science. Ready to evaluate your learning journey? Join us today!
+                                Embark on a dynamic learning experience with our science online tutoring! Dive into virtual labs, explore real-life examples, and engage with interactive videos, making complex concepts come alive.
+                                 {/* Our comprehensive approach ensures a deeper understanding of science. Ready to evaluate your learning journey? Join us today! */}
                                 </div>
                               </div>
                             </div>
@@ -829,7 +829,7 @@ const Home = () => {
                             <iframe
                 width="100%"
                 height={300}
-                src={learningmath}
+                src={sat}
                 frameBorder={0}
                 allow="autoplay; encrypted-media"
                 allowFullScreen=""
@@ -903,7 +903,7 @@ const Home = () => {
                             <iframe
                 width="100%"
                 height={300}
-                src={learningmath}
+                src={sat}
                 frameBorder={0}
                 allow="autoplay; encrypted-media"
                 allowFullScreen=""
@@ -964,7 +964,7 @@ const Home = () => {
                             <iframe
                 width="100%"
                 height={300}
-                src={learningmath}
+                src={sat}
                 frameBorder={0}
                 allow="autoplay; encrypted-media"
                 allowFullScreen=""
@@ -1235,55 +1235,26 @@ const Home = () => {
                                 </div>
                               </div>
                             </div>
-                            <h5>Proven Track Record</h5>
+                            <h5>Transforming Lives Through Personalized Education</h5>
                             <p>
-                              Join a legacy of success! Our experienced tutors
-                              boast a track record of helping students excel in
-                              competitive exams, opening doors to top-tier
-                              universities and scholarship opportunities.
+                            At EDUFUSION TUTOR, we envision a world where every learner, regardless of background or circumstance, has the opportunity to unlock their full potential through personalized education. We aspire to be a guiding light on the educational journey, fostering a love for learning that transcends boundaries.
+
                             </p>
-                            <h5>Comprehensive Exam Coverage</h5>
+                            <h5>Our Commitment</h5>
                             <p>
-                              PSAT, SAT, ACT, NAPLAN, Olympiads – we cover them
-                              all! Our comprehensive exam preparation ensures
-                              that students are well-equipped to face the unique
-                              challenges of each test.{" "}
+                            Empowerment: We envision empowering students with the tools and knowledge to confidently navigate the ever-evolving landscape of education and beyond.
+
                             </p>
-                            <h5> Expert Tutors with Specialized Knowledge:</h5>
+                            <h5>Inclusivity: </h5>
                             <p>
-                              Benefit from the expertise of tutors who
-                              specialize in the intricacies of each exam. Our
-                              team is dedicated to staying abreast of the latest
-                              trends and updates to provide the most relevant
-                              guidance.{" "}
+                            Our vision includes breaking down barriers to learning. We strive to create an inclusive space where every student feels valued and supported.
+
                             </p>
-                            <ul className="list1">
-                              <li>
-                                <span className="table-cell valign-middle">
-                                  Inclusive Learning Environment
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                  Innovative Teaching Methods
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                  Dedicated Educators
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                  Accessible Learning
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                  Transformative Learning Experience
-                                </span>
-                              </li>
-                            </ul>
+                            <h5>Innovation: </h5>
+                            <p>
+                            We aim to be at the forefront of educational innovation, leveraging cutting-edge technology and methodologies to redefine the online learning experience.
+                            </p>
+                           
                           </div>
                           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="img-exp">
@@ -1328,57 +1299,24 @@ const Home = () => {
                             </div>
                           </div>
                         </div>
-                        <h5>Strategic Test-Taking Strategies:</h5>
-                        <p>
-                          It's not just about knowing the content; it's about
-                          mastering the art of test-taking. Our tutors impart
-                          strategic approaches that help students navigate exams
-                          with confidence.
-                        </p>
-                        <h5>Tailored Approach:</h5>
-                        <p>
-                          Personalized learning plans that address individual
-                          strengths and areas for improvement.{" "}
-                        </p>
-                        <h5>Innovative Teaching Methods:</h5>
-                        <p>
-                          Engaging lessons that go beyond textbooks, fostering a
-                          deep understanding of exam concepts.{" "}
-                        </p>
-                        <h5>Adaptive Learning:</h5>
-                        <p>
-                          Evolving with the dynamic nature of exams, ensuring
-                          students are well-prepared for any changes in format
-                          or content.
-                        </p>
-                        <ul className="list1">
-                          <li>
-                            <span className="table-cell valign-middle">
-                              Proven Track Record
-                            </span>
-                          </li>
-                          <li>
-                            <span className="table-cell valign-middle">
-                              Holistic Learning
-                            </span>
-                          </li>
-                          <li>
-                            <span className="table-cell valign-middle">
-                              Flexible Learning Options
-                            </span>
-                          </li>
-                          <li>
-                            <span className="table-cell valign-middle">
-                              Constant Improvement
-                            </span>
-                          </li>
-                          <li>
-                            <span className="table-cell valign-middle">
-                              {" "}
-                              Parental Involvement
-                            </span>
-                          </li>
-                        </ul>
+                        <h5>Global Impact: </h5>
+                            <p>
+                            Our vision extends globally, reaching learners around the world. We aspire to contribute to the development of a knowledgeable and empowered global community.
+
+                            </p>
+                            <p>Lifelong Learning: Beyond academic success, our vision encompasses instilling a love for lifelong learning. We aspire to cultivate curious, adaptable individuals prepared for the challenges and opportunities of the future.
+</p>
+<h5>Time Rescheduling</h5>
+<p>Recognizing the busy nature of life, we offer hassle-free time rescheduling options. Your education should fit your schedule, not the other way around.
+</p>
+<h5>Hassle-Free Chat Support</h5>
+<p> Our dedicated chat support team is here to assist you seamlessly. Experience hassle-free communication, ensuring that your queries are addressed promptly and efficiently.
+</p>
+<h5>Join Us in Shaping the Future:
+</h5>
+<p>As we work towards this vision, we invite students, parents, and educators to join us on this transformative journey. Together, we can create a world where education knows no boundaries, and each learner can thrive, succeed, and contribute meaningfully to society.
+</p>
+
                       </div>
                       <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div className="video-exp">

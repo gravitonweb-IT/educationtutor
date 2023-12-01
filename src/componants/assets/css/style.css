@@ -1263,6 +1263,7 @@ img {
 .list1 {
   list-style: none;
   line-height: 38px;
+  margin-left: -56px;
 }
 
 .list1 li:before {
@@ -1493,7 +1494,7 @@ a:focus {
 }
 
 .banner-area .banner-txt .app-media {
-  margin-top: 85px;
+  margin-top: 108px;
 }
 
 .banner-area .banner-device {
@@ -1739,12 +1740,14 @@ a:focus {
 .course .course-slider {
   border-radius: 10px;
   overflow: hidden;
-  -webkit-box-shadow: -5.4px 8.4px 29px rgba(36, 171, 179, 0.2);
   box-shadow: -5.4px 8.4px 29px rgba(36, 171, 179, 0.2);
-  right: -40px;
-  top: -40px;
+  /* right: -40px; */
+  /* top: -40px; */
+  margin-top: 183px;
 }
-
+#course-item-1{
+    padding: 16px;
+}
 .course .course-slider .course-slider-img {
   height: 420px;
   background-size: cover;

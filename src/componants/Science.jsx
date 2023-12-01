@@ -5,7 +5,7 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
-
+import p2 from "../componants/assets/p2.png";
 const Science = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -80,7 +80,7 @@ const Science = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src="logo.JPG"
+                  src={p2}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
@@ -145,7 +145,7 @@ const Science = () => {
             }}
           >
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsMcKuvWz__7yRiCZIoG23JUJTjuUsuLd5l4kWv8huKxQ2D7GumHVGyjG7BlONRqgv8R4&usqp=CAU"
+              src="https://www.scienceeurope.org/media/yaemm3wa/illustration-woman-scientist.png?anchor=center&mode=crop&rnd=133221437978900000&width=800&height=913"
               alt="Image"
             />
           </div>

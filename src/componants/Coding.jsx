@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Faq from "react-faq-component";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
-
+import p2 from  "../componants/assets/p2.png";
 const Coding = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -61,6 +62,79 @@ const Coding = () => {
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
+
+
+
+  const data = {
+    title: "",
+    rows: [
+        {
+            title: "Coding: The Language of the Future",
+            content: `Join us to be part of the 80% leading the way in the job market of 2030. Coding isn't just a skill; it's a passport to limitless career opportunities! `,
+        },
+        {
+            title: " Personalized Learning for Tomorrow's Innovators",
+            content:
+                "Our experienced tutors are dedicated to your success, offering personalized lessons that cater to your unique learning style and pace.",
+        },
+        {
+            title: "Explore Endless Possibilities",
+            content: `From AI and machine learning to web development and cybersecurity, our coding tutorials cover the spectrum of in-demand skills that employers are seeking.  `,
+        },
+        {
+            title: "Expert Tutors, Real-World Insight",
+            content: `Learn from industry experts who bring real-world applications to your coding journey, providing insights that go beyond textbooks. `
+        },
+        {
+          title: "Flexible Scheduling, Boundless Opportunities",
+          content: `Enjoy the flexibility of scheduling sessions that fit your busy lifestyle. Coding education has never been this accessible and convenient.  `
+      },
+      {
+        title: " Enroll Now and Code Your Way to Success!",
+        content: `Ready to be at the forefront of the digital revolution? Contact us today to unlock the power of coding and secure a future where opportunities are limitless.  `
+    },
+    ],
+};
+const styles = {
+  // bgColor: 'white',
+  titleTextColor: "blue",
+  rowTitleColor: "blue",
+  // rowContentColor: 'grey',
+  // arrowColor: "red"
+  titleTextSize: '20px',
+  rowContentTextSize: '16px',
+  rowContentPaddingBottom: '10px',
+  rowContentPaddingLeft: '50px',
+  padding:"30px",
+  marginTop:'20px'
+  
+};
+
+const config = {
+  animate: true,
+  arrowIcon: "V",
+  openOnload: 0,
+  expandIcon: "+",
+  collapseIcon: "-",
+};
+const containerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100vh', // Adjust as needed
+};
+
+const innerDivStyle = {
+  // Optional: Add styles for the inner div if needed
+  maxWidth: '800px', // Adjust the max-width as needed
+  width: '100%',
+  padding: '20px',
+  boxSizing: 'border-box',
+};
+const headingStyle = {
+  marginBottom: '20px', 
+  marginTop:"30px"// Adjust the margin as needed
+};
   return (
     <>
       <header>
@@ -80,7 +154,7 @@ const Coding = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src="logo.JPG"
+                  src={p2}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
@@ -125,27 +199,27 @@ const Coding = () => {
 
       {/* banner part */}
       <div className="container">
-        <div className="row">
+        <div className="row" style={{marginTop: "140px"}}>
           <div
             className="col-md-6 mx-auto"
-            style={{ marginTop: "90px", padding: "20px" }}
+            style={{  padding: "20px" }}
           >
             <h1>
-              Online Math Classes <br /> for Kids
+            Future-Proof Your Career with Edufusion <br/>1:1 Online Coding Tutorials
             </h1>
-            <p>Introduce your kids to a new way of learning Maths</p>
-            <button type="button">Enquire Now</button>
+            {/* <p>Introduce your kids to a new way of learning Maths</p> */}
+            {/* <button type="button">Enquire Now</button> */}
           </div>
           <div
             className="col-md-6 "
             style={{
-              marginTop: "90px",
+            
               display: "flex",
               justifyContent: "center",
             }}
           >
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsMcKuvWz__7yRiCZIoG23JUJTjuUsuLd5l4kWv8huKxQ2D7GumHVGyjG7BlONRqgv8R4&usqp=CAU"
+              src="https://worcestercentralkidscalendar.com/wp-content/uploads/295582030_2099552396888997_1032073843401583885_n.jpg"
               alt="Image"
             />
           </div>
@@ -158,7 +232,7 @@ const Coding = () => {
 
       <div
         className="section progress-bars section-padding"
-        style={{ marginTop: "30px" }}
+        style={{ marginTop: "50px" }}
       >
         <div className="progress-bars-content">
           <div className="progress-bar-wrapper">
@@ -223,9 +297,21 @@ const Coding = () => {
 
       {/* counter end */}
 
+
+      <div style={containerStyle}>
+      <div style={innerDivStyle}>
+        <h1 style={headingStyle}>Why Choose Our Coding Tutorials?</h1>
+        <Faq
+          data={data}
+          styles={styles}
+          config={config}
+        />
+      </div>
+    </div>
+
       {/* maths tabs */}
 
-      <div data-v-0a33574d className="container course-section-container my-10">
+      <div data-v-0a33574d className="container course-section-container my-60">
         <div data-v-0a33574d className="course-heading-section">
           <div
             data-v-0a33574d
@@ -247,23 +333,23 @@ const Coding = () => {
                     className={` step tab ${activeTab2 === 1 ? "active" : ""}`}
                     onClick={() => handleTabClick2(1)}
                   >
-                    Kindergarten
+                   Grade 4-5
                   </span>
                   <span
                     data-v-0a33574d
                     className={` step tab ${activeTab2 === 2 ? "active" : ""}`}
                     onClick={() => handleTabClick2(2)}
                   >
-                    Grade 1 - 3
+                    Grade 6-8
                   </span>
                   <span
                     data-v-0a33574d
                     className={` step tab ${activeTab2 === 3 ? "active" : ""}`}
                     onClick={() => handleTabClick2(3)}
                   >
-                    Grade 4 - 6
+                    Grade 10 -12
                   </span>
-                  <span
+                  {/* <span
                     data-v-0a33574d
                     className={` step tab ${activeTab2 === 4 ? "active" : ""}`}
                     onClick={() => handleTabClick2(4)}
@@ -283,7 +369,7 @@ const Coding = () => {
                     onClick={() => handleTabClick2(6)}
                   >
                     Grade 11 - 12
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>
@@ -307,7 +393,7 @@ const Coding = () => {
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                      Block-based coding 
                       </span>
                     </div>
                   </center>{" "}
@@ -324,7 +410,7 @@ const Coding = () => {
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Count, Compare and Write Numbers 0 to 10
+                      Sequencing and Algorithm 
                       </div>
                     </div>
                     <div
@@ -339,7 +425,7 @@ const Coding = () => {
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Sorting
+                      Loops, variables, operators 
                       </div>
                     </div>
                     <div
@@ -354,7 +440,7 @@ const Coding = () => {
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Two-Dimensional Shapes
+                      Game development on Play Lab 
                       </div>
                     </div>
                     <div
@@ -369,7 +455,7 @@ const Coding = () => {
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Position and Location
+                      Animation using Sprite Lab and many more 
                       </div>
                     </div>
                   </div>
@@ -390,7 +476,7 @@ const Coding = () => {
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                      Sprite Lab, App Lab, Minecraft 
                       </span>
                     </div>
                   </center>{" "}
@@ -403,7 +489,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Number systems
+                    Basic and advanced loops 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -415,7 +501,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Addition and Subtraction
+                    Scratch game development 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -427,7 +513,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Multiplication and division
+                    Advanced game development 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -451,86 +537,86 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Shapes and many more
+                    Android application development and many more 
                     </div>
                   </div>
                 </div>
 
-                <div data-v-eb8371ae className="course-step-container">
-                  <center data-v-eb8371ae>
-                    <div data-v-eb8371ae className="course-header-container">
+                  {/* <div data-v-eb8371ae className="course-step-container">
+                    <center data-v-eb8371ae>
+                      <div data-v-eb8371ae className="course-header-container">
+                        <img
+                          data-v-eb8371ae
+                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                          src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
+                          alt="teacher"
+                          className="topic-img"
+                        />{" "}
+                        <span data-v-eb8371ae className="topic-title">
+                          Vedic Math
+                        </span>
+                      </div>
+                    </center>{" "}
+                    <div data-v-eb8371ae className="course-step-inner-container">
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
+                        src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
                         alt="teacher"
-                        className="topic-img"
+                        className="course-img"
                       />{" "}
-                      <span data-v-eb8371ae className="topic-title">
-                        Vedic Math
-                      </span>
+                      <div data-v-eb8371ae className="course-step-info">
+                        Addition Tricks
+                      </div>
                     </div>
-                  </center>{" "}
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Addition Tricks
+                    <div data-v-eb8371ae className="course-step-inner-container">
+                      <img
+                        data-v-eb8371ae
+                        sizes="https://i.pinimg.com/736x/f2/c2/63/f2c2631d469db9d9f08ac76a17c3f910.jpg"
+                        alt="teacher"
+                        className="course-img"
+                      />{" "}
+                      <div data-v-eb8371ae className="course-step-info">
+                        Series Addition
+                      </div>
                     </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="https://i.pinimg.com/736x/f2/c2/63/f2c2631d469db9d9f08ac76a17c3f910.jpg"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Series Addition
+                    <div data-v-eb8371ae className="course-step-inner-container">
+                      <img
+                        data-v-eb8371ae
+                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                        src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
+                        alt="teacher"
+                        className="course-img"
+                      />{" "}
+                      <div data-v-eb8371ae className="course-step-info">
+                        Subtraction Tricks
+                      </div>
                     </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Subtraction Tricks
+                    <div data-v-eb8371ae className="course-step-inner-container">
+                      <img
+                        data-v-eb8371ae
+                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                        src="https://static.thenounproject.com/png/953211-200.png"
+                        alt="teacher"
+                        className="course-img"
+                      />{" "}
+                      <div data-v-eb8371ae className="course-step-info">
+                        Mental Addition
+                      </div>
                     </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://static.thenounproject.com/png/953211-200.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Mental Addition
+                    <div data-v-eb8371ae className="course-step-inner-container">
+                      <img
+                        data-v-eb8371ae
+                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                        src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
+                        alt="teacher"
+                        className="course-img"
+                      />{" "}
+                      <div data-v-eb8371ae className="course-step-info">
+                        Mental Subtraction and many more
+                      </div>
                     </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Mental Subtraction and many more
-                    </div>
-                  </div>
-                </div>
+                  </div> */}
               </div>
             )}
             {activeTab2 === 3 && (
@@ -546,7 +632,7 @@ const Coding = () => {
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                      Scratch programming 
                       </span>
                     </div>
                   </center>{" "}
@@ -559,7 +645,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Number systems
+                    Artificial intelligence 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -583,7 +669,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SIMPLE EQUATIONS
+                    Machine learning 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -595,7 +681,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      MENSURATION
+                    Advance web development  
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -607,10 +693,10 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      DATA HNADLING & PROBABILITY
+                    Advance App development and many more 
                     </div>
                   </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
+                  {/* <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
@@ -621,10 +707,10 @@ const Coding = () => {
                     <div data-v-eb8371ae className="course-step-info">
                       QUADILATERALS , POLYGONS & MANY MORE.
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
-                <div data-v-eb8371ae className="course-step-container">
+                {/* <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
                       <img
@@ -687,7 +773,7 @@ const Coding = () => {
                       Fraction tricks and many more
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             )}
             {activeTab2 === 4 && (
@@ -703,7 +789,7 @@ const Coding = () => {
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                      Html, css  
                       </span>
                     </div>
                   </center>{" "}
@@ -716,7 +802,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      INTEGERS
+                    Website development 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -728,7 +814,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      PROFIT & LOSS
+                    Python concepts 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -740,7 +826,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SIMPLE INTEREST
+                    Machine learning 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -752,10 +838,10 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      LINEAR EQUATIONS & MODELLING PROBLEMS
+                    Artifiicial intelligence and many more 
                     </div>
                   </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
+                  {/* <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
@@ -766,7 +852,7 @@ const Coding = () => {
                     <div data-v-eb8371ae className="course-step-info">
                       Construction and Many More
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div data-v-eb8371ae className="course-step-container">
@@ -780,7 +866,7 @@ const Coding = () => {
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        Vedic Math
+                      Ap Computer science  
                       </span>
                     </div>
                   </center>{" "}
@@ -793,7 +879,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                        Square roots
+                    Introduction to java 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -805,7 +891,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                         Cube roots
+                    Oops concept 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -817,7 +903,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Negative numbers
+                    Sorting and searching 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -829,7 +915,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Transpose and apply
+                    Array  
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -841,7 +927,7 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Vertically and crosswise
+                    Recursions 
                     </div>
                   </div>
                 </div>
@@ -1230,6 +1316,9 @@ const Coding = () => {
         </div>
       </div>
       {/* maths tabs */}
+
+
+
 
       {/* footer */}
       <footer

@@ -5,7 +5,7 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
-
+import p2 from "../componants/assets/p2.png"
 const Competative = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -80,7 +80,7 @@ const Competative = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src="logo.JPG"
+                  src={p2}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
