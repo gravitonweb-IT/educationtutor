@@ -7,8 +7,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import p2 from "../componants/assets/p2.png";
-import close from "./assets/images/icons/close-icon.png";
-const Contact = () => {
+const Facts = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
   const [membersCount, setMembersCount] = useState(0);
@@ -34,6 +33,10 @@ const Contact = () => {
     animateCounter(setMembersCount, 15);
     animateCounter(setCountriesCount, 15);
   }, []);
+  const [activeTab2, setActiveTab2] = useState(2);
+  const handleTabClick2 = (tabName) => {
+    setActiveTab2(tabName);
+  };
 
   const [studentsCount, setStudentsCount] = useState(0);
   const [classesCount, setclassesCount] = useState(0);
@@ -129,183 +132,6 @@ const Contact = () => {
     marginBottom: "20px",
     marginTop: "30px", // Adjust the margin as needed
   };
-  const [showForm, setShowForm] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const toggleForm = () => {
-    setShowForm(!showForm);
-  };
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
-
-  const handleSubmit1 = (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    // Access the values using the state variables (name, email, message)
-    // Once done, you can close the form
-    setShowForm(false);
-  };
-
-  const [slidesToShow, setSlidesToShow] = useState(3);
-  // const [contact, setContact]=useState(false);
-
-  const settings1 = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: slidesToShow,
-    slidesToScroll: 1,
-  };
-  const [activeTab, setActiveTab] = useState("course-item-1"); // Initial active tab
-
-  useEffect(() => {
-    console.log("this is ");
-  }, [activeTab]);
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
-  };
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth <= 768) {
-        setSlidesToShow(1);
-      } else {
-        setSlidesToShow(3);
-      }
-    }
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  // form
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const openPopup = () => {
-    setIsPopupOpen(true);
-  };
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-    message: "",
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    // Clear the error message when the user starts typing
-    setErrors({
-      ...errors,
-      [name]: "",
-    });
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    // Add your validation logic here
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    }
-
-    // Add more validation rules for other fields
-
-    setErrors(newErrors);
-
-    // Return true if there are no errors
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      // You can access the form data in the 'formData' object
-      console.log("Form Data:", formData);
-    } else {
-      console.log("Form validation failed.");
-    }
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      address: "",
-      message: "",
-    });
-  };
-
-  useEffect(() => {
-    const animateCounter = (setter, to) => {
-      let currentCount = 0;
-      const increment = to / 1200;
-
-      const interval = setInterval(() => {
-        currentCount += increment;
-        setter(Math.min(Math.round(currentCount), to));
-
-        if (currentCount >= to) {
-          clearInterval(interval);
-        }
-      }, 16);
-    };
-
-    animateCounter(setTeachersCount, 45);
-    animateCounter(setCoursesCount, 56);
-    animateCounter(setMembersCount, 15);
-    animateCounter(setCountriesCount, 15);
-  }, []);
-
-  // counter start
-
-  useEffect(() => {
-    const animateCounter = (setter, to) => {
-      let currentCount = 0;
-      const increment = to / 120;
-
-      const interval = setInterval(() => {
-        currentCount += increment;
-        setter(Math.min(Math.round(currentCount), to));
-
-        if (currentCount >= to) {
-          clearInterval(interval);
-        }
-      }, 16);
-    };
-
-    animateCounter(setStudentsCount, 1000);
-    animateCounter(setclassesCount, 10000);
-    animateCounter(setRegisteredCount, 100);
-    animateCounter(setCountryCount, 15);
-  }, []);
   return (
     <>
       <header>
@@ -355,7 +181,7 @@ const Contact = () => {
                   <Link to="/Blog">Blog</Link>
                 </li>
                 <li>
-                  <Link to="/Facts">Facts</Link>
+                  <Link to="/education-footer">Facts</Link>
                 </li>
                 <li>
                   <Link data-toggle="modal" data-target="#education-contact">
@@ -368,150 +194,8 @@ const Contact = () => {
         </nav>
       </header>
 
-      <div id="education-contact" className="modal fade" role="dialog">
-        <div className="modal-dialog">
-          {/* Modal content*/}
-          <div className="modal-content">
-            <div className="modal-header">
-              <button onClick={closePopup}>
-                <img
-                  className="close"
-                  data-dismiss="modal"
-                  src={close}
-                  alt="close"
-                />
-              </button>
-              <h4 className="modal-title">Get In Touch</h4>
-            </div>
-            <div className="modal-body">
-              <div className="contact-section">
-                <form
-                  onSubmit={handleSubmit}
-                  className="contact-form signup-form"
-                  id="ajax-contact"
-                >
-                  <div className="row section-signup semitrans">
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-name">
-                        <label className="sr-only" htmlFor="name">
-                          Your name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control form-control-lg"
-                          name="name"
-                          id="name"
-                          placeholder="Your name"
-                          value={formData.name}
-                          onChange={handleChange}
-                        />
-                        {errors.name && (
-                          <p className="error-message">{errors.name}</p>
-                        )}
-                      </div>
-                    </div>
-                    {/* Add other form fields */}
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-email">
-                        <label className="sr-only" htmlFor="email">
-                          Email address
-                        </label>
-                        <input
-                          type="email"
-                          className="form-control form-control-lg"
-                          name="email"
-                          id="email"
-                          placeholder="Email address"
-                          autoComplete="off"
-                          value={formData.email}
-                          onChange={handleChange}
-                        />
-                        {errors.email && (
-                          <p className="error-message">{errors.email}</p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-phone">
-                        <label className="sr-only" htmlFor="phone">
-                          Phone Number
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control form-control-lg"
-                          name="phone"
-                          id="phone"
-                          placeholder="Phone Number"
-                          autoComplete="off"
-                          value={formData.phone}
-                          onChange={handleChange}
-                        />
-                        {errors.phone && (
-                          <p className="error-message">{errors.phone}</p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-address">
-                        <label className="sr-only" htmlFor="address">
-                          Address
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control form-control-lg"
-                          name="address"
-                          id="address"
-                          placeholder="Your Address"
-                          autoComplete="off"
-                          value={formData.address}
-                          onChange={handleChange}
-                        />
-                        {errors.address && (
-                          <p className="error-message">{errors.address}</p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group has-icon-left form-control-message">
-                        <label className="sr-only" htmlFor="message">
-                          Enter your message
-                        </label>
-                        <textarea
-                          className="form-control form-control-lg home-textarea"
-                          name="message"
-                          id="message"
-                          placeholder="Enter your message"
-                          autoComplete="off"
-                          value={formData.message}
-                          onChange={handleChange}
-                        />
-                        {errors.message && (
-                          <p className="error-message">{errors.message}</p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
-                          Send Message
-                        </button>
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <p className="submit-btn-bottom-text">
-                        Your email is safe with us and we hate spam as much as
-                        you do.
-                      </p>
-                    </div>
-                  </div>
-                  <div id="error-message" className="text-center" />
-                  <div id="form-messages" />
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* banner part */}
+
       {/* footer */}
       <footer
         id="education-footer"
@@ -664,4 +348,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Facts;

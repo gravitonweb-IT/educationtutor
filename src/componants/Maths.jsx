@@ -5,8 +5,78 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
-import p2 from "../componants/assets/p2.png"
+import p2 from "../componants/assets/p2.png";
+import close from "./assets/images/icons/close-icon.png";
+import WhatsAppButton from "../componants/WhatsAppButton";
+import { IoIosArrowUp } from "react-icons/io";
 const Maths = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    // Clear the error message when the user starts typing
+    setErrors({
+      ...errors,
+      [name]: "",
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Add your validation logic here
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    }
+
+    // Add more validation rules for other fields
+
+    setErrors(newErrors);
+
+    // Return true if there are no errors
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // You can access the form data in the 'formData' object
+      console.log("Form Data:", formData);
+    } else {
+      console.log("Form validation failed.");
+    }
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      message: "",
+    });
+  };
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
   const [membersCount, setMembersCount] = useState(0);
@@ -63,7 +133,7 @@ const Maths = () => {
   }, []);
   return (
     <>
-      <header>
+    <header>
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container mob-logo">
             <div className="navbar-header col-sm-2 tablet-logo">
@@ -104,16 +174,16 @@ const Maths = () => {
                   <a href="#education-price">Price</a>
                 </li> */}
                 <li>
-                  <a href="#education-testimonial">Testimonial</a>
+                  <Link to="/Testimonial">Testimonial</Link>
                 </li>
                 <li>
-                  <a href="#education-blog">Blog</a>
+                  <Link to="/Blog">Blog</Link>
                 </li>
                 <li>
-                  <a href="#education-footer">Facts</a>
+                  <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
-                  <a data-toggle="modal" data-target="#education-contact">
+                  <a  data-toggle="modal" data-target="#education-contact">
                     Contact
                   </a>
                 </li>
@@ -123,23 +193,23 @@ const Maths = () => {
         </nav>
       </header>
 
-
-
-
-
       {/* banner part */}
       <div className="container">
         <div className="row">
-          <div
-            className="col-md-6 mx-auto"
-            
-          >
-            <h1 style={{ marginTop: "90px", padding: "20px" ,fontSize: "38px",
-            fontWeight: "800",marginTop: "133px"}}>
-              Online Live Classes for Kids
+          <div className="col-md-6 mx-auto">
+            <h1
+              style={{
+                marginTop: "90px",
+                padding: "20px",
+                fontSize: "38px",
+                fontWeight: "800",
+                marginTop: "133px",
+              }}
+            >
+              Unlock the Power of Math with Edufusion Online Tutoring
             </h1>
-            <p>Introduce your kids to a new way of learning Maths</p>
-            <button type="button">Enquire Now</button>
+            <p>Are you grappling with Math Anxiety, facing Learning Gaps, and desiring mastery in Conceptual Learning, Mental Math’s, and Advanced Math? Look no further – our online math tutoring service is designed just for you! </p>
+         
           </div>
           <div
             className="col-md-6 "
@@ -480,7 +550,7 @@ const Maths = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
+                      src="https://www.shutterstock.com/image-vector/cross-funny-math-shape-character-600nw-2212214943.jpg"
                       alt="teacher"
                       className="course-img"
                     />{" "}
@@ -576,7 +646,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      ARITHMETIC OPERATIONS
+                      Arithmetic Operations
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -588,7 +658,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SIMPLE EQUATIONS
+                      Simple Equations
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -600,7 +670,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      MENSURATION
+                      Mensuration
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -612,7 +682,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      DATA HNADLING & PROBABILITY
+                      Data handling & Probability
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -624,7 +694,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      QUADILATERALS , POLYGONS & MANY MORE.
+                      Quadilaterals, Polygons & Many More
                     </div>
                   </div>
                 </div>
@@ -721,7 +791,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      INTEGERS
+                      Integers
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -733,7 +803,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      PROFIT & LOSS
+                      Profit and Loss
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -745,7 +815,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SIMPLE INTEREST
+                      Simple Interest
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -757,7 +827,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      LINEAR EQUATIONS & MODELLING PROBLEMS
+                      Linear equations and modeling problems
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -943,7 +1013,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      INDICES & POWERS
+                      Indices & Powers
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -955,7 +1025,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SINGLE VARIABLE & BIVARIATE DATA ANALYSIS
+                      Single variable and bivariate data analysis
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -967,7 +1037,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      VENN DIAGRAMS & TWO WAY TABLES
+                      Venn diagramS & two way tables
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -979,7 +1049,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      EUCLID'S THEOREM
+                      Euclid's Theorem
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -991,7 +1061,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SURFACE AREA / VOLUME OF 3D SHAPES
+                      Surface Area / Volume of 3D Shapes
                     </div>
                   </div>
                 </div>
@@ -1100,7 +1170,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      COMPLEX NUMBERS
+                      Complex Numbers
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1112,7 +1182,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      DIFFERENTIAL CALCULUS
+                      Differential Calculus
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1124,7 +1194,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      APPLICATION OF DERIVATIVES
+                      Application of derivatives
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1136,7 +1206,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      INTEGRAL CALCULUS
+                      Integral Calculus
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1148,7 +1218,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      LIMTS & DERIVATIVES
+                      Limits & derivatives
                     </div>
                   </div>
                 </div>
@@ -1235,6 +1305,109 @@ const Maths = () => {
         </div>
       </div>
       {/* maths tabs */}
+
+      <div className="enroll-wrapper" data-v-0a6dbf09>
+        <div
+          data-aos="fade-up"
+          data-aos-duration={1000}
+          className="title-container aos-init aos-animate"
+          data-v-0a6dbf09
+        >
+          <h2 className="title" data-v-0a6dbf09>
+            A Simple 3-Step Process To Enroll Your Kid to Any Maths Course
+          </h2>
+        </div>{" "}
+        <div className="enroll-container" data-v-0a6dbf09>
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://www.codeyoung.com/_ipx/w_1280/choose.svg"
+                alt="choose"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                srcSet="https://www.codeyoung.com/_ipx/w_320/choose.svg  320w,https://www.codeyoung.com/_ipx/w_640/choose.svg  640w,https://www.codeyoung.com/_ipx/w_768/choose.svg  768w,https://www.codeyoung.com/_ipx/w_1024/choose.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/choose.svg  1280w"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                1
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                Maths Course
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                Are you grappling with Math Anxiety, facing Learning Gaps, and desiring mastery in Conceptual Learning, Mental Math’s, and Advanced Math
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://www.codeyoung.com/_ipx/w_1280/subscribe.svg"
+                alt="subscribe"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                srcSet="https://www.codeyoung.com/_ipx/w_320/subscribe.svg  320w,https://www.codeyoung.com/_ipx/w_640/subscribe.svg  640w,https://www.codeyoung.com/_ipx/w_768/subscribe.svg  768w,https://www.codeyoung.com/_ipx/w_1024/subscribe.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/subscribe.svg  1280w"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                2
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Book a FREE trial class
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  Choose your mentor of choice from 200+ mentors as well as your
+                  preferred time slot
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://www.codeyoung.com/_ipx/w_1280/success.svg"
+                alt="success"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                srcSet="https://www.codeyoung.com/_ipx/w_320/success.svg  320w,https://www.codeyoung.com/_ipx/w_640/success.svg  640w,https://www.codeyoung.com/_ipx/w_768/success.svg  768w,https://www.codeyoung.com/_ipx/w_1024/success.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/success.svg  1280w"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                3
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Enroll for the course
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  If you liked the demo session, enroll for the course &amp;
+                  begin your child's exciting journey!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>{" "}
+        <div className="book-btn" data-v-0a6dbf09>
+          <a
+            href="/#education-contact"
+            data-toggle="modal"
+            aria-current="page"
+            className="inline-block items-center font-semibold flex-1 justify-center text-white border-0 hero-btn px-8 focus:outline-none text-lg sweep-hero-orange sweep-to-right nuxt-link-exact-active nuxt-link-active"
+            data-v-0a6dbf09
+          >
+            Book a Free Trial Class
+          </a>
+        </div>
+      </div>
 
       {/* footer */}
       <footer
@@ -1384,6 +1557,160 @@ const Maths = () => {
           </div>
         </div>
       </footer>
+
+      <WhatsAppButton />
+      <a
+          href="#"
+          id="toTop"
+          className="theme-bg-gradient color-white"
+          style={{ display: "inline" }}
+        >
+          <IoIosArrowUp style={{ marginTop: "6px" }} />
+        </a>
+      <div id="education-contact" className="modal fade" role="dialog">
+          <div className="modal-dialog">
+            {/* Modal content*/}
+            <div className="modal-content">
+              <div className="modal-header">
+                <button onClick={closePopup}>
+                  <img
+                    className="close"
+                    data-dismiss="modal"
+                    src={close}
+                    alt="close"
+                  />
+                </button>
+                <h4 className="modal-title">Get In Touch</h4>
+              </div>
+              <div className="modal-body">
+                <div className="contact-section">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="contact-form signup-form"
+                    id="ajax-contact"
+                  >
+                    <div className="row section-signup semitrans">
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-name">
+                          <label className="sr-only" htmlFor="name">
+                            Your name
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="name"
+                            id="name"
+                            placeholder="Your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                          />
+                          {errors.name && (
+                            <p className="error-message">{errors.name}</p>
+                          )}
+                        </div>
+                      </div>
+                      {/* Add other form fields */}
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-email">
+                          <label className="sr-only" htmlFor="email">
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            className="form-control form-control-lg"
+                            name="email"
+                            id="email"
+                            placeholder="Email address"
+                            autoComplete="off"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && (
+                            <p className="error-message">{errors.email}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-phone">
+                          <label className="sr-only" htmlFor="phone">
+                            Phone Number
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="phone"
+                            id="phone"
+                            placeholder="Phone Number"
+                            autoComplete="off"
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                          {errors.phone && (
+                            <p className="error-message">{errors.phone}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-address">
+                          <label className="sr-only" htmlFor="address">
+                            Address
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="address"
+                            id="address"
+                            placeholder="Your Address"
+                            autoComplete="off"
+                            value={formData.address}
+                            onChange={handleChange}
+                          />
+                          {errors.address && (
+                            <p className="error-message">{errors.address}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-message">
+                          <label className="sr-only" htmlFor="message">
+                            Enter your message
+                          </label>
+                          <textarea
+                            className="form-control form-control-lg home-textarea"
+                            name="message"
+                            id="message"
+                            placeholder="Enter your message"
+                            autoComplete="off"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && (
+                            <p className="error-message">{errors.message}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group">
+                          <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <p className="submit-btn-bottom-text">
+                          Your email is safe with us and we hate spam as much as
+                          you do.
+                        </p>
+                      </div>
+                    </div>
+                    <div id="error-message" className="text-center" />
+                    <div id="form-messages" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </>
   );
 };

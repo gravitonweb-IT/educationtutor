@@ -47,9 +47,10 @@ import grade6 from "../componants/assets/grade6.mp4";
 import mario from "../componants/assets/mario.webm";
 import kids from "../componants/assets/kids.png";
 import p2 from "../componants/assets/p2.png";
+import game from "../componants/assets/game.mp4"
 import "./home.css";
 import "./tabs.css";
-import sat from "../componants/assets/sat.mp4"
+import sat from "../componants/assets/sat.mp4";
 // import anime from 'animejs';
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
@@ -248,6 +249,16 @@ const Home = () => {
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
+  const [position, setPosition] = useState('100%');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition((prevPosition) => (prevPosition === '-100   ' ? '0' : '-100'));
+    }, 5000); // Adjust the interval as needed
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
       <>
@@ -331,13 +342,21 @@ const Home = () => {
                 <div className="banner-txt">
                   <div className="banner-intro">
                     <h1 className="banner-title">
-                    Welcome to Edufusion Tutors - Breaking 
+                      Welcome to Edufusion Tutors - Breaking
                       <span id="area"> Learning Boundaries! </span>
-                      
                     </h1>
                     <p className="color-white lheight-30">
-                      At Edufusion, we're passionate about transforming education. With a dedicated team of experienced educators more than 15 years and tech enthusiasts, we're redefining online learning to make it accessible, engaging, and empowering for every student.
-Experience personalized excellence with our exclusive 1:1 sessions in math, science, and coding. Join Edufusion, where education transcends boundaries!
+                      At Edufusion, we're passionate about transforming
+                      education. With a dedicated team of experienced educators
+                      more than 15 years and tech enthusiasts, we're redefining
+                      online learning to make it accessible, engaging, and
+                      empowering for every student. Experience personalized
+                      excellence with our exclusive<br/>   <div id="sessions" style={{ color: '#ffec0b', fontSize: '23px', fontWeight: '600', 
+                      // transform: `translateX(${position})`, whiteSpace: 'nowrap'
+                       }}>
+      1:1 sessions in math, science, and coding. Join Edufusion,
+    </div> where education
+                      transcends boundaries!
                     </p>
                   </div>
                   <div className="app-media">
@@ -389,7 +408,7 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                   data-wow-duration="2s"
                   style={{
                     visibility: "visible",
-                    WebkitAnimationDuration: "2s", // Fix for the warning
+                    WebkitAnimationDuration: "2s", 
                     animationDuration: "2s",
                     animationName: "fadeIn",
                   }}
@@ -404,12 +423,12 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                   </div>
                   <div className="spliter mb30" />
                 </div>
-                {/*Star course items */}
+              
                 <div className="course-items">
                   <div className="tabs text-center">
                     <div className="tabs-nav">
                       <ul className="list-inline nav nav-tabs fsize-0">
-                        {/* Start course tab button */}
+                        
                         <li className="col-lg-2 col-md-2 active">
                           <a
                             onClick={() => handleTabClick("course-item-1")}
@@ -557,17 +576,25 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                             </div>
                             <h1></h1>
                             <p className="lheight-30 mt20">
-                            Are you grappling with Math Anxiety, facing Learning Gaps, and desiring mastery in Conceptual Learning, Mental Math’s, and Advanced Math? Look no further – our online math tutoring service is designed just for you! 
+                              Are you grappling with Math Anxiety, facing
+                              Learning Gaps, and desiring mastery in Conceptual
+                              Learning, Mental Math’s, and Advanced Math? Look
+                              no further – our online math tutoring service is
+                              designed just for you!
                             </p>
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                Math Anxiety Support: Conquer math anxiety with our supportive environment, ensuring a positive and enjoyable learning experience.
+                                  Math Anxiety Support: Conquer math anxiety
+                                  with our supportive environment, ensuring a
+                                  positive and enjoyable learning experience.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Bridge Learning Gaps: Personalized lessons fill gaps, providing a solid foundation for mathematical success.
+                                  Bridge Learning Gaps: Personalized lessons
+                                  fill gaps, providing a solid foundation for
+                                  mathematical success.
                                 </span>
                               </li>
                               {/* <li>
@@ -587,25 +614,19 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                               </li> */}
                             </ul>
                             {/* button */}
-                         
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                      
-                           <div className="slick-list draggable">
-                                
-                                   <iframe
-                width="100%"
-                height={300}
-                src={learningmath}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-                                 
-                                
+                              <div className="slick-list draggable">
+                                <iframe
+                                  width="100%"
+                                  height={300}
+                                  src={learningmath}
+                                  frameBorder={0}
+                                  allow="autoplay; encrypted-media"
+                                  allowFullScreen=""
+                                />
                               </div>
-                            
                             </div>
                           </div>
                         </div>
@@ -627,20 +648,24 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                                   </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt20">
-                                Embark on a dynamic learning experience with our science online tutoring! Dive into virtual labs, explore real-life examples, and engage with interactive videos, making complex concepts come alive.
-                                 {/* Our comprehensive approach ensures a deeper understanding of science. Ready to evaluate your learning journey? Join us today! */}
+                                  {/* Embark on a dynamic learning experience with our science online tutoring! Dive into virtual labs, explore real-life examples, and engage with interactive videos, making complex concepts come alive. */}
+                                  {/* Our comprehensive approach ensures a deeper understanding of science. Ready to evaluate your learning journey? Join us today! */}
                                 </div>
                               </div>
                             </div>
                             <p className="lheight-30 mt20">
-                              Our curriculum doesn't just teach science; it
-                              propels you toward promising careers! Consider the
-                              following career pathways awaiting our students:
+                              Embark on a dynamic learning experience with our
+                              science online tutoring! Dive into virtual labs,
+                              explore real-life examples, and engage with
+                              interactive videos, making complex concepts come
+                              alive. Our comprehensive approach ensures a deeper
+                              understanding of science. Ready to evaluate your
+                              learning journey? Join us today!
                             </p>
                             <ul className="list1">
                               <li className="list-theme-color">
                                 <span className="table-cell valign-middle">
-                                  Top-notch Tutors:
+                                  Top-notch Tutors
                                 </span>
                               </li>
                               <li className="list-theme-color">
@@ -653,33 +678,21 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                                   Interactive Learning Tools
                                 </span>
                               </li>
-                              <li className="list-theme-color">
-                                <span className="table-cell valign-middle">
-                                  Boost Your Confidence
-                                </span>
-                              </li>
-                              <li className="list-theme-color">
-                                <span className="table-cell valign-middle">
-                                  Space Scientist/Astronomer
-                                </span>
-                              </li>
+                             
                             </ul>
                             {/* button */}
-                            <div className="flex-1">
-                            
-                            </div>
+                            <div className="flex-1"></div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            <iframe
-                width="100%"
-                height={300}
-                src={grade6}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-                          
+                              <iframe
+                                width="100%"
+                                height={300}
+                                src={grade6}
+                                frameBorder={0}
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen=""
+                              />
                             </div>
                           </div>
                         </div>
@@ -695,7 +708,9 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>Supercharge Your Child's Future with Coding! </span>
+                                  <span>
+                                    Supercharge Your Child's Future with Coding!{" "}
+                                  </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt20">
                                   Explore the world of coding from the comfort
@@ -714,25 +729,28 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                Boosts Critical Thinking: Develops logical and analytical skills for academic excellence.
+                                  Boosts Critical Thinking: Develops logical and
+                                  analytical skills for academic excellence.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Math Made Fun: Coding enhances math proficiency in an engaging way.
+                                  Math Made Fun: Coding enhances math
+                                  proficiency in an engaging way.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                Creative Exploration: Unleash creativity through coding adventures. 
+                                  Creative Exploration: Unleash creativity
+                                  through coding adventures.
                                 </span>
                               </li>
-                              <li>
+                              {/* <li>
                                 <span className="table-cell valign-middle">
                                 Confidence Building: Conquer coding challenges for increased self-assurance. 
                                 </span>
-                              </li>
-                              <li>
+                              </li> */}
+                              {/* <li>
                                 <span className="table-cell valign-middle">
                                 Expert-Led Sessions: Learn from experienced educators in convenient online sessions. 
                                 </span>
@@ -751,25 +769,21 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                                 <span className="table-cell valign-middle">
                                 Success Shapers: Empower your child to shape the future with coding superpowers.
                                 </span>
-                              </li>
+                              </li> */}
                             </ul>
                             {/* button */}
-                            <div className="flex-1">
-                             
-                            </div>
+                            <div className="flex-1"></div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                              
-                            <iframe
-                width="100%"
-                height={300}
-                src={grade8}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-                             
+                              <iframe
+                                width="100%"
+                                height={300}
+                                src={game}
+                                frameBorder={0}
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen=""
+                              />
                             </div>
                           </div>
                         </div>
@@ -785,15 +799,25 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>Excel in Competitive Exams with Our Proven Expertise</span>
+                                  <span>
+                                    Excel in Competitive Exams with Our Proven
+                                    Expertise
+                                  </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt30">
-                                Your success in PSAT, SAT, ACT, NAPLAN, and Olympiads begins with EDUFUSION TUTOR - Your Trusted Guide to Academic Excellence! 
+                                  Your success in PSAT, SAT, ACT, NAPLAN, and
+                                  Olympiads begins with EDUFUSION TUTOR - Your
+                                  Trusted Guide to Academic Excellence!
                                 </div>
                               </div>
                             </div>
                             <p className="lheight-30 mt30">
-                            Unlock the door to success in competitive exams such as PSAT, SAT, ACT, NAPLAN, and Olympiads with EDUFUSION TUTOR. With over 12 years of unparalleled experience, we have been guiding students towards academic excellence and achieving top scores in these prestigious examinations. 
+                              Unlock the door to success in competitive exams
+                              such as PSAT, SAT, ACT, NAPLAN, and Olympiads with
+                              EDUFUSION TUTOR. With over 12 years of
+                              unparalleled experience, we have been guiding
+                              students towards academic excellence and achieving
+                              top scores in these prestigious examinations.
                             </p>
                             <ul className="list1">
                               <li>
@@ -816,25 +840,20 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                                   Strategic Test-Taking Strategies
                                 </span>
                               </li>
-                    
                             </ul>
                             {/* button */}
-                            <div className="flex-1">
-                            
-                            </div>
+                            <div className="flex-1"></div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            
-                            <iframe
-                width="100%"
-                height={300}
-                src={sat}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-                           
+                              <iframe
+                                width="100%"
+                                height={300}
+                                src={sat}
+                                frameBorder={0}
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen=""
+                              />
                             </div>
                           </div>
                         </div>
@@ -855,12 +874,20 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                                   </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt30">
-                                Your success in PSAT, SAT, ACT, NAPLAN, and Olympiads begins with EDUFUSION TUTOR - Your Trusted Guide to Academic Excellence! 
+                                  Your success in PSAT, SAT, ACT, NAPLAN, and
+                                  Olympiads begins with EDUFUSION TUTOR - Your
+                                  Trusted Guide to Academic Excellence!
                                 </div>
                               </div>
                             </div>
                             <p className="lheight-30 mt30">
-                            Unlock Your Potential with PSAT Online Tutoring! 🌟 Are you ready to ace the PSAT and set the stage for your academic success? Look no further! Our PSAT Online Tutoring program is designed to empower students like you to confidently tackle the exam and achieve outstanding results. can you add more features or information about psat 
+                              Unlock Your Potential with PSAT Online Tutoring!
+                              🌟 Are you ready to ace the PSAT and set the stage
+                              for your academic success? Look no further! Our
+                              PSAT Online Tutoring program is designed to
+                              empower students like you to confidently tackle
+                              the exam and achieve outstanding results. can you
+                              add more features or information about psat
                             </p>
                             <ul className="list1 mt30">
                               <li>
@@ -900,15 +927,14 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            <iframe
-                width="100%"
-                height={300}
-                src={sat}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-                            
+                              <iframe
+                                width="100%"
+                                height={300}
+                                src={sat}
+                                frameBorder={0}
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen=""
+                              />
                             </div>
                           </div>
                         </div>
@@ -924,17 +950,35 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>Other competitive exam </span>
+                                  <span> Competitive Exam </span>
                                 </div>
-                                <div className="subtitle fweight-600 color-4" style={{marginTop:"20px"}}>
-                                Embark on a Journey to Academic Excellence with edufusion  ACADEMY!
+                                <div
+                                  className="subtitle fweight-600 color-4"
+                                  style={{ marginTop: "20px" }}
+                                >
+                                  Embark on a Journey to Academic Excellence
+                                  with edufusion ACADEMY!
                                 </div>
                               </div>
                             </div>
                             <p className="lheight-30">
-                            Are you ready to conquer a myriad of competitive exams, from PSAT, SAT, ACT, NAPLAN, Olympiads, to AP courses and beyond? Look no further! ACCELERATE ACADEMY is your one-stop destination for comprehensive exam preparation, guiding you towards success in every academic endeavor 
+                              Are you ready to conquer a myriad of competitive
+                              exams, from PSAT, SAT, ACT, NAPLAN, Olympiads, to
+                              AP courses and beyond? Look no further! Edufusion
+                              Tutors is your one-stop destination for
+                              comprehensive exam preparation, guiding you
+                              towards success in every academic endeavor .
                             </p>
-                            <p className="lheight-30">Master a spectrum of exams including PSAT, SAT, ACT, NAPLAN, Olympiads, AP courses, and various university-level exams. Our expert tutors are well-versed in diverse curricula, ensuring you're prepared for any challenge. </p>
+                            <p
+                              className="lheight-30 "
+                              style={{ marginTop: "2px" }}
+                            >
+                              Master a spectrum of exams including PSAT, SAT,
+                              ACT, NAPLAN, Olympiads, AP courses, and various
+                              university-level exams. Our expert tutors are
+                              well-versed in diverse curricula, ensuring you're
+                              prepared for any challenge.{" "}
+                            </p>
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
@@ -955,28 +999,24 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                               </li>
                             </ul>
                             {/* button */}
-                            <div className="flex-1">
-                           
-                            </div>
+                            <div className="flex-1"></div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
-                            <iframe
-                width="100%"
-                height={300}
-                src={sat}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-                          
+                              <iframe
+                                width="100%"
+                                height={300}
+                                src={sat}
+                                frameBorder={0}
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen=""
+                              />
                             </div>
                           </div>
                         </div>
                       )}
 
                       {/* End Single tab content */}
-                   
                     </div>
                   </div>
                 </div>
@@ -1079,10 +1119,10 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
             <div className="enroll-box" data-v-0a6dbf09>
               <div data-v-0a6dbf09>
                 <img
-                  src="https://www.codeyoung.com/_ipx/w_1280/choose.svg"
+                  src="https://cdn-icons-png.flaticon.com/512/4762/4762311.png"
                   alt="choose"
                   sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                  srcSet="https://www.codeyoung.com/_ipx/w_320/choose.svg  320w,https://www.codeyoung.com/_ipx/w_640/choose.svg  640w,https://www.codeyoung.com/_ipx/w_768/choose.svg  768w,https://www.codeyoung.com/_ipx/w_1024/choose.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/choose.svg  1280w"
+                 
                   className="enroll-img"
                   data-v-0a6dbf09
                 />
@@ -1096,8 +1136,12 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                     Select A Course
                   </div>{" "}
                   <div className="enroll-description" data-v-0a6dbf09>
-                    Choose a course of your choice based on the child's
-                    age/grade
+                    <ul>
+                      <li>Maths Course</li>
+                      <li>Coding Course</li>
+                      <li>Science Course</li>
+                      <li>competitive Course</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -1105,10 +1149,10 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
             <div className="enroll-box" data-v-0a6dbf09>
               <div data-v-0a6dbf09>
                 <img
-                  src="https://www.codeyoung.com/_ipx/w_1280/subscribe.svg"
+                  src="https://cdn.iconscout.com/icon/premium/png-256-thumb/trial-7-404313.png"
                   alt="subscribe"
                   sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                  srcSet="https://www.codeyoung.com/_ipx/w_320/subscribe.svg  320w,https://www.codeyoung.com/_ipx/w_640/subscribe.svg  640w,https://www.codeyoung.com/_ipx/w_768/subscribe.svg  768w,https://www.codeyoung.com/_ipx/w_1024/subscribe.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/subscribe.svg  1280w"
+                  
                   className="enroll-img"
                   data-v-0a6dbf09
                 />
@@ -1131,10 +1175,10 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
             <div className="enroll-box" data-v-0a6dbf09>
               <div data-v-0a6dbf09>
                 <img
-                  src="https://www.codeyoung.com/_ipx/w_1280/success.svg"
+                  src="https://cdn-icons-png.flaticon.com/512/4413/4413569.png"
                   alt="success"
                   sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                  srcSet="https://www.codeyoung.com/_ipx/w_320/success.svg  320w,https://www.codeyoung.com/_ipx/w_640/success.svg  640w,https://www.codeyoung.com/_ipx/w_768/success.svg  768w,https://www.codeyoung.com/_ipx/w_1024/success.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/success.svg  1280w"
+                 
                   className="enroll-img"
                   data-v-0a6dbf09
                 />
@@ -1167,8 +1211,6 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
             </a>
           </div>
         </div>
-
-    
 
         {/*================================================================================= 
                           START why-choose 
@@ -1235,34 +1277,47 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                                 </div>
                               </div>
                             </div>
-                            <h5>Transforming Lives Through Personalized Education</h5>
+                            <h5>
+                              Transforming Lives Through Personalized Education
+                            </h5>
                             <p>
-                            At EDUFUSION TUTOR, we envision a world where every learner, regardless of background or circumstance, has the opportunity to unlock their full potential through personalized education. We aspire to be a guiding light on the educational journey, fostering a love for learning that transcends boundaries.
-
+                              At EDUFUSION TUTOR, we envision a world where
+                              every learner, regardless of background or
+                              circumstance, has the opportunity to unlock their
+                              full potential through personalized education. We
+                              aspire to be a guiding light on the educational
+                              journey, fostering a love for learning that
+                              transcends boundaries.
                             </p>
                             <h5>Our Commitment</h5>
                             <p>
-                            Empowerment: We envision empowering students with the tools and knowledge to confidently navigate the ever-evolving landscape of education and beyond.
-
+                              Empowerment: We envision empowering students with
+                              the tools and knowledge to confidently navigate
+                              the ever-evolving landscape of education and
+                              beyond.
                             </p>
                             <h5>Inclusivity: </h5>
                             <p>
-                            Our vision includes breaking down barriers to learning. We strive to create an inclusive space where every student feels valued and supported.
-
+                              Our vision includes breaking down barriers to
+                              learning. We strive to create an inclusive space
+                              where every student feels valued and supported.
                             </p>
-                            <h5>Innovation: </h5>
+                            {/* <h5>Innovation: </h5>
                             <p>
                             We aim to be at the forefront of educational innovation, leveraging cutting-edge technology and methodologies to redefine the online learning experience.
-                            </p>
-                           
+                            </p> */}
                           </div>
                           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="img-exp">
                               <img
-                                src={choose}
+                                src="https://www.internationaltalentacademy.org/wp-content/uploads/2020/09/Happy-kids-with-books-thumbs-up-1-1.jpg"
                                 alt="choose"
                                 className="img-fluid"
-                                style={{ width: "433px" }}
+                                style={{
+                                  width: "433px",
+                                  marginTOp: "85px",
+                                  width: "489px",
+                                }}
                               />
                             </div>
                           </div>
@@ -1277,6 +1332,7 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                         activeTab1 === 2 ? "active in" : ""
                       }`}
                       id="video-why-choose"
+                      style={{ margin: "40px 0" }}
                     >
                       <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 lheight-30">
                         <div
@@ -1300,23 +1356,31 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                           </div>
                         </div>
                         <h5>Global Impact: </h5>
-                            <p>
-                            Our vision extends globally, reaching learners around the world. We aspire to contribute to the development of a knowledgeable and empowered global community.
-
-                            </p>
-                            <p>Lifelong Learning: Beyond academic success, our vision encompasses instilling a love for lifelong learning. We aspire to cultivate curious, adaptable individuals prepared for the challenges and opportunities of the future.
-</p>
-<h5>Time Rescheduling</h5>
-<p>Recognizing the busy nature of life, we offer hassle-free time rescheduling options. Your education should fit your schedule, not the other way around.
-</p>
-<h5>Hassle-Free Chat Support</h5>
+                        <p>
+                          Our vision extends globally, reaching learners around
+                          the world. We aspire to contribute to the development
+                          of a knowledgeable and empowered global community.
+                        </p>
+                        <p>
+                          Lifelong Learning: Beyond academic success, our vision
+                          encompasses instilling a love for lifelong learning.
+                          We aspire to cultivate curious, adaptable individuals
+                          prepared for the challenges and opportunities of the
+                          future.
+                        </p>
+                        <h5>Time Rescheduling</h5>
+                        <p>
+                          Recognizing the busy nature of life, we offer
+                          hassle-free time rescheduling options. Your education
+                          should fit your schedule, not the other way around.
+                        </p>
+                        {/* <h5>Hassle-Free Chat Support</h5>
 <p> Our dedicated chat support team is here to assist you seamlessly. Experience hassle-free communication, ensuring that your queries are addressed promptly and efficiently.
 </p>
 <h5>Join Us in Shaping the Future:
 </h5>
 <p>As we work towards this vision, we invite students, parents, and educators to join us on this transformative journey. Together, we can create a world where education knows no boundaries, and each learner can thrive, succeed, and contribute meaningfully to society.
-</p>
-
+</p> */}
                       </div>
                       <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div className="video-exp">
@@ -1523,7 +1587,7 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
 
         <div
           className="section progress-bars section-padding"
-          style={{ background: "#2f384a" , marginTop:"30px" }}
+          style={{ background: "#2f384a", marginTop: "66px" }}
         >
           <div className="progress-bars-content">
             <div className="progress-bar-wrapper">
@@ -1895,84 +1959,84 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
         {/*================================================================================= 
                           START BLOG  
     ==================================================================================*/}
-        <section id="education-blog" className="pt100 pb80">
-          <div className="education-blog">
-            <div className="container">
-              <div className="row">
-                <div
-                  className="text-center wow fadeIn"
-                  data-wow-duration="2s"
-                  style={{
-                    visibility: "visible",
-                    animationDuration: "2s",
-                    animationName: "fadeIn",
-                  }}
-                >
-                  <div className="subtitle">A modern and unique style</div>
-                  <div className="title color-2 lheight-40 mb30">
-                    <span>
-                      Latest from blog<span className="color-15">.</span>
-                    </span>
-                  </div>
-                  <div className="spliter mb40" />
+     <section id="education-blog" className="pt100 pb80">
+        <div className="education-blog">
+          <div className="container">
+            <div className="row">
+              <div
+                className="text-center wow fadeIn"
+                data-wow-duration="2s"
+                style={{
+                  visibility: "visible",
+                  animationDuration: "2s",
+                  animationName: "fadeIn",
+                }}
+              >
+                <div className="subtitle">A modern and unique style</div>
+                <div className="title color-2 lheight-40 mb30">
+                  <span>
+                    Latest from blog<span className="color-15">.</span>
+                  </span>
                 </div>
-                {/*====| All Blog Start |====*/}
-                <div className="all-blogs">
-                  {/* Single Blog Item Start */}
-                  <div className="col-md-4 col-sm-6">
-                    <div className="single-blog-item">
-                      <div className="blog-photo">
-                        <img
-                          src="https://codestar.xyz/demo/education/assets/images/blog/blog-01.jpg"
-                          alt="blog"
-                        />
-                        <div className="blog-post-date theme-bg-gradient">
+                <div className="spliter mb40" />
+              </div>
+              {/*====| All Blog Start |====*/}
+              <div className="all-blogs">
+                {/* Single Blog Item Start */}
+                <div className="col-md-4 col-sm-6">
+                  <div className="single-blog-item">
+                    <div className="blog-photo">
+                      <img
+                        src="https://i.pngimg.me/thumb/f/720/6021832081670144.jpg"
+                        alt="blog"
+                      />
+                      {/* <div className="blog-post-date theme-bg-gradient">
                           <h3 className="color-white fsize-16 plr30">
                             23-9-2018
                           </h3>
-                        </div>
-                        <div className="blog-dtls-link color-4">
+                        </div> */}
+                      {/* <div className="blog-dtls-link color-4">
                           <a href="#">
                             Check Details{" "}
                             <i className="fa fa-share" aria-hidden="true" />
                           </a>
-                        </div>
-                      </div>
+                        </div> */}
                     </div>
                   </div>
-                  {/* Single Blog Item End */}
-                  {/* Single gallery Item Start */}
-                  <div className="col-md-4 col-sm-6">
-                    <div className="single-blog-item">
-                      <div className="blog-photo">
-                        <img
-                          src="https://codestar.xyz/demo/education/assets/images/blog/blog-01.jpg"
-                          alt="blog"
-                        />
-                        <div className="blog-post-date theme-bg-gradient">
+                </div>
+                {/* Single Blog Item End */}
+                {/* Single gallery Item Start */}
+                <div className="col-md-4 col-sm-6">
+                  <div className="single-blog-item">
+                    <div className="blog-photo">
+                      <img
+                        src="https://www.ourfamilywizard.com/sites/default/files/styles/scale_width_960/public/media/image/2022-10/blog-studying.jpg?itok=tCYtRweI"
+                        alt="blog"
+                      />
+                      {/* <div className="blog-post-date theme-bg-gradient">
                           <h3 className="color-white fsize-16 plr30">
                             25-9-2018
                           </h3>
-                        </div>
-                        <div className="blog-dtls-link color-4">
+                        </div> */}
+                      {/* <div className="blog-dtls-link color-4">
                           <a href="#">
                             Check Details{" "}
                             <i className="fa fa-share" aria-hidden="true" />
                           </a>
-                        </div>
-                      </div>
+                        </div> */}
                     </div>
                   </div>
-                  {/* Single Blog Item End */}
-                  {/* Single Blog Item Start */}
-                  <div className="col-md-4 col-sm-6 col-md-offset-0 col-sm-offset-3">
-                    <div className="single-blog-item">
-                      <div className="blog-photo">
-                        <img
-                          src="https://codestar.xyz/demo/education/assets/images/blog/blog-01.jpg"
-                          alt="blog"
-                        />
-                        <div className="blog-post-date theme-bg-gradient">
+                </div>
+                {/* Single Blog Item End */}
+                {/* Single Blog Item Start */}
+                <div className="col-md-4 col-sm-6 col-md-offset-0 col-sm-offset-3">
+                  <div className="single-blog-item">
+                    <div className="blog-photo">
+                      <img
+                        src="https://previews.123rf.com/images/pairhandmade/pairhandmade1610/pairhandmade161000266/64648417-asian-kids-are-studying-the-globe-over-white-background.jpg"
+                        alt="blog"
+                      />
+                      {/* <div className="blog-post-date theme-bg-gradient">
                           <h3 className="color-white fsize-16 plr30">
                             26-9-2018
                           </h3>
@@ -1982,17 +2046,17 @@ Experience personalized excellence with our exclusive 1:1 sessions in math, scie
                             Check Details{" "}
                             <i className="fa fa-share" aria-hidden="true" />
                           </a>
-                        </div>
-                      </div>
+                        </div> */}
                     </div>
                   </div>
-                  {/* Single Blog Item End */}
                 </div>
-                {/*====| All Blog End |====*/}
+                {/* Single Blog Item End */}
               </div>
+              {/*====| All Blog End |====*/}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
         {/*================================================================================= 
                           END BLOG
     ==================================================================================*/}

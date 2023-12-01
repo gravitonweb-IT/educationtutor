@@ -5,7 +5,11 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
-import p2 from "../componants/assets/p2.png"
+import p2 from "../componants/assets/p2.png";
+import Faq from "react-faq-component";
+import close from "./assets/images/icons/close-icon.png";
+import WhatsAppButton from "../componants/WhatsAppButton";
+import { IoIosArrowUp } from "react-icons/io";
 const Competative = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -61,9 +65,157 @@ const Competative = () => {
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
+
+  const data = {
+    title: "",
+    rows: [
+      {
+        title: " Proven Track Record:",
+        content: ` 
+
+        Join a legacy of success! Our experienced tutors boast a track record of helping students excel in competitive exams, opening doors to top-tier universities and scholarship opportunities.  `,
+      },
+      {
+        title: " Comprehensive Exam Coverage",
+        content:
+          "PSAT, SAT, ACT, NAPLAN, Olympiads – we cover them all! Our comprehensive exam preparation ensures that students are well-equipped to face the unique challenges of each test. ",
+      },
+      {
+        title: "Expert Tutors with Specialized Knowledge",
+        content: `Benefit from the expertise of tutors who specialize in the intricacies of each exam. Our team is dedicated to staying abreast of the latest trends and updates to provide the most relevant guidance.  `,
+      },
+      {
+        title: "Strategic Test-Taking Strategies:",
+        content: `It's not just about knowing the content; it's about mastering the art of test-taking. Our tutors impart strategic approaches that help students navigate exams with confidence.  `,
+      },
+      {
+        title: "Tailored Approach",
+        content: ` Personalized learning plans that address individual strengths and areas for improvement.  `,
+      },
+      {
+        title: "  Innovative Teaching Methods",
+        content: ` Engaging lessons that go beyond textbooks, fostering a deep understanding of exam concepts.   `,
+      },
+      {
+        title: " Adaptive Learning",
+        content: `  Evolving with the dynamic nature of exams, ensuring students are well-prepared for any changes in format or content.  `,
+      },
+    ],
+  };
+  const styles = {
+    // bgColor: 'white',
+    titleTextColor: "blue",
+    rowTitleColor: "blue",
+    // rowContentColor: 'grey',
+    // arrowColor: "red"
+    titleTextSize: "20px",
+    rowContentTextSize: "16px",
+    rowContentPaddingBottom: "10px",
+    rowContentPaddingLeft: "50px",
+    padding: "30px",
+    marginTop: "20px",
+  };
+
+  const config = {
+    animate: true,
+    arrowIcon: "V",
+    openOnload: 0,
+    expandIcon: "+",
+    collapseIcon: "-",
+  };
+  const containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh", // Adjust as needed
+  };
+
+  const innerDivStyle = {
+    // Optional: Add styles for the inner div if needed
+    maxWidth: "800px", // Adjust the max-width as needed
+    width: "100%",
+    padding: "20px",
+    boxSizing: "border-box",
+  };
+  const headingStyle = {
+    marginBottom: "20px",
+    marginTop: "30px", // Adjust the margin as needed
+  };
+
+
+   // form
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const openPopup = () => {
+     setIsPopupOpen(true);
+   };
+   const closePopup = () => {
+     setIsPopupOpen(false);
+   };
+   const [formData, setFormData] = useState({
+     name: "",
+     email: "",
+     phone: "",
+     address: "",
+     message: "",
+   });
+ 
+   const [errors, setErrors] = useState({});
+ 
+   const handleChange = (e) => {
+     const { name, value } = e.target;
+     setFormData({
+       ...formData,
+       [name]: value,
+     });
+     // Clear the error message when the user starts typing
+     setErrors({
+       ...errors,
+       [name]: "",
+     });
+   };
+ 
+   const validateForm = () => {
+     const newErrors = {};
+ 
+     // Add your validation logic here
+     if (!formData.name.trim()) {
+       newErrors.name = "Name is required";
+     }
+ 
+     if (!formData.email.trim()) {
+       newErrors.email = "Email is required";
+     }
+ 
+     // Add more validation rules for other fields
+ 
+     setErrors(newErrors);
+ 
+     // Return true if there are no errors
+     return Object.keys(newErrors).length === 0;
+   };
+ 
+   const handleSubmit = (e) => {
+     e.preventDefault();
+ 
+     if (validateForm()) {
+       // You can access the form data in the 'formData' object
+       console.log("Form Data:", formData);
+     } else {
+       console.log("Form validation failed.");
+     }
+     setFormData({
+       name: "",
+       email: "",
+       phone: "",
+       address: "",
+       message: "",
+     });
+   };
+ 
+   
   return (
     <>
-      <header>
+    <header>
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container mob-logo">
             <div className="navbar-header col-sm-2 tablet-logo">
@@ -104,16 +256,16 @@ const Competative = () => {
                   <a href="#education-price">Price</a>
                 </li> */}
                 <li>
-                  <a href="#education-testimonial">Testimonial</a>
+                  <Link to="/Testimonial">Testimonial</Link>
                 </li>
                 <li>
-                  <a href="#education-blog">Blog</a>
+                  <Link to="/Blog">Blog</Link>
                 </li>
                 <li>
-                  <a href="#education-footer">Facts</a>
+                  <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
-                  <a data-toggle="modal" data-target="#education-contact">
+                  <a  data-toggle="modal" data-target="#education-contact">
                     Contact
                   </a>
                 </li>
@@ -125,16 +277,23 @@ const Competative = () => {
 
       {/* banner part */}
       <div className="container">
-        <div className="row">
+        <div className="row" style={{ marginTop: "90px" }}>
           <div
             className="col-md-6 mx-auto"
             style={{ marginTop: "90px", padding: "20px" }}
           >
             <h1>
-              Online Math Classes <br /> for Kids
+              Welcome to EduFusion Online Tutoring – Your Passport to Academic
+              Excellence!
             </h1>
-            <p>Introduce your kids to a new way of learning Maths</p>
-            <button type="button">Enquire Now</button>
+            <p>
+              Are you prepared to conquer the challenges of SAT, PSAT, ACT, AP
+              exams, or university-level courses? Dive into the world of
+              EduFusion, where academic success is not just a goal; it's a
+              journey!{" "}
+            </p>
+            <p>Elevate Your Learning Experience with EduFusion!</p>
+            {/* <button type="button">Enquire Now</button> */}
           </div>
           <div
             className="col-md-6 "
@@ -145,7 +304,7 @@ const Competative = () => {
             }}
           >
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsMcKuvWz__7yRiCZIoG23JUJTjuUsuLd5l4kWv8huKxQ2D7GumHVGyjG7BlONRqgv8R4&usqp=CAU"
+              src="https://assets.telegraphindia.com/telegraph/2022/Aug/1660043555_untitled.jpg"
               alt="Image"
             />
           </div>
@@ -158,7 +317,7 @@ const Competative = () => {
 
       <div
         className="section progress-bars section-padding"
-        style={{ marginTop: "30px" }}
+        style={{ marginTop: "60px" }}
       >
         <div className="progress-bars-content">
           <div className="progress-bar-wrapper">
@@ -223,9 +382,247 @@ const Competative = () => {
 
       {/* counter end */}
 
+      {/* faq */}
+      <div style={containerStyle}>
+        <div style={innerDivStyle}>
+          <h1 style={headingStyle}>Why Choose Our Coding Tutorials?</h1>
+          <Faq data={data} styles={styles} config={config} />
+        </div>
+      </div>
+
+      {/* faq */}
+
+      {/* cards */}
+      <div
+        className="container d-flex flex-column align-items-center justify-content-center vh-100"
+        style={{ marginTop: "100px" }}
+      >
+        <h1 style={{ textAlign: "center" }}>Competitive Courses</h1>
+        <p style={{ textAlign: "center" }}>
+          The Mathematics section of the SAT is designed to assess your
+          understanding of key math
+          <br /> concepts and your ability to apply them in problem-solving.
+          Here's a deeper breakdown of the math content on the SAT:
+        </p>
+        <div className="row" style={{ marginTop: "40px" }}>
+          {/* Card 1 */}
+          <div className="col-md-4 menu">
+            <div
+              className="card "
+              style={{
+                border: "1px solid blue",
+                padding: "16px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="card-body">
+                <h5
+                  className="card-title"
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: "500",
+                    textAlign: "center",
+                  }}
+                >
+                  Heart of Algebra
+                </h5>
+
+                <p className="card-text">
+                  Focuses on linear equations and systems of linear equations.
+                </p>
+                <p className="card-text">
+                  Involves solving equations and inequalities, understanding the
+                  properties of linear functions, and analyzing and interpreting
+                  linear equations and inequalities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="col-md-4 menu">
+            <div
+              className="card"
+              style={{
+                border: "1px solid blue",
+                padding: "10px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="card-body">
+                <h5
+                  className="card-title"
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: "500",
+                    textAlign: "center",
+                  }}
+                >
+                  Problem Solving and Data Analysis
+                </h5>
+                <p className="card-text">
+                  Tests your ability to use ratios, percentages, and
+                  proportional reasoning to solve real-world problems.
+                </p>
+                <p className="card-text">
+                  Requires interpretation and analysis of data presented in
+                  various formats, such as charts and graphs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="col-md-4 menu">
+            <div
+              className="card"
+              style={{
+                border: "1px solid blue",
+                padding: "10px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="card-body">
+                <h5
+                  className="card-title"
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: "500",
+                    textAlign: "center",
+                  }}
+                >
+                  Passport to Advanced Math
+                </h5>
+                <p className="card-text">
+                  Emphasizes more complex mathematical concepts, including
+                  quadratic and higher-order equations.
+                </p>
+                <p className="card-text">
+                  Covers topics such as polynomials, functions, and radical and
+                  exponential equations.
+                </p>
+                {/* <p className="card-text">Involves manipulating and solving algebraic expressions in a variety of forms.</p> */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row" style={{ marginTop: "40px" }}>
+          {/* Card 1 */}
+          <div className="col-md-4 menu">
+            <div
+              className="card"
+              style={{
+                border: "1px solid blue",
+                padding: "14px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="card-body">
+                <h5
+                  className="card-title"
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: "500",
+                    textAlign: "center",
+                  }}
+                >
+                  Additional Topics in Math
+                </h5>
+                <p className="card-text">
+                  Spans a range of topics from geometry, trigonometry, and the
+                  arithmetic of complex numbers.
+                </p>
+                <p className="card-text">
+                  Geometry questions may involve properties of shapes,
+                  coordinate geometry, and the Pythagorean theorem.
+                </p>
+                <p className="card-text">
+                  Trigonometry questions may cover ratios, angles, and the
+                  properties of trigonometric functions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="col-md-4 menu">
+            <div
+              className="card"
+              style={{
+                border: "1px solid blue",
+                padding: "9px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="card-body">
+                <h5
+                  className="card-title"
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: "500",
+                    textAlign: "center",
+                  }}
+                >
+                  Calculator and No-Calculator Sections
+                </h5>
+                <p className="card-text">
+                  The SAT Math test is divided into calculator-allowed and
+                  no-calculator sections.
+                </p>
+                <p className="card-text">
+                  The calculator section assesses your ability to apply
+                  mathematical concepts in a more complex setting, whereas the
+                  no-calculator section focuses on problem-solving and
+                  mathematical reasoning without the aid of a
+                  calculator.calculator use or grid-in questions!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="col-md-4 menu">
+            <div
+              className="card"
+              style={{
+                border: "1px solid blue",
+                padding: "14px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="card-body">
+                <h5
+                  className="card-title"
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: "500",
+                    textAlign: "center",
+                  }}
+                >
+                  Grid-In Questions
+                </h5>
+                <p className="card-text">
+                  In addition to multiple-choice questions, the SAT includes
+                  grid-in questions where you enter the answer directly rather
+                  than choosing from provided options.
+                </p>
+                <p>
+                  It seems like your question is a bit unclear. Could you please
+                  provide more details or clarify what you're looking for
+                  related to SAT grid-in questions and the mention of "3
+                  points"? I'll do my best to assist you once I have more
+                  information.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* maths tabs */}
 
-      <div data-v-0a33574d className="container course-section-container my-10">
+      {/* <div data-v-0a33574d className="container course-section-container my-10">
         <div data-v-0a33574d className="course-heading-section">
           <div
             data-v-0a33574d
@@ -234,7 +631,7 @@ const Competative = () => {
             <div data-v-0a33574d className="w-full relative">
               <div data-v-0a33574d className="course-title">
                 <h2 data-v-0a33574d className="heading">
-                  Maths Courses for Every Grade
+                 Competitive Exam for Every Grade
                 </h2>
               </div>{" "}
               <div data-v-0a33574d className="stepper-wrapper">
@@ -846,70 +1243,7 @@ const Competative = () => {
                   </div>
                 </div>
 
-                {/* <div data-v-eb8371ae className="course-step-container">
-                  <center data-v-eb8371ae>
-                    <div data-v-eb8371ae className="course-header-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                        alt="teacher"
-                        className="topic-img"
-                      />{" "}
-                      <span data-v-eb8371ae className="topic-title">
-                        Logical Reasoning
-                      </span>
-                    </div>
-                  </center>{" "}
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://www.shutterstock.com/image-vector/analyzing-decoding-qr-code-linear-260nw-2373720407.jpg"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Coding and Decoding
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="/_nuxt/img/Frame 5460.4b01e0d.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Verbal & Non-Verbal Series
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Mathematical Operations
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://i.pinimg.com/474x/65/4f/81/654f81cdff9000eed53c9e1877eee55f.jpg"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Direction Sense Test
-                    </div>
-                  </div>
-                </div> */}
+            
               </div>
             )}
             {activeTab2 === 5 && (
@@ -1228,8 +1562,111 @@ const Competative = () => {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* maths tabs */}
+
+      {/* enroll */}
+      <div className="enroll-wrapper" data-v-0a6dbf09>
+        <div
+          data-aos="fade-up"
+          data-aos-duration={1000}
+          className="title-container aos-init aos-animate"
+          data-v-0a6dbf09
+        >
+          <h2 className="title" data-v-0a6dbf09>
+            A Simple 3-Step Process To Enroll Your Kid to Any Competitive Course
+          </h2>
+        </div>{" "}
+        <div className="enroll-container" data-v-0a6dbf09>
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1134/1134189.png"
+                alt="choose"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                1
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Competitive Course
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  Are you prepared to conquer the challenges of SAT, PSAT, ACT,
+                  AP exams, or university-level courses
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://www.shutterstock.com/image-vector/abstract-red-grungy-free-trial-260nw-1988417402.jpg"
+                alt="subscribe"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                2
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Book a FREE trial class
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  Choose your mentor of choice from 200+ mentors as well as your
+                  preferred time slot
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3663/3663712.png"
+                alt="success"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                3
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Enroll for the course
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  If you liked the demo session, enroll for the course &amp;
+                  begin your child's exciting journey!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>{" "}
+        <div className="book-btn" data-v-0a6dbf09>
+          <a
+            href="/#education-contact"
+            data-toggle="modal"
+            aria-current="page"
+            className="inline-block items-center font-semibold flex-1 justify-center text-white border-0 hero-btn px-8 focus:outline-none text-lg sweep-hero-orange sweep-to-right nuxt-link-exact-active nuxt-link-active"
+            data-v-0a6dbf09
+          >
+            Book a Free Trial Class
+          </a>
+        </div>
+      </div>
+      {/* enroll */}
 
       {/* footer */}
       <footer
@@ -1379,6 +1816,162 @@ const Competative = () => {
           </div>
         </div>
       </footer>
+
+      <WhatsAppButton />
+
+      <a
+          href="#"
+          id="toTop"
+          className="theme-bg-gradient color-white"
+          style={{ display: "inline" }}
+        >
+          <IoIosArrowUp style={{ marginTop: "6px" }} />
+        </a>
+
+      <div id="education-contact" className="modal fade" role="dialog">
+          <div className="modal-dialog">
+            {/* Modal content*/}
+            <div className="modal-content">
+              <div className="modal-header">
+                <button onClick={closePopup}>
+                  <img
+                    className="close"
+                    data-dismiss="modal"
+                    src={close}
+                    alt="close"
+                  />
+                </button>
+                <h4 className="modal-title">Get In Touch</h4>
+              </div>
+              <div className="modal-body">
+                <div className="contact-section">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="contact-form signup-form"
+                    id="ajax-contact"
+                  >
+                    <div className="row section-signup semitrans">
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-name">
+                          <label className="sr-only" htmlFor="name">
+                            Your name
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="name"
+                            id="name"
+                            placeholder="Your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                          />
+                          {errors.name && (
+                            <p className="error-message">{errors.name}</p>
+                          )}
+                        </div>
+                      </div>
+                      {/* Add other form fields */}
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-email">
+                          <label className="sr-only" htmlFor="email">
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            className="form-control form-control-lg"
+                            name="email"
+                            id="email"
+                            placeholder="Email address"
+                            autoComplete="off"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && (
+                            <p className="error-message">{errors.email}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-phone">
+                          <label className="sr-only" htmlFor="phone">
+                            Phone Number
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="phone"
+                            id="phone"
+                            placeholder="Phone Number"
+                            autoComplete="off"
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                          {errors.phone && (
+                            <p className="error-message">{errors.phone}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-address">
+                          <label className="sr-only" htmlFor="address">
+                            Address
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="address"
+                            id="address"
+                            placeholder="Your Address"
+                            autoComplete="off"
+                            value={formData.address}
+                            onChange={handleChange}
+                          />
+                          {errors.address && (
+                            <p className="error-message">{errors.address}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-message">
+                          <label className="sr-only" htmlFor="message">
+                            Enter your message
+                          </label>
+                          <textarea
+                            className="form-control form-control-lg home-textarea"
+                            name="message"
+                            id="message"
+                            placeholder="Enter your message"
+                            autoComplete="off"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && (
+                            <p className="error-message">{errors.message}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group">
+                          <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <p className="submit-btn-bottom-text">
+                          Your email is safe with us and we hate spam as much as
+                          you do.
+                        </p>
+                      </div>
+                    </div>
+                    <div id="error-message" className="text-center" />
+                    <div id="form-messages" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </>
   );
 };

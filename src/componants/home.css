@@ -1,4 +1,6 @@
 /*! CSS Used from: Embedded */
+
+
 a {
     background-color: transparent;
     text-decoration: none;
@@ -91,13 +93,13 @@ a {
     transition-timing-function: ease-out;
   }
   .sweep-hero-orange {
-    background: #ff712d;
+    background: yellow;
+font-size :20px;
     cursor: pointer;
     overflow: hidden;
     border-radius: 12px;
   }
   .sweep-hero-orange:before {
-    background: #ffb600;
   }
   .sweep-to-right:active:before,
   .sweep-to-right:focus:before,

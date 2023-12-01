@@ -2920,7 +2920,7 @@ a:focus {
 }
 
 .title span {
-  font-size: 40px;
+  font-size: 29px;
   font-weight: 500;
   line-height: 40px;
 }
@@ -2948,6 +2948,17 @@ a:focus {
   z-index: 9999;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+}
+.cards.shadow{
+  width: 306px;
+}
+/* Your existing styles */
+
+/* Media query for screen width between 300px and 900px */
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .menu {
+    margin-top: 15px;
+  }
 }
 
 #toTop:hover {

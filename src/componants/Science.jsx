@@ -6,6 +6,10 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import p2 from "../componants/assets/p2.png";
+import Faq from "react-faq-component";
+import WhatsAppButton from "../componants/WhatsAppButton";
+import { IoIosArrowUp } from "react-icons/io";
+import close from "./assets/images/icons/close-icon.png";
 const Science = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -61,6 +65,146 @@ const Science = () => {
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
+
+  const data = {
+    title: "",
+    rows: [
+      {
+        title: "Personalized Learning for Future Leaders",
+        content: `Embark on a journey of personalized learning, guided by experienced tutors passionate about shaping the future leaders of science. `,
+      },
+      {
+        title: " Top-notch Tutors:",
+        content:
+          "Learn from the best! Our team of qualified and passionate science tutors are dedicated to your success. They bring real-world expertise to make science come alive.  ",
+      },
+      {
+        title: "Flexibility in Scheduling:",
+        content: `Busy schedule? No problem! Enjoy the convenience of scheduling sessions at times that suit you. Learning science has never been this flexible.   `,
+      },
+      {
+        title: "Interactive Learning Tools",
+        content: ` Immerse yourself in a world of interactive simulations and virtual labs. Explore science concepts in a hands-on, engaging way from the comfort of your home. `,
+      },
+      {
+        title: "Boost Your Confidence",
+        content: `Overcome challenges with personalized feedback and guatidance. Build confidence in your scientific abilities and ace your exams with flying colors. .  `,
+      },
+      //   {
+      //     title: " Enroll Now and Code Your Way to Success!",
+      //     content: `Ready to be at the forefront of the digital revolution? Contact us today to unlock the power of coding and secure a future where opportunities are limitless.  `
+      // },
+    ],
+  };
+  const styles = {
+    // bgColor: 'white',
+    titleTextColor: "blue",
+    rowTitleColor: "blue",
+    // rowContentColor: 'grey',
+    // arrowColor: "red"
+    titleTextSize: "20px",
+    rowContentTextSize: "16px",
+    rowContentPaddingBottom: "10px",
+    rowContentPaddingLeft: "50px",
+    padding: "30px",
+    marginTop: "20px",
+  };
+
+  const config = {
+    animate: true,
+    arrowIcon: "V",
+    openOnload: 0,
+    expandIcon: "+",
+    collapseIcon: "-",
+  };
+  const containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh", // Adjust as needed
+  };
+
+  const innerDivStyle = {
+    // Optional: Add styles for the inner div if needed
+    maxWidth: "800px", // Adjust the max-width as needed
+    width: "100%",
+    padding: "20px",
+    boxSizing: "border-box",
+  };
+  const headingStyle = {
+    marginBottom: "20px",
+    marginTop: "30px", // Adjust the margin as needed
+  };
+   // form
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const openPopup = () => {
+     setIsPopupOpen(true);
+   };
+   const closePopup = () => {
+     setIsPopupOpen(false);
+   };
+   const [formData, setFormData] = useState({
+     name: "",
+     email: "",
+     phone: "",
+     address: "",
+     message: "",
+   });
+ 
+   const [errors, setErrors] = useState({});
+ 
+   const handleChange = (e) => {
+     const { name, value } = e.target;
+     setFormData({
+       ...formData,
+       [name]: value,
+     });
+     // Clear the error message when the user starts typing
+     setErrors({
+       ...errors,
+       [name]: "",
+     });
+   };
+ 
+   const validateForm = () => {
+     const newErrors = {};
+ 
+     // Add your validation logic here
+     if (!formData.name.trim()) {
+       newErrors.name = "Name is required";
+     }
+ 
+     if (!formData.email.trim()) {
+       newErrors.email = "Email is required";
+     }
+ 
+     // Add more validation rules for other fields
+ 
+     setErrors(newErrors);
+ 
+     // Return true if there are no errors
+     return Object.keys(newErrors).length === 0;
+   };
+ 
+   const handleSubmit = (e) => {
+     e.preventDefault();
+ 
+     if (validateForm()) {
+       // You can access the form data in the 'formData' object
+       console.log("Form Data:", formData);
+     } else {
+       console.log("Form validation failed.");
+     }
+     setFormData({
+       name: "",
+       email: "",
+       phone: "",
+       address: "",
+       message: "",
+     });
+   };
+ 
+   
   return (
     <>
       <header>
@@ -104,16 +248,16 @@ const Science = () => {
                   <a href="#education-price">Price</a>
                 </li> */}
                 <li>
-                  <a href="#education-testimonial">Testimonial</a>
+                  <Link to="/Testimonial">Testimonial</Link>
                 </li>
                 <li>
-                  <a href="#education-blog">Blog</a>
+                  <Link to="/Blog">Blog</Link>
                 </li>
                 <li>
-                  <a href="#education-footer">Facts</a>
+                  <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
-                  <a data-toggle="modal" data-target="#education-contact">
+                  <a  data-toggle="modal" data-target="#education-contact">
                     Contact
                   </a>
                 </li>
@@ -128,13 +272,14 @@ const Science = () => {
         <div className="row">
           <div
             className="col-md-6 mx-auto"
-            style={{ marginTop: "90px", padding: "20px" }}
+            style={{ marginTop: "130px", padding: "20px" }}
           >
             <h1>
-              Online Math Classes <br /> for Kids
+              Unlock the Wonders of Science with Our Exclusive
+              <br />
+              1:1 Online Tuitions!
             </h1>
-            <p>Introduce your kids to a new way of learning Maths</p>
-            <button type="button">Enquire Now</button>
+           <p>Are you ready to embark on a journey of discovery and excellence in science education? Look no further! Our tailored 1:1 online science tuition offer an unparalleled learning experience that goes beyond the ordinary. </p>
           </div>
           <div
             className="col-md-6 "
@@ -145,7 +290,7 @@ const Science = () => {
             }}
           >
             <img
-              src="https://www.scienceeurope.org/media/yaemm3wa/illustration-woman-scientist.png?anchor=center&mode=crop&rnd=133221437978900000&width=800&height=913"
+              src="https://media.istockphoto.com/id/1179433703/vector/little-students-doing-chemical-experiment.jpg?s=612x612&w=0&k=20&c=pKRWUGuEBrhT4SV5qBHC3dZwq6USU6bEwCV9UoyYCko="
               alt="Image"
             />
           </div>
@@ -158,7 +303,7 @@ const Science = () => {
 
       <div
         className="section progress-bars section-padding"
-        style={{ marginTop: "30px" }}
+        style={{ marginTop: "90px" }}
       >
         <div className="progress-bars-content">
           <div className="progress-bar-wrapper">
@@ -234,7 +379,7 @@ const Science = () => {
             <div data-v-0a33574d className="w-full relative">
               <div data-v-0a33574d className="course-title">
                 <h2 data-v-0a33574d className="heading">
-                  Maths Courses for Every Grade
+                  Science Courses for Every Grade
                 </h2>
               </div>{" "}
               <div data-v-0a33574d className="stepper-wrapper">
@@ -247,30 +392,30 @@ const Science = () => {
                     className={` step tab ${activeTab2 === 1 ? "active" : ""}`}
                     onClick={() => handleTabClick2(1)}
                   >
-                    Kindergarten
+                    Grade 3-5
                   </span>
                   <span
                     data-v-0a33574d
                     className={` step tab ${activeTab2 === 2 ? "active" : ""}`}
                     onClick={() => handleTabClick2(2)}
                   >
-                    Grade 1 - 3
+                    Grade 6-7
                   </span>
                   <span
                     data-v-0a33574d
                     className={` step tab ${activeTab2 === 3 ? "active" : ""}`}
                     onClick={() => handleTabClick2(3)}
                   >
-                    Grade 4 - 6
+                    Grade 8-9
                   </span>
                   <span
                     data-v-0a33574d
                     className={` step tab ${activeTab2 === 4 ? "active" : ""}`}
                     onClick={() => handleTabClick2(4)}
                   >
-                    Grade 7 - 9
+                    Grade 10-12
                   </span>
-                  <span
+                  {/* <span
                     data-v-0a33574d
                     className={` step tab ${activeTab2 === 5 ? "active" : ""}`}
                     onClick={() => handleTabClick2(5)}
@@ -283,7 +428,7 @@ const Science = () => {
                     onClick={() => handleTabClick2(6)}
                   >
                     Grade 11 - 12
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>
@@ -302,12 +447,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
+                        src="https://cdn-icons-png.flaticon.com/512/2573/2573871.png"
                         alt="teacher"
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                        Environment changes
                       </span>
                     </div>
                   </center>{" "}
@@ -319,12 +464,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/2038/2038806.png"
+                        src="https://cdn-icons-png.flaticon.com/512/8191/8191390.png"
                         alt="teacher"
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Count, Compare and Write Numbers 0 to 10
+                        Matter
                       </div>
                     </div>
                     <div
@@ -334,12 +479,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
+                        src="https://cdn-icons-png.flaticon.com/512/3208/3208119.png"
                         alt="teacher"
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Sorting
+                        Energy
                       </div>
                     </div>
                     <div
@@ -349,12 +494,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://i.pinimg.com/564x/8b/04/12/8b04124be0a29312eccc0798dc232ffe.jpg"
+                        src="https://www.shutterstock.com/image-vector/cell-icons-600nw-670596565.jpg"
                         alt="teacher"
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Two-Dimensional Shapes
+                        Structure in living being
                       </div>
                     </div>
                     <div
@@ -364,12 +509,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaKs8EArLUmhS_Fq28x-fM9vsfkzDXlFb62A&usqp=CAU"
+                        src="https://cdn-icons-png.flaticon.com/512/2106/2106448.png"
                         alt="teacher"
                         className="course-img"
                       />{" "}
                       <div data-v-eb8371ae className="course-step-info">
-                        Position and Location
+                        Chemical reaction and many more
                       </div>
                     </div>
                   </div>
@@ -385,12 +530,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
+                        src="https://cdn-icons-png.flaticon.com/512/947/947683.png"
                         alt="teacher"
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                        Solar system
                       </span>
                     </div>
                   </center>{" "}
@@ -398,136 +543,48 @@ const Science = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtW6EgLP0gBKRFrbaayWBR81A2kUcXH2jPBQ&usqp=CAU"
+                      src="https://w7.pngwing.com/pngs/731/427/png-transparent-metal-scrap-computer-icons-steel-metal-s-angle-rectangle-steel.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Number systems
+                      Metals and non- metals
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://i.pinimg.com/736x/f2/c2/63/f2c2631d469db9d9f08ac76a17c3f910.jpg"
+                      src="https://w7.pngwing.com/pngs/731/427/png-transparent-metal-scrap-computer-icons-steel-metal-s-angle-rectangle-steel.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Addition and Subtraction
+                      Plant tissue
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/6555/6555320.png"
+                      src="https://cdn-icons-png.flaticon.com/512/4176/4176652.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Multiplication and division
+                      Friction and its resistance
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/Tips-And-Tricks-And-Shortcuts-Of-Decimals-And-Fractions.webp"
+                      src="https://cdn-icons-png.flaticon.com/512/2286/2286215.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Data Handling
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/603/603563.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Shapes and many more
-                    </div>
-                  </div>
-                </div>
-
-                <div data-v-eb8371ae className="course-step-container">
-                  <center data-v-eb8371ae>
-                    <div data-v-eb8371ae className="course-header-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
-                        alt="teacher"
-                        className="topic-img"
-                      />{" "}
-                      <span data-v-eb8371ae className="topic-title">
-                        Vedic Math
-                      </span>
-                    </div>
-                  </center>{" "}
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Addition Tricks
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="https://i.pinimg.com/736x/f2/c2/63/f2c2631d469db9d9f08ac76a17c3f910.jpg"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Series Addition
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Subtraction Tricks
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://static.thenounproject.com/png/953211-200.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Mental Addition
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Mental Subtraction and many more
+                      Magnetism and many more
                     </div>
                   </div>
                 </div>
@@ -541,12 +598,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
+                        src="https://cdn1.byjus.com/wp-content/uploads/2020/02/Electric-Circuit-and-Electrical-Symbols-2.png"
                         alt="teacher"
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                        Electric currents and it’s types
                       </span>
                     </div>
                   </center>{" "}
@@ -554,51 +611,51 @@ const Science = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtW6EgLP0gBKRFrbaayWBR81A2kUcXH2jPBQ&usqp=CAU"
+                      src="https://cdn-icons-png.flaticon.com/512/5449/5449557.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Number systems
+                      The cell
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://i.pinimg.com/736x/f2/c2/63/f2c2631d469db9d9f08ac76a17c3f910.jpg"
+                      src="https://static.thenounproject.com/png/4133942-200.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      ARITHMETIC OPERATIONS
+                      Reflection of light
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/6555/6555320.png"
+                      src="https://static.thenounproject.com/png/3202284-200.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SIMPLE EQUATIONS
+                      Force and gravitation
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/Tips-And-Tricks-And-Shortcuts-Of-Decimals-And-Fractions.webp"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnWY7mt_EQpe4Mn5ikdLjTNHRQpqnMS58S4tIi8q5iXrx0OBTRd-FVOt6GV5ipkpGvbDM&usqp=CAU"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      MENSURATION
+                      Human impact and many more
                     </div>
                   </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
+                  {/* <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
@@ -621,10 +678,10 @@ const Science = () => {
                     <div data-v-eb8371ae className="course-step-info">
                       QUADILATERALS , POLYGONS & MANY MORE.
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
-                <div data-v-eb8371ae className="course-step-container">
+                {/* <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
                       <img
@@ -687,7 +744,7 @@ const Science = () => {
                       Fraction tricks and many more
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             )}
             {activeTab2 === 4 && (
@@ -698,12 +755,12 @@ const Science = () => {
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://cdn-icons-png.flaticon.com/512/4720/4720451.png"
+                        src="https://static.thenounproject.com/png/1607110-200.png"
                         alt="teacher"
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        School Math
+                        Elements and compound
                       </span>
                     </div>
                   </center>{" "}
@@ -711,51 +768,51 @@ const Science = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://thumbs.dreamstime.com/b/linear-function-equation-mathematics-icon-vector-image-can-also-be-used-math-symbols-suitable-use-web-apps-mobile-apps-97721965.jpg"
+                      src="https://media.geeksforgeeks.org/wp-content/uploads/20230129113820/Base.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      INTEGERS
+                      Acid, bases and salt
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBtVc9TxtBEJ07mw/bFEBhJBDKRUATipiKklDSkSoFSLilQJDUkcBSfoAtGkoiQZGODjpCSZM4EtCAkisACUvILvyBvzPv8Flre++8GPtJhrX3ed7s7PjtnkaKSCaTw319fcsej2ehWq2G+GVomjaMOR6neGzy/zi/zorF4tHIyEhKJa6mIGwMDAxscuCwLagC5u8XCoUIJ2JSJwlgxSy8zcMteh2i+Xw+4lQRzUEcqz7loUHdgclJLMqqoUvEQ10WB6wFpdPpUPOE1iRu9EBcREslNEEce/5bFM9ks5TJ5aSRAj4fBfz+F/GEJObsnvDan9YazqiLc8Bve3s0HgxKA98nEvR1fd0aq/CQSA1GTetzPQGUnpq6HQmMj43RxsqKNPDu4WF91SIv8fhIuacnejMx0cATEgC2WDOGrbCasL+/f5u6hMubG/p7e9uWx6ZmLdiLvWeDCTsRzbs7+tcUcHZ62pF3wQm48Wzour7G2js67JVc4G8snYVsPt8xT4Bl7V5e/YIbKzg6SsH5eWqHZt6iwndwrqAJQ9RFvJ2cJP/goBIXhxoSMGST6Nr7hwfaPTiQfhk/L7uzVXkSGFo2m606zeLnA5ORJsjmYgdW5cmgkxuqVbU5VZ4E3tplouWc76ETikihB0ySNGKnTlgql8nr8bTwHBKwnPAPtQGCwGLxwtgNv66u6OL6mlTAlY9jC37yYM2N+Glpqd7lG6urUo7omGjI0/NzVycEyuXymY4LJPrAlcmNVCyV6mMZOnBCgrYX5zLfVL5zFTadiD9OTuhLOPw8Pj6W9oXthJdcfk3X6d3UFLmB9fahbR3HbIlRroJjAqKgU1PamJ2ZoVKlQgqI4I+VgM/nM7kKMT6h6kn00gkrlUpsaGjIxNj9StYbJzR5wXO8BamGBIBcLmfwVvT0UsrCi6i4/UGDFWOCy/ORns2p6+KILYoD0geTHlSiZeU2pIcRiLg6o1nolUAM7LlMHGj7cIpqcJCddm4ponbAwVuiTsLKCQhBhzOZzDIH/cBv3xMuE8LjOeFg0fU47DUQCBzZXd4O/wHb7dHbWH3QegAAAABJRU5ErkJggg=="
+                      src="https://static.thenounproject.com/png/1849509-200.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      PROFIT & LOSS
+                      Oscillation and waves
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://w7.pngwing.com/pngs/41/897/png-transparent-mathematics-rational-number-mathematics-text-numerical-digit-cartoon-thumbnail.png"
+                      src="https://cdn-icons-png.flaticon.com/512/11098/11098327.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      SIMPLE INTEREST
+                      Thermodynamics
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/4133/4133386.png"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvvufbcRgzGQrg21Uwhch-vifp3G9dv-EfTkaYEwTS6e1KHEd47bhi6DtOsRnzXrFWTjg&usqp=CAU"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      LINEAR EQUATIONS & MODELLING PROBLEMS
+                      Projectile and circular motion and many more
                     </div>
                   </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
+                  {/* <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
@@ -766,10 +823,10 @@ const Science = () => {
                     <div data-v-eb8371ae className="course-step-info">
                       Construction and Many More
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
-                <div data-v-eb8371ae className="course-step-container">
+                {/* <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
                       <img
@@ -844,7 +901,7 @@ const Science = () => {
                       Vertically and crosswise
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 {/* <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
@@ -912,7 +969,7 @@ const Science = () => {
                 </div> */}
               </div>
             )}
-            {activeTab2 === 5 && (
+            {/* {activeTab2 === 5 && (
               <div data-v-eb8371ae className="maths-topic-container">
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
@@ -1225,11 +1282,123 @@ const Science = () => {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
       {/* maths tabs */}
+
+      
+      <div className="enroll-wrapper" data-v-0a6dbf09>
+        <div
+          data-aos="fade-up"
+          data-aos-duration={1000}
+          className="title-container aos-init aos-animate"
+          data-v-0a6dbf09
+        >
+          <h2 className="title" data-v-0a6dbf09>
+            A Simple 3-Step Process To Enroll Your Kid to Science Course
+          </h2>
+        </div>{" "}
+        <div className="enroll-container" data-v-0a6dbf09>
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5205/5205074.png"
+                alt="choose"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                srcSet="https://www.codeyoung.com/_ipx/w_320/choose.svg  320w,https://www.codeyoung.com/_ipx/w_640/choose.svg  640w,https://www.codeyoung.com/_ipx/w_768/choose.svg  768w,https://www.codeyoung.com/_ipx/w_1024/choose.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/choose.svg  1280w"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                1
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Science Courses
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  Are you ready to embark on a journey of discovery and
+                  excellence in science education? Look no further!
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://www.codeyoung.com/_ipx/w_1280/subscribe.svg"
+                alt="subscribe"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                srcSet="https://www.codeyoung.com/_ipx/w_320/subscribe.svg  320w,https://www.codeyoung.com/_ipx/w_640/subscribe.svg  640w,https://www.codeyoung.com/_ipx/w_768/subscribe.svg  768w,https://www.codeyoung.com/_ipx/w_1024/subscribe.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/subscribe.svg  1280w"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                2
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Book a FREE trial class
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  Choose your mentor of choice from 200+ mentors as well as your
+                  preferred time slot
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="enroll-box" data-v-0a6dbf09>
+            <div data-v-0a6dbf09>
+              <img
+                src="https://www.codeyoung.com/_ipx/w_1280/success.svg"
+                alt="success"
+                sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                srcSet="https://www.codeyoung.com/_ipx/w_320/success.svg  320w,https://www.codeyoung.com/_ipx/w_640/success.svg  640w,https://www.codeyoung.com/_ipx/w_768/success.svg  768w,https://www.codeyoung.com/_ipx/w_1024/success.svg  1024w,https://www.codeyoung.com/_ipx/w_1280/success.svg  1280w"
+                className="enroll-img"
+                data-v-0a6dbf09
+              />
+            </div>{" "}
+            <div className="enroll-body" data-v-0a6dbf09>
+              <div className="enroll-number" data-v-0a6dbf09>
+                3
+              </div>{" "}
+              <div data-v-0a6dbf09>
+                <div className="enroll-title" data-v-0a6dbf09>
+                  Enroll for the course
+                </div>{" "}
+                <div className="enroll-description" data-v-0a6dbf09>
+                  If you liked the demo session, enroll for the course &amp;
+                  begin your child's exciting journey!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>{" "}
+        <div className="book-btn" data-v-0a6dbf09>
+          <a
+            href="/#education-contact"
+            data-toggle="modal"
+            aria-current="page"
+            className="inline-block items-center font-semibold flex-1 justify-center text-white border-0 hero-btn px-8 focus:outline-none text-lg sweep-hero-orange sweep-to-right nuxt-link-exact-active nuxt-link-active"
+            data-v-0a6dbf09
+          >
+            Book a Free Trial Class
+          </a>
+        </div>
+      </div>
+
+      <div style={containerStyle}>
+        <div style={innerDivStyle}>
+          <h1 style={headingStyle}>Why Choose Edufusion Science Tuitions?</h1>
+          <Faq data={data} styles={styles} config={config} />
+        </div>
+      </div>
 
       {/* footer */}
       <footer
@@ -1379,6 +1548,161 @@ const Science = () => {
           </div>
         </div>
       </footer>
+
+
+      <WhatsAppButton />
+      <a
+          href="#"
+          id="toTop"
+          className="theme-bg-gradient color-white"
+          style={{ display: "inline" }}
+        >
+          <IoIosArrowUp style={{ marginTop: "6px" }} />
+        </a>
+      <div id="education-contact" className="modal fade" role="dialog">
+          <div className="modal-dialog">
+            {/* Modal content*/}
+            <div className="modal-content">
+              <div className="modal-header">
+                <button onClick={closePopup}>
+                  <img
+                    className="close"
+                    data-dismiss="modal"
+                    src={close}
+                    alt="close"
+                  />
+                </button>
+                <h4 className="modal-title">Get In Touch</h4>
+              </div>
+              <div className="modal-body">
+                <div className="contact-section">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="contact-form signup-form"
+                    id="ajax-contact"
+                  >
+                    <div className="row section-signup semitrans">
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-name">
+                          <label className="sr-only" htmlFor="name">
+                            Your name
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="name"
+                            id="name"
+                            placeholder="Your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                          />
+                          {errors.name && (
+                            <p className="error-message">{errors.name}</p>
+                          )}
+                        </div>
+                      </div>
+                      {/* Add other form fields */}
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-email">
+                          <label className="sr-only" htmlFor="email">
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            className="form-control form-control-lg"
+                            name="email"
+                            id="email"
+                            placeholder="Email address"
+                            autoComplete="off"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                          {errors.email && (
+                            <p className="error-message">{errors.email}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-phone">
+                          <label className="sr-only" htmlFor="phone">
+                            Phone Number
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="phone"
+                            id="phone"
+                            placeholder="Phone Number"
+                            autoComplete="off"
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                          {errors.phone && (
+                            <p className="error-message">{errors.phone}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-address">
+                          <label className="sr-only" htmlFor="address">
+                            Address
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            name="address"
+                            id="address"
+                            placeholder="Your Address"
+                            autoComplete="off"
+                            value={formData.address}
+                            onChange={handleChange}
+                          />
+                          {errors.address && (
+                            <p className="error-message">{errors.address}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group has-icon-left form-control-message">
+                          <label className="sr-only" htmlFor="message">
+                            Enter your message
+                          </label>
+                          <textarea
+                            className="form-control form-control-lg home-textarea"
+                            name="message"
+                            id="message"
+                            placeholder="Enter your message"
+                            autoComplete="off"
+                            value={formData.message}
+                            onChange={handleChange}
+                          />
+                          {errors.message && (
+                            <p className="error-message">{errors.message}</p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group">
+                          <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <p className="submit-btn-bottom-text">
+                          Your email is safe with us and we hate spam as much as
+                          you do.
+                        </p>
+                      </div>
+                    </div>
+                    <div id="error-message" className="text-center" />
+                    <div id="form-messages" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </>
   );
 };
