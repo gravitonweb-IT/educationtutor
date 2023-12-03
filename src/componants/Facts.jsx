@@ -7,6 +7,10 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import p2 from "../componants/assets/p2.png";
+import WhatsAppButton from "../componants/WhatsAppButton";
+import WhatsAppButton1 from "../componants/WhatsAppButton1";
+import { IoIosArrowUp } from "react-icons/io";
+import logo3 from "../componants/assets/images/logo3.jpg";
 const Facts = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -151,7 +155,7 @@ const Facts = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src={p2}
+                  src={logo3}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
@@ -181,10 +185,10 @@ const Facts = () => {
                   <Link to="/Blog">Blog</Link>
                 </li>
                 <li>
-                  <Link to="/education-footer">Facts</Link>
+                  <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
-                  <Link data-toggle="modal" data-target="#education-contact">
+                  <Link data-toggle="modal" to="/#education-contact">
                     Contact
                   </Link>
                 </li>
@@ -215,7 +219,7 @@ const Facts = () => {
                   coding. Join us on this incredible journey.
                 </p>
                 {/* PROGRESS BARS*/}
-                <div className="section progress-bars section-padding">
+                {/* <div className="section progress-bars section-padding">
                   <div className="progress-bars-content">
                     <div className="progress-bar-wrapper">
                       <div className="row">
@@ -252,7 +256,7 @@ const Facts = () => {
                       </div>
                     </div>{" "}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -344,6 +348,16 @@ const Facts = () => {
           </div>
         </div>
       </footer>
+      <WhatsAppButton1 />
+      <WhatsAppButton />
+      <a
+        href="#"
+        id="toTop"
+        className="theme-bg-gradient color-white"
+        style={{ display: "inline" }}
+      >
+        <IoIosArrowUp style={{ marginTop: "6px" }} />
+      </a>
     </>
   );
 };

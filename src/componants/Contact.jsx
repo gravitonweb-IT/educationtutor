@@ -8,6 +8,7 @@ import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import p2 from "../componants/assets/p2.png";
 import close from "./assets/images/icons/close-icon.png";
+import logo3 from "../componants/assets/images/logo3.jpg";
 const Contact = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -325,7 +326,7 @@ const Contact = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src={p2}
+                  src={logo3}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
@@ -531,7 +532,7 @@ const Contact = () => {
                   coding. Join us on this incredible journey.
                 </p>
                 {/* PROGRESS BARS*/}
-                <div className="section progress-bars section-padding">
+                {/* <div className="section progress-bars section-padding">
                   <div className="progress-bars-content">
                     <div className="progress-bar-wrapper">
                       <div className="row">
@@ -568,7 +569,7 @@ const Contact = () => {
                       </div>
                     </div>{" "}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -32,7 +32,7 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import close from "./assets/images/icons/close-icon.png";
 import { IoIosArrowUp } from "react-icons/io";
-import logo from "../componants/assets/images/logo3.png";
+import logo from "../componants/assets/images/logo.jpg";
 import WhatsAppButton from "../componants/WhatsAppButton";
 import test from "../componants/assets/images/testmonialimages/t1.png";
 import test1 from "../componants/assets/images/testmonialimages/t2.jpg";
@@ -46,13 +46,94 @@ import grade8 from "../componants/assets/grade8.mp4";
 import grade6 from "../componants/assets/grade6.mp4";
 import mario from "../componants/assets/mario.webm";
 import kids from "../componants/assets/kids.png";
-import p2 from "../componants/assets/p2.png";
-import game from "../componants/assets/game.mp4"
+// import p2 from "../componants/assets/p2.png";
+import logo2 from "../componants/assets/images/logo3.jpg";
+import game from "../componants/assets/game.mp4";
+import coding from "../componants/assets/coding.jpg";
+import science from "../componants/assets/science.jpg";
+import math from "../componants/assets/maths.jpg";
 import "./home.css";
 import "./tabs.css";
+import WhatsAppButton1 from "../componants/WhatsAppButton1"
 import sat from "../componants/assets/sat.mp4";
 // import anime from 'animejs';
 const Home = () => {
+  const [expandedCardIndex, setExpandedCardIndex] = useState(null);
+
+  const toggleText = (index) => {
+    setExpandedCardIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+  const cardContents = [
+    {
+      title: 'Coding is valuable for kids as it',
+      intro: 'Kid-friendly platforms  ',
+      readMore: (
+        <>
+        <p>and resources make learning to code engaging and enjoyable.</p>
+          <h2>Develops Problem-Solving Skills:</h2>
+          <p>Breaks down complex issues for critical thinking. </p>
+          <h2>Fosters Logic and Creativity:</h2>
+          <p>Requires both logical thinking and creativity. </p>
+          <h2>Enhances Computational Thinking:</h2>
+          <p>Teaches problem-solving for computers. </p>
+          <h2>Prepares for the Future</h2>
+          <p> Equips for technology-driven job markets.</p>
+          <h2>Provides Understanding of Technology</h2>
+          <p>Demystifies daily digital interactions. </p>
+          <h2>Improves Math Skills</h2>
+          <p>Involves mathematical concepts naturally. </p>
+          <h2>Allows Creativity and Expression</h2>
+          <p>Enables creation of games, apps, and websites. </p>
+          <h2>Promotes Collaboration</h2>
+          <p>Encourages teamwork and effective collaboration. </p>
+          <h2>Offers Career Opportunities</h2>
+          <p> Opens doors to various tech-related careers. </p>
+          <h2>Builds Confidence</h2>
+          <p>Boosts confidence by mastering complex skills. </p>
+        </>
+      ),
+      imageSrc: coding,
+    },
+    {
+      title: 'Beyond the Stars: Dark Matter Unveiled',
+      intro: 'Gazing into the cosmos, ',
+      readMore: (
+        <>
+        <p>we confront the enigma—dark matter. Elusive, it interacts solely through gravity, challenging scientists who infer its presence through gravitational effects on visible matter.  </p>
+          <p> Picture the universe as a cosmic ballet, with dark matter as the unseen choreographer, maintaining cosmic harmony. Scientists engage in cosmic cartography, mapping visible matters distribution. Discrepancies reveal dark matters ethereal silhouette, weaving an unseen tapestry—the cosmic web—concentrating galaxies along invisible threads.</p>
+          <p>As our journey concludes, an invitation extends to all curious minds. The cosmos beckons, revealing hidden wonders. Let curiosity propel us further into the cosmic unknown, where discovery knows no bounds.</p>
+        </>
+      ),
+      imageSrc: science,
+    },
+    {
+      title: 'Unveiling the Beauty of Mathematics',
+      intro: 'Dive into the world of math: ',
+      readMore: (
+        <>
+          <h2>Patterns Revealed</h2>
+          <p>Uncover the beauty of numerical patterns, connecting diverse concepts seamlessly. </p>
+          <h2>Geometry's Charm</h2>
+          <p>Explore the elegance of shapes and angles, witnessing the visual allure of geometry. </p>
+          <h2>Algebra's Power</h2>
+          <p>Balancing equations and solving mysteries—algebra's artistry in real-world precision. </p>
+          <h2>Calculus Insight</h2>
+          <p>Experience the symphony of rates and changes, where calculus unlocks profound insights.</p>
+          <h2>Nature's Equation</h2>
+          <p>In the natural world, math is the silent language describing the universe's beauty. </p>
+          <h2>Conclusion</h2>
+          <p>Celebrate the wonders of mathematics—a language expressing the beauty of the world. Unlock secrets within its realm and embrace the elegance math offers. 
+
+ 
+
+Learn Math Online At Home - X Math Education | Teaching Methods </p>
+       
+        </>
+      ),
+      imageSrc: math,
+    },
+  ];
+
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -76,9 +157,7 @@ const Home = () => {
 
   const handleSubmit1 = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    // Access the values using the state variables (name, email, message)
-    // Once done, you can close the form
+   
     setShowForm(false);
   };
 
@@ -92,7 +171,7 @@ const Home = () => {
     setActiveTab2(tabName);
   };
   const [slidesToShow, setSlidesToShow] = useState(3);
-  // const [contact, setContact]=useState(false);
+
 
   const settings1 = {
     dots: true,
@@ -101,7 +180,7 @@ const Home = () => {
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
   };
-  const [activeTab, setActiveTab] = useState("course-item-1"); // Initial active tab
+  const [activeTab, setActiveTab] = useState("course-item-1"); 
 
   useEffect(() => {
     console.log("this is ");
@@ -279,7 +358,7 @@ const Home = () => {
 
                 <a href="#education-home" className="brand-logo">
                   <img
-                    src={p2}
+                    src={logo2}
                     alt="karbar logo"
                     className="header-logo-section"
                   />
@@ -296,7 +375,7 @@ const Home = () => {
                       <Link to="/Maths">Maths</Link>
                       <Link to="/Science">Science</Link>
                       <Link to="/Coding">Coding</Link>
-                      <Link to="/Competative">Competative</Link>
+                      <Link to="/Competative">Competative Exams</Link>
                     </div>
                   </li>
                   {/* <li>
@@ -331,15 +410,20 @@ const Home = () => {
     ==================================================================================*/}
         <section id="education-home" className="banner-area theme-bg-gradient">
           <div className="container">
+         
+ 
             <div className="row">
+              
               <div className="col-lg-4 col-sm-4">
                 <div className="banner-device">
+          
                   <img src={kids} alt="main" />
                 </div>
               </div>
               <div className="col-lg-8 col-sm-8">
                 {/* Home content */}
                 <div className="banner-txt">
+              
                   <div className="banner-intro">
                     <h1 className="banner-title">
                       Welcome to Edufusion Tutors - Breaking
@@ -351,10 +435,11 @@ const Home = () => {
                       more than 15 years and tech enthusiasts, we're redefining
                       online learning to make it accessible, engaging, and
                       empowering for every student. Experience personalized
-                      excellence with our exclusive<br/>   <div id="sessions" style={{ color: '#ffec0b', fontSize: '23px', fontWeight: '600', 
+                      excellence with our exclusive<br/>  
+                       <div id="sessions" style={{ color: '#ff3366', fontSize: '23px', fontWeight: '600', 
                       // transform: `translateX(${position})`, whiteSpace: 'nowrap'
                        }}>
-      1:1 sessions in math, science, and coding. Join Edufusion,
+      1:1 Sessions In Math, Science, and Coding. Join Edufusion,
     </div> where education
                       transcends boundaries!
                     </p>
@@ -565,7 +650,7 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>Mathematics Learning Platform</span>
+                                  <span style={{fontSize:"25px", fontWeight:"700"}}>Mathematics Learning Platform</span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt20">
                                   <h5>
@@ -584,34 +669,20 @@ const Home = () => {
                             </p>
                             <ul className="list1">
                               <li>
-                                <span className="table-cell valign-middle">
-                                  Math Anxiety Support: Conquer math anxiety
+                                <span className="table-cell valign-middle"  >
+                                  <h5 style={{fontSize:"18px", fontWeight:"600"}}>Math Anxiety Support:</h5>Conquer math anxiety
                                   with our supportive environment, ensuring a
                                   positive and enjoyable learning experience.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Bridge Learning Gaps: Personalized lessons
+                                <h5 style={{fontSize:"18px", fontWeight:"600"}}>Bridge Learning Gaps:</h5> Personalized lessons
                                   fill gaps, providing a solid foundation for
                                   mathematical success.
                                 </span>
                               </li>
-                              {/* <li>
-                                <span className="table-cell valign-middle">
-                                Conceptual Learning: Dive into concepts, transforming math into a captivating journey of understanding.
-                                </span>
-                              </li> */}
-                              {/* <li>
-                                <span className="table-cell valign-middle">
-                                Mental Math’s Mastery: Practical strategies enhance mental math skills, boosting confidence in everyday calculations.
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                Advanced Math Support: From calculus to trigonometry, our tutors guide you through advanced math challenges with patience and expertise.
-                                </span>
-                              </li> */}
+                              
                             </ul>
                             {/* button */}
                           </div>
@@ -642,7 +713,7 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>
+                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
                                     Unlock the Wonders of Science with Our
                                     Exclusive
                                   </span>
@@ -708,7 +779,7 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>
+                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
                                     Supercharge Your Child's Future with Coding!{" "}
                                   </span>
                                 </div>
@@ -729,47 +800,23 @@ const Home = () => {
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Boosts Critical Thinking: Develops logical and
+                                  <h5 style={{fontSize:"18px", fontWeight:"700"}}>Boosts Critical Thinking:</h5> Develops logical and
                                   analytical skills for academic excellence.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Math Made Fun: Coding enhances math
+                                 <h5 style={{fontSize:"18px", fontWeight:"700"}}>Math Made Fun:</h5>  Coding enhances math
                                   proficiency in an engaging way.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  Creative Exploration: Unleash creativity
+                                  <h5 style={{fontSize:"18px", fontWeight:"700"}}>Creative Exploration:</h5> Unleash creativity
                                   through coding adventures.
                                 </span>
                               </li>
-                              {/* <li>
-                                <span className="table-cell valign-middle">
-                                Confidence Building: Conquer coding challenges for increased self-assurance. 
-                                </span>
-                              </li> */}
-                              {/* <li>
-                                <span className="table-cell valign-middle">
-                                Expert-Led Sessions: Learn from experienced educators in convenient online sessions. 
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                Life-Long Benefits: Instill problem-solving, resilience, and a love for learning. 
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                Accessible Learning: Flexible online tutoring tailored to your child's schedule.
-                                </span>
-                              </li>
-                              <li>
-                                <span className="table-cell valign-middle">
-                                Success Shapers: Empower your child to shape the future with coding superpowers.
-                                </span>
-                              </li> */}
+                             
                             </ul>
                             {/* button */}
                             <div className="flex-1"></div>
@@ -799,7 +846,7 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>
+                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
                                     Excel in Competitive Exams with Our Proven
                                     Expertise
                                   </span>
@@ -813,8 +860,8 @@ const Home = () => {
                             </div>
                             <p className="lheight-30 mt30">
                               Unlock the door to success in competitive exams
-                              such as PSAT, SAT, ACT, NAPLAN, and Olympiads with
-                              EDUFUSION TUTOR. With over 12 years of
+                              such as PSAT, SAT, ACT, NAPLAN, and Olympiads with 
+                               <span style={{fontSize:"15px", fontWeight:"600",marginLeft:"10px"}}>EDUFUSION TUTOR</span>. With over 12 years of
                               unparalleled experience, we have been guiding
                               students towards academic excellence and achieving
                               top scores in these prestigious examinations.
@@ -869,7 +916,7 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span>
+                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
                                     Master the PSAT with EDUFUSION TUTOR
                                   </span>
                                 </div>
@@ -918,11 +965,7 @@ const Home = () => {
                             </ul>
                             {/* button */}
                             <div className="flex-1">
-                              {/* <button className="button button-mat border-gradient bdrs-10 lheight-50 color-white fsize-14 fweight-600 btn-1">
-                  <span className="color-2 button-text">
-                    START LEARN NOW
-                  </span>
-                </button> */}
+                            
                             </div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -950,7 +993,7 @@ const Home = () => {
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span> Competitive Exam </span>
+                                  <span style={{fontSize:"25px", fontWeight:"700"}}> Competitive Exam </span>
                                 </div>
                                 <div
                                   className="subtitle fweight-600 color-4"
@@ -1026,82 +1069,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* <div className="container" style={{ marginRight: "52px" }}>
-          <h1 className="text-center">Video'S Section </h1>
-          <div className="row mt40" id="videos">
        
-            <div className="col-lg-4 col-md-4 mx-auto">
-              <iframe
-                width="100%"
-                height={300}
-                src={mathsvideo}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-            </div>
-
-    
-            <div className="col-lg-4 col-md-4  mx-auto">
-              <iframe
-                width="100%"
-                height={300}
-                src={learningmath}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-            </div>
-
-       
-            <div className="col-lg-4 col-md-4  mx-auto">
-              <iframe
-                width="100%"
-                height={300}
-                src={grade2}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-            </div>
-          </div>
-          <div className="row mt40" id="videos">
-                <div className="col-lg-4 col-md-4  mx-auto">
-              <iframe
-                width="100%"
-                height={300}
-                src={grade6}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-            </div>
-
-        
-            <div className="col-lg-4 col-md-4  mx-auto">
-              <iframe
-                width="100%"
-                height={300}
-                src={grade8}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-            </div>
-
-        
-            <div className="col-lg-4 col-md-4 mx-auto">
-              <iframe
-                width="100%"
-                height={300}
-                src={mario}
-                frameBorder={0}
-                allow="autoplay; encrypted-media"
-                allowFullScreen=""
-              />
-            </div>
-          </div>
-        </div> */}
 
         {/* tabs */}
         <div className="enroll-wrapper" data-v-0a6dbf09>
@@ -1112,7 +1080,7 @@ const Home = () => {
             data-v-0a6dbf09
           >
             <h2 className="title" data-v-0a6dbf09>
-              A Simple 3-Step Process To Enroll Your Kid to Any Coding Course
+              A Simple 3-Step Process To Enroll Your Kid to Any  Course
             </h2>
           </div>{" "}
           <div className="enroll-container" data-v-0a6dbf09>
@@ -1138,9 +1106,9 @@ const Home = () => {
                   <div className="enroll-description" data-v-0a6dbf09>
                     <ul>
                       <li>Maths Course</li>
-                      <li>Coding Course</li>
+                      {/* <li>Coding Course</li> */}
                       <li>Science Course</li>
-                      <li>competitive Course</li>
+                      <li>Competitive Exam</li>
                     </ul>
                   </div>
                 </div>
@@ -1270,16 +1238,16 @@ const Home = () => {
                                   Make your courses standout
                                 </div>
                                 <div className="title color-2">
-                                  <span>
+                                  <span  style={{fontSize:"25px", fontWeight:"700" }}>
                                     Why choose us
                                     <span className="color-15">.</span>
                                   </span>
                                 </div>
                               </div>
                             </div>
-                            <h5>
+                            <h2 style={{fontSize:"24px", fontWeight:"700" }}>
                               Transforming Lives Through Personalized Education
-                            </h5>
+                            </h2>
                             <p>
                               At EDUFUSION TUTOR, we envision a world where
                               every learner, regardless of background or
@@ -1289,14 +1257,15 @@ const Home = () => {
                               journey, fostering a love for learning that
                               transcends boundaries.
                             </p>
-                            <h5>Our Commitment</h5>
+                            <h5 style={{fontSize:"20px", fontWeight:"700" }}>Our Commitment</h5>
                             <p>
-                              Empowerment: We envision empowering students with
+                             <h5  style={{fontSize:"18px", fontWeight:"600" }}>Empowerment:</h5> 
+                             We envision empowering students with
                               the tools and knowledge to confidently navigate
                               the ever-evolving landscape of education and
                               beyond.
                             </p>
-                            <h5>Inclusivity: </h5>
+                            <h5  style={{fontSize:"20px", fontWeight:"700" }}>Inclusivity: </h5>
                             <p>
                               Our vision includes breaking down barriers to
                               learning. We strive to create an inclusive space
@@ -1349,38 +1318,32 @@ const Home = () => {
                               Make your courses standout
                             </div>
                             <div className="title color-2">
-                              <span>
+                              <span style={{fontSize:"25px", fontWeight:"700" }}>
                                 Why choose us<span className="color-15">.</span>
                               </span>
                             </div>
                           </div>
                         </div>
-                        <h5>Global Impact: </h5>
+                        <h5 style={{fontSize:"25px", fontWeight:"700" }}>Global Impact: </h5>
                         <p>
                           Our vision extends globally, reaching learners around
                           the world. We aspire to contribute to the development
                           of a knowledgeable and empowered global community.
                         </p>
                         <p>
-                          Lifelong Learning: Beyond academic success, our vision
+                         <span style={{fontSize:"20px", fontWeight:"600" }}> Lifelong Learning</span>: Beyond academic success, our vision
                           encompasses instilling a love for lifelong learning.
                           We aspire to cultivate curious, adaptable individuals
                           prepared for the challenges and opportunities of the
                           future.
                         </p>
-                        <h5>Time Rescheduling</h5>
+                        <h5 style={{fontSize:"20px", fontWeight:"700" }}>Time Rescheduling</h5>
                         <p>
                           Recognizing the busy nature of life, we offer
                           hassle-free time rescheduling options. Your education
                           should fit your schedule, not the other way around.
                         </p>
-                        {/* <h5>Hassle-Free Chat Support</h5>
-<p> Our dedicated chat support team is here to assist you seamlessly. Experience hassle-free communication, ensuring that your queries are addressed promptly and efficiently.
-</p>
-<h5>Join Us in Shaping the Future:
-</h5>
-<p>As we work towards this vision, we invite students, parents, and educators to join us on this transformative journey. Together, we can create a world where education knows no boundaries, and each learner can thrive, succeed, and contribute meaningfully to society.
-</p> */}
+                      
                       </div>
                       <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div className="video-exp">
@@ -1471,115 +1434,7 @@ const Home = () => {
         {/*================================================================================= 
                           START PRICE  
     ==================================================================================*/}
-        {/* <section id="education-price" className="prices pt100 pb80">
-          <div className="container">
-            <div className="row">
-              <div className="text-center">
-                <div className="subtitle">A modern and unique style</div>
-                <div className="title color-2 lheight-40 mb30">
-                  <span>
-                    Affordable Packages<span className="color-15">.</span>
-                  </span>
-                </div>
-                <div className="spliter mb70" />
-              </div>
-              <div className="price-wrapper">
-                
-                <div
-                  className="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center wow fadeInLeft"
-                  data-wow-duration="2s"
-                >
-                  <div className="price-holder theme-bg-gradient color-white price-same-st bdrs-10 plr60 pt60 pb90 relative">
-                    <div className="fweight-500">
-                      <div className="price-title fsize-40 mb-40">Startup</div>
-                      <div className="price-current color-white lheight-normal nowrap">
-                        <span className="fsize-30">$</span>
-                        <span className="fsize-60">29.</span>
-                        <span className="fsize-30">00</span>
-                      </div>
-                      <div className="recomend fsize-12 uppercase mb50">
-                        Start Business
-                      </div>
-                    </div>
-                    <ul className="pl0">
-                      <li className="price-list">One Year Standard Access</li>
-                      <li className="price-list">Limited Courses</li>
-                      <li className="price-list">30+ Lessons</li>
-                      <li className="price-list">Standard Tutorials</li>
-                    </ul>
-                    <div className="price-btn light btn border-gradient absolute width-100p lheight-60 color-16 fsize-14 fweight-600">
-                      Sign Up
-                    </div>
-                  </div>
-                </div>
-              
-                <div
-                  className="price-center col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center wow fadeInDown"
-                  data-wow-duration="1s"
-                >
-                  <div className="price-holder background-white border-gradient bdrs-10 relative">
-                    <div className="plr60 pt60 pb80">
-                      <div className="fweight-500">
-                        <div className="price-title fsize-40 mb-40">
-                          Premium
-                        </div>
-                        <div className="price-current color-2 lheight-normal nowrap">
-                          <span className="fsize-30">$</span>
-                          <span className="fsize-60">99.</span>
-                          <span className="fsize-30">00</span>
-                        </div>
-                        <div className="recomend fsize-12 uppercase mb50">
-                          High Business
-                        </div>
-                      </div>
-                      <ul className="pl0">
-                        <li className="price-list">One Year Standard Access</li>
-                        <li className="price-list">Limited Courses</li>
-                        <li className="price-list">300+ Lessons</li>
-                        <li className="price-list">Standard Tutorials</li>
-                        <li className="price-list">
-                          Unlimited Registered User
-                        </li>
-                      </ul>
-                      <div className="price-btn btn theme-bg-gradient absolute width-100p lheight-50 color-white fsize-14 fweight-600">
-                        Sign Up
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div
-                  className="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center wow fadeInRight"
-                  data-wow-duration="2s"
-                >
-                  <div className="price-holder theme-bg-gradient price-same-st color-white bdrs-10 plr60 pt60 pb90 relative">
-                    <div className="fweight-500">
-                      <div className="price-title fsize-40 mb-40">Optimal</div>
-                      <div className="price-current color-white lheight-normal nowrap">
-                        <span className="fsize-30">$</span>
-                        <span className="fsize-60">69.</span>
-                        <span className="fsize-30">00</span>
-                      </div>
-                      <div className="recomend fsize-12 uppercase mb50">
-                        Any Business
-                      </div>
-                    </div>
-                    <ul className="pl0">
-                      <li className="price-list">One Year Standard Access</li>
-                      <li className="price-list">Limited Courses</li>
-                      <li className="price-list">200+ Lessons</li>
-                      <li className="price-list">Standard Tutorials</li>
-                    </ul>
-                    <div className="price-btn light btn border-gradient absolute width-100p lheight-60 color-16 fsize-14 fweight-600">
-                      Sign Up
-                    </div>
-                  </div>
-                </div>
-            
-              </div>
-            </div>
-          </div>
-        </section> */}
+      
         {/*================================================================================= 
                           END PRICE  
     ==================================================================================*/}
@@ -1674,7 +1529,10 @@ const Home = () => {
                       animationDelay: "0.2s",
                       WebkitAnimationName: "_fadeInUp",
                       animationName: "_fadeInUp",
+                      fontSize:"35px",
+                       fontWeight:"700"
                     }}
+               
                   >
                     Testimonials{" "}
                   </h4>
@@ -1689,7 +1547,7 @@ const Home = () => {
                       animationName: "_fadeInUp",
                     }}
                   >
-                    <span> Empowering Every Child for Success</span>
+                    <span style={{fontSize:"23px", fontWeight:"600"}}> Empowering Every Child for Success</span>
                   </h2>
                   <p
                     className="wow fadeInUp"
@@ -1869,84 +1727,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* 4th */}
-                {/* <div>
-                  <div
-                    className="testimonials__item swiper-slide swiper-slide-active"
-                    data-swiper-slide-index={1}
-                    style={{ width: "350px", "margin-right": "30px" }}
-                    role="group"
-                    aria-label="2 / 3"
-                  >
-                    <div className="testimonials__item-content">
-                      <div className="testimonials__logo">
-                        <img
-                          decoding="async"
-                          src={test3}
-                          alt="image"
-                          className="student-images"
-                        />
-                      </div>
-                      <div className="testimonials__text">
-                        <p>
-                          Edufusion has innovatively incorporated technology,
-                          leading to significant advancements in my child's math
-                          learning. Once a source of fear, math has now become
-                          her favorite subject. The foundational concepts are
-                          developing impressively, evident in my daughter's
-                          ability to solve complex problems effortlessly and
-                          swiftly. Thanks to Edufusion for facilitating
-                          conceptual learning and helping my child thrive in
-                          math.
-                        </p>
-                      </div>
-                      <div className="testimonials__client d-flex align-items-center">
-                        <div className="testimonials__client-thumb"></div>
-                        <div className="testimonials__client-text">
-                       
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* 5th */}
-                {/* <div>
-                  <div
-                    className="testimonials__item swiper-slide swiper-slide-next"
-                    data-swiper-slide-index={2}
-                    style={{ width: "350px", "margin-right": "30px" }}
-                    role="group"
-                    aria-label="3 / 3"
-                  >
-                    <div className="testimonials__item-content">
-                      <div className="testimonials__logo">
-                        <img
-                          decoding="async"
-                          src={test}
-                          alt="image"
-                          className="student-images"
-                        />
-                      </div>
-                      <div className="testimonials__text">
-                        <p>
-                          "The SAT online class with Edufusion Tutor was a
-                          game-changer, boosting my confidence and refining my
-                          test-taking skills. The convenience of online learning
-                          and insightful feedback from Edufusion's instructors
-                          significantly contributed to my success. The
-                          personalized support and targeted practice provided by
-                          Edufusion were key factors in my score improvement. I
-                          highly recommend Edufusion Tutor's ."
-                        </p>
-                      </div>
-                      <div className="testimonials__client d-flex align-items-center">
-                        <div className="testimonials__client-thumb"></div>
-                        <div className="testimonials__client-text">
-                         
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
+               
               </Slider>
             </div>
             {/*  */}
@@ -1959,107 +1740,63 @@ const Home = () => {
         {/*================================================================================= 
                           START BLOG  
     ==================================================================================*/}
-     <section id="education-blog" className="pt100 pb80">
-        <div className="education-blog">
-          <div className="container">
-            <div className="row">
-              <div
+    
+      
+      <div
                 className="text-center wow fadeIn"
                 data-wow-duration="2s"
                 style={{
                   visibility: "visible",
                   animationDuration: "2s",
                   animationName: "fadeIn",
+                  marginTop:"140px"
                 }}
               >
                 <div className="subtitle">A modern and unique style</div>
                 <div className="title color-2 lheight-40 mb30">
-                  <span>
+                  <span style={{fontSize:"30px", fontWeight:"700"}}>
                     Latest from blog<span className="color-15">.</span>
                   </span>
                 </div>
                 <div className="spliter mb40" />
               </div>
-              {/*====| All Blog Start |====*/}
-              <div className="all-blogs">
-                {/* Single Blog Item Start */}
-                <div className="col-md-4 col-sm-6">
-                  <div className="single-blog-item">
-                    <div className="blog-photo">
-                      <img
-                        src="https://i.pngimg.me/thumb/f/720/6021832081670144.jpg"
-                        alt="blog"
-                      />
-                      {/* <div className="blog-post-date theme-bg-gradient">
-                          <h3 className="color-white fsize-16 plr30">
-                            23-9-2018
-                          </h3>
-                        </div> */}
-                      {/* <div className="blog-dtls-link color-4">
-                          <a href="#">
-                            Check Details{" "}
-                            <i className="fa fa-share" aria-hidden="true" />
-                          </a>
-                        </div> */}
-                    </div>
-                  </div>
-                </div>
-                {/* Single Blog Item End */}
-                {/* Single gallery Item Start */}
-                <div className="col-md-4 col-sm-6">
-                  <div className="single-blog-item">
-                    <div className="blog-photo">
-                      <img
-                        src="https://www.ourfamilywizard.com/sites/default/files/styles/scale_width_960/public/media/image/2022-10/blog-studying.jpg?itok=tCYtRweI"
-                        alt="blog"
-                      />
-                      {/* <div className="blog-post-date theme-bg-gradient">
-                          <h3 className="color-white fsize-16 plr30">
-                            25-9-2018
-                          </h3>
-                        </div> */}
-                      {/* <div className="blog-dtls-link color-4">
-                          <a href="#">
-                            Check Details{" "}
-                            <i className="fa fa-share" aria-hidden="true" />
-                          </a>
-                        </div> */}
-                    </div>
-                  </div>
-                </div>
-                {/* Single Blog Item End */}
-                {/* Single Blog Item Start */}
-                <div className="col-md-4 col-sm-6 col-md-offset-0 col-sm-offset-3">
-                  <div className="single-blog-item">
-                    <div className="blog-photo">
-                      <img
-                        src="https://previews.123rf.com/images/pairhandmade/pairhandmade1610/pairhandmade161000266/64648417-asian-kids-are-studying-the-globe-over-white-background.jpg"
-                        alt="blog"
-                      />
-                      {/* <div className="blog-post-date theme-bg-gradient">
-                          <h3 className="color-white fsize-16 plr30">
-                            26-9-2018
-                          </h3>
-                        </div>
-                        <div className="blog-dtls-link color-4">
-                          <a href="#">
-                            Check Details{" "}
-                            <i className="fa fa-share" aria-hidden="true" />
-                          </a>
-                        </div> */}
-                    </div>
-                  </div>
-                </div>
-                {/* Single Blog Item End */}
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+      {/* Three cards */}
+      {cardContents.map((card, index) => (
+        <div key={index} style={{
+          flex: 1,
+          border: `1px solid ${expandedCardIndex === index ? 'blue' : 'black'}`, // Change border color if the card is expanded
+          padding: '10px',
+          margin: '10px',
+          transition: 'border 0.3s ease', // Add a smooth transition effect
+        }}>
+            <img src={card.imageSrc} alt={`Image for ${card.title}`} style={{ width: '100%', maxHeight: '270px', objectFit: 'cover' }} />
+          <h1 style={{ fontSize: "20px", fontWeight: "600" }}>{card.title}</h1>
+
+        
+
+          <p>
+            {card.intro}
+            <span id={`points${index}`}>...</span>
+
+            {expandedCardIndex === index && (
+              <div id={`moreText${index}`}>
+                {card.readMore}
               </div>
-              {/*====| All Blog End |====*/}
-            </div>
-          </div>
+            )}
+          </p>
+
+          <button onClick={() => toggleText(index)} id={`textButton${index}`} style={{color:"black",fontSize:"20px",fontWeight:"600" }}>
+            {expandedCardIndex === index ? 'Show Less' : 'Read More'}
+          </button>
         </div>
-      </section>
+      ))}
+    </div>
         {/*================================================================================= 
                           END BLOG
     ==================================================================================*/}
+
+
 
         {/*================================================================================= 
                           START FOOTER  
@@ -2082,7 +1819,7 @@ const Home = () => {
                     into coding. Join us on this incredible journey.
                   </p>
                   {/* PROGRESS BARS*/}
-                  <div className="section progress-bars section-padding">
+                  {/* <div className="section progress-bars section-padding">
                     <div className="progress-bars-content">
                       <div className="progress-bar-wrapper">
                         <div className="row">
@@ -2123,7 +1860,7 @@ const Home = () => {
                         </div>
                       </div>{" "}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -2231,7 +1968,7 @@ const Home = () => {
         {/* End Scroll to top */}
 
         {/* whats app */}
-
+        <WhatsAppButton1/>
         <WhatsAppButton />
 
         {/*================================================================================= 

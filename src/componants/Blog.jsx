@@ -32,8 +32,9 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import close from "./assets/images/icons/close-icon.png";
 import { IoIosArrowUp } from "react-icons/io";
-import logo from "../componants/assets/images/logo3.png";
+import logo from "../componants/assets/images/logo3.jpg";
 import WhatsAppButton from "../componants/WhatsAppButton";
+import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import test from "../componants/assets/images/testmonialimages/t1.png";
 import test1 from "../componants/assets/images/testmonialimages/t2.jpg";
 import test2 from "../componants/assets/images/testmonialimages/t3.jpg";
@@ -47,6 +48,9 @@ import grade6 from "../componants/assets/grade6.mp4";
 import mario from "../componants/assets/mario.webm";
 import kids from "../componants/assets/kids.png";
 import p2 from "../componants/assets/p2.png";
+import coding from "../componants/assets/coding.jpg";
+import science from "../componants/assets/science.jpg";
+import math from "../componants/assets/maths.jpg";
 const Blog = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   // const [contact, setContact]=useState(false);
@@ -88,6 +92,113 @@ const Blog = () => {
   const [coursesCount, setCoursesCount] = useState(0);
   const [membersCount, setMembersCount] = useState(0);
   const [countriesCount, setCountriesCount] = useState(0);
+  const [expandedCardIndex, setExpandedCardIndex] = useState(null);
+
+  const toggleText = (index) => {
+    setExpandedCardIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+  const cardContents = [
+    {
+      title: "Coding is valuable for kids as it",
+      intro: "Kid-friendly platforms  ",
+      readMore: (
+        <>
+          <p>and resources make learning to code engaging and enjoyable.</p>
+          <h2>Develops Problem-Solving Skills:</h2>
+          <p>Breaks down complex issues for critical thinking. </p>
+          <h2>Fosters Logic and Creativity:</h2>
+          <p>Requires both logical thinking and creativity. </p>
+          <h2>Enhances Computational Thinking:</h2>
+          <p>Teaches problem-solving for computers. </p>
+          <h2>Prepares for the Future</h2>
+          <p> Equips for technology-driven job markets.</p>
+          <h2>Provides Understanding of Technology</h2>
+          <p>Demystifies daily digital interactions. </p>
+          <h2>Improves Math Skills</h2>
+          <p>Involves mathematical concepts naturally. </p>
+          <h2>Allows Creativity and Expression</h2>
+          <p>Enables creation of games, apps, and websites. </p>
+          <h2>Promotes Collaboration</h2>
+          <p>Encourages teamwork and effective collaboration. </p>
+          <h2>Offers Career Opportunities</h2>
+          <p> Opens doors to various tech-related careers. </p>
+          <h2>Builds Confidence</h2>
+          <p>Boosts confidence by mastering complex skills. </p>
+        </>
+      ),
+      imageSrc: coding,
+    },
+    {
+      title: "Beyond the Stars: Dark Matter Unveiled",
+      intro: "Gazing into the cosmos, ",
+      readMore: (
+        <>
+          <p>
+            we confront the enigma—dark matter. Elusive, it interacts solely
+            through gravity, challenging scientists who infer its presence
+            through gravitational effects on visible matter.{" "}
+          </p>
+          <p>
+            {" "}
+            Picture the universe as a cosmic ballet, with dark matter as the
+            unseen choreographer, maintaining cosmic harmony. Scientists engage
+            in cosmic cartography, mapping visible matters distribution.
+            Discrepancies reveal dark matters ethereal silhouette, weaving an
+            unseen tapestry—the cosmic web—concentrating galaxies along
+            invisible threads.
+          </p>
+          <p>
+            As our journey concludes, an invitation extends to all curious
+            minds. The cosmos beckons, revealing hidden wonders. Let curiosity
+            propel us further into the cosmic unknown, where discovery knows no
+            bounds.
+          </p>
+        </>
+      ),
+      imageSrc: science,
+    },
+    {
+      title: "Unveiling the Beauty of Mathematics",
+      intro: "Dive into the world of math: ",
+      readMore: (
+        <>
+          <h2>Patterns Revealed</h2>
+          <p>
+            Uncover the beauty of numerical patterns, connecting diverse
+            concepts seamlessly.{" "}
+          </p>
+          <h2>Geometry's Charm</h2>
+          <p>
+            Explore the elegance of shapes and angles, witnessing the visual
+            allure of geometry.{" "}
+          </p>
+          <h2>Algebra's Power</h2>
+          <p>
+            Balancing equations and solving mysteries—algebra's artistry in
+            real-world precision.{" "}
+          </p>
+          <h2>Calculus Insight</h2>
+          <p>
+            Experience the symphony of rates and changes, where calculus unlocks
+            profound insights.
+          </p>
+          <h2>Nature's Equation</h2>
+          <p>
+            In the natural world, math is the silent language describing the
+            universe's beauty.{" "}
+          </p>
+          <h2>Conclusion</h2>
+          <p>
+            Celebrate the wonders of mathematics—a language expressing the
+            beauty of the world. Unlock secrets within its realm and embrace the
+            elegance math offers. Learn Math Online At Home - X Math Education |
+            Teaching Methods{" "}
+          </p>
+        </>
+      ),
+      imageSrc: math,
+    },
+  ];
   return (
     <div>
       <header>
@@ -149,104 +260,67 @@ const Blog = () => {
           </div>
         </nav>
       </header>
-      <section id="education-blog" className="pt100 pb80">
-        <div className="education-blog">
-          <div className="container">
-            <div className="row">
-              <div
-                className="text-center wow fadeIn"
-                data-wow-duration="2s"
-                style={{
-                  visibility: "visible",
-                  animationDuration: "2s",
-                  animationName: "fadeIn",
-                }}
-              >
-                <div className="subtitle">A modern and unique style</div>
-                <div className="title color-2 lheight-40 mb30">
-                  <span>
-                    Latest from blog<span className="color-15">.</span>
-                  </span>
-                </div>
-                <div className="spliter mb40" />
-              </div>
-              {/*====| All Blog Start |====*/}
-              <div className="all-blogs">
-                {/* Single Blog Item Start */}
-                <div className="col-md-4 col-sm-6">
-                  <div className="single-blog-item">
-                    <div className="blog-photo">
-                      <img
-                        src="https://i.pngimg.me/thumb/f/720/6021832081670144.jpg"
-                        alt="blog"
-                      />
-                      {/* <div className="blog-post-date theme-bg-gradient">
-                          <h3 className="color-white fsize-16 plr30">
-                            23-9-2018
-                          </h3>
-                        </div> */}
-                      {/* <div className="blog-dtls-link color-4">
-                          <a href="#">
-                            Check Details{" "}
-                            <i className="fa fa-share" aria-hidden="true" />
-                          </a>
-                        </div> */}
-                    </div>
-                  </div>
-                </div>
-                {/* Single Blog Item End */}
-                {/* Single gallery Item Start */}
-                <div className="col-md-4 col-sm-6">
-                  <div className="single-blog-item">
-                    <div className="blog-photo">
-                      <img
-                        src="https://www.ourfamilywizard.com/sites/default/files/styles/scale_width_960/public/media/image/2022-10/blog-studying.jpg?itok=tCYtRweI"
-                        alt="blog"
-                      />
-                      {/* <div className="blog-post-date theme-bg-gradient">
-                          <h3 className="color-white fsize-16 plr30">
-                            25-9-2018
-                          </h3>
-                        </div> */}
-                      {/* <div className="blog-dtls-link color-4">
-                          <a href="#">
-                            Check Details{" "}
-                            <i className="fa fa-share" aria-hidden="true" />
-                          </a>
-                        </div> */}
-                    </div>
-                  </div>
-                </div>
-                {/* Single Blog Item End */}
-                {/* Single Blog Item Start */}
-                <div className="col-md-4 col-sm-6 col-md-offset-0 col-sm-offset-3">
-                  <div className="single-blog-item">
-                    <div className="blog-photo">
-                      <img
-                        src="https://previews.123rf.com/images/pairhandmade/pairhandmade1610/pairhandmade161000266/64648417-asian-kids-are-studying-the-globe-over-white-background.jpg"
-                        alt="blog"
-                      />
-                      {/* <div className="blog-post-date theme-bg-gradient">
-                          <h3 className="color-white fsize-16 plr30">
-                            26-9-2018
-                          </h3>
-                        </div>
-                        <div className="blog-dtls-link color-4">
-                          <a href="#">
-                            Check Details{" "}
-                            <i className="fa fa-share" aria-hidden="true" />
-                          </a>
-                        </div> */}
-                    </div>
-                  </div>
-                </div>
-                {/* Single Blog Item End */}
-              </div>
-              {/*====| All Blog End |====*/}
-            </div>
-          </div>
+      <div
+        className="text-center wow fadeIn"
+        data-wow-duration="2s"
+        style={{
+          visibility: "visible",
+          animationDuration: "2s",
+          animationName: "fadeIn",
+          marginTop: "140px",
+        }}
+      >
+        <div className="subtitle">A modern and unique style</div>
+        <div className="title color-2 lheight-40 mb30">
+          <span style={{ fontSize: "30px", fontWeight: "700" }}>
+            Latest from blog<span className="color-15">.</span>
+          </span>
         </div>
-      </section>
+        <div className="spliter mb40" />
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {/* Three cards */}
+        {cardContents.map((card, index) => (
+          <div
+            key={index}
+            style={{
+              flex: 1,
+              border: `1px solid ${
+                expandedCardIndex === index ? "blue" : "black"
+              }`, // Change border color if the card is expanded
+              padding: "10px",
+              margin: "10px",
+              transition: "border 0.3s ease", // Add a smooth transition effect
+            }}
+          >
+            <img
+              src={card.imageSrc}
+              alt={`Image for ${card.title}`}
+              style={{ width: "100%", maxHeight: "270px", objectFit: "cover" }}
+            />
+            <h1 style={{ fontSize: "20px", fontWeight: "600" }}>
+              {card.title}
+            </h1>
+
+            <p>
+              {card.intro}
+              <span id={`points${index}`}>...</span>
+
+              {expandedCardIndex === index && (
+                <div id={`moreText${index}`}>{card.readMore}</div>
+              )}
+            </p>
+
+            <button
+              onClick={() => toggleText(index)}
+              id={`textButton${index}`}
+              style={{ color: "black", fontSize: "20px", fontWeight: "600" }}
+            >
+              {expandedCardIndex === index ? "Show Less" : "Read More"}
+            </button>
+          </div>
+        ))}
+      </div>
 
       <footer
         id="education-footer"
@@ -266,7 +340,7 @@ const Blog = () => {
                   coding. Join us on this incredible journey.
                 </p>
                 {/* PROGRESS BARS*/}
-                <div className="section progress-bars section-padding">
+                {/* <div className="section progress-bars section-padding">
                   <div className="progress-bars-content">
                     <div className="progress-bar-wrapper">
                       <div className="row">
@@ -303,7 +377,7 @@ const Blog = () => {
                       </div>
                     </div>{" "}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -395,6 +469,16 @@ const Blog = () => {
           </div>
         </div>
       </footer>
+      <WhatsAppButton1 />
+      <WhatsAppButton />
+      <a
+        href="#"
+        id="toTop"
+        className="theme-bg-gradient color-white"
+        style={{ display: "inline" }}
+      >
+        <IoIosArrowUp style={{ marginTop: "6px" }} />
+      </a>
     </div>
   );
 };

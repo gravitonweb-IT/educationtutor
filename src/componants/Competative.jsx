@@ -9,7 +9,9 @@ import p2 from "../componants/assets/p2.png";
 import Faq from "react-faq-component";
 import close from "./assets/images/icons/close-icon.png";
 import WhatsAppButton from "../componants/WhatsAppButton";
+import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import { IoIosArrowUp } from "react-icons/io";
+import logo3 from "../componants/assets/images/logo3.jpg";
 const Competative = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -142,80 +144,78 @@ const Competative = () => {
     marginTop: "30px", // Adjust the margin as needed
   };
 
+  // form
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    message: "",
+  });
 
-   // form
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
-   const openPopup = () => {
-     setIsPopupOpen(true);
-   };
-   const closePopup = () => {
-     setIsPopupOpen(false);
-   };
-   const [formData, setFormData] = useState({
-     name: "",
-     email: "",
-     phone: "",
-     address: "",
-     message: "",
-   });
- 
-   const [errors, setErrors] = useState({});
- 
-   const handleChange = (e) => {
-     const { name, value } = e.target;
-     setFormData({
-       ...formData,
-       [name]: value,
-     });
-     // Clear the error message when the user starts typing
-     setErrors({
-       ...errors,
-       [name]: "",
-     });
-   };
- 
-   const validateForm = () => {
-     const newErrors = {};
- 
-     // Add your validation logic here
-     if (!formData.name.trim()) {
-       newErrors.name = "Name is required";
-     }
- 
-     if (!formData.email.trim()) {
-       newErrors.email = "Email is required";
-     }
- 
-     // Add more validation rules for other fields
- 
-     setErrors(newErrors);
- 
-     // Return true if there are no errors
-     return Object.keys(newErrors).length === 0;
-   };
- 
-   const handleSubmit = (e) => {
-     e.preventDefault();
- 
-     if (validateForm()) {
-       // You can access the form data in the 'formData' object
-       console.log("Form Data:", formData);
-     } else {
-       console.log("Form validation failed.");
-     }
-     setFormData({
-       name: "",
-       email: "",
-       phone: "",
-       address: "",
-       message: "",
-     });
-   };
- 
-   
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    // Clear the error message when the user starts typing
+    setErrors({
+      ...errors,
+      [name]: "",
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Add your validation logic here
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    }
+
+    // Add more validation rules for other fields
+
+    setErrors(newErrors);
+
+    // Return true if there are no errors
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // You can access the form data in the 'formData' object
+      console.log("Form Data:", formData);
+    } else {
+      console.log("Form validation failed.");
+    }
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      message: "",
+    });
+  };
+
   return (
     <>
-    <header>
+      <header>
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container mob-logo">
             <div className="navbar-header col-sm-2 tablet-logo">
@@ -232,7 +232,7 @@ const Competative = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src={p2}
+                  src={logo3}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
@@ -252,9 +252,7 @@ const Competative = () => {
                     <Link to="/Competative">Competative</Link>
                   </div>
                 </li>
-                {/* <li>
-                  <a href="#education-price">Price</a>
-                </li> */}
+             
                 <li>
                   <Link to="/Testimonial">Testimonial</Link>
                 </li>
@@ -265,7 +263,7 @@ const Competative = () => {
                   <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
-                  <a  data-toggle="modal" data-target="#education-contact">
+                  <a data-toggle="modal" data-target="#education-contact">
                     Contact
                   </a>
                 </li>
@@ -1687,7 +1685,7 @@ const Competative = () => {
                   coding. Join us on this incredible journey.
                 </p>
                 {/* PROGRESS BARS*/}
-                <div className="section progress-bars section-padding">
+                {/* <div className="section progress-bars section-padding">
                   <div className="progress-bars-content">
                     <div className="progress-bar-wrapper">
                       <div className="row">
@@ -1724,7 +1722,7 @@ const Competative = () => {
                       </div>
                     </div>{" "}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -1818,160 +1816,160 @@ const Competative = () => {
       </footer>
 
       <WhatsAppButton />
-
+      <WhatsAppButton1 />
       <a
-          href="#"
-          id="toTop"
-          className="theme-bg-gradient color-white"
-          style={{ display: "inline" }}
-        >
-          <IoIosArrowUp style={{ marginTop: "6px" }} />
-        </a>
+        href="#"
+        id="toTop"
+        className="theme-bg-gradient color-white"
+        style={{ display: "inline" }}
+      >
+        <IoIosArrowUp style={{ marginTop: "6px" }} />
+      </a>
 
       <div id="education-contact" className="modal fade" role="dialog">
-          <div className="modal-dialog">
-            {/* Modal content*/}
-            <div className="modal-content">
-              <div className="modal-header">
-                <button onClick={closePopup}>
-                  <img
-                    className="close"
-                    data-dismiss="modal"
-                    src={close}
-                    alt="close"
-                  />
-                </button>
-                <h4 className="modal-title">Get In Touch</h4>
-              </div>
-              <div className="modal-body">
-                <div className="contact-section">
-                  <form
-                    onSubmit={handleSubmit}
-                    className="contact-form signup-form"
-                    id="ajax-contact"
-                  >
-                    <div className="row section-signup semitrans">
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-name">
-                          <label className="sr-only" htmlFor="name">
-                            Your name
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="name"
-                            id="name"
-                            placeholder="Your name"
-                            value={formData.name}
-                            onChange={handleChange}
-                          />
-                          {errors.name && (
-                            <p className="error-message">{errors.name}</p>
-                          )}
-                        </div>
-                      </div>
-                      {/* Add other form fields */}
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-email">
-                          <label className="sr-only" htmlFor="email">
-                            Email address
-                          </label>
-                          <input
-                            type="email"
-                            className="form-control form-control-lg"
-                            name="email"
-                            id="email"
-                            placeholder="Email address"
-                            autoComplete="off"
-                            value={formData.email}
-                            onChange={handleChange}
-                          />
-                          {errors.email && (
-                            <p className="error-message">{errors.email}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-phone">
-                          <label className="sr-only" htmlFor="phone">
-                            Phone Number
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="phone"
-                            id="phone"
-                            placeholder="Phone Number"
-                            autoComplete="off"
-                            value={formData.phone}
-                            onChange={handleChange}
-                          />
-                          {errors.phone && (
-                            <p className="error-message">{errors.phone}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-address">
-                          <label className="sr-only" htmlFor="address">
-                            Address
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="address"
-                            id="address"
-                            placeholder="Your Address"
-                            autoComplete="off"
-                            value={formData.address}
-                            onChange={handleChange}
-                          />
-                          {errors.address && (
-                            <p className="error-message">{errors.address}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-message">
-                          <label className="sr-only" htmlFor="message">
-                            Enter your message
-                          </label>
-                          <textarea
-                            className="form-control form-control-lg home-textarea"
-                            name="message"
-                            id="message"
-                            placeholder="Enter your message"
-                            autoComplete="off"
-                            value={formData.message}
-                            onChange={handleChange}
-                          />
-                          {errors.message && (
-                            <p className="error-message">{errors.message}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
-                            Send Message
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <p className="submit-btn-bottom-text">
-                          Your email is safe with us and we hate spam as much as
-                          you do.
-                        </p>
+        <div className="modal-dialog">
+          {/* Modal content*/}
+          <div className="modal-content">
+            <div className="modal-header">
+              <button onClick={closePopup}>
+                <img
+                  className="close"
+                  data-dismiss="modal"
+                  src={close}
+                  alt="close"
+                />
+              </button>
+              <h4 className="modal-title">Get In Touch</h4>
+            </div>
+            <div className="modal-body">
+              <div className="contact-section">
+                <form
+                  onSubmit={handleSubmit}
+                  className="contact-form signup-form"
+                  id="ajax-contact"
+                >
+                  <div className="row section-signup semitrans">
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-name">
+                        <label className="sr-only" htmlFor="name">
+                          Your name
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-lg"
+                          name="name"
+                          id="name"
+                          placeholder="Your name"
+                          value={formData.name}
+                          onChange={handleChange}
+                        />
+                        {errors.name && (
+                          <p className="error-message">{errors.name}</p>
+                        )}
                       </div>
                     </div>
-                    <div id="error-message" className="text-center" />
-                    <div id="form-messages" />
-                  </form>
-                </div>
+                    {/* Add other form fields */}
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-email">
+                        <label className="sr-only" htmlFor="email">
+                          Email address
+                        </label>
+                        <input
+                          type="email"
+                          className="form-control form-control-lg"
+                          name="email"
+                          id="email"
+                          placeholder="Email address"
+                          autoComplete="off"
+                          value={formData.email}
+                          onChange={handleChange}
+                        />
+                        {errors.email && (
+                          <p className="error-message">{errors.email}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-phone">
+                        <label className="sr-only" htmlFor="phone">
+                          Phone Number
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-lg"
+                          name="phone"
+                          id="phone"
+                          placeholder="Phone Number"
+                          autoComplete="off"
+                          value={formData.phone}
+                          onChange={handleChange}
+                        />
+                        {errors.phone && (
+                          <p className="error-message">{errors.phone}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-address">
+                        <label className="sr-only" htmlFor="address">
+                          Address
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-lg"
+                          name="address"
+                          id="address"
+                          placeholder="Your Address"
+                          autoComplete="off"
+                          value={formData.address}
+                          onChange={handleChange}
+                        />
+                        {errors.address && (
+                          <p className="error-message">{errors.address}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-message">
+                        <label className="sr-only" htmlFor="message">
+                          Enter your message
+                        </label>
+                        <textarea
+                          className="form-control form-control-lg home-textarea"
+                          name="message"
+                          id="message"
+                          placeholder="Enter your message"
+                          autoComplete="off"
+                          value={formData.message}
+                          onChange={handleChange}
+                        />
+                        {errors.message && (
+                          <p className="error-message">{errors.message}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group">
+                        <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
+                          Send Message
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <p className="submit-btn-bottom-text">
+                        Your email is safe with us and we hate spam as much as
+                        you do.
+                      </p>
+                    </div>
+                  </div>
+                  <div id="error-message" className="text-center" />
+                  <div id="form-messages" />
+                </form>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 };

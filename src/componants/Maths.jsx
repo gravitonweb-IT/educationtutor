@@ -5,9 +5,11 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
-import p2 from "../componants/assets/p2.png";
+// import p2 from "../componants/assets/p2.png";
 import close from "./assets/images/icons/close-icon.png";
 import WhatsAppButton from "../componants/WhatsAppButton";
+import WhatsAppButton1 from "../componants/WhatsAppButton1";
+import logo3 from "../componants/assets/images/logo3.jpg";
 import { IoIosArrowUp } from "react-icons/io";
 const Maths = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -133,7 +135,7 @@ const Maths = () => {
   }, []);
   return (
     <>
-    <header>
+      <header>
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container mob-logo">
             <div className="navbar-header col-sm-2 tablet-logo">
@@ -150,7 +152,7 @@ const Maths = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src={p2}
+                  src={logo3}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
@@ -167,7 +169,7 @@ const Maths = () => {
                     <Link to="/Maths">Maths</Link>
                     <Link to="/Science">Science</Link>
                     <Link to="/Coding">Coding</Link>
-                    <Link to="/Competative">Competative</Link>
+                    <Link to="/Competative">Competative Exams</Link>
                   </div>
                 </li>
                 {/* <li>
@@ -183,9 +185,9 @@ const Maths = () => {
                   <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
-                  <a  data-toggle="modal" data-target="#education-contact">
+                  <Link data-toggle="modal" to="/#education-contact">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -208,8 +210,12 @@ const Maths = () => {
             >
               Unlock the Power of Math with Edufusion Online Tutoring
             </h1>
-            <p>Are you grappling with Math Anxiety, facing Learning Gaps, and desiring mastery in Conceptual Learning, Mental Math’s, and Advanced Math? Look no further – our online math tutoring service is designed just for you! </p>
-         
+            <p>
+              Are you grappling with Math Anxiety, facing Learning Gaps, and
+              desiring mastery in Conceptual Learning, Mental Math’s, and
+              Advanced Math? Look no further – our online math tutoring service
+              is designed just for you!{" "}
+            </p>
           </div>
           <div
             className="col-md-6 "
@@ -314,7 +320,7 @@ const Maths = () => {
               </div>{" "}
               <div data-v-0a33574d className="stepper-wrapper">
                 <span data-v-0a33574d className="course-subtitle sub-heading">
-                  Our Focused Curriculum ensures Academic Excellence
+                  Our Focused Curriculum Ensures Academic Excellence
                 </span>{" "}
                 <div data-v-0a33574d className="course-stepper tabs">
                   <span
@@ -478,7 +484,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Number systems
+                      Number Systems
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -502,7 +508,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Multiplication and division
+                      Multiplication and Division
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -526,7 +532,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Shapes and many more
+                      Shapes and Many More
                     </div>
                   </div>
                 </div>
@@ -602,7 +608,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Mental Subtraction and many more
+                      Mental Subtraction and Many More
                     </div>
                   </div>
                 </div>
@@ -634,7 +640,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Number systems
+                      Number Systems
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -682,7 +688,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Data handling & Probability
+                      Data Handling & Probability
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -723,7 +729,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Multiplication tricks
+                      Multiplication Tricks
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -747,7 +753,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Factors tricks
+                      Factors Tricks
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -759,7 +765,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Fraction tricks and many more
+                      Fraction Tricks and Many More
                     </div>
                   </div>
                 </div>
@@ -827,7 +833,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Linear equations and modeling problems
+                      Linear Equations and Modeling Problems
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -868,7 +874,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                        Square roots
+                        Square Roots
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -880,7 +886,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                         Cube roots
+                         Cube Roots
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -892,7 +898,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Negative numbers
+                      Negative Numbers
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -904,7 +910,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Transpose and apply
+                      Transpose and Apply
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -916,75 +922,10 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Vertically and crosswise
+                      Vertically and Crosswise
                     </div>
                   </div>
                 </div>
-
-                {/* <div data-v-eb8371ae className="course-step-container">
-                  <center data-v-eb8371ae>
-                    <div data-v-eb8371ae className="course-header-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYqKmXTPTlQdXFmzJPQ5wTats4Lotg-CbLax6s2PLK7qOVqk-HSj1CWeJc6fH2gsQOb4&usqp=CAU"
-                        alt="teacher"
-                        className="topic-img"
-                      />{" "}
-                      <span data-v-eb8371ae className="topic-title">
-                        Logical Reasoning
-                      </span>
-                    </div>
-                  </center>{" "}
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://www.shutterstock.com/image-vector/analyzing-decoding-qr-code-linear-260nw-2373720407.jpg"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Coding and Decoding
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="/_nuxt/img/Frame 5460.4b01e0d.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Verbal & Non-Verbal Series
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALZSURBVHgBxVe9T1pRFD/v8hUKA5i0JnV5DqaDjcWYtBOxbozWoYuDpnuj/4E6udL4D2ijSycX49SILoZ0KDV0aUx8Di4mCo08CBCg5/fkkff4vMCj/pIX7rv3cH7nK+eep5AkMplMyOPxLLpcrvlarRbhR1UUJYQzXmd5rfFvip/Tcrl8GA6HszJ6FQli1efzrbHiVZNQBiy/WyqVttgQjQYxAB4z8QYv12k4xIvF4laniCgdyOH1CS9VcgYaG7HQLhqiDXnEYXLAcCiXy0WaD5QmcnUE5Fa0REKxkCPnP2XIkxcXlC8UbHvPx8bo9dQUSQBGzJo10UhBveBUGQ0nySS9YMJnfr/xiwd7klDrXNQwAKGnPqo9wMTT7K12c2O8T8t5bsV6nfPRAK/Xu0EDAJ4PCm5qhsNu5J4bzGonwR/pNOV03ban1/PvdrtpUAghVph7U6C9dhP8fn5ueMpGNnKOFADRublBwm/CaO2CFc93kzLzfXt/T0eJxDCELcC9ghhGZIS5t3clv+KC3Dk4sO3B+E9LS910RlCEKkng6Oys6/nkxAR9Xl4mtxBGmrDW83nqAdUte8N93d6WEaNYNErfjo9JEiFBDuPvw0Nf8gLDBDmIP9fX/RRqFkWokWQhyuBjLNaPuIYU/KInAtdfCilI0BOhUqmcCgyQTteBLMAtcC+zAXv0n8Hh3wW3MZAUCgWVjbiyCuB+R/vF8PFuZsb253730KTeNp2xAZN+v19rTEQ8r8X5hloz33f292UnnJ5IX14andFEtVr9EgwGjeu440j2m/90e3dHTuDl+Di9UlXzVWPPZzkCWZsBQD0VIx1KmXgBoTc3bK0YBxyeD/TYnBwnh24rOdD2w2QEkWjx3ETbywiCGJ1RLDQkoAM5b0cO9Pw4RTRYySZ7sEKSqH8t7/ET70QsbYBFaUjX9UVW+p5f3/Bj+zwnXCxCpNBeA4HAoVnlvfAPILxG7MQdMgAAAAAASUVORK5CYII="
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Mathematical Operations
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://i.pinimg.com/474x/65/4f/81/654f81cdff9000eed53c9e1877eee55f.jpg"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Direction Sense Test
-                    </div>
-                  </div>
-                </div> */}
               </div>
             )}
             {activeTab2 === 5 && (
@@ -1025,7 +966,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Single variable and bivariate data analysis
+                      Single Variable and Bivariate Data Analysis
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1037,7 +978,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Venn diagramS & two way tables
+                      Venn DiagramS & Two Way Tables
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1138,7 +1079,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Reminder technique by 9 and many more
+                      Reminder Technique By 9 and Many More
                     </div>
                   </div>
                 </div>
@@ -1194,7 +1135,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Application of derivatives
+                      Application of Derivatives
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1218,7 +1159,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Limits & derivatives
+                      Limits & Derivatives
                     </div>
                   </div>
                 </div>
@@ -1247,7 +1188,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Recurring decimals
+                      Recurring Decimals
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1259,7 +1200,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Auxillary fractions
+                      Auxillary Fractions
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -1295,7 +1236,7 @@ const Maths = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Calculus and many more
+                      Calculus and Many More
                     </div>
                   </div>
                 </div>
@@ -1335,10 +1276,12 @@ const Maths = () => {
               </div>{" "}
               <div data-v-0a6dbf09>
                 <div className="enroll-title" data-v-0a6dbf09>
-                Maths Course
+                  Maths Course
                 </div>{" "}
                 <div className="enroll-description" data-v-0a6dbf09>
-                Are you grappling with Math Anxiety, facing Learning Gaps, and desiring mastery in Conceptual Learning, Mental Math’s, and Advanced Math
+                  Are you grappling with Math Anxiety, facing Learning Gaps, and
+                  desiring mastery in Conceptual Learning, Mental Math’s, and
+                  Advanced Math
                 </div>
               </div>
             </div>
@@ -1428,7 +1371,7 @@ const Maths = () => {
                   coding. Join us on this incredible journey.
                 </p>
                 {/* PROGRESS BARS*/}
-                <div className="section progress-bars section-padding">
+                {/* <div className="section progress-bars section-padding">
                   <div className="progress-bars-content">
                     <div className="progress-bar-wrapper">
                       <div className="row">
@@ -1465,7 +1408,7 @@ const Maths = () => {
                       </div>
                     </div>{" "}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -1557,160 +1500,160 @@ const Maths = () => {
           </div>
         </div>
       </footer>
-
+      <WhatsAppButton1 />
       <WhatsAppButton />
       <a
-          href="#"
-          id="toTop"
-          className="theme-bg-gradient color-white"
-          style={{ display: "inline" }}
-        >
-          <IoIosArrowUp style={{ marginTop: "6px" }} />
-        </a>
+        href="#"
+        id="toTop"
+        className="theme-bg-gradient color-white"
+        style={{ display: "inline" }}
+      >
+        <IoIosArrowUp style={{ marginTop: "6px" }} />
+      </a>
       <div id="education-contact" className="modal fade" role="dialog">
-          <div className="modal-dialog">
-            {/* Modal content*/}
-            <div className="modal-content">
-              <div className="modal-header">
-                <button onClick={closePopup}>
-                  <img
-                    className="close"
-                    data-dismiss="modal"
-                    src={close}
-                    alt="close"
-                  />
-                </button>
-                <h4 className="modal-title">Get In Touch</h4>
-              </div>
-              <div className="modal-body">
-                <div className="contact-section">
-                  <form
-                    onSubmit={handleSubmit}
-                    className="contact-form signup-form"
-                    id="ajax-contact"
-                  >
-                    <div className="row section-signup semitrans">
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-name">
-                          <label className="sr-only" htmlFor="name">
-                            Your name
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="name"
-                            id="name"
-                            placeholder="Your name"
-                            value={formData.name}
-                            onChange={handleChange}
-                          />
-                          {errors.name && (
-                            <p className="error-message">{errors.name}</p>
-                          )}
-                        </div>
-                      </div>
-                      {/* Add other form fields */}
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-email">
-                          <label className="sr-only" htmlFor="email">
-                            Email address
-                          </label>
-                          <input
-                            type="email"
-                            className="form-control form-control-lg"
-                            name="email"
-                            id="email"
-                            placeholder="Email address"
-                            autoComplete="off"
-                            value={formData.email}
-                            onChange={handleChange}
-                          />
-                          {errors.email && (
-                            <p className="error-message">{errors.email}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-phone">
-                          <label className="sr-only" htmlFor="phone">
-                            Phone Number
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="phone"
-                            id="phone"
-                            placeholder="Phone Number"
-                            autoComplete="off"
-                            value={formData.phone}
-                            onChange={handleChange}
-                          />
-                          {errors.phone && (
-                            <p className="error-message">{errors.phone}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-address">
-                          <label className="sr-only" htmlFor="address">
-                            Address
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            name="address"
-                            id="address"
-                            placeholder="Your Address"
-                            autoComplete="off"
-                            value={formData.address}
-                            onChange={handleChange}
-                          />
-                          {errors.address && (
-                            <p className="error-message">{errors.address}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group has-icon-left form-control-message">
-                          <label className="sr-only" htmlFor="message">
-                            Enter your message
-                          </label>
-                          <textarea
-                            className="form-control form-control-lg home-textarea"
-                            name="message"
-                            id="message"
-                            placeholder="Enter your message"
-                            autoComplete="off"
-                            value={formData.message}
-                            onChange={handleChange}
-                          />
-                          {errors.message && (
-                            <p className="error-message">{errors.message}</p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
-                            Send Message
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-md-12">
-                        <p className="submit-btn-bottom-text">
-                          Your email is safe with us and we hate spam as much as
-                          you do.
-                        </p>
+        <div className="modal-dialog">
+          {/* Modal content*/}
+          <div className="modal-content">
+            <div className="modal-header">
+              <button onClick={closePopup}>
+                <img
+                  className="close"
+                  data-dismiss="modal"
+                  src={close}
+                  alt="close"
+                />
+              </button>
+              <h4 className="modal-title">Get In Touch</h4>
+            </div>
+            <div className="modal-body">
+              <div className="contact-section">
+                <form
+                  onSubmit={handleSubmit}
+                  className="contact-form signup-form"
+                  id="ajax-contact"
+                >
+                  <div className="row section-signup semitrans">
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-name">
+                        <label className="sr-only" htmlFor="name">
+                          Your name
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-lg"
+                          name="name"
+                          id="name"
+                          placeholder="Your name"
+                          value={formData.name}
+                          onChange={handleChange}
+                        />
+                        {errors.name && (
+                          <p className="error-message">{errors.name}</p>
+                        )}
                       </div>
                     </div>
-                    <div id="error-message" className="text-center" />
-                    <div id="form-messages" />
-                  </form>
-                </div>
+                    {/* Add other form fields */}
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-email">
+                        <label className="sr-only" htmlFor="email">
+                          Email address
+                        </label>
+                        <input
+                          type="email"
+                          className="form-control form-control-lg"
+                          name="email"
+                          id="email"
+                          placeholder="Email address"
+                          autoComplete="off"
+                          value={formData.email}
+                          onChange={handleChange}
+                        />
+                        {errors.email && (
+                          <p className="error-message">{errors.email}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-phone">
+                        <label className="sr-only" htmlFor="phone">
+                          Phone Number
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-lg"
+                          name="phone"
+                          id="phone"
+                          placeholder="Phone Number"
+                          autoComplete="off"
+                          value={formData.phone}
+                          onChange={handleChange}
+                        />
+                        {errors.phone && (
+                          <p className="error-message">{errors.phone}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-address">
+                        <label className="sr-only" htmlFor="address">
+                          Address
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-lg"
+                          name="address"
+                          id="address"
+                          placeholder="Your Address"
+                          autoComplete="off"
+                          value={formData.address}
+                          onChange={handleChange}
+                        />
+                        {errors.address && (
+                          <p className="error-message">{errors.address}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group has-icon-left form-control-message">
+                        <label className="sr-only" htmlFor="message">
+                          Enter your message
+                        </label>
+                        <textarea
+                          className="form-control form-control-lg home-textarea"
+                          name="message"
+                          id="message"
+                          placeholder="Enter your message"
+                          autoComplete="off"
+                          value={formData.message}
+                          onChange={handleChange}
+                        />
+                        {errors.message && (
+                          <p className="error-message">{errors.message}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="form-group">
+                        <button className="contact-btn btn theme-bg-gradient lheight-60i color-white fsize-14 fweight-600">
+                          Send Message
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <p className="submit-btn-bottom-text">
+                        Your email is safe with us and we hate spam as much as
+                        you do.
+                      </p>
+                    </div>
+                  </div>
+                  <div id="error-message" className="text-center" />
+                  <div id="form-messages" />
+                </form>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 };

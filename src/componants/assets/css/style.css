@@ -1,7 +1,7 @@
 .brand-logo img {
   left: 0;
   position: absolute;
-  min-width: 100px;
+  min-width: 153px;
   margin-top: -8px;
 }
 
@@ -114,7 +114,7 @@ nav.top-nav-collapse {
 /* ---- */
 /* logo */
 .header-logo-section {
-  height: 68px;
+  height: 86px;
 }
 /* cards 5  */
 /* CardGridComponent.css */

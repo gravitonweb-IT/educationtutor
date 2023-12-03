@@ -34,6 +34,7 @@ import close from "./assets/images/icons/close-icon.png";
 import { IoIosArrowUp } from "react-icons/io";
 import logo from "../componants/assets/images/logo3.png";
 import WhatsAppButton from "../componants/WhatsAppButton";
+import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import test from "../componants/assets/images/testmonialimages/t1.png";
 import test1 from "../componants/assets/images/testmonialimages/t2.jpg";
 import test2 from "../componants/assets/images/testmonialimages/t3.jpg";
@@ -447,6 +448,7 @@ const Testimonial = () => {
         </div>
       </section>
 
+     
       <footer
         id="education-footer"
         className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
@@ -465,7 +467,7 @@ const Testimonial = () => {
                   coding. Join us on this incredible journey.
                 </p>
                 {/* PROGRESS BARS*/}
-                <div className="section progress-bars section-padding">
+                {/* <div className="section progress-bars section-padding">
                   <div className="progress-bars-content">
                     <div className="progress-bar-wrapper">
                       <div className="row">
@@ -502,7 +504,7 @@ const Testimonial = () => {
                       </div>
                     </div>{" "}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -594,6 +596,16 @@ const Testimonial = () => {
           </div>
         </div>
       </footer>
+      <WhatsAppButton1 />
+      <WhatsAppButton />
+      <a
+          href="#"
+          id="toTop"
+          className="theme-bg-gradient color-white"
+          style={{ display: "inline" }}
+        >
+          <IoIosArrowUp style={{ marginTop: "6px" }} />
+        </a>
     </div>
   );
 };
