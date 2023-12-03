@@ -41,10 +41,19 @@ const Coding = () => {
     animateCounter(setMembersCount, 15);
     animateCounter(setCountriesCount, 15);
   }, []);
-  const [activeTab2, setActiveTab2] = useState(2);
+  const [activeTab2, setActiveTab2] = useState(1);
+  const [isCardVisible, setCardVisibility] = useState(false);
+
+  // useEffect to trigger the card visibility on screen refresh
+  useEffect(() => {
+    setCardVisibility(true);
+  }, []); // Empty dependency array ensures that this effect runs only once on mount
+
   const handleTabClick2 = (tabName) => {
     setActiveTab2(tabName);
+    setCardVisibility(!isCardVisible);
   };
+
 
   const [studentsCount, setStudentsCount] = useState(0);
   const [classesCount, setclassesCount] = useState(0);
@@ -280,7 +289,7 @@ const Coding = () => {
             style={{ padding: "20px", marginTop: "60px" }}
           >
             <h1>
-              Future-Proof Your Career with Edufusion<br/> 1:1 Online Coding
+              Future-Proof Your Career with Edufusion 1:1 Online Coding
               Tutorials
             </h1>
             <p>
@@ -429,7 +438,10 @@ const Coding = () => {
         >
           <div data-v-eb8371ae data-v-0a33574d className="course-card">
             {activeTab2 === 1 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container"style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',
+                }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -512,7 +524,10 @@ const Coding = () => {
             )}
 
             {activeTab2 === 2 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container" style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',
+                }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -668,7 +683,10 @@ const Coding = () => {
               </div>
             )}
             {activeTab2 === 3 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container" style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',
+                }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -752,7 +770,10 @@ const Coding = () => {
               </div>
             )}
             {activeTab2 === 4 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container" style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',
+                }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">

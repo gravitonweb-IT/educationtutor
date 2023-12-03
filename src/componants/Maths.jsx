@@ -104,9 +104,17 @@ const Maths = () => {
     animateCounter(setMembersCount, 15);
     animateCounter(setCountriesCount, 15);
   }, []);
-  const [activeTab2, setActiveTab2] = useState(2);
+  const [activeTab2, setActiveTab2] = useState(1);
+  const [isCardVisible, setCardVisibility] = useState(false);
+
+  // useEffect to trigger the card visibility on screen refresh
+  useEffect(() => {
+    setCardVisibility(true);
+  }, []); // Empty dependency array ensures that this effect runs only once on mount
+
   const handleTabClick2 = (tabName) => {
     setActiveTab2(tabName);
+    setCardVisibility(!isCardVisible);
   };
 
   const [studentsCount, setStudentsCount] = useState(0);
@@ -376,7 +384,10 @@ const Maths = () => {
         >
           <div data-v-eb8371ae data-v-0a33574d className="course-card">
             {activeTab2 === 1 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container" style={{
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column', // Add this line for mobile view
+              }}  >
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -459,7 +470,11 @@ const Maths = () => {
             )}
 
             {activeTab2 === 2 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container"  style={{
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'row', // Default to row for larger screens
+                flexWrap: 'wrap', // Allow cards to wrap to the next line
+              }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -615,7 +630,11 @@ const Maths = () => {
               </div>
             )}
             {activeTab2 === 3 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container"  style={{
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'row', // Default to row for larger screens
+                flexWrap: 'wrap', // Allow cards to wrap to the next line
+              }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -772,7 +791,11 @@ const Maths = () => {
               </div>
             )}
             {activeTab2 === 4 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container"  style={{
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'row', // Default to row for larger screens
+                flexWrap: 'wrap', // Allow cards to wrap to the next line
+              }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -929,7 +952,11 @@ const Maths = () => {
               </div>
             )}
             {activeTab2 === 5 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container"  style={{
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'row', // Default to row for larger screens
+                flexWrap: 'wrap', // Allow cards to wrap to the next line
+              }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -1086,7 +1113,11 @@ const Maths = () => {
               </div>
             )}
             {activeTab2 === 6 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container"  style={{
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'row', // Default to row for larger screens
+                flexWrap: 'wrap', // Allow cards to wrap to the next line
+              }}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">

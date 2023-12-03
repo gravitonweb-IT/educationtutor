@@ -38,10 +38,10 @@ const Science = () => {
     animateCounter(setMembersCount, 15);
     animateCounter(setCountriesCount, 15);
   }, []);
-  const [activeTab2, setActiveTab2] = useState(2);
-  const handleTabClick2 = (tabName) => {
-    setActiveTab2(tabName);
-  };
+  // const [activeTab2, setActiveTab2] = useState(2);
+  // const handleTabClick2 = (tabName) => {
+  //   setActiveTab2(tabName);
+  // };
 
   const [studentsCount, setStudentsCount] = useState(0);
   const [classesCount, setclassesCount] = useState(0);
@@ -205,6 +205,19 @@ const Science = () => {
       message: "",
     });
   };
+  const [activeTab2, setActiveTab2] = useState(2);
+  const [isCardVisible, setCardVisibility] = useState(false);
+
+  // useEffect to trigger the card visibility on screen refresh
+  useEffect(() => {
+    setCardVisibility(true);
+  }, []); // Empty dependency array ensures that this effect runs only once on mount
+
+  const handleTabClick2 = (tabName) => {
+    setActiveTab2(tabName);
+    setCardVisibility(!isCardVisible);
+  };
+
 
   return (
     <>
@@ -432,7 +445,10 @@ const Science = () => {
         >
           <div data-v-eb8371ae data-v-0a33574d className="course-card">
             {activeTab2 === 1 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container" style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',
+                }} >
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -515,7 +531,9 @@ const Science = () => {
             )}
 
             {activeTab2 === 2 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container"style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',}}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -583,7 +601,9 @@ const Science = () => {
               </div>
             )}
             {activeTab2 === 3 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container" style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',}}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
@@ -716,7 +736,9 @@ const Science = () => {
               </div>
             )}
             {activeTab2 === 4 && (
-              <div data-v-eb8371ae className="maths-topic-container">
+              <div data-v-eb8371ae className="maths-topic-container" style={{ 
+                display: isCardVisible ? 'flex' : 'none',
+                flexDirection: 'column',}}>
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">

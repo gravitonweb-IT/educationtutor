@@ -1,4 +1,8 @@
 
+/* Your CSS file or style tag */
+
+
+/* Add more media queries as needed */
 
 
 /*! CSS Used from: Embedded */
@@ -450,7 +454,7 @@ button:not(:disabled) {
   margin-top: 50px;
 }
 .mentor-mobile-section[data-v-eb8371ae] {
-  display: none;
+  display: visible;
 }
 .maths-topic-container[data-v-eb8371ae] {
   display: flex;
@@ -608,7 +612,7 @@ button:not(:disabled) {
   }
   .course-step-container[data-v-eb8371ae] {
     min-width: 360px;
-    height: 340px;
+    height: 357px;
     background: #fff;
     border: 1px solid #cce7ff;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
@@ -770,7 +774,7 @@ width: 180px;
     border-radius: 8px;
   }
   .step[data-v-0a33574d] {
-    padding: 15px;
+    padding: 8px;
     font-size: 12px;
     font-weight: 400;
   }
