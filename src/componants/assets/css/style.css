@@ -30,7 +30,7 @@ nav {
 }
 
 .navbar-nav li a {
-  /* color: #fff; */
+  color:black;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -52,7 +52,7 @@ nav {
 
 .navbar {
   position: fixed;
-  background-color: #00b1d6;
+  background-color: #ffffff;
 }
 
 nav {
