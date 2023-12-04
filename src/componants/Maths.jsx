@@ -874,7 +874,7 @@ const Maths = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/4133/4133386.png"
+                      src="https://cdn-icons-png.flaticon.com/512/2827/2827348.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
@@ -951,7 +951,7 @@ const Maths = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://prepinstadotcom.s3.ap-south-1.amazonaws.com/wp-content/uploads/2020/07/How-to-solve-Calendar-Problems.webp"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_LJ33g-ghgOUkqKozfjPi7-kvadXp6VXKOCso2ZPwSFiOe1CxEtiB6oJBKxz3TQgBJ5o&usqp=CAU"
                       alt="teacher"
                       className="course-img"
                     />{" "}

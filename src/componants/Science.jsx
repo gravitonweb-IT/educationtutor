@@ -566,7 +566,7 @@ const Science = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://w7.pngwing.com/pngs/731/427/png-transparent-metal-scrap-computer-icons-steel-metal-s-angle-rectangle-steel.png"
+                      src="https://st4.depositphotos.com/39344414/41494/v/450/depositphotos_414945844-stock-illustration-entertainment-related-crane-machine-balls.jpg"
                       alt="teacher"
                       className="course-img"
                     />{" "}
