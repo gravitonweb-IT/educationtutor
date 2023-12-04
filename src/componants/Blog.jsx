@@ -20,6 +20,7 @@ import { BiSolidCertification } from "react-icons/bi";
 import { FaRegCreditCard } from "react-icons/fa";
 import { FaCamera } from "react-icons/fa";
 import Slider from "react-slick";
+import logo from "../componants/assets/images/logo3.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import choose from "./assets/images/why-choose.png";
@@ -32,7 +33,7 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import close from "./assets/images/icons/close-icon.png";
 import { IoIosArrowUp } from "react-icons/io";
-import logo from "../componants/assets/images/logo3.jpg";
+import logo3 from "../componants/assets/images/logo3.jpg";
 import WhatsAppButton from "../componants/WhatsAppButton";
 import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import test from "../componants/assets/images/testmonialimages/t1.png";
@@ -218,7 +219,7 @@ const Blog = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src={p2}
+                  src={logo3}
                   alt="karbar logo"
                   className="header-logo-section"
                 />

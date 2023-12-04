@@ -30,6 +30,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo3 from "../componants/assets/images/logo3.jpg"
 import close from "./assets/images/icons/close-icon.png";
 import { IoIosArrowUp } from "react-icons/io";
 import logo from "../componants/assets/images/logo3.png";
@@ -108,7 +109,7 @@ const Testimonial = () => {
 
               <a href="#education-home" className="brand-logo">
                 <img
-                  src={p2}
+                  src={logo3}
                   alt="karbar logo"
                   className="header-logo-section"
                 />
