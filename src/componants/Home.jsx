@@ -46,7 +46,6 @@ import grade8 from "../componants/assets/grade8.mp4";
 import grade6 from "../componants/assets/grade6.mp4";
 import mario from "../componants/assets/mario.webm";
 import kids from "../componants/assets/kids.png";
-// import p2 from "../componants/assets/p2.png";
 import logo2 from "../componants/assets/images/logo3.jpg";
 import game from "../componants/assets/game.mp4";
 import coding from "../componants/assets/coding.jpg";
@@ -54,9 +53,9 @@ import science from "../componants/assets/science.jpg";
 import math from "../componants/assets/maths.jpg";
 import "./home.css";
 import "./tabs.css";
-import WhatsAppButton1 from "../componants/WhatsAppButton1"
+import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import sat from "../componants/assets/sat.mp4";
-// import anime from 'animejs';
+import { FaInstagram } from "react-icons/fa";
 const Home = () => {
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
 
@@ -65,11 +64,11 @@ const Home = () => {
   };
   const cardContents = [
     {
-      title: 'Coding is valuable for kids as it',
-      intro: 'Kid-friendly platforms  ',
+      title: "Coding is valuable for kids as it",
+      intro: "Kid-friendly platforms  ",
       readMore: (
         <>
-        <p>and resources make learning to code engaging and enjoyable.</p>
+          <p>and resources make learning to code engaging and enjoyable.</p>
           <h2>Develops Problem-Solving Skills:</h2>
           <p>Breaks down complex issues for critical thinking. </p>
           <h2>Fosters Logic and Creativity:</h2>
@@ -95,39 +94,71 @@ const Home = () => {
       imageSrc: coding,
     },
     {
-      title: 'Beyond the Stars: Dark Matter Unveiled',
-      intro: 'Gazing into the cosmos, ',
+      title: "Beyond the Stars: Dark Matter Unveiled",
+      intro: "Gazing into the cosmos, ",
       readMore: (
         <>
-        <p>we confront the enigma—dark matter. Elusive, it interacts solely through gravity, challenging scientists who infer its presence through gravitational effects on visible matter.  </p>
-          <p> Picture the universe as a cosmic ballet, with dark matter as the unseen choreographer, maintaining cosmic harmony. Scientists engage in cosmic cartography, mapping visible matters distribution. Discrepancies reveal dark matters ethereal silhouette, weaving an unseen tapestry—the cosmic web—concentrating galaxies along invisible threads.</p>
-          <p>As our journey concludes, an invitation extends to all curious minds. The cosmos beckons, revealing hidden wonders. Let curiosity propel us further into the cosmic unknown, where discovery knows no bounds.</p>
+          <p>
+            we confront the enigma—dark matter. Elusive, it interacts solely
+            through gravity, challenging scientists who infer its presence
+            through gravitational effects on visible matter.{" "}
+          </p>
+          <p>
+            {" "}
+            Picture the universe as a cosmic ballet, with dark matter as the
+            unseen choreographer, maintaining cosmic harmony. Scientists engage
+            in cosmic cartography, mapping visible matters distribution.
+            Discrepancies reveal dark matters ethereal silhouette, weaving an
+            unseen tapestry—the cosmic web—concentrating galaxies along
+            invisible threads.
+          </p>
+          <p>
+            As our journey concludes, an invitation extends to all curious
+            minds. The cosmos beckons, revealing hidden wonders. Let curiosity
+            propel us further into the cosmic unknown, where discovery knows no
+            bounds.
+          </p>
         </>
       ),
       imageSrc: science,
     },
     {
-      title: 'Unveiling the Beauty of Mathematics',
-      intro: 'Dive into the world of math: ',
+      title: "Unveiling the Beauty of Mathematics",
+      intro: "Dive into the world of math: ",
       readMore: (
         <>
           <h2>Patterns Revealed</h2>
-          <p>Uncover the beauty of numerical patterns, connecting diverse concepts seamlessly. </p>
+          <p>
+            Uncover the beauty of numerical patterns, connecting diverse
+            concepts seamlessly.{" "}
+          </p>
           <h2>Geometry's Charm</h2>
-          <p>Explore the elegance of shapes and angles, witnessing the visual allure of geometry. </p>
+          <p>
+            Explore the elegance of shapes and angles, witnessing the visual
+            allure of geometry.{" "}
+          </p>
           <h2>Algebra's Power</h2>
-          <p>Balancing equations and solving mysteries—algebra's artistry in real-world precision. </p>
+          <p>
+            Balancing equations and solving mysteries—algebra's artistry in
+            real-world precision.{" "}
+          </p>
           <h2>Calculus Insight</h2>
-          <p>Experience the symphony of rates and changes, where calculus unlocks profound insights.</p>
+          <p>
+            Experience the symphony of rates and changes, where calculus unlocks
+            profound insights.
+          </p>
           <h2>Nature's Equation</h2>
-          <p>In the natural world, math is the silent language describing the universe's beauty. </p>
+          <p>
+            In the natural world, math is the silent language describing the
+            universe's beauty.{" "}
+          </p>
           <h2>Conclusion</h2>
-          <p>Celebrate the wonders of mathematics—a language expressing the beauty of the world. Unlock secrets within its realm and embrace the elegance math offers. 
-
- 
-
-Learn Math Online At Home - X Math Education | Teaching Methods </p>
-       
+          <p>
+            Celebrate the wonders of mathematics—a language expressing the
+            beauty of the world. Unlock secrets within its realm and embrace the
+            elegance math offers. Learn Math Online At Home - X Math Education |
+            Teaching Methods{" "}
+          </p>
         </>
       ),
       imageSrc: math,
@@ -157,7 +188,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
 
   const handleSubmit1 = (e) => {
     e.preventDefault();
-   
+
     setShowForm(false);
   };
 
@@ -172,7 +203,6 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
   };
   const [slidesToShow, setSlidesToShow] = useState(3);
 
-
   const settings1 = {
     dots: true,
     infinite: true,
@@ -180,7 +210,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
   };
-  const [activeTab, setActiveTab] = useState("course-item-1"); 
+  const [activeTab, setActiveTab] = useState("course-item-1");
 
   useEffect(() => {
     console.log("this is ");
@@ -236,7 +266,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
       ...formData,
       [name]: value,
     });
-    // Clear the error message when the user starts typing
+    
     setErrors({
       ...errors,
       [name]: "",
@@ -255,11 +285,11 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
       newErrors.email = "Email is required";
     }
 
-    // Add more validation rules for other fields
+
 
     setErrors(newErrors);
 
-    // Return true if there are no errors
+
     return Object.keys(newErrors).length === 0;
   };
 
@@ -267,7 +297,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
     e.preventDefault();
 
     if (validateForm()) {
-      // You can access the form data in the 'formData' object
+
       console.log("Form Data:", formData);
     } else {
       console.log("Form validation failed.");
@@ -328,12 +358,14 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
-  const [position, setPosition] = useState('100%');
+  const [position, setPosition] = useState("100%");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPosition((prevPosition) => (prevPosition === '-100   ' ? '0' : '-100'));
-    }, 5000); // Adjust the interval as needed
+      setPosition((prevPosition) =>
+        prevPosition === "-100   " ? "0" : "-100"
+      );
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -375,12 +407,10 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                       <Link to="/Maths">Maths</Link>
                       <Link to="/Science">Science</Link>
                       <Link to="/Coding">Coding</Link>
-                      <Link to="/Competative">Competative Exams</Link>
+                      <Link to="/Competative">Competitive Exam</Link>
                     </div>
                   </li>
-                  {/* <li>
-                  <a href="#education-price">Price</a>
-                </li> */}
+                  
                   <li>
                     <a href="#education-testimonial">Testimonial</a>
                   </li>
@@ -410,20 +440,15 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
     ==================================================================================*/}
         <section id="education-home" className="banner-area theme-bg-gradient">
           <div className="container">
-         
- 
             <div className="row">
-              
               <div className="col-lg-4 col-sm-4">
                 <div className="banner-device">
-          
                   <img src={kids} alt="main" />
                 </div>
               </div>
               <div className="col-lg-8 col-sm-8">
                 {/* Home content */}
                 <div className="banner-txt">
-              
                   <div className="banner-intro">
                     <h1 className="banner-title">
                       Welcome to Edufusion Tutors - Breaking
@@ -435,13 +460,21 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                       more than 15 years and tech enthusiasts, we're redefining
                       online learning to make it accessible, engaging, and
                       empowering for every student. Experience personalized
-                      excellence with our exclusive<br/>  
-                       <div id="sessions" style={{ color: '#ff3366', fontSize: '23px', fontWeight: '600', 
-                      // transform: `translateX(${position})`, whiteSpace: 'nowrap'
-                       }}>
-      1:1 Sessions In Math, Science, and Coding. Join Edufusion,
-    </div> where education
-                      transcends boundaries!
+                      excellence with our exclusive
+                      <br />
+                      <div
+                        id="sessions"
+                        style={{
+                          color: "#ff3366",
+                          fontSize: "23px",
+                          fontWeight: "600",
+                        
+                        }}
+                      >
+                        1:1 Sessions In Math, Science, and Coding. Join
+                        Edufusion,
+                      </div>{" "}
+                      where education transcends boundaries!
                     </p>
                   </div>
                   <div className="app-media">
@@ -493,7 +526,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   data-wow-duration="2s"
                   style={{
                     visibility: "visible",
-                    WebkitAnimationDuration: "2s", 
+                    WebkitAnimationDuration: "2s",
                     animationDuration: "2s",
                     animationName: "fadeIn",
                   }}
@@ -508,12 +541,11 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   </div>
                   <div className="spliter mb30" />
                 </div>
-              
+
                 <div className="course-items">
                   <div className="tabs text-center">
                     <div className="tabs-nav">
                       <ul className="list-inline nav nav-tabs fsize-0">
-                        
                         <li className="col-lg-2 col-md-2 active">
                           <a
                             onClick={() => handleTabClick("course-item-1")}
@@ -650,7 +682,14 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span style={{fontSize:"25px", fontWeight:"700"}}>Mathematics Learning Platform</span>
+                                  <span
+                                    style={{
+                                      fontSize: "25px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
+                                    Mathematics Learning Platform
+                                  </span>
                                 </div>
                                 <div className="subtitle fweight-600 color-4 mt20">
                                   <h5>
@@ -669,20 +708,34 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             </p>
                             <ul className="list1">
                               <li>
-                                <span className="table-cell valign-middle"  >
-                                  <h5 style={{fontSize:"18px", fontWeight:"600"}}>Math Anxiety Support:</h5>Conquer math anxiety
-                                  with our supportive environment, ensuring a
-                                  positive and enjoyable learning experience.
+                                <span className="table-cell valign-middle">
+                                  <h5
+                                    style={{
+                                      fontSize: "18px",
+                                      fontWeight: "600",
+                                    }}
+                                  >
+                                    Math Anxiety Support:
+                                  </h5>
+                                  Conquer math anxiety with our supportive
+                                  environment, ensuring a positive and enjoyable
+                                  learning experience.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                <h5 style={{fontSize:"18px", fontWeight:"600"}}>Bridge Learning Gaps:</h5> Personalized lessons
-                                  fill gaps, providing a solid foundation for
-                                  mathematical success.
+                                  <h5
+                                    style={{
+                                      fontSize: "18px",
+                                      fontWeight: "600",
+                                    }}
+                                  >
+                                    Bridge Learning Gaps:
+                                  </h5>{" "}
+                                  Personalized lessons fill gaps, providing a
+                                  solid foundation for mathematical success.
                                 </span>
                               </li>
-                              
                             </ul>
                             {/* button */}
                           </div>
@@ -713,7 +766,12 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
+                                  <span
+                                    style={{
+                                      fontSize: "25px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
                                     Unlock the Wonders of Science with Our
                                     Exclusive
                                   </span>
@@ -733,7 +791,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                               understanding of science. Ready to evaluate your
                               learning journey? Join us today!
                             </p>
-                            <ul className="list1">
+                            {/* <ul className="list1">
                               <li className="list-theme-color">
                                 <span className="table-cell valign-middle">
                                   Top-notch Tutors
@@ -749,8 +807,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                                   Interactive Learning Tools
                                 </span>
                               </li>
-                             
-                            </ul>
+                            </ul> */}
                             {/* button */}
                             <div className="flex-1"></div>
                           </div>
@@ -779,7 +836,12 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
+                                  <span
+                                    style={{
+                                      fontSize: "25px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
                                     Supercharge Your Child's Future with Coding!{" "}
                                   </span>
                                 </div>
@@ -800,23 +862,45 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             <ul className="list1">
                               <li>
                                 <span className="table-cell valign-middle">
-                                  <h5 style={{fontSize:"18px", fontWeight:"700"}}>Boosts Critical Thinking:</h5> Develops logical and
-                                  analytical skills for academic excellence.
+                                  <h5
+                                    style={{
+                                      fontSize: "18px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
+                                    Boosts Critical Thinking:
+                                  </h5>{" "}
+                                  Develops logical and analytical skills for
+                                  academic excellence.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                 <h5 style={{fontSize:"18px", fontWeight:"700"}}>Math Made Fun:</h5>  Coding enhances math
-                                  proficiency in an engaging way.
+                                  <h5
+                                    style={{
+                                      fontSize: "18px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
+                                    Math Made Fun:
+                                  </h5>{" "}
+                                  Coding enhances math proficiency in an
+                                  engaging way.
                                 </span>
                               </li>
                               <li>
                                 <span className="table-cell valign-middle">
-                                  <h5 style={{fontSize:"18px", fontWeight:"700"}}>Creative Exploration:</h5> Unleash creativity
-                                  through coding adventures.
+                                  <h5
+                                    style={{
+                                      fontSize: "18px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
+                                    Creative Exploration:
+                                  </h5>{" "}
+                                  Unleash creativity through coding adventures.
                                 </span>
                               </li>
-                             
                             </ul>
                             {/* button */}
                             <div className="flex-1"></div>
@@ -846,7 +930,12 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
+                                  <span
+                                    style={{
+                                      fontSize: "25px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
                                     Excel in Competitive Exams with Our Proven
                                     Expertise
                                   </span>
@@ -860,11 +949,20 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             </div>
                             <p className="lheight-30 mt30">
                               Unlock the door to success in competitive exams
-                              such as PSAT, SAT, ACT, NAPLAN, and Olympiads with 
-                               <span style={{fontSize:"15px", fontWeight:"600",marginLeft:"10px"}}>EDUFUSION TUTOR</span>. With over 12 years of
-                              unparalleled experience, we have been guiding
-                              students towards academic excellence and achieving
-                              top scores in these prestigious examinations.
+                              such as PSAT, SAT, ACT, NAPLAN, and Olympiads with
+                              <span
+                                style={{
+                                  fontSize: "15px",
+                                  fontWeight: "600",
+                                  marginLeft: "10px",
+                                }}
+                              >
+                                EDUFUSION TUTOR
+                              </span>
+                              . With over 12 years of unparalleled experience,
+                              we have been guiding students towards academic
+                              excellence and achieving top scores in these
+                              prestigious examinations.
                             </p>
                             <ul className="list1">
                               <li>
@@ -916,7 +1014,12 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span style={{fontSize:"25px", fontWeight:"700"}}>
+                                  <span
+                                    style={{
+                                      fontSize: "25px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
                                     Master the PSAT with EDUFUSION TUTOR
                                   </span>
                                 </div>
@@ -964,9 +1067,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                               </li>
                             </ul>
                             {/* button */}
-                            <div className="flex-1">
-                            
-                            </div>
+                            <div className="flex-1"></div>
                           </div>
                           <div className="course-slider-bl col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="course-slider arrow-btn slick-initialized slick-slider">
@@ -993,7 +1094,15 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                             <div className="table mb40">
                               <div className="title-bl table-cell valign-middle">
                                 <div className="title color-2">
-                                  <span style={{fontSize:"25px", fontWeight:"700"}}> Competitive Exam </span>
+                                  <span
+                                    style={{
+                                      fontSize: "25px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
+                                    {" "}
+                                    Competitive Exam{" "}
+                                  </span>
                                 </div>
                                 <div
                                   className="subtitle fweight-600 color-4"
@@ -1069,8 +1178,6 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
           </div>
         </section>
 
-       
-
         {/* tabs */}
         <div className="enroll-wrapper" data-v-0a6dbf09>
           <div
@@ -1080,7 +1187,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
             data-v-0a6dbf09
           >
             <h2 className="title" data-v-0a6dbf09>
-              A Simple 3-Step Process To Enroll Your Kid to Any  Course
+              A Simple 3-Step Process To Enroll Your Kid to Any Course
             </h2>
           </div>{" "}
           <div className="enroll-container" data-v-0a6dbf09>
@@ -1090,7 +1197,6 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   src="https://cdn-icons-png.flaticon.com/512/4762/4762311.png"
                   alt="choose"
                   sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                 
                   className="enroll-img"
                   data-v-0a6dbf09
                 />
@@ -1106,7 +1212,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   <div className="enroll-description" data-v-0a6dbf09>
                     <ul>
                       <li>Maths Course</li>
-                      {/* <li>Coding Course</li> */}
+                      <li>Coding </li>
                       <li>Science Course</li>
                       <li>Competitive Exam</li>
                     </ul>
@@ -1120,7 +1226,6 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   src="https://cdn.iconscout.com/icon/premium/png-256-thumb/trial-7-404313.png"
                   alt="subscribe"
                   sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                  
                   className="enroll-img"
                   data-v-0a6dbf09
                 />
@@ -1146,7 +1251,6 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   src="https://cdn-icons-png.flaticon.com/512/4413/4413569.png"
                   alt="success"
                   sizes="(max-width: 320px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                 
                   className="enroll-img"
                   data-v-0a6dbf09
                 />
@@ -1228,7 +1332,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                               data-wow-duration="2s"
                               style={{
                                 visibility: "visible",
-                                WebkitAnimationDuration: "2s", // Fix for the warning
+                                WebkitAnimationDuration: "2s", 
                                 animationDuration: "2s",
                                 animationName: "fadeIn",
                               }}
@@ -1238,14 +1342,19 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                                   Make your courses standout
                                 </div>
                                 <div className="title color-2">
-                                  <span  style={{fontSize:"25px", fontWeight:"700" }}>
+                                  <span
+                                    style={{
+                                      fontSize: "25px",
+                                      fontWeight: "700",
+                                    }}
+                                  >
                                     Why choose us
                                     <span className="color-15">.</span>
                                   </span>
                                 </div>
                               </div>
                             </div>
-                            <h2 style={{fontSize:"24px", fontWeight:"700" }}>
+                            <h2 style={{ fontSize: "24px", fontWeight: "700" }}>
                               Transforming Lives Through Personalized Education
                             </h2>
                             <p>
@@ -1257,24 +1366,28 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                               journey, fostering a love for learning that
                               transcends boundaries.
                             </p>
-                            <h5 style={{fontSize:"20px", fontWeight:"700" }}>Our Commitment</h5>
+                            <h5 style={{ fontSize: "20px", fontWeight: "700" }}>
+                              Our Commitment
+                            </h5>
                             <p>
-                             <h5  style={{fontSize:"18px", fontWeight:"600" }}>Empowerment:</h5> 
-                             We envision empowering students with
-                              the tools and knowledge to confidently navigate
-                              the ever-evolving landscape of education and
-                              beyond.
+                              <h5
+                                style={{ fontSize: "18px", fontWeight: "600" }}
+                              >
+                                Empowerment:
+                              </h5>
+                              We envision empowering students with the tools and
+                              knowledge to confidently navigate the
+                              ever-evolving landscape of education and beyond.
                             </p>
-                            <h5  style={{fontSize:"20px", fontWeight:"700" }}>Inclusivity: </h5>
+                            <h5 style={{ fontSize: "20px", fontWeight: "700" }}>
+                              Inclusivity:{" "}
+                            </h5>
                             <p>
                               Our vision includes breaking down barriers to
                               learning. We strive to create an inclusive space
                               where every student feels valued and supported.
                             </p>
-                            {/* <h5>Innovation: </h5>
-                            <p>
-                            We aim to be at the forefront of educational innovation, leveraging cutting-edge technology and methodologies to redefine the online learning experience.
-                            </p> */}
+                           
                           </div>
                           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div className="img-exp">
@@ -1318,32 +1431,40 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                               Make your courses standout
                             </div>
                             <div className="title color-2">
-                              <span style={{fontSize:"25px", fontWeight:"700" }}>
+                              <span
+                                style={{ fontSize: "25px", fontWeight: "700" }}
+                              >
                                 Why choose us<span className="color-15">.</span>
                               </span>
                             </div>
                           </div>
                         </div>
-                        <h5 style={{fontSize:"25px", fontWeight:"700" }}>Global Impact: </h5>
+                        <h5 style={{ fontSize: "25px", fontWeight: "700" }}>
+                          Global Impact:{" "}
+                        </h5>
                         <p>
                           Our vision extends globally, reaching learners around
                           the world. We aspire to contribute to the development
                           of a knowledgeable and empowered global community.
                         </p>
                         <p>
-                         <span style={{fontSize:"20px", fontWeight:"600" }}> Lifelong Learning</span>: Beyond academic success, our vision
-                          encompasses instilling a love for lifelong learning.
-                          We aspire to cultivate curious, adaptable individuals
-                          prepared for the challenges and opportunities of the
-                          future.
+                          <span style={{ fontSize: "20px", fontWeight: "600" }}>
+                            {" "}
+                            Lifelong Learning
+                          </span>
+                          : Beyond academic success, our vision encompasses
+                          instilling a love for lifelong learning. We aspire to
+                          cultivate curious, adaptable individuals prepared for
+                          the challenges and opportunities of the future.
                         </p>
-                        <h5 style={{fontSize:"20px", fontWeight:"700" }}>Time Rescheduling</h5>
+                        <h5 style={{ fontSize: "20px", fontWeight: "700" }}>
+                          Time Rescheduling
+                        </h5>
                         <p>
                           Recognizing the busy nature of life, we offer
                           hassle-free time rescheduling options. Your education
                           should fit your schedule, not the other way around.
                         </p>
-                      
                       </div>
                       <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div className="video-exp">
@@ -1434,7 +1555,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
         {/*================================================================================= 
                           START PRICE  
     ==================================================================================*/}
-      
+
         {/*================================================================================= 
                           END PRICE  
     ==================================================================================*/}
@@ -1529,10 +1650,9 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                       animationDelay: "0.2s",
                       WebkitAnimationName: "_fadeInUp",
                       animationName: "_fadeInUp",
-                      fontSize:"35px",
-                       fontWeight:"700"
+                      fontSize: "35px",
+                      fontWeight: "700",
                     }}
-               
                   >
                     Testimonials{" "}
                   </h4>
@@ -1547,7 +1667,10 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                       animationName: "_fadeInUp",
                     }}
                   >
-                    <span style={{fontSize:"23px", fontWeight:"600"}}> Empowering Every Child for Success</span>
+                    <span style={{ fontSize: "23px", fontWeight: "600" }}>
+                      {" "}
+                      Empowering Every Child for Success
+                    </span>
                   </h2>
                   <p
                     className="wow fadeInUp"
@@ -1602,8 +1725,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          {/* <h4>Alima Alisha</h4>
-                          <span>CEO</span> */}
+                         
                         </div>
                       </div>
                     </div>
@@ -1642,8 +1764,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          {/* <h4>David Clark</h4>
-                          <span>Marketing Manager</span> */}
+                         
                         </div>
                       </div>
                     </div>
@@ -1682,8 +1803,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                       <div className="testimonials__client d-flex align-items-center">
                         <div className="testimonials__client-thumb"></div>
                         <div className="testimonials__client-text">
-                          {/* <h4>Moran Sham</h4>
-                          <span>Team Leader</span> */}
+                      
                         </div>
                       </div>
                     </div>
@@ -1727,7 +1847,6 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   </div>
                 </div>
                 {/* 4th */}
-               
               </Slider>
             </div>
             {/*  */}
@@ -1740,63 +1859,75 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
         {/*================================================================================= 
                           START BLOG  
     ==================================================================================*/}
-    
-      
-      <div
-                className="text-center wow fadeIn"
-                data-wow-duration="2s"
-                style={{
-                  visibility: "visible",
-                  animationDuration: "2s",
-                  animationName: "fadeIn",
-                  marginTop:"140px"
-                }}
-              >
-                <div className="subtitle">A modern and unique style</div>
-                <div className="title color-2 lheight-40 mb30">
-                  <span style={{fontSize:"30px", fontWeight:"700"}}>
-                    Latest from blog<span className="color-15">.</span>
-                  </span>
-                </div>
-                <div className="spliter mb40" />
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-      {/* Three cards */}
-      {cardContents.map((card, index) => (
-        <div key={index} style={{
-          flex: 1,
-          border: `1px solid ${expandedCardIndex === index ? 'blue' : 'black'}`, // Change border color if the card is expanded
-          padding: '10px',
-          margin: '10px',
-          transition: 'border 0.3s ease', // Add a smooth transition effect
-        }}>
-            <img src={card.imageSrc} alt={`Image for ${card.title}`} style={{ width: '100%', maxHeight: '270px', objectFit: 'cover' }} />
-          <h1 style={{ fontSize: "20px", fontWeight: "600" }}>{card.title}</h1>
 
-        
-
-          <p>
-            {card.intro}
-            <span id={`points${index}`}>...</span>
-
-            {expandedCardIndex === index && (
-              <div id={`moreText${index}`}>
-                {card.readMore}
-              </div>
-            )}
-          </p>
-
-          <button onClick={() => toggleText(index)} id={`textButton${index}`} style={{color:"black",fontSize:"20px",fontWeight:"600" }}>
-            {expandedCardIndex === index ? 'Show Less' : 'Read More'}
-          </button>
+        <div
+          className="text-center wow fadeIn"
+          data-wow-duration="2s"
+          style={{
+            visibility: "visible",
+            animationDuration: "2s",
+            animationName: "fadeIn",
+            marginTop: "140px",
+          }}
+        >
+          <div className="subtitle">A modern and unique style</div>
+          <div className="title color-2 lheight-40 mb30">
+            <span style={{ fontSize: "30px", fontWeight: "700" }}>
+              Latest from blog<span className="color-15">.</span>
+            </span>
+          </div>
+          <div className="spliter mb40" />
         </div>
-      ))}
-    </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+         
+          {cardContents.map((card, index) => (
+            <div
+              key={index}
+              style={{
+                flex: 1,
+                border: `1px solid ${
+                  expandedCardIndex === index ? "blue" : "black"
+                }`, 
+                padding: "10px",
+                margin: "10px",
+                transition: "border 0.3s ease",
+              }}
+            >
+              <img
+                src={card.imageSrc}
+                alt={`Image for ${card.title}`}
+                style={{
+                  width: "100%",
+                  maxHeight: "270px",
+                  objectFit: "cover",
+                }}
+              />
+              <h1 style={{ fontSize: "20px", fontWeight: "600" }}>
+                {card.title}
+              </h1>
+
+              <p>
+                {card.intro}
+                <span id={`points${index}`}>...</span>
+
+                {expandedCardIndex === index && (
+                  <div id={`moreText${index}`}>{card.readMore}</div>
+                )}
+              </p>
+
+              <button
+                onClick={() => toggleText(index)}
+                id={`textButton${index}`}
+                style={{ color: "black", fontSize: "20px", fontWeight: "600" }}
+              >
+                {expandedCardIndex === index ? "Show Less" : "Read More"}
+              </button>
+            </div>
+          ))}
+        </div>
         {/*================================================================================= 
                           END BLOG
     ==================================================================================*/}
-
-
 
         {/*================================================================================= 
                           START FOOTER  
@@ -1808,65 +1939,24 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                {/* Progress title */}
+             
                 <div className="progress-bars-inner">
                   <h2 className="color-white fsize-40 mb15 mt0">
-                    Some important facts
+                  ADDRESS
                   </h2>
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Office: </h5>
+
                   <p className="color-white lheight-30 pb30">
-                    Step into a world of possibilities with us! Explore the
-                    magic of numbers, unravel scientific wonders, and dive deep
-                    into coding. Join us on this incredible journey.
+                    Oshiwara Andheri West Mumbai – 53 India 
                   </p>
-                  {/* PROGRESS BARS*/}
-                  {/* <div className="section progress-bars section-padding">
-                    <div className="progress-bars-content">
-                      <div className="progress-bar-wrapper">
-                        <div className="row">
-                          <div className="content mb40">
-                            <div className="col-sm-3 col-xs-6">
-                              <div className="progress-bar-number">
-                                <div className="fsize-60 num">
-                                  {teachersCount}
-                                </div>
-                                <p className="name-inner">teachers</p>
-                              </div>
-                            </div>
-                            <div className="col-sm-3 col-xs-6">
-                              <div className="progress-bar-number">
-                                <div className="fsize-60 num">
-                                  {coursesCount}
-                                </div>
-                                <p className="name-inner">courses</p>
-                              </div>
-                            </div>
-                            <div className="col-sm-3 col-xs-6">
-                              <div className="progress-bar-number">
-                                <div className="fsize-60 num">
-                                  {membersCount}
-                                </div>
-                                <p className="name-inner">members</p>
-                              </div>
-                            </div>
-                            <div className="col-sm-3 col-xs-6">
-                              <div className="progress-bar-number">
-                                <div className="fsize-60 num">
-                                  {countriesCount}
-                                </div>
-                                <p className="name-inner">Countries</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>{" "}
-                    </div>
-                  </div> */}
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Branch:</h5>
+                  <p className="color-white lheight-30 pb30">Race Course, Ringroad Gujarat – India </p>
                 </div>
               </div>
             </div>
             <div className="section-subscribe section-subscribe-st">
               <div className="subscribe-content">
-                {/* Newsletter title */}
+            
                 <div className="subscribe-content-inner text-white">
                   <h2 className="color-white fsize-40 mb15">Contacts</h2>
                   <a href="tel:8469092774">
@@ -1887,7 +1977,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
               </div>
               <div className="subscribe-form mt30">
                 <div className="subscribe-form-inner">
-                  {/* Newsletter form */}
+         
                   <form className="form-inline dv-form" id="mc-form">
                     <div className="form-group">
                       <input
@@ -1925,8 +2015,13 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://www.facebook.com/profile.php?id=61552672263290">
                     <FaFacebookF />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/edufusion_tutor/">
+                  <FaInstagram />
                   </a>
                 </li>
                 <li>
@@ -1968,7 +2063,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
         {/* End Scroll to top */}
 
         {/* whats app */}
-        <WhatsAppButton1/>
+        <WhatsAppButton1 />
         <WhatsAppButton />
 
         {/*================================================================================= 
@@ -2018,7 +2113,7 @@ Learn Math Online At Home - X Math Education | Teaching Methods </p>
                           )}
                         </div>
                       </div>
-                      {/* Add other form fields */}
+
                       <div className="col-md-12">
                         <div className="form-group has-icon-left form-control-email">
                           <label className="sr-only" htmlFor="email">

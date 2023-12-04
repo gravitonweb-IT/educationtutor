@@ -11,7 +11,7 @@ import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import { IoIosArrowUp } from "react-icons/io";
 import logo3 from "../componants/assets/images/logo3.jpg";
 // import { Link } from "react-router-dom";
-
+import { FaInstagram } from "react-icons/fa";
 import p2 from "../componants/assets/p2.png";
 import close from "./assets/images/icons/close-icon.png";
 
@@ -255,7 +255,7 @@ const Coding = () => {
                     <Link to="/Maths">Maths</Link>
                     <Link to="/Science">Science</Link>
                     <Link to="/Coding">Coding</Link>
-                    <Link to="/Competative">Competative</Link>
+                    <Link to="/Competative">Competitive Exam</Link>
                   </div>
                 </li>
                 {/* <li>
@@ -426,6 +426,13 @@ const Coding = () => {
                   >
                     Grade 6-8
                   </span>
+                  <span
+                    data-v-0a33574d
+                    className={` step tab ${activeTab2 === 4 ? "active" : ""}`}
+                    onClick={() => handleTabClick2(4)}
+                  >
+                 Grade 9-12 
+                  </span>
                 
                 </div>
               </div>
@@ -583,18 +590,6 @@ const Coding = () => {
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://static.thenounproject.com/png/2017447-200.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Data Handling
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
                       src="https://w7.pngwing.com/pngs/163/279/png-transparent-android-software-development-computer-icons-bionic-android-text-logo-grass.png"
                       alt="teacher"
                       className="course-img"
@@ -605,81 +600,7 @@ const Coding = () => {
                   </div>
                 </div>
 
-                {/* <div data-v-eb8371ae className="course-step-container">
-                    <center data-v-eb8371ae>
-                      <div data-v-eb8371ae className="course-header-container">
-                        <img
-                          data-v-eb8371ae
-                          sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                          src="https://b2990823.smushcdn.com/2990823/wp-content/uploads/2022/02/vedic-maths-services-500x500-1-1-294x300.png?lossy=1&strip=1&webp=1"
-                          alt="teacher"
-                          className="topic-img"
-                        />{" "}
-                        <span data-v-eb8371ae className="topic-title">
-                          Vedic Math
-                        </span>
-                      </div>
-                    </center>{" "}
-                    <div data-v-eb8371ae className="course-step-inner-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://play-lh.googleusercontent.com/Kuvx2co9DbP6e4JPzYbvdg8EtvIj2iwdekqjl7IuLzKIeyxUyEthwYKzxSVk6tpTGQ"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Addition Tricks
-                      </div>
-                    </div>
-                    <div data-v-eb8371ae className="course-step-inner-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="https://i.pinimg.com/736x/f2/c2/63/f2c2631d469db9d9f08ac76a17c3f910.jpg"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Series Addition
-                      </div>
-                    </div>
-                    <div data-v-eb8371ae className="course-step-inner-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://vick8890.files.wordpress.com/2010/04/division1.gif"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Subtraction Tricks
-                      </div>
-                    </div>
-                    <div data-v-eb8371ae className="course-step-inner-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://static.thenounproject.com/png/953211-200.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Mental Addition
-                      </div>
-                    </div>
-                    <div data-v-eb8371ae className="course-step-inner-container">
-                      <img
-                        data-v-eb8371ae
-                        sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://icons-for-free.com/iconfiles/png/512/subtract+icon-1320166877654139912.png"
-                        alt="teacher"
-                        className="course-img"
-                      />{" "}
-                      <div data-v-eb8371ae className="course-step-info">
-                        Mental Subtraction and many more
-                      </div>
-                    </div>
-                  </div> */}
+  
               </div>
             )}
             {activeTab2 === 3 && (
@@ -714,7 +635,7 @@ const Coding = () => {
                       Artificial Intelligence
                     </div>
                   </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
+                  {/* <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
@@ -723,10 +644,9 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                    
-                      Arithmetic Operations
+                    Machine Learning 
                     </div>
-                  </div>
+                  </div> */}
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
@@ -769,23 +689,28 @@ const Coding = () => {
                
               </div>
             )}
-            {activeTab2 === 4 && (
-              <div data-v-eb8371ae className="maths-topic-container" style={{ 
-                display: isCardVisible ? 'flex' : 'none',
-                flexDirection: 'column',
-                }}>
+               {activeTab2 === 4 && (
+              <div
+                data-v-eb8371ae
+                className="maths-topic-container"
+                style={{
+                  display: isCardVisible ? "flex" : "none",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                }}
+              >
                 <div data-v-eb8371ae className="course-step-container">
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://user-images.githubusercontent.com/30186107/29488525-f55a69d0-84da-11e7-8a39-5476f663b5eb.png"
+                        src="https://simg.nicepng.com/png/small/141-1415510_psd-to-html-and-css3-html-css.png"
                         alt="teacher"
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        HTML, CSS
+                    HTML, CSS
                       </span>
                     </div>
                   </center>{" "}
@@ -798,109 +723,134 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Website Development
+                    Website Development 
+                    </div>
+                  </div>
+                  {/* <div data-v-eb8371ae className="course-step-inner-container">
+                    <img
+                      data-v-eb8371ae
+                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                      src="https://w7.pngwing.com/pngs/505/664/png-transparent-mathematics-mathematical-finance-derivative-actuarial-science-function-mathematics-logo-monochrome-number.png"
+                      alt="teacher"
+                      className="course-img"
+                    />{" "}
+                    <div data-v-eb8371ae className="course-step-info">
+                      Differential Calculus
+                    </div>
+                  </div> */}
+                  <div data-v-eb8371ae className="course-step-inner-container">
+                    <img
+                      data-v-eb8371ae
+                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                      src="https://cdn-icons-png.flaticon.com/512/2621/2621303.png"
+                      alt="teacher"
+                      className="course-img"
+                    />{" "}
+                    <div data-v-eb8371ae className="course-step-info">
+                    Python Concepts 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/2721/2721287.png"
+                      src=" https://cdn-icons-png.flaticon.com/512/2980/2980560.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Python Concepts
+                    Machine Learning 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/2083/2083213.png"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgsT8DOB1KbVMM2Pic68pHVdKgdyK41J5-42_8nOUftp_P5ntcy6zbBny9dJ8BtJBQHkE&usqp=CAU"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Machine Learning
+                    Artifiicial Intelligence and Many More 
                     </div>
                   </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://cdn-icons-png.flaticon.com/512/2083/2083213.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Artifiicial Intelligence and Many More
-                    </div>
-                  </div>
-                 
                 </div>
 
                 <div data-v-eb8371ae className="course-step-container">
+                
                   <center data-v-eb8371ae>
                     <div data-v-eb8371ae className="course-header-container">
                       <img
                         data-v-eb8371ae
                         sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                        src="https://e7.pngegg.com/pngimages/588/224/png-clipart-ap-computer-science-principles-advanced-placement-science-angle-text-thumbnail.png"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNwh3fEkYfDsscn_zBVv4Jrtin4TywMl2VdFw2xvjgf6q9-wM9QnMlfL7ydG1ud9b6k6Q&usqp=CAU"
                         alt="teacher"
                         className="topic-img"
                       />{" "}
                       <span data-v-eb8371ae className="topic-title">
-                        Ap Computer Science
+                      Ap Computer Science  
                       </span>
                     </div>
                   </center>{" "}
+
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKTmGpfBVnAbLfAXcUny39EHTiXlCzAnR9odXk9Kt0UE1lmm8y_aYT9zATadifElQRjSA&usqp=CAU"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Introduction to Java
+                    Introduction to Java 
+                    </div>
+                  </div>
+                  {/* <div data-v-eb8371ae className="course-step-inner-container">
+                    <img
+                      data-v-eb8371ae
+                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                      src="https://d1e4pidl3fu268.cloudfront.net/3e9b16b6-0962-405a-aa0e-3f21edb5cce2/6fRecurringdecimalstofractions.png"
+                      alt="teacher"
+                      className="course-img"
+                    />{" "}
+                    <div data-v-eb8371ae className="course-step-info">
+                      Recurring Decimals
+                    </div>
+                  </div> */}
+                  <div data-v-eb8371ae className="course-step-inner-container">
+                    <img
+                      data-v-eb8371ae
+                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
+                      src="https://cdn4.iconfinder.com/data/icons/technology-83/1000/object_programming_development_oriented_developer_object-oriented_programming_software-512.png"
+                      alt="teacher"
+                      className="course-img"
+                    />{" "}
+                    <div data-v-eb8371ae className="course-step-info">
+                    Oops Concept 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="   Oops concept "
+                      src="https://t3.ftcdn.net/jpg/02/52/48/62/360_F_252486270_nwCFOCDQrxWeQSA5CI1PwPnjd5GOY4WB.jpg"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Oops Concept
+                    Sorting and Searching 
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
                     <img
                       data-v-eb8371ae
                       sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://www.svgrepo.com/show/310633/channel-follow.svg"
+                      src="https://cdn-icons-png.flaticon.com/512/3024/3024163.png"
                       alt="teacher"
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Sorting and Searching
-                    </div>
-                  </div>
-                  <div data-v-eb8371ae className="course-step-inner-container">
-                    <img
-                      data-v-eb8371ae
-                      sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw"
-                      src="https://static.thenounproject.com/png/2732962-200.png"
-                      alt="teacher"
-                      className="course-img"
-                    />{" "}
-                    <div data-v-eb8371ae className="course-step-info">
-                      Array
+                    Array  
                     </div>
                   </div>
                   <div data-v-eb8371ae className="course-step-inner-container">
@@ -912,12 +862,10 @@ const Coding = () => {
                       className="course-img"
                     />{" "}
                     <div data-v-eb8371ae className="course-step-info">
-                      Recursions
+                    Recursions 
                     </div>
                   </div>
                 </div>
-
-                
               </div>
             )}
          
@@ -1039,152 +987,120 @@ const Coding = () => {
 
       {/* footer */}
       <footer
-        id="education-footer"
-        className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              {/* Progress title */}
-              <div className="progress-bars-inner">
-                <h2 className="color-white fsize-40 mb15 mt0">
-                  Some important facts
-                </h2>
-                <p className="color-white lheight-30 pb30">
-                  Step into a world of possibilities with us! Explore the magic
-                  of numbers, unravel scientific wonders, and dive deep into
-                  coding. Join us on this incredible journey.
-                </p>
-                {/* PROGRESS BARS*/}
-                {/* <div className="section progress-bars section-padding">
-                  <div className="progress-bars-content">
-                    <div className="progress-bar-wrapper">
-                      <div className="row">
-                        <div className="content mb40">
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">
-                                {teachersCount}
-                              </div>
-                              <p className="name-inner">teachers</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">{coursesCount}</div>
-                              <p className="name-inner">courses</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">{membersCount}</div>
-                              <p className="name-inner">members</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">
-                                {countriesCount}
-                              </div>
-                              <p className="name-inner">Countries</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>{" "}
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          </div>
-          <div className="section-subscribe section-subscribe-st">
-            <div className="subscribe-content">
-              {/* Newsletter title */}
-              <div className="subscribe-content-inner text-white">
-                <h2 className="color-white fsize-40 mb15">Contacts</h2>
-                <a href="tel:8469092774">
-                  <p
-                    className="text-white lheight-30 pb40  "
-                    style={{ color: "white" }}
-                  >
-                    Phone1: +918469092774
-                    <br />
-                    Phone2:+91-6006474119
-                  </p>
-                </a>
+          id="education-footer"
+          className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
+        >
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+             
+                <div className="progress-bars-inner">
+                  <h2 className="color-white fsize-40 mb15 mt0">
+                  ADDRESS
+                  </h2>
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Office: </h5>
 
-                <a href="mailto:inquiries@edufusion.co.in" className="mb90">
-                  <p>Email: Inquiries@edufusion.co.in</p>
-                </a>
+                  <p className="color-white lheight-30 pb30">
+                    Oshiwara Andheri West Mumbai – 53 India 
+                  </p>
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Branch:</h5>
+                  <p className="color-white lheight-30 pb30">Race Course, Ringroad Gujarat – India </p>
+                </div>
               </div>
             </div>
-            <div className="subscribe-form mt30">
-              <div className="subscribe-form-inner">
-                {/* Newsletter form */}
-                <form className="form-inline dv-form" id="mc-form">
-                  <div className="form-group">
-                    <input
-                      id="mc-email"
-                      type="email"
-                      name="EMAIL"
-                      placeholder="Enter Your Email Address"
-                      className="form-control color-white"
-                    />
-                    <button
-                      className="btn color-16 fsize-14 lheight-40 fweight-600"
-                      name="Subscribe"
-                      id="subscribe-btn"
-                      type="submit"
+            <div className="section-subscribe section-subscribe-st">
+              <div className="subscribe-content">
+            
+                <div className="subscribe-content-inner text-white">
+                  <h2 className="color-white fsize-40 mb15">Contacts</h2>
+                  <a href="tel:8469092774">
+                    <p
+                      className="text-white lheight-30 pb40  "
+                      style={{ color: "white" }}
                     >
-                      Submit
-                    </button>
-                  </div>
-                  <br />
-                  <label htmlFor="mc-email" />
-                  <div id="subscribe-result" />
-                </form>
+                      Phone1: +91-8735820099
+                      <br />
+                      Phone2: +91-6006474119
+                    </p>
+                  </a>
+
+                  <a href="mailto:inquiries@edufusion.co.in" className="mb90">
+                    <p>Email: Inquiries@edufusion.co.in</p>
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* Start Social icons */}
-            <ul className="social-rounded social-icon mt35 p0">
-              <li>
-                <a href="#">
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaTwitter />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaFacebookF />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaBehance />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaGooglePlusG />
-                </a>
-              </li>
-            </ul>
-            {/* End Social icons */}
-            <div className="copyright mt20">
-              <p className="color-white fsize-16">
-                Copyright@2020 All Rights Reserved By
-                <span className="font-bold" style={{ color: "#2f384a" }}>
-                  <a href="#">:Edufusion Tutor</a>
-                </span>
-              </p>
+              <div className="subscribe-form mt30">
+                <div className="subscribe-form-inner">
+         
+                  <form className="form-inline dv-form" id="mc-form">
+                    <div className="form-group">
+                      <input
+                        id="mc-email"
+                        type="email"
+                        name="EMAIL"
+                        placeholder="Enter Your Email Address"
+                        className="form-control color-white"
+                      />
+                      <button
+                        className="btn color-16 fsize-14 lheight-40 fweight-600"
+                        name="Subscribe"
+                        id="subscribe-btn"
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                    <br />
+                    <label htmlFor="mc-email" />
+                    <div id="subscribe-result" />
+                  </form>
+                </div>
+              </div>
+              {/* Start Social icons */}
+              <ul className="social-rounded social-icon mt35 p0">
+                <li>
+                  <a href="#">
+                    <FaLinkedinIn />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaTwitter />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=61552672263290">
+                    <FaFacebookF />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/edufusion_tutor/">
+                  <FaInstagram />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaBehance />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaGooglePlusG />
+                  </a>
+                </li>
+              </ul>
+              {/* End Social icons */}
+              <div className="copyright mt20">
+                <p className="color-white fsize-16">
+                  Copyright@2020 All Rights Reserved By
+                  <span className="font-bold" style={{ color: "#2f384a" }}>
+                    <a href="#">:Edufusion Tutor</a>
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
 <WhatsAppButton />
 <WhatsAppButton1 />
 <a

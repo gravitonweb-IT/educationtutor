@@ -49,6 +49,7 @@ import grade6 from "../componants/assets/grade6.mp4";
 import mario from "../componants/assets/mario.webm";
 import kids from "../componants/assets/kids.png";
 import p2 from "../componants/assets/p2.png";
+import { FaInstagram } from "react-icons/fa";
 const Testimonial = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   // const [contact, setContact]=useState(false);
@@ -126,7 +127,7 @@ const Testimonial = () => {
                     <Link to="/Maths">Maths</Link>
                     <Link to="/Science">Science</Link>
                     <Link to="/Coding">Coding</Link>
-                    <Link to="/Competative">Competative</Link>
+                    <Link to="/Competative">Competitive Exam</Link>
                   </div>
                 </li>
                 {/* <li>
@@ -240,8 +241,7 @@ const Testimonial = () => {
                     <div className="testimonials__client d-flex align-items-center">
                       <div className="testimonials__client-thumb"></div>
                       <div className="testimonials__client-text">
-                        {/* <h4>Alima Alisha</h4>
-                          <span>CEO</span> */}
+                     
                       </div>
                     </div>
                   </div>
@@ -280,8 +280,7 @@ const Testimonial = () => {
                     <div className="testimonials__client d-flex align-items-center">
                       <div className="testimonials__client-thumb"></div>
                       <div className="testimonials__client-text">
-                        {/* <h4>David Clark</h4>
-                          <span>Marketing Manager</span> */}
+                     
                       </div>
                     </div>
                   </div>
@@ -320,8 +319,7 @@ const Testimonial = () => {
                     <div className="testimonials__client d-flex align-items-center">
                       <div className="testimonials__client-thumb"></div>
                       <div className="testimonials__client-text">
-                        {/* <h4>Moran Sham</h4>
-                          <span>Team Leader</span> */}
+                      
                       </div>
                     </div>
                   </div>
@@ -364,85 +362,7 @@ const Testimonial = () => {
                   </div>
                 </div>
               </div>
-              {/* 4th */}
-              {/* <div>
-                  <div
-                    className="testimonials__item swiper-slide swiper-slide-active"
-                    data-swiper-slide-index={1}
-                    style={{ width: "350px", "margin-right": "30px" }}
-                    role="group"
-                    aria-label="2 / 3"
-                  >
-                    <div className="testimonials__item-content">
-                      <div className="testimonials__logo">
-                        <img
-                          decoding="async"
-                          src={test3}
-                          alt="image"
-                          className="student-images"
-                        />
-                      </div>
-                      <div className="testimonials__text">
-                        <p>
-                          Edufusion has innovatively incorporated technology,
-                          leading to significant advancements in my child's math
-                          learning. Once a source of fear, math has now become
-                          her favorite subject. The foundational concepts are
-                          developing impressively, evident in my daughter's
-                          ability to solve complex problems effortlessly and
-                          swiftly. Thanks to Edufusion for facilitating
-                          conceptual learning and helping my child thrive in
-                          math.
-                        </p>
-                      </div>
-                      <div className="testimonials__client d-flex align-items-center">
-                        <div className="testimonials__client-thumb"></div>
-                        <div className="testimonials__client-text">
-                       
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-              {/* 5th */}
-              {/* <div>
-                  <div
-                    className="testimonials__item swiper-slide swiper-slide-next"
-                    data-swiper-slide-index={2}
-                    style={{ width: "350px", "margin-right": "30px" }}
-                    role="group"
-                    aria-label="3 / 3"
-                  >
-                    <div className="testimonials__item-content">
-                      <div className="testimonials__logo">
-                        <img
-                          decoding="async"
-                          src={test}
-                          alt="image"
-                          className="student-images"
-                        />
-                      </div>
-                      <div className="testimonials__text">
-                        <p>
-                          "The SAT online class with Edufusion Tutor was a
-                          game-changer, boosting my confidence and refining my
-                          test-taking skills. The convenience of online learning
-                          and insightful feedback from Edufusion's instructors
-                          significantly contributed to my success. The
-                          personalized support and targeted practice provided by
-                          Edufusion were key factors in my score improvement. I
-                          highly recommend Edufusion Tutor's ."
-                        </p>
-                      </div>
-                      <div className="testimonials__client d-flex align-items-center">
-                        <div className="testimonials__client-thumb"></div>
-                        <div className="testimonials__client-text">
-                         
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
+              
             </Slider>
           </div>
           {/*  */}
@@ -451,152 +371,120 @@ const Testimonial = () => {
 
      
       <footer
-        id="education-footer"
-        className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              {/* Progress title */}
-              <div className="progress-bars-inner">
-                <h2 className="color-white fsize-40 mb15 mt0">
-                  Some important facts
-                </h2>
-                <p className="color-white lheight-30 pb30">
-                  Step into a world of possibilities with us! Explore the magic
-                  of numbers, unravel scientific wonders, and dive deep into
-                  coding. Join us on this incredible journey.
-                </p>
-                {/* PROGRESS BARS*/}
-                {/* <div className="section progress-bars section-padding">
-                  <div className="progress-bars-content">
-                    <div className="progress-bar-wrapper">
-                      <div className="row">
-                        <div className="content mb40">
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">
-                                {teachersCount}
-                              </div>
-                              <p className="name-inner">teachers</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">{coursesCount}</div>
-                              <p className="name-inner">courses</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">{membersCount}</div>
-                              <p className="name-inner">members</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">
-                                {countriesCount}
-                              </div>
-                              <p className="name-inner">Countries</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>{" "}
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          </div>
-          <div className="section-subscribe section-subscribe-st">
-            <div className="subscribe-content">
-              {/* Newsletter title */}
-              <div className="subscribe-content-inner text-white">
-                <h2 className="color-white fsize-40 mb15">Contacts</h2>
-                <a href="tel:8469092774">
-                  <p
-                    className="text-white lheight-30 pb40  "
-                    style={{ color: "white" }}
-                  >
-                    Phone1: +918469092774
-                    <br />
-                    Phone2:+91-6006474119
-                  </p>
-                </a>
+          id="education-footer"
+          className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
+        >
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+             
+                <div className="progress-bars-inner">
+                  <h2 className="color-white fsize-40 mb15 mt0">
+                  ADDRESS
+                  </h2>
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Office: </h5>
 
-                <a href="mailto:inquiries@edufusion.co.in" className="mb90">
-                  <p>Email: Inquiries@edufusion.co.in</p>
-                </a>
+                  <p className="color-white lheight-30 pb30">
+                    Oshiwara Andheri West Mumbai – 53 India 
+                  </p>
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Branch:</h5>
+                  <p className="color-white lheight-30 pb30">Race Course, Ringroad Gujarat – India </p>
+                </div>
               </div>
             </div>
-            <div className="subscribe-form mt30">
-              <div className="subscribe-form-inner">
-                {/* Newsletter form */}
-                <form className="form-inline dv-form" id="mc-form">
-                  <div className="form-group">
-                    <input
-                      id="mc-email"
-                      type="email"
-                      name="EMAIL"
-                      placeholder="Enter Your Email Address"
-                      className="form-control color-white"
-                    />
-                    <button
-                      className="btn color-16 fsize-14 lheight-40 fweight-600"
-                      name="Subscribe"
-                      id="subscribe-btn"
-                      type="submit"
+            <div className="section-subscribe section-subscribe-st">
+              <div className="subscribe-content">
+            
+                <div className="subscribe-content-inner text-white">
+                  <h2 className="color-white fsize-40 mb15">Contacts</h2>
+                  <a href="tel:8469092774">
+                    <p
+                      className="text-white lheight-30 pb40  "
+                      style={{ color: "white" }}
                     >
-                      Submit
-                    </button>
-                  </div>
-                  <br />
-                  <label htmlFor="mc-email" />
-                  <div id="subscribe-result" />
-                </form>
+                      Phone1: +91-8735820099
+                      <br />
+                      Phone2: +91-6006474119
+                    </p>
+                  </a>
+
+                  <a href="mailto:inquiries@edufusion.co.in" className="mb90">
+                    <p>Email: Inquiries@edufusion.co.in</p>
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* Start Social icons */}
-            <ul className="social-rounded social-icon mt35 p0">
-              <li>
-                <a href="#">
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaTwitter />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaFacebookF />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaBehance />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaGooglePlusG />
-                </a>
-              </li>
-            </ul>
-            {/* End Social icons */}
-            <div className="copyright mt20">
-              <p className="color-white fsize-16">
-                Copyright@2020 All Rights Reserved By
-                <span className="font-bold" style={{ color: "#2f384a" }}>
-                  <a href="#">:Edufusion Tutor</a>
-                </span>
-              </p>
+              <div className="subscribe-form mt30">
+                <div className="subscribe-form-inner">
+         
+                  <form className="form-inline dv-form" id="mc-form">
+                    <div className="form-group">
+                      <input
+                        id="mc-email"
+                        type="email"
+                        name="EMAIL"
+                        placeholder="Enter Your Email Address"
+                        className="form-control color-white"
+                      />
+                      <button
+                        className="btn color-16 fsize-14 lheight-40 fweight-600"
+                        name="Subscribe"
+                        id="subscribe-btn"
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                    <br />
+                    <label htmlFor="mc-email" />
+                    <div id="subscribe-result" />
+                  </form>
+                </div>
+              </div>
+              {/* Start Social icons */}
+              <ul className="social-rounded social-icon mt35 p0">
+                <li>
+                  <a href="#">
+                    <FaLinkedinIn />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaTwitter />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=61552672263290">
+                    <FaFacebookF />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/edufusion_tutor/">
+                  <FaInstagram />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaBehance />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaGooglePlusG />
+                  </a>
+                </li>
+              </ul>
+              {/* End Social icons */}
+              <div className="copyright mt20">
+                <p className="color-white fsize-16">
+                  Copyright@2020 All Rights Reserved By
+                  <span className="font-bold" style={{ color: "#2f384a" }}>
+                    <a href="#">:Edufusion Tutor</a>
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
       <WhatsAppButton1 />
       <WhatsAppButton />
       <a

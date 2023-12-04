@@ -52,6 +52,7 @@ import p2 from "../componants/assets/p2.png";
 import coding from "../componants/assets/coding.jpg";
 import science from "../componants/assets/science.jpg";
 import math from "../componants/assets/maths.jpg";
+import { FaInstagram } from "react-icons/fa";
 const Blog = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   // const [contact, setContact]=useState(false);
@@ -236,7 +237,7 @@ const Blog = () => {
                     <Link to="/Maths">Maths</Link>
                     <Link to="/Science">Science</Link>
                     <Link to="/Coding">Coding</Link>
-                    <Link to="/Competative">Competative</Link>
+                    <Link to="/Competative">Competitive Exam</Link>
                   </div>
                 </li>
                 {/* <li>
@@ -324,152 +325,120 @@ const Blog = () => {
       </div>
 
       <footer
-        id="education-footer"
-        className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              {/* Progress title */}
-              <div className="progress-bars-inner">
-                <h2 className="color-white fsize-40 mb15 mt0">
-                  Some important facts
-                </h2>
-                <p className="color-white lheight-30 pb30">
-                  Step into a world of possibilities with us! Explore the magic
-                  of numbers, unravel scientific wonders, and dive deep into
-                  coding. Join us on this incredible journey.
-                </p>
-                {/* PROGRESS BARS*/}
-                {/* <div className="section progress-bars section-padding">
-                  <div className="progress-bars-content">
-                    <div className="progress-bar-wrapper">
-                      <div className="row">
-                        <div className="content mb40">
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">
-                                {teachersCount}
-                              </div>
-                              <p className="name-inner">teachers</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">{coursesCount}</div>
-                              <p className="name-inner">courses</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">{membersCount}</div>
-                              <p className="name-inner">members</p>
-                            </div>
-                          </div>
-                          <div className="col-sm-3 col-xs-6">
-                            <div className="progress-bar-number">
-                              <div className="fsize-60 num">
-                                {countriesCount}
-                              </div>
-                              <p className="name-inner">Countries</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>{" "}
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          </div>
-          <div className="section-subscribe section-subscribe-st">
-            <div className="subscribe-content">
-              {/* Newsletter title */}
-              <div className="subscribe-content-inner text-white">
-                <h2 className="color-white fsize-40 mb15">Contacts</h2>
-                <a href="tel:8469092774">
-                  <p
-                    className="text-white lheight-30 pb40  "
-                    style={{ color: "white" }}
-                  >
-                    Phone1: +918469092774
-                    <br />
-                    Phone2:+91-6006474119
-                  </p>
-                </a>
+          id="education-footer"
+          className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
+        >
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+             
+                <div className="progress-bars-inner">
+                  <h2 className="color-white fsize-40 mb15 mt0">
+                  ADDRESS
+                  </h2>
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Office: </h5>
 
-                <a href="mailto:inquiries@edufusion.co.in" className="mb90">
-                  <p>Email: Inquiries@edufusion.co.in</p>
-                </a>
+                  <p className="color-white lheight-30 pb30">
+                    Oshiwara Andheri West Mumbai – 53 India 
+                  </p>
+                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Branch:</h5>
+                  <p className="color-white lheight-30 pb30">Race Course, Ringroad Gujarat – India </p>
+                </div>
               </div>
             </div>
-            <div className="subscribe-form mt30">
-              <div className="subscribe-form-inner">
-                {/* Newsletter form */}
-                <form className="form-inline dv-form" id="mc-form">
-                  <div className="form-group">
-                    <input
-                      id="mc-email"
-                      type="email"
-                      name="EMAIL"
-                      placeholder="Enter Your Email Address"
-                      className="form-control color-white"
-                    />
-                    <button
-                      className="btn color-16 fsize-14 lheight-40 fweight-600"
-                      name="Subscribe"
-                      id="subscribe-btn"
-                      type="submit"
+            <div className="section-subscribe section-subscribe-st">
+              <div className="subscribe-content">
+            
+                <div className="subscribe-content-inner text-white">
+                  <h2 className="color-white fsize-40 mb15">Contacts</h2>
+                  <a href="tel:8469092774">
+                    <p
+                      className="text-white lheight-30 pb40  "
+                      style={{ color: "white" }}
                     >
-                      Submit
-                    </button>
-                  </div>
-                  <br />
-                  <label htmlFor="mc-email" />
-                  <div id="subscribe-result" />
-                </form>
+                      Phone1: +91-8735820099
+                      <br />
+                      Phone2: +91-6006474119
+                    </p>
+                  </a>
+
+                  <a href="mailto:inquiries@edufusion.co.in" className="mb90">
+                    <p>Email: Inquiries@edufusion.co.in</p>
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* Start Social icons */}
-            <ul className="social-rounded social-icon mt35 p0">
-              <li>
-                <a href="#">
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaTwitter />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaFacebookF />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaBehance />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaGooglePlusG />
-                </a>
-              </li>
-            </ul>
-            {/* End Social icons */}
-            <div className="copyright mt20">
-              <p className="color-white fsize-16">
-                Copyright@2020 All Rights Reserved By
-                <span className="font-bold" style={{ color: "#2f384a" }}>
-                  <a href="#">:Edufusion Tutor</a>
-                </span>
-              </p>
+              <div className="subscribe-form mt30">
+                <div className="subscribe-form-inner">
+         
+                  <form className="form-inline dv-form" id="mc-form">
+                    <div className="form-group">
+                      <input
+                        id="mc-email"
+                        type="email"
+                        name="EMAIL"
+                        placeholder="Enter Your Email Address"
+                        className="form-control color-white"
+                      />
+                      <button
+                        className="btn color-16 fsize-14 lheight-40 fweight-600"
+                        name="Subscribe"
+                        id="subscribe-btn"
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                    <br />
+                    <label htmlFor="mc-email" />
+                    <div id="subscribe-result" />
+                  </form>
+                </div>
+              </div>
+              {/* Start Social icons */}
+              <ul className="social-rounded social-icon mt35 p0">
+                <li>
+                  <a href="#">
+                    <FaLinkedinIn />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaTwitter />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=61552672263290">
+                    <FaFacebookF />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/edufusion_tutor/">
+                  <FaInstagram />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaBehance />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaGooglePlusG />
+                  </a>
+                </li>
+              </ul>
+              {/* End Social icons */}
+              <div className="copyright mt20">
+                <p className="color-white fsize-16">
+                  Copyright@2020 All Rights Reserved By
+                  <span className="font-bold" style={{ color: "#2f384a" }}>
+                    <a href="#">:Edufusion Tutor</a>
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
       <WhatsAppButton1 />
       <WhatsAppButton />
       <a
