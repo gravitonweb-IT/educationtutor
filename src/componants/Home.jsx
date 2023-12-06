@@ -370,6 +370,42 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+  const handleDownload = () => {
+    // Assuming your APK file is in the public folder
+    const apkFilePath = '../componants/app-debug.apk';
+
+    // Fetch the file and create a Blob
+    fetch(process.env.PUBLIC_URL + apkFilePath)
+      .then(response => response.blob())
+      .then(blob => {
+        // Create a link element
+        const link = document.createElement('a');
+
+        // Create a Blob URL for the file
+        const blobUrl = URL.createObjectURL(blob);
+
+        // Set the href attribute of the link to the Blob URL
+        link.href = blobUrl;
+
+        // Set the download attribute to prompt the user to download the file
+        link.download = 'app-debug.apk';
+
+        // Append the link to the document
+        document.body.appendChild(link);
+
+        // Trigger a click on the link to start the download
+        link.click();
+
+        // Remove the link and revoke the Blob URL
+        document.body.removeChild(link);
+        URL.revokeObjectURL(blobUrl);
+      })
+      .catch(error => {
+        console.error('Error fetching the file:', error);
+      });
+  };
+
   return (
     <div>
       <>
@@ -412,7 +448,7 @@ const Home = () => {
                   </li>
                   
                   <li>
-                    <a href="#education-testimonial">Testimonial</a>
+                    <a href="#education-testmonial">Testimonial</a>
                   </li>
                   <li>
                     <a href="#education-blog">Blog</a>
@@ -1928,7 +1964,9 @@ const Home = () => {
         {/*================================================================================= 
                           END BLOG
     ==================================================================================*/}
-
+<button onClick={handleDownload} style={{backgroundColor:"yellow" , color:"black" , padding:"10px" , borderRadius:"10px",fontSize:"16px", fontWeight:"700",textAlign:"center", justifyContent:"center", alignItems:"center"}}>
+      Download APK
+    </button>
         {/*================================================================================= 
                           START FOOTER  
     ==================================================================================*/}
@@ -1972,6 +2010,8 @@ const Home = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
+                    <p> Email: Edufusiontutor@gmail.com
+</p>
                   </a>
                 </div>
               </div>

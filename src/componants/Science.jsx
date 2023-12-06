@@ -263,7 +263,7 @@ const Science = () => {
                   <a href="#education-price">Price</a>
                 </li> */}
                 <li>
-                  <Link to="/Testimonial">Testimonial</Link>
+                  <Link to="/Testmonial">Testimonial</Link>
                 </li>
                 <li>
                   <Link to="/Blog">Blog</Link>
@@ -272,10 +272,13 @@ const Science = () => {
                   <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
+                  <Link to="/Contact">Contact</Link>
+                </li>
+                {/* <li>
                   <a data-toggle="modal" data-target="#education-contact">
                     Contact
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -963,6 +966,8 @@ const Science = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
+                    <p> Email: Edufusiontutor@gmail.com
+</p>
                   </a>
                 </div>
               </div>

@@ -143,7 +143,7 @@ const Testimonial = () => {
                   <Link to="/Facts">Facts</Link>
                 </li>
                 <li>
-                  <Link data-toggle="modal" data-target="#education-contact">
+                  <Link to="/Contact" data-toggle="modal" data-target="#education-contact">
                     Contact
                   </Link>
                 </li>
@@ -410,6 +410,8 @@ const Testimonial = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
+                    <p> Email: Edufusiontutor@gmail.com
+</p>
                   </a>
                 </div>
               </div>

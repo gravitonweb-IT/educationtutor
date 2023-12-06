@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import Faq from "react-faq-component";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -10,12 +10,15 @@ import p2 from "../componants/assets/p2.png";
 import close from "./assets/images/icons/close-icon.png";
 import logo3 from "../componants/assets/images/logo3.jpg";
 import { FaInstagram } from "react-icons/fa";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import emailjs from '@emailjs/browser';
 const Contact = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
   const [membersCount, setMembersCount] = useState(0);
   const [countriesCount, setCountriesCount] = useState(0);
-
+  const [value, setValue] = useState();
   useEffect(() => {
     const animateCounter = (setter, to) => {
       let currentCount = 0;
@@ -62,6 +65,25 @@ const Contact = () => {
     animateCounter(setCountryCount, 15);
   }, []);
 
+  const [selectedCode, setSelectedCode] = useState("");
+
+  const countryCodes = [
+    { value: "+1", label: "+1 (United States)" },
+
+    { value: "+44", label: "+44 (United Kingdom)" },
+
+    { value: "+91", label: "+91 (India)" },
+
+    { value: "+33", label: "+33 (France)" },
+
+    { value: "+81", label: "+81 (Japan)" },
+
+    // Add more country codes as needed
+  ];
+
+  const handleChangebutton = (e) => {
+    setSelectedCode(e.target.value);
+  };
   const data = {
     title: "",
     rows: [
@@ -297,6 +319,26 @@ const Contact = () => {
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
+
+  const form = useRef()
+  const sendEmail = (e) => {
+    e.preventDefault();
+ 
+    emailjs.sendForm('service_g4737lr', 'template_7fov8vt', form.current, 'Tti4lP6PJyImEkf-q')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        message: "",
+      });
+  };
+
   return (
     <>
       <header>
@@ -336,9 +378,11 @@ const Contact = () => {
                     <Link to="/Competative">Competitive Exam</Link>
                   </div>
                 </li>
-
+                {/* <li>
+                  <a href="#education-price">Price</a>
+                </li> */}
                 <li>
-                  <Link to="/Testimonial">Testimonial</Link>
+                  <Link to="/Testmonial">Testimonial</Link>
                 </li>
                 <li>
                   <Link to="/Blog">Blog</Link>
@@ -346,10 +390,9 @@ const Contact = () => {
                 <li>
                   <Link to="/Facts">Facts</Link>
                 </li>
+
                 <li>
-                  <Link data-toggle="modal" data-target="#education-contact">
-                    Contact
-                  </Link>
+                  <Link to="/Contact">Contact</Link>
                 </li>
               </ul>
             </div>
@@ -357,7 +400,7 @@ const Contact = () => {
         </nav>
       </header>
 
-      <div id="education-contact" className="modal fade" role="dialog">
+      <div>
         <div className="modal-dialog">
           {/* Modal content*/}
           <div className="modal-content">
@@ -375,7 +418,7 @@ const Contact = () => {
             <div className="modal-body">
               <div className="contact-section">
                 <form
-                  onSubmit={handleSubmit}
+                  ref={form} onSubmit={sendEmail}
                   className="contact-form signup-form"
                   id="ajax-contact"
                 >
@@ -420,26 +463,47 @@ const Contact = () => {
                         )}
                       </div>
                     </div>
+
                     <div className="col-md-12">
                       <div className="form-group has-icon-left form-control-phone">
+                        <select
+                          id="countryCode"
+                          name="code"
+                          className="form-control form-control-lg"
+                          value={selectedCode}
+                          onChange={handleChangebutton}
+                        >
+                          <option value="" disabled>
+                            Select Country Code
+                          </option>
+                          {countryCodes.map((code) => (
+                            <option key={code.value} value={code.value}>
+                              {code.label}
+                            </option>
+                          ))}
+                        </select>
+                        {/* {selectedCode && <p>Selected Country Code: {selectedCode}</p>} */}
+                      </div>
+                    </div>
+                              <div className="col-md-12">
+                                  <div className="form-group has-icon-left form-control-phone">
                         <label className="sr-only" htmlFor="phone">
                           Phone Number
                         </label>
                         <input
-                          type="text"
-                          className="form-control form-control-lg"
-                          name="phone"
-                          id="phone"
-                          placeholder="Phone Number"
-                          autoComplete="off"
-                          value={formData.phone}
-                          onChange={handleChange}
-                        />
+                        className="form-control form-control-lg"
+                        name="phone"
+                        id="phone"
+      placeholder="Enter phone number"
+      value={formData.phone}
+      onChange={handleChange}/>
                         {errors.phone && (
                           <p className="error-message">{errors.phone}</p>
                         )}
-                      </div>
-                    </div>
+                      </div> 
+                              </div>
+
+
                     <div className="col-md-12">
                       <div className="form-group has-icon-left form-control-address">
                         <label className="sr-only" htmlFor="address">
@@ -503,120 +567,122 @@ const Contact = () => {
       </div>
       {/* footer */}
       <footer
-          id="education-footer"
-          className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-             
-                <div className="progress-bars-inner">
-                  <h2 className="color-white fsize-40 mb15 mt0">
-                  ADDRESS
-                  </h2>
-                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Office: </h5>
+        id="education-footer"
+        className="footer-st-25 text-center theme-bg-gradient pt90 pb80"
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="progress-bars-inner">
+                <h2 className="color-white fsize-40 mb15 mt0">ADDRESS</h2>
+                <h5 className="color-white fsize-20 mb15 mt0">
+                  Edufusion Office:{" "}
+                </h5>
 
-                  <p className="color-white lheight-30 pb30">
-                    Oshiwara Andheri West Mumbai – 53 India 
-                  </p>
-                  <h5 className="color-white fsize-20 mb15 mt0">Edufusion Branch:</h5>
-                  <p className="color-white lheight-30 pb30">Race Course, Ringroad Gujarat – India </p>
-                </div>
-              </div>
-            </div>
-            <div className="section-subscribe section-subscribe-st">
-              <div className="subscribe-content">
-            
-                <div className="subscribe-content-inner text-white">
-                  <h2 className="color-white fsize-40 mb15">Contacts</h2>
-                  <a href="tel:8469092774">
-                    <p
-                      className="text-white lheight-30 pb40  "
-                      style={{ color: "white" }}
-                    >
-                      Phone1: +91-8735820099
-                      <br />
-                      Phone2: +91-6006474119
-                    </p>
-                  </a>
-
-                  <a href="mailto:inquiries@edufusion.co.in" className="mb90">
-                    <p>Email: Inquiries@edufusion.co.in</p>
-                  </a>
-                </div>
-              </div>
-              <div className="subscribe-form mt30">
-                <div className="subscribe-form-inner">
-         
-                  <form className="form-inline dv-form" id="mc-form">
-                    <div className="form-group">
-                      <input
-                        id="mc-email"
-                        type="email"
-                        name="EMAIL"
-                        placeholder="Enter Your Email Address"
-                        className="form-control color-white"
-                      />
-                      <button
-                        className="btn color-16 fsize-14 lheight-40 fweight-600"
-                        name="Subscribe"
-                        id="subscribe-btn"
-                        type="submit"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                    <br />
-                    <label htmlFor="mc-email" />
-                    <div id="subscribe-result" />
-                  </form>
-                </div>
-              </div>
-              {/* Start Social icons */}
-              <ul className="social-rounded social-icon mt35 p0">
-                <li>
-                  <a href="#">
-                    <FaLinkedinIn />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FaTwitter />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/profile.php?id=61552672263290">
-                    <FaFacebookF />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/edufusion_tutor/">
-                  <FaInstagram />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FaBehance />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FaGooglePlusG />
-                  </a>
-                </li>
-              </ul>
-              {/* End Social icons */}
-              <div className="copyright mt20">
-                <p className="color-white fsize-16">
-                  Copyright@2020 All Rights Reserved By
-                  <span className="font-bold" style={{ color: "#2f384a" }}>
-                    <a href="#">:Edufusion Tutor</a>
-                  </span>
+                <p className="color-white lheight-30 pb30">
+                  Oshiwara Andheri West Mumbai – 53 India
+                </p>
+                <h5 className="color-white fsize-20 mb15 mt0">
+                  Edufusion Branch:
+                </h5>
+                <p className="color-white lheight-30 pb30">
+                  Race Course, Ringroad Gujarat – India{" "}
                 </p>
               </div>
             </div>
           </div>
-        </footer>
+          <div className="section-subscribe section-subscribe-st">
+            <div className="subscribe-content">
+              <div className="subscribe-content-inner text-white">
+                <h2 className="color-white fsize-40 mb15">Contacts</h2>
+                <a href="tel:8469092774">
+                  <p
+                    className="text-white lheight-30 pb40  "
+                    style={{ color: "white" }}
+                  >
+                    Phone1: +91-8735820099
+                    <br />
+                    Phone2: +91-6006474119
+                  </p>
+                </a>
+
+                <a href="mailto:inquiries@edufusion.co.in" className="mb90">
+                  <p>Email: Inquiries@edufusion.co.in</p>
+                  <p> Email: Edufusiontutor@gmail.com</p>
+                </a>
+              </div>
+            </div>
+            <div className="subscribe-form mt30">
+              <div className="subscribe-form-inner">
+                <form className="form-inline dv-form" id="mc-form">
+                  <div className="form-group">
+                    <input
+                      id="mc-email"
+                      type="email"
+                      name="EMAIL"
+                      placeholder="Enter Your Email Address"
+                      className="form-control color-white"
+                    />
+                    <button
+                      className="btn color-16 fsize-14 lheight-40 fweight-600"
+                      name="Subscribe"
+                      id="subscribe-btn"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                  <br />
+                  <label htmlFor="mc-email" />
+                  <div id="subscribe-result" />
+                </form>
+              </div>
+            </div>
+            {/* Start Social icons */}
+            <ul className="social-rounded social-icon mt35 p0">
+              <li>
+                <a href="#">
+                  <FaLinkedinIn />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FaTwitter />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61552672263290">
+                  <FaFacebookF />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/edufusion_tutor/">
+                  <FaInstagram />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FaBehance />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FaGooglePlusG />
+                </a>
+              </li>
+            </ul>
+            {/* End Social icons */}
+            <div className="copyright mt20">
+              <p className="color-white fsize-16">
+                Copyright@2020 All Rights Reserved By
+                <span className="font-bold" style={{ color: "#2f384a" }}>
+                  <a href="#">:Edufusion Tutor</a>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };

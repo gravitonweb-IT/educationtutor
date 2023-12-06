@@ -140,62 +140,63 @@ const Facts = () => {
   return (
     <>
       <header>
-          <nav className="navbar navbar-default navbar-fixed-top">
-            <div className="container mob-logo">
-              <div className="navbar-header col-sm-2 tablet-logo">
-                <button
-                  type="button"
-                  className="navbar-toggle mob-menu"
-                  data-toggle="collapse"
-                  data-target="#myNavbar"
-                >
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
+        <nav className="navbar navbar-default navbar-fixed-top">
+          <div className="container mob-logo">
+            <div className="navbar-header col-sm-2 tablet-logo">
+              <button
+                type="button"
+                className="navbar-toggle mob-menu"
+                data-toggle="collapse"
+                data-target="#myNavbar"
+              >
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
 
-                <a href="#education-home" className="brand-logo">
-                  <img
-                    src={logo3}
-                    alt="karbar logo"
-                    className="header-logo-section"
-                  />
-                </a>
-              </div>
-              <div className="collapse navbar-collapse" id="myNavbar">
-                <ul className="nav navbar-nav pull-right">
-                  <li className="active">
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#education-courses">Courses</a>
-                    <div class="dropdown-content">
-                      <Link to="/Maths">Maths</Link>
-                      <Link to="/Science">Science</Link>
-                      <Link to="/Coding">Coding</Link>
-                      <Link to="/Competative">Competitive Exams</Link>
-                    </div>
-                  </li>
-                  
-                  <li>
-                    <a href="#education-testimonial">Testimonial</a>
-                  </li>
-                  <li>
-                    <a href="#education-blog">Blog</a>
-                  </li>
-                  <li>
-                    <a href="#education-footer">Facts</a>
-                  </li>
-                  <li>
-                    <a data-toggle="modal" data-target="#education-contact">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <a href="#education-home" className="brand-logo">
+                <img
+                  src={logo3}
+                  alt="karbar logo"
+                  className="header-logo-section"
+                />
+              </a>
             </div>
-          </nav>
-        </header>
+            <div className="collapse navbar-collapse" id="myNavbar">
+              <ul className="nav navbar-nav pull-right">
+                <li className="active">
+                  <Link to="/">Home</Link>
+                </li>
+                <li class="dropdown">
+                  <a href="#education-courses">Courses</a>
+                  <div class="dropdown-content">
+                    <Link to="/Maths">Maths</Link>
+                    <Link to="/Science">Science</Link>
+                    <Link to="/Coding">Coding</Link>
+                    <Link to="/Competative">Competitive Exam</Link>
+                  </div>
+                </li>
+                {/* <li>
+                  <a href="#education-price">Price</a>
+                </li> */}
+                <li>
+                  <Link to="/Testmonial">Testimonial</Link>
+                </li>
+                <li>
+                  <Link to="/Blog">Blog</Link>
+                </li>
+                <li>
+                  <Link to="/Facts">Facts</Link>
+                </li>
+                
+                <li>
+                  <Link to="/Contact">Contact</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
 
       {/* banner part */}
 
@@ -240,6 +241,8 @@ const Facts = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
+                    <p> Email: Edufusiontutor@gmail.com
+</p>
                   </a>
                 </div>
               </div>

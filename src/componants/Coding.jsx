@@ -221,7 +221,7 @@ const Coding = () => {
 
   return (
     <>
-      <header>
+       <header>
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container mob-logo">
             <div className="navbar-header col-sm-2 tablet-logo">
@@ -262,7 +262,7 @@ const Coding = () => {
                   <a href="#education-price">Price</a>
                 </li> */}
                 <li>
-                  <Link to="/Testimonial">Testimonial</Link>
+                  <Link to="/Testmonial">Testimonial</Link>
                 </li>
                 <li>
                   <Link to="/Blog">Blog</Link>
@@ -270,11 +270,15 @@ const Coding = () => {
                 <li>
                   <Link to="/Facts">Facts</Link>
                 </li>
+
                 <li>
-                  <a  data-toggle="modal" data-target="#education-contact">
+                  <Link to="/Contact">Contact</Link>
+                </li>
+                {/* <li>
+                  <a data-toggle="modal" data-target="#education-contact">
                     Contact
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -1026,6 +1030,8 @@ const Coding = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
+                    <p> Email: Edufusiontutor@gmail.com
+</p>
                   </a>
                 </div>
               </div>
