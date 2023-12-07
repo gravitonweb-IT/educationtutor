@@ -2832,7 +2832,7 @@ const Home = () => {
                     role="group"
                     aria-label="1 / 3"
                   >
-                    <div className="testimonials__item-content">
+                    {/* <div className="testimonials__item-content">
                       <div className="testimonials__logo">
                         <img
                           decoding="async"
@@ -2857,7 +2857,7 @@ const Home = () => {
 
                         <div className="testimonials__client-text"></div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 {/* 4th */}
