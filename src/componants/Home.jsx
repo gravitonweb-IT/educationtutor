@@ -865,172 +865,173 @@ const Home = () => {
     },
     {
       "value": "+1 869",
-      "label": "Nevis (+1 869)"
+      "label": "+1 869 -Nevis "
     },
     {
       "value": "+687",
-      "label": "New Caledonia (+687)"
-    },
-    {
+      "label": "+687 New Caledonia"
+  },
+  {
       "value": "+64",
-      "label": "New Zealand (+64)"
-    },
-    {
+      "label": "+64 New Zealand"
+  },
+  {
       "value": "+505",
-      "label": "Nicaragua (+505)"
-    },
-    {
+      "label": "+505 Nicaragua"
+  },
+  {
       "value": "+227",
-      "label": "Niger (+227)"
-    },
-    {
+      "label": "+227 Niger"
+  },
+  {
       "value": "+234",
-      "label": "Nigeria (+234)"
-    },
-    {
+      "label": "+234 Nigeria"
+  },
+  {
       "value": "+683",
-      "label": "Niue (+683)"
-    },
-    {
+      "label": "+683 Niue"
+  },
+  {
       "value": "+672",
-      "label": "Norfolk Island (+672)"
-    },
-    {
+      "label": "+672 Norfolk Island"
+  },
+  {
       "value": "+850",
-      "label": "North Korea (+850)"
-    },
-    {
+      "label": "+850 North Korea"
+  },
+  {
       "value": "+1 670",
-      "label": "Northern Mariana Islands (+1 670)"
-    },
-    {
+      "label": "+1 670 Northern Mariana Islands"
+  },
+  {
       "value": "+47",
-      "label": "Norway (+47)"
-    },
-    {
+      "label": "+47 Norway"
+  },
+  {
       "value": "+968",
-      "label": "Oman (+968)"
-    },
-    {
+      "label": "+968 Oman"
+  },
+  {
       "value": "+92",
-      "label": "Pakistan (+92)"
-    },
-    {
+      "label": "+92 Pakistan"
+  },
+  {
       "value": "+680",
-      "label": "Palau (+680)"
-    },
-    {
+      "label": "+680 Palau"
+  },
+  {
       "value": "+970",
-      "label": "Palestinian Territory (+970)"
-    },
-    {
+      "label": "+970 Palestinian Territory"
+  },
+  {
       "value": "+507",
-      "label": "Panama (+507)"
-    },
-    {
+      "label": "+507 Panama"
+  },
+  {
       "value": "+675",
-      "label": "Papua New Guinea (+675)"
-    },
-    {
+      "label": "+675 Papua New Guinea"
+  },
+  {
       "value": "+595",
-      "label": "Paraguay (+595)"
-    },
-    {
+      "label": "+595 Paraguay"
+  },
+  {
       "value": "+51",
-      "label": "Peru (+51)"
-    },
-    {
+      "label": "+51 Peru"
+  },
+  {
       "value": "+63",
-      "label": "Philippines (+63)"
-    },
-    {
+      "label": "+63 Philippines"
+  },
+  {
       "value": "+48",
-      "label": "Poland (+48)"
-    },
-    {
+      "label": "+48 Poland"
+  },
+  {
       "value": "+351",
-      "label": "Portugal (+351)"
-    },
-    {
+      "label": "+351 Portugal"
+  },
+  {
       "value": "+1 787",
-      "label": "Puerto Rico (+1 787)"
-    },
-    {
+      "label": "+1 787 Puerto Rico"
+  },
+  {
       "value": "+974",
-      "label": "Qatar (+974)"
-    },
-    {
+      "label": "+974 Qatar"
+  },
+  {
       "value": "+262",
-      "label": "Reunion (+262)"
-    },
-    {
+      "label": "+262 Reunion"
+  },
+  {
       "value": "+40",
-      "label": "Romania (+40)"
-    },
-    {
+      "label": "+40 Romania"
+  },
+  {
       "value": "+7",
-      "label": "Russia (+7)"
-    },
-    {
+      "label": "+7 Russia"
+  },
+  {
       "value": "+250",
-      "label": "Rwanda (+250)"
-    },
-    {
+      "label": "+250 Rwanda"
+  },
+  {
       "value": "+685",
-      "label": "Samoa (+685)"
-    },
-    {
+      "label": "+685 Samoa"
+  },
+  {
       "value": "+378",
-      "label": "San Marino (+378)"
-    },
-    {
+      "label": "+378 San Marino"
+  },
+  {
       "value": "+966",
-      "label": "Saudi Arabia (+966)"
-    },
-    {
+      "label": "+966 Saudi Arabia"
+  },
+  {
       "value": "+221",
-      "label": "Senegal (+221)"
-    },
-    {
+      "label": "+221 Senegal"
+  },
+  {
       "value": "+381",
-      "label": "Serbia (+381)"
-    },
-    {
+      "label": "+381 Serbia"
+  },
+  {
       "value": "+248",
-      "label": "Seychelles (+248)"
-    },
-    {
+      "label": "+248 Seychelles"
+  },
+  {
       "value": "+232",
-      "label": "Sierra Leone (+232)"
-    },
-    {
+      "label": "+232 Sierra Leone"
+  },
+  {
       "value": "+65",
-      "label": "Singapore (+65)"
-    },
-    {
+      "label": "+65 Singapore"
+  },
+  {
       "value": "+421",
-      "label": "Slovakia (+421)"
-    },
-    {
+      "label": "+421 Slovakia"
+  },
+  {
       "value": "+386",
-      "label": "Slovenia (+386)"
-    },
-    {
+      "label": "+386 Slovenia"
+  },
+  {
       "value": "+677",
-      "label": "Solomon Islands (+677)"
-    },
-    {
+      "label": "+677 Solomon Islands"
+  },
+  {
       "value": "+27",
-      "label": "South Africa (+27)"
-    },
-    {
+      "label": "+27 South Africa"
+  },
+  {
       "value": "+500",
-      "label": "South Georgia and the South Sandwich Islands (+500)"
-    },
-    {
+      "label": "+500 South Georgia and the South Sandwich Islands"
+  },
+  {
       "value": "+82",
-      "label": "South Korea (+82)"
-    },
+      "label": "+82 South Korea"
+  },
+  
     {
       "value": "+34",
       "label": "+34 (Spain)"
@@ -1065,123 +1066,123 @@ const Home = () => {
     },
     {
       "value": "+886",
-      "label": "(Taiwan)"
+      "label": "(Taiwan) +886"
     },
     {
       "value": "+992",
-      "label": "(Tajikistan)"
+      "label": "(Tajikistan) +992"
     },
     {
       "value": "+255",
-      "label": "(Tanzania)"
+      "label": "(Tanzania) +255"
     },
     {
       "value": "+66",
-      "label": "(Thailand)"
+      "label": "(Thailand) +66"
     },
     {
       "value": "+670",
-      "label": "(Timor Leste)"
+      "label": "(Timor Leste) +670"
     },
     {
       "value": "+228",
-      "label": "(Togo)"
+      "label": "(Togo) +228"
     },
     {
       "value": "+690",
-      "label": "(Tokelau)"
+      "label": "(Tokelau) +690"
     },
     {
       "value": "+676",
-      "label": "(Tonga)"
+      "label": "(Tonga) +676"
     },
     {
       "value": "+1 868",
-      "label": "(Trinidad and Tobago)"
+      "label": "(Trinidad and Tobago) +1 868"
     },
     {
       "value": "+216",
-      "label": "(Tunisia)"
+      "label": "(Tunisia) +216"
     },
     {
       "value": "+90",
-      "label": "(Turkey)"
+      "label": "(Turkey) +90"
     },
     {
       "value": "+993",
-      "label": "(Turkmenistan)"
+      "label": "(Turkmenistan) +993"
     },
     {
       "value": "+1 649",
-      "label": "(Turks and Caicos Islands)"
+      "label": "(Turks and Caicos Islands) +1 649"
     },
     {
       "value": "+688",
-      "label": "(Tuvalu)"
+      "label": "(Tuvalu) +688"
     },
     {
       "value": "+1 340",
-      "label": "(U.S. Virgin Islands)"
+      "label": "(U.S. Virgin Islands) +1 340"
     },
     {
       "value": "+256",
-      "label": "(Uganda)"
+      "label": "(Uganda) +256"
     },
     {
       "value": "+380",
-      "label": "(Ukraine)"
+      "label": "(Ukraine) +380"
     },
     {
       "value": "+971",
-      "label": "(United Arab Emirates)"
+      "label": "(United Arab Emirates) +971"
     },
     {
       "value": "+44",
-      "label": "(United Kingdom)"
+      "label": "(United Kingdom) +44"
     },
     {
       "value": "+1",
-      "label": "(United States)"
+      "label": "(United States) +1"
     },
     {
       "value": "+598",
-      "label": "(Uruguay)"
+      "label": "(Uruguay) +598"
     },
     {
       "value": "+998",
-      "label": "(Uzbekistan)"
+      "label": "(Uzbekistan) +998"
     },
     {
       "value": "+678",
-      "label": "(Vanuatu)"
+      "label": "(Vanuatu) +678"
     },
     {
       "value": "+58",
-      "label": "(Venezuela)"
+      "label": "(Venezuela) +58"
     },
     {
       "value": "+84",
-      "label": "(Vietnam)"
+      "label": "(Vietnam) +84"
     },
     {
       "value": "+1 808",
-      "label": "(Wake Island)"
+      "label": "(Wake Island) +1 808"
     },
     {
       "value": "+681",
-      "label": "(Wallis and Futuna)"
+      "label": "(Wallis and Futuna) +681"
     },
     {
       "value": "+967",
-      "label": "(Yemen)"
+      "label": "(Yemen) +967"
     },
     {
       "value": "+260",
-      "label": "(Zambia)"
+      "label": "(Zambia) +260"
     },
     {
       "value": "+255",
-      "label": "(Zanzibar)"
+      "label": "(Zanzibar) +255"
     },
     {
       "value": "+263",
@@ -1189,7 +1190,6 @@ const Home = () => {
     }
     // Add more country codes as needed
   ];
-
   const handleChangebutton = (e) => {
     setSelectedCode(e.target.value);
   };
