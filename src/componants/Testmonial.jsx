@@ -49,8 +49,18 @@ import grade6 from "../componants/assets/grade6.mp4";
 import mario from "../componants/assets/mario.webm";
 import kids from "../componants/assets/kids.png";
 import p2 from "../componants/assets/p2.png";
+import { useLocation } from 'react-router-dom';
 import { FaInstagram } from "react-icons/fa";
 const Testmonial = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+
+
   const [slidesToShow, setSlidesToShow] = useState(3);
   // const [contact, setContact]=useState(false);
 
@@ -410,8 +420,7 @@ const Testmonial = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
-                    <p> Email: Edufusiontutor@gmail.com
-</p>
+                    <p> Email: edufusiontutor@gmail.com</p>
                   </a>
                 </div>
               </div>

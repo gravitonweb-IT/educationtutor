@@ -13,6 +13,7 @@ import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import { IoIosArrowUp } from "react-icons/io";
 import close from "./assets/images/icons/close-icon.png";
 import { FaInstagram } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 const Science = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -188,7 +189,14 @@ const Science = () => {
     // Return true if there are no errors
     return Object.keys(newErrors).length === 0;
   };
+  const location = useLocation();
 
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -966,9 +974,7 @@ const Science = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
-                    <p> Email: Edufusiontutor@gmail.com
-</p>
-                  </a>
+                    <p> Email: edufusiontutor@gmail.com</p>         </a>
                 </div>
               </div>
               <div className="subscribe-form mt30">

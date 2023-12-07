@@ -13,7 +13,17 @@ import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import { IoIosArrowUp } from "react-icons/io";
 import logo3 from "../componants/assets/images/logo3.jpg";
 import { FaInstagram } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 const Competative = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+ // You can return null or any other component here if needed
+
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
   const [membersCount, setMembersCount] = useState(0);
@@ -765,8 +775,7 @@ const Competative = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
-                    <p> Email: Edufusiontutor@gmail.com
-</p>
+                    <p> Email: edufusiontutor@gmail.com</p>
                   </a>
                 </div>
               </div>

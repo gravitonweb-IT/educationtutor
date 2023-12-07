@@ -53,6 +53,7 @@ import coding from "../componants/assets/coding.jpg";
 import science from "../componants/assets/science.jpg";
 import math from "../componants/assets/maths.jpg";
 import { FaInstagram } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 const Blog = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   // const [contact, setContact]=useState(false);
@@ -201,6 +202,14 @@ const Blog = () => {
       imageSrc: math,
     },
   ];
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+
   return (
     <div>
       <header>
@@ -262,67 +271,82 @@ const Blog = () => {
           </div>
         </nav>
       </header>
-      <div
-        className="text-center wow fadeIn"
-        data-wow-duration="2s"
-        style={{
-          visibility: "visible",
-          animationDuration: "2s",
-          animationName: "fadeIn",
-          marginTop: "140px",
-        }}
-      >
-        <div className="subtitle">A modern and unique style</div>
-        <div className="title color-2 lheight-40 mb30">
-          <span style={{ fontSize: "30px", fontWeight: "700" }}>
-            Latest from blog<span className="color-15">.</span>
-          </span>
-        </div>
-        <div className="spliter mb40" />
-      </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        {/* Three cards */}
-        {cardContents.map((card, index) => (
-          <div
-            key={index}
-            style={{
-              flex: 1,
-              border: `1px solid ${
-                expandedCardIndex === index ? "blue" : "black"
-              }`, // Change border color if the card is expanded
-              padding: "10px",
-              margin: "10px",
-              transition: "border 0.3s ease", // Add a smooth transition effect
-            }}
-          >
-            <img
-              src={card.imageSrc}
-              alt={`Image for ${card.title}`}
-              style={{ width: "100%", maxHeight: "270px", objectFit: "cover" }}
-            />
-            <h1 style={{ fontSize: "20px", fontWeight: "600" }}>
-              {card.title}
-            </h1>
-
-            <p>
-              {card.intro}
-              <span id={`points${index}`}>...</span>
-
-              {expandedCardIndex === index && (
-                <div id={`moreText${index}`}>{card.readMore}</div>
-              )}
-            </p>
-
-            <button
-              onClick={() => toggleText(index)}
-              id={`textButton${index}`}
-              style={{ color: "black", fontSize: "20px", fontWeight: "600" }}
-            >
-              {expandedCardIndex === index ? "Show Less" : "Read More"}
-            </button>
+      <div>
+        <div
+          className="text-center wow fadeIn"
+          data-wow-duration="2s"
+          style={{
+            visibility: "visible",
+            animationDuration: "2s",
+            animationName: "fadeIn",
+         marginTop:"100px"
+          }}
+        >
+          <div className="subtitle">A modern and unique style</div>
+          <div className="title color-2 lheight-40 mb30">
+            <span style={{ fontSize: "30px", fontWeight: "700" }}>
+              Latest from blog<span className="color-15">.</span>
+            </span>
           </div>
-        ))}
-      </div>
+          <div className="spliter mb40" />
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+  {cardContents.map((card, index) => (
+    <div
+      key={index}
+      style={{
+        flex: "1 0 30%",  // Adjust the percentage as needed for larger screens
+        maxWidth: "300px", // Set a max width if necessary
+        border: `1px solid ${expandedCardIndex === index ? "blue" : "black"}`,
+        padding: "10px",
+        margin: "10px",
+        transition: "border 0.3s ease",
+        boxSizing: "border-box", // Ensure padding and border are included in the width
+        ...(window.innerWidth <= 768 && {
+          flex: "1 0 100%", // Make each card take up the full width in mobile view
+          maxWidth: "none", // Remove the max width in mobile view if necessary
+          margin: 0, // Remove margin for better spacing in mobile view
+        }),
+        ...(window.innerWidth <= 480 && {
+          display: "grid",
+          gridTemplateColumns: "1fr", // Display one column in grid for smaller screens
+          gap: "10px", // Add some gap between grid items for better spacing
+        }),
+      }}
+    >
+              <img
+                src={card.imageSrc}
+                alt={`Image for ${card.title}`}
+                style={{
+                  width: "100%",
+                  maxHeight: "270px",
+                  objectFit: "cover",
+                }}
+              />
+              <h1 style={{ fontSize: "20px", fontWeight: "600" }}>
+                {card.title}
+              </h1>
+
+              <p>
+                {card.intro}
+                <span id={`points${index}`}>...</span>
+
+                {expandedCardIndex === index && (
+                  <div id={`moreText${index}`}>{card.readMore}</div>
+                )}
+              </p>
+
+              <button
+                onClick={() => toggleText(index)}
+                id={`textButton${index}`}
+                style={{ color: "black", fontSize: "20px", fontWeight: "600" }}
+              >
+                {expandedCardIndex === index ? "Show Less" : "Read More"}
+              </button>
+            </div>
+          ))}
+        </div>
+        </div>
 
       <footer
           id="education-footer"
@@ -364,8 +388,7 @@ const Blog = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
-                    <p> Email: Edufusiontutor@gmail.com
-</p>
+                    <p> Email: edufusiontutor@gmail.com</p>
                   </a>
                 </div>
               </div>

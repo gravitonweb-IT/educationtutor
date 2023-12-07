@@ -12,6 +12,7 @@ import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import { IoIosArrowUp } from "react-icons/io";
 import logo3 from "../componants/assets/images/logo3.jpg";
 import { FaInstagram } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 const Facts = () => {
   const [teachersCount, setTeachersCount] = useState(0);
   const [coursesCount, setCoursesCount] = useState(0);
@@ -67,7 +68,14 @@ const Facts = () => {
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
+  const location = useLocation();
 
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  
   const data = {
     title: "",
     rows: [
@@ -241,7 +249,7 @@ const Facts = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
-                    <p> Email: Edufusiontutor@gmail.com
+                    <p> Email: edufusiontutor@gmail.com
 </p>
                   </a>
                 </div>

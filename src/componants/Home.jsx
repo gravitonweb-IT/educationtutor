@@ -52,6 +52,7 @@ import coding from "../componants/assets/coding.jpg";
 import science from "../componants/assets/science.jpg";
 import math from "../componants/assets/maths.jpg";
 import "./home.css";
+import { useLocation } from 'react-router-dom';
 import "./tabs.css";
 import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import sat from "../componants/assets/sat.mp4";
@@ -59,6 +60,7 @@ import { FaInstagram } from "react-icons/fa";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import emailjs from "@emailjs/browser";
+import Marquee from "react-fast-marquee";
 const Home = () => {
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
 
@@ -241,960 +243,950 @@ const Home = () => {
   const [selectedCode, setSelectedCode] = useState("");
 
   const countryCodes = [
-    { value: "+1", label: "+1 (United States)" },
-
-    { value: "+44", label: "+44 (United Kingdom)" },
-
-    { value: "+91", label: "+91 (India)" },
-
-    { value: "+33", label: "+33 (France)" },
-
-    { value: "+81", label: "+81 (Japan)" },
     {
-      value: "+7 840",
-      label: "Abkhazia",
+      "value": "+7 840",
+      "label": "+7 840 - Abkhazia"
     },
     {
-      value: "+93",
-      label: "Afghanistan",
+      "value": "+93",
+      "label": "+93 - Afghanistan"
     },
     {
-      value: "+355",
-      label: "Albania",
+      "value": "+355",
+      "label": "+355 - Albania"
     },
     {
-      value: "+213",
-      label: "Algeria",
+      "value": "+213",
+      "label": "+213 - Algeria"
     },
     {
-      value: "+1 684",
-      label: "American Samoa",
+      "value": "+1 684",
+      "label": "+1 684 - American Samoa"
     },
     {
-      value: "+376",
-      label: "Andorra",
+      "value": "+376",
+      "label": "+376 - Andorra"
     },
     {
-      value: "+244",
-      label: "Angola",
+      "value": "+244",
+      "label": "+244 - Angola"
     },
     {
-      value: "+1 264",
-      label: "Anguilla",
+      "value": "+1 264",
+      "label": "+1 264 - Anguilla"
     },
     {
-      value: "+1 268",
-      label: "Antigua and Barbuda",
+      "value": "+1 268",
+      "label": "+1 268 - Antigua and Barbuda"
     },
     {
-      value: "+54",
-      label: "Argentina",
+      "value": "+54",
+      "label": "+54 - Argentina"
     },
     {
-      value: "+374",
-      label: "Armenia",
+      "value": "+374",
+      "label": "+374 - Armenia"
     },
     {
-      value: "+297",
-      label: "Aruba",
+      "value": "+297",
+      "label": "+297 - Aruba"
     },
     {
-      value: "+247",
-      label: "Ascension",
+      "value": "+247",
+      "label": "+247 - Ascension"
     },
     {
-      value: "+61",
-      label: "Australia",
+      "value": "+61",
+      "label": "+61 - Australia"
     },
     {
-      value: "+672",
-      label: "Australian External Territories",
+      "value": "+672",
+      "label": "+672 - Australian External Territories"
     },
     {
-      value: "+43",
-      label: "Austria",
+      "value": "+43",
+      "label": "+43 - Austria"
     },
     {
-      value: "+994",
-      label: "Azerbaijan",
+      "value": "+994",
+      "label": "+994 - Azerbaijan"
     },
     {
-      value: "+1 242",
-      label: "Bahamas",
+      "value": "+1 242",
+      "label": "+1 242 - Bahamas"
     },
     {
-      value: "+973",
-      label: "Bahrain",
+      "value": "+973",
+      "label": "+973 - Bahrain"
     },
     {
-      value: "+880",
-      label: "Bangladesh",
+      "value": "+880",
+      "label": "+880 - Bangladesh"
     },
     {
-      value: "+1 246",
-      label: "Barbados",
+      "value": "+1 246",
+      "label": "+1 246 - Barbados"
     },
     {
-      value: "+1 268",
-      label: "Barbuda",
+      "value": "+1 268",
+      "label": "+1 268 - Barbuda"
     },
     {
-      value: "+375",
-      label: "Belarus",
+      "value": "+375",
+      "label": "+375 - Belarus"
     },
     {
-      value: "+32",
-      label: "Belgium",
+      "value": "+32",
+      "label": "+32 - Belgium"
     },
     {
-      value: "+501",
-      label: "Belize",
+      "value": "+501",
+      "label": "+501 - Belize"
     },
     {
-      value: "+229",
-      label: "Benin",
+      "value": "+229",
+      "label": "+229 - Benin"
     },
     {
-      value: "+1 441",
-      label: "Bermuda",
+      "value": "+1 441",
+      "label": "+1 441 - Bermuda"
     },
     {
-      value: "+975",
-      label: "Bhutan",
+      "value": "+975",
+      "label": "+975 - Bhutan"
     },
     {
-      value: "+591",
-      label: "Bolivia",
+      "value": "+591",
+      "label": "+591 - Bolivia"
     },
     {
-      value: "+387",
-      label: "Bosnia and Herzegovina",
+      "value": "+387",
+      "label": "+387 - Bosnia and Herzegovina"
     },
     {
-      value: "+267",
-      label: "Botswana",
+      "value": "+267",
+      "label": "+267 - Botswana"
     },
     {
-      value: "+55",
-      label: "Brazil",
+      "value": "+55",
+      "label": "+55 - Brazil"
     },
     {
-      value: "+246",
-      label: "British Indian Ocean Territory",
+      "value": "+246",
+      "label": "+246 - British Indian Ocean Territory"
     },
     {
-      value: "+1 284",
-      label: "British Virgin Islands",
+      "value": "+1 284",
+      "label": "+1 284 - British Virgin Islands"
     },
     {
-      value: "+673",
-      label: "Brunei",
+      "value": "+673",
+      "label": "+673 - Brunei"
     },
     {
-      value: "+359",
-      label: "Bulgaria",
+      "value": "+359",
+      "label": "+359 - Bulgaria"
     },
     {
-      value: "+226",
-      label: "Burkina Faso",
+      "value": "+226",
+      "label": "+226 - Burkina Faso"
     },
     {
-      value: "+257",
-      label: "Burundi",
+      "value": "+257",
+      "label": "+257 - Burundi"
     },
     {
-      value: "+855",
-      label: "Cambodia",
+      "value": "+855",
+      "label": "+855 - Cambodia"
     },
     {
-      value: "+237",
-      label: "Cameroon",
+      "value": "+237",
+      "label": "+237 - Cameroon"
     },
     {
-      value: "+1",
-      label: "Canada",
+      "value": "+1",
+      "label": "+1 - Canada"
     },
     {
-      value: "+238",
-      label: "Cape Verde",
+      "value": "+238",
+      "label": "+238 - Cape Verde"
     },
     {
-      value: "+ 345",
-      label: "Cayman Islands",
+      "value": "+ 345",
+      "label": "+ 345 - Cayman Islands"
     },
     {
-      value: "+236",
-      label: "Central African Republic",
+      "value": "+236",
+      "label": "+236 - Central African Republic"
     },
     {
-      value: "+235",
-      label: "Chad",
+      "value": "+235",
+      "label": "+235 - Chad"
     },
     {
-      value: "+56",
-      label: "Chile",
+      "value": "+56",
+      "label": "+56 - Chile"
     },
     {
-      value: "+86",
-      label: "China",
+      "value": "+86",
+      "label": "+86 - China"
     },
     {
-      value: "+61",
-      label: "Christmas Island",
+      "value": "+61",
+      "label": "+61 - Christmas Island"
     },
     {
-      value: "+61",
-      label: "Cocos-Keeling Islands",
+      "value": "+61",
+      "label": "+61 - Cocos-Keeling Islands"
     },
     {
-      value: "+57",
-      label: "Colombia",
+      "value": "+57",
+      "label": "+57 - Colombia"
     },
     {
-      value: "+269",
-      label: "Comoros",
+      "value": "+269",
+      "label": "+269 - Comoros"
     },
     {
-      value: "+242",
-      label: "Congo",
+      "value": "+242",
+      "label": "+242 - Congo"
     },
     {
-      value: "+243",
-      label: "Congo, Dem. Rep. of (Zaire)",
+      "value": "+243",
+      "label": "+243 - Congo, Dem. Rep. of (Zaire)"
     },
     {
-      value: "+682",
-      label: "Cook Islands",
+      "value": "+682",
+      "label": "+682 - Cook Islands"
     },
     {
-      value: "+506",
-      label: "Costa Rica",
+      "value": "+506",
+      "label": "+506 - Costa Rica"
     },
     {
-      value: "+385",
-      label: "Croatia",
+      "value": "+385",
+      "label": "+385 - Croatia"
     },
     {
-      value: "+53",
-      label: "Cuba",
+      "value": "+53",
+      "label": "+53 - Cuba"
     },
     {
-      value: "+599",
-      label: "Curacao",
+      "value": "+599",
+      "label": "+599 - Curacao"
     },
     {
-      value: "+537",
-      label: "Cyprus",
+      "value": "+537",
+      "label": "+537 - Cyprus"
     },
     {
-      value: "+420",
-      label: "Czech Republic",
+      "value": "+420",
+      "label": "+420 - Czech Republic"
     },
     {
-      value: "+45",
-      label: "Denmark",
+      "value": "+45",
+      "label": "+45 - Denmark"
     },
     {
-      value: "+246",
-      label: "Diego Garcia",
+      "value": "+246",
+      "label": "+246 - Diego Garcia"
     },
     {
-      value: "+253",
-      label: "Djibouti",
+      "value": "+253",
+      "label": "+253 - Djibouti"
     },
     {
-      value: "+1 767",
-      label: "Dominica",
+      "value": "+1 767",
+      "label": "+1 767 - Dominica"
     },
     {
-      value: "+1 809",
-      label: "Dominican Republic",
+      "value": "+1 809",
+      "label": "+1 809 - Dominican Republic"
     },
     {
-      value: "+670",
-      label: "East Timor",
+      "value": "+670",
+      "label": "+670 - East Timor"
     },
     {
-      value: "+56",
-      label: "Easter Island",
+      "value": "+56",
+      "label": "+56 - Easter Island"
     },
     {
-      value: "+593",
-      label: "Ecuador",
+      "value": "+593",
+      "label": "+593 - Ecuador"
     },
     {
-      value: "+20",
-      label: "Egypt",
+      "value": "+20",
+      "label": "+20 - Egypt"
     },
     {
-      value: "+503",
-      label: "El Salvador",
+      "value": "+503",
+      "label": "+503 - El Salvador"
     },
     {
-      value: "+240",
-      label: "Equatorial Guinea",
+      "value": "+240",
+      "label": "+240 - Equatorial Guinea"
     },
     {
-      value: "+291",
-      label: "Eritrea",
+      "value": "+291",
+      "label": "+291 - Eritrea"
     },
     {
-      value: "+372",
-      label: "Estonia",
+      "value": "+372",
+      "label": "+372 - Estonia"
     },
     {
-      value: "+251",
-      label: "Ethiopia",
+      "value": "+251",
+      "label": "+251 - Ethiopia"
     },
     {
-      value: "+500",
-      label: "Falkland Islands",
+      "value": "+500",
+      "label": "+500 - Falkland Islands"
     },
     {
-      value: "+298",
-      label: "Faroe Islands",
+      "value": "+298",
+      "label": "+298 - Faroe Islands"
     },
     {
-      value: "+679",
-      label: "Fiji",
+      "value": "+679",
+      "label": "+679 - Fiji"
     },
     {
-      value: "+358",
-      label: "Finland",
+      "value": "+358",
+      "label": "+358 - Finland"
     },
     {
-      value: "+33",
-      label: "France",
+      "value": "+33",
+      "label": "+33 - France"
     },
     {
-      value: "+596",
-      label: "French Antilles",
+      "value": "+596",
+      "label": "+596 - French Antilles"
     },
     {
-      value: "+594",
-      label: "French Guiana",
+      "value": "+594",
+      "label": "+594 - French Guiana"
     },
     {
-      value: "+689",
-      label: "French Polynesia",
+      "value": "+689",
+      "label": "+689 - French Polynesia"
     },
     {
-      value: "+241",
-      label: "Gabon",
+      "value": "+241",
+      "label": "+241 - Gabon"
     },
     {
-      value: "+220",
-      label: "Gambia",
+      "value": "+220",
+      "label": "+220 - Gambia"
     },
     {
-      value: "+995",
-      label: "Georgia",
+      "value": "+995",
+      "label": "+995 - Georgia"
     },
     {
-      value: "+49",
-      label: "Germany",
+      "value": "+49",
+      "label": "+49 - Germany"
     },
     {
-      value: "+233",
-      label: "Ghana",
+      "value": "+233",
+      "label": "+233 - Ghana"
     },
     {
-      value: "+350",
-      label: "Gibraltar",
+      "value": "+350",
+      "label": "+350 - Gibraltar"
     },
     {
-      value: "+30",
-      label: "Greece",
+      "value": "+30",
+      "label": "+30 - Greece"
     },
     {
-      value: "+299",
-      label: "Greenland",
+      "value": "+299",
+      "label": "+299 - Greenland"
     },
     {
-      value: "+1 473",
-      label: "Grenada",
+      "value": "+1 473",
+      "label": "+1 473 - Grenada"
     },
     {
-      value: "+590",
-      label: "Guadeloupe",
+      "value": "+590",
+      "label": "+590 - Guadeloupe"
     },
     {
-      value: "+1 671",
-      label: "Guam",
+      "value": "+1 671",
+      "label": "+1 671 - Guam"
     },
     {
-      value: "+502",
-      label: "Guatemala",
+      "value": "+502",
+      "label": "+502 - Guatemala"
     },
     {
-      value: "+224",
-      label: "Guinea",
+      "value": "+224",
+      "label": "+224 - Guinea"
     },
     {
-      value: "+245",
-      label: "Guinea-Bissau",
+      "value": "+245",
+      "label": "+245 - Guinea-Bissau"
     },
     {
-      value: "+595",
-      label: "Guyana",
+      "value": "+595",
+      "label": "+595 - Guyana"
     },
     {
-      value: "+509",
-      label: "Haiti",
+      "value": "+509",
+      "label": "+509 - Haiti"
     },
     {
-      value: "+504",
-      label: "Honduras",
+      "value": "+504",
+      "label": "+504 - Honduras"
     },
     {
-      value: "+852",
-      label: "Hong Kong SAR China",
+      "value": "+852",
+      "label": "+852 - Hong Kong SAR China"
     },
     {
-      value: "+36",
-      label: "Hungary",
+      "value": "+36",
+      "label": "+36 - Hungary"
     },
     {
-      value: "+354",
-      label: "Iceland",
+      "value": "+354",
+      "label": "+354 - Iceland"
     },
     {
-      value: "+91",
-      label: "India",
+      "value": "+91",
+      "label": "+91 - India"
     },
     {
-      value: "+62",
-      label: "Indonesia",
+      "value": "+62",
+      "label": "+62 - Indonesia"
     },
     {
-      value: "+98",
-      label: "Iran",
+      "value": "+98",
+      "label": "+98 - Iran"
     },
     {
-      value: "+964",
-      label: "Iraq",
+      "value": "+964",
+      "label": "+964 - Iraq"
     },
     {
-      value: "+353",
-      label: "Ireland",
+      "value": "+353",
+      "label": "+353 - Ireland"
     },
     {
-      value: "+972",
-      label: "Israel",
+      "value": "+972",
+      "label": "+972 - Israel"
     },
     {
-      value: "+39",
-      label: "Italy",
+      "value": "+39",
+      "label": "+39 - Italy"
     },
     {
-      value: "+225",
-      label: "Ivory Coast",
+      "value": "+225",
+      "label": "+225 - Ivory Coast"
     },
     {
-      value: "+1 876",
-      label: "Jamaica",
+      "value": "+1 876",
+      "label": "+1 876 - Jamaica"
     },
     {
-      value: "+81",
-      label: "Japan",
+      "value": "+81",
+      "label": "+81 - Japan"
     },
     {
-      value: "+962",
-      label: "Jordan",
+      "value": "+962",
+      "label": "+962 - Jordan"
     },
     {
-      value: "+7 7",
-      label: "Kazakhstan",
+      "value": "+7 7",
+      "label": "+7 7 - Kazakhstan"
     },
     {
-      value: "+254",
-      label: "Kenya",
+      "value": "+254",
+      "label": "+254 - Kenya"
     },
     {
-      value: "+686",
-      label: "Kiribati",
+      "value": "+686",
+      "label": "+686 - Kiribati"
     },
     {
-      value: "+965",
-      label: "Kuwait",
+      "value": "+965",
+      "label": "+965 - Kuwait"
     },
     {
-      value: "+996",
-      label: "Kyrgyzstan",
+      "value": "+996",
+      "label": "+996 - Kyrgyzstan"
     },
     {
-      value: "+856",
-      label: "Laos",
+      "value": "+856",
+      "label": "+856 - Laos"
     },
     {
-      value: "+371",
-      label: "Latvia",
+      "value": "+371",
+      "label": "+371 - Latvia"
     },
     {
-      value: "+961",
-      label: "Lebanon",
+      "value": "+961",
+      "label": "+961 - Lebanon"
     },
     {
-      value: "+266",
-      label: "Lesotho",
+      "value": "+266",
+      "label": "+266 - Lesotho"
     },
     {
-      value: "+231",
-      label: "Liberia",
+      "value": "+231",
+      "label": "+231 - Liberia"
     },
     {
-      value: "+218",
-      label: "Libya",
+      "value": "+218",
+      "label": "+218 - Libya"
     },
     {
-      value: "+423",
-      label: "Liechtenstein",
+      "value": "+423",
+      "label": "+423 - Liechtenstein"
     },
     {
-      value: "+370",
-      label: "Lithuania",
+      "value": "+370",
+      "label": "+370 - Lithuania"
     },
     {
-      value: "+352",
-      label: "Luxembourg",
+      "value": "+352",
+      "label": "+352 - Luxembourg"
     },
     {
-      value: "+853",
-      label: "Macau SAR China",
+      "value": "+853",
+      "label": "+853 - Macau SAR China"
     },
     {
-      value: "+389",
-      label: "Macedonia",
+      "value": "+389",
+      "label": "+389 - Macedonia"
     },
     {
-      value: "+261",
-      label: "Madagascar",
+      "value": "+261",
+      "label": "+261 - Madagascar"
     },
     {
-      value: "+265",
-      label: "Malawi",
+      "value": "+265",
+      "label": "+265 - Malawi"
     },
     {
-      value: "+60",
-      label: "Malaysia",
+      "value": "+60",
+      "label": "+60 - Malaysia"
     },
     {
-      value: "+960",
-      label: "Maldives",
+      "value": "+960",
+      "label": "+960 - Maldives"
     },
     {
-      value: "+223",
-      label: "Mali",
+      "value": "+223",
+      "label": "+223 - Mali"
     },
     {
-      value: "+356",
-      label: "Malta",
+      "value": "+356",
+      "label": "+356 - Malta"
     },
     {
-      value: "+692",
-      label: "Marshall Islands",
+      "value": "+692",
+      "label": "+692 - Marshall Islands"
     },
     {
-      value: "+596",
-      label: "Martinique",
+      "value": "+596",
+      "label": "+596 - Martinique"
     },
     {
-      value: "+222",
-      label: "Mauritania",
+      "value": "+222",
+      "label": "+222 - Mauritania"
     },
     {
-      value: "+230",
-      label: "Mauritius",
+      "value": "+230",
+      "label": "+230 - Mauritius"
     },
     {
-      value: "+262",
-      label: "Mayotte",
+      "value": "+262",
+      "label": "+262 - Mayotte"
     },
     {
-      value: "+52",
-      label: "Mexico",
+      "value": "+52",
+      "label": "+52 - Mexico"
     },
     {
-      value: "+691",
-      label: "Micronesia",
+      "value": "+691",
+      "label": "+691 - Micronesia"
     },
     {
-      value: "+1 808",
-      label: "Midway Island",
+      "value": "+1 808",
+      "label": "+1 808 - Midway Island"
     },
     {
-      value: "+373",
-      label: "Moldova",
+      "value": "+373",
+      "label": "+373 - Moldova"
     },
     {
-      value: "+377",
-      label: "Monaco",
+      "value": "+377",
+      "label": "+377 - Monaco"
     },
     {
-      value: "+976",
-      label: "Mongolia",
+      "value": "+976",
+      "label": "+976 - Mongolia"
     },
     {
-      value: "+382",
-      label: "Montenegro",
+      "value": "+382",
+      "label": "+382 - Montenegro"
     },
     {
-      value: "+1664",
-      label: "Montserrat",
+      "value": "+1664",
+      "label": "+1664 - Montserrat"
     },
     {
-      value: "+212",
-      label: "Morocco",
+      "value": "+212",
+      "label": "+212 - Morocco"
     },
     {
-      value: "+95",
-      label: "Myanmar",
+      "value": "+95",
+      "label": "+95 - Myanmar"
     },
     {
-      value: "+264",
-      label: "Namibia",
+      "value": "+264",
+      "label": "+264 - Namibia"
     },
     {
-      value: "+674",
-      label: "Nauru",
+      "value": "+674",
+      "label": "+674 - Nauru"
     },
     {
-      value: "+977",
-      label: "Nepal",
+      "value": "+977",
+      "label": "+977 - Nepal"
     },
     {
-      value: "+31",
-      label: "Netherlands",
+      "value": "+31",
+      "label": "+31 - Netherlands"
     },
     {
-      value: "+599",
-      label: "Netherlands Antilles",
+      "value": "+599",
+      "label": "+599 - Netherlands Antilles"
     },
     {
-      value: "+1 869",
-      label: "Nevis",
+      "value": "+1 869",
+      "label": "Nevis (+1 869)"
     },
     {
-      value: "+687",
-      label: "New Caledonia",
+      "value": "+687",
+      "label": "New Caledonia (+687)"
     },
     {
-      value: "+64",
-      label: "New Zealand",
+      "value": "+64",
+      "label": "New Zealand (+64)"
     },
     {
-      value: "+505",
-      label: "Nicaragua",
+      "value": "+505",
+      "label": "Nicaragua (+505)"
     },
     {
-      value: "+227",
-      label: "Niger",
+      "value": "+227",
+      "label": "Niger (+227)"
     },
     {
-      value: "+234",
-      label: "Nigeria",
+      "value": "+234",
+      "label": "Nigeria (+234)"
     },
     {
-      value: "+683",
-      label: "Niue",
+      "value": "+683",
+      "label": "Niue (+683)"
     },
     {
-      value: "+672",
-      label: "Norfolk Island",
+      "value": "+672",
+      "label": "Norfolk Island (+672)"
     },
     {
-      value: "+850",
-      label: "North Korea",
+      "value": "+850",
+      "label": "North Korea (+850)"
     },
     {
-      value: "+1 670",
-      label: "Northern Mariana Islands",
+      "value": "+1 670",
+      "label": "Northern Mariana Islands (+1 670)"
     },
     {
-      value: "+47",
-      label: "Norway",
+      "value": "+47",
+      "label": "Norway (+47)"
     },
     {
-      value: "+968",
-      label: "Oman",
+      "value": "+968",
+      "label": "Oman (+968)"
     },
     {
-      value: "+92",
-      label: "Pakistan",
+      "value": "+92",
+      "label": "Pakistan (+92)"
     },
     {
-      value: "+680",
-      label: "Palau",
+      "value": "+680",
+      "label": "Palau (+680)"
     },
     {
-      value: "+970",
-      label: "Palestinian Territory",
+      "value": "+970",
+      "label": "Palestinian Territory (+970)"
     },
     {
-      value: "+507",
-      label: "Panama",
+      "value": "+507",
+      "label": "Panama (+507)"
     },
     {
-      value: "+675",
-      label: "Papua New Guinea",
+      "value": "+675",
+      "label": "Papua New Guinea (+675)"
     },
     {
-      value: "+595",
-      label: "Paraguay",
+      "value": "+595",
+      "label": "Paraguay (+595)"
     },
     {
-      value: "+51",
-      label: "Peru",
+      "value": "+51",
+      "label": "Peru (+51)"
     },
     {
-      value: "+63",
-      label: "Philippines",
+      "value": "+63",
+      "label": "Philippines (+63)"
     },
     {
-      value: "+48",
-      label: "Poland",
+      "value": "+48",
+      "label": "Poland (+48)"
     },
     {
-      value: "+351",
-      label: "Portugal",
+      "value": "+351",
+      "label": "Portugal (+351)"
     },
     {
-      value: "+1 787",
-      label: "Puerto Rico",
+      "value": "+1 787",
+      "label": "Puerto Rico (+1 787)"
     },
     {
-      value: "+974",
-      label: "Qatar",
+      "value": "+974",
+      "label": "Qatar (+974)"
     },
     {
-      value: "+262",
-      label: "Reunion",
+      "value": "+262",
+      "label": "Reunion (+262)"
     },
     {
-      value: "+40",
-      label: "Romania",
+      "value": "+40",
+      "label": "Romania (+40)"
     },
     {
-      value: "+7",
-      label: "Russia",
+      "value": "+7",
+      "label": "Russia (+7)"
     },
     {
-      value: "+250",
-      label: "Rwanda",
+      "value": "+250",
+      "label": "Rwanda (+250)"
     },
     {
-      value: "+685",
-      label: "Samoa",
+      "value": "+685",
+      "label": "Samoa (+685)"
     },
     {
-      value: "+378",
-      label: "San Marino",
+      "value": "+378",
+      "label": "San Marino (+378)"
     },
     {
-      value: "+966",
-      label: "Saudi Arabia",
+      "value": "+966",
+      "label": "Saudi Arabia (+966)"
     },
     {
-      value: "+221",
-      label: "Senegal",
+      "value": "+221",
+      "label": "Senegal (+221)"
     },
     {
-      value: "+381",
-      label: "Serbia",
+      "value": "+381",
+      "label": "Serbia (+381)"
     },
     {
-      value: "+248",
-      label: "Seychelles",
+      "value": "+248",
+      "label": "Seychelles (+248)"
     },
     {
-      value: "+232",
-      label: "Sierra Leone",
+      "value": "+232",
+      "label": "Sierra Leone (+232)"
     },
     {
-      value: "+65",
-      label: "Singapore",
+      "value": "+65",
+      "label": "Singapore (+65)"
     },
     {
-      value: "+421",
-      label: "Slovakia",
+      "value": "+421",
+      "label": "Slovakia (+421)"
     },
     {
-      value: "+386",
-      label: "Slovenia",
+      "value": "+386",
+      "label": "Slovenia (+386)"
     },
     {
-      value: "+677",
-      label: "Solomon Islands",
+      "value": "+677",
+      "label": "Solomon Islands (+677)"
     },
     {
-      value: "+27",
-      label: "South Africa",
+      "value": "+27",
+      "label": "South Africa (+27)"
     },
     {
-      value: "+500",
-      label: "South Georgia and the South Sandwich Islands",
+      "value": "+500",
+      "label": "South Georgia and the South Sandwich Islands (+500)"
     },
     {
-      value: "+82",
-      label: "South Korea",
+      "value": "+82",
+      "label": "South Korea (+82)"
     },
     {
-      value: "+34",
-      label: "Spain",
+      "value": "+34",
+      "label": "+34 (Spain)"
     },
     {
-      value: "+94",
-      label: "Sri Lanka",
+      "value": "+94",
+      "label": "+94 (Sri Lanka)"
     },
     {
-      value: "+249",
-      label: "Sudan",
+      "value": "+249",
+      "label": "+249 (Sudan)"
     },
     {
-      value: "+597",
-      label: "Surilabel",
+      "value": "+597",
+      "label": "+597 (Surilabel)"
     },
     {
-      value: "+268",
-      label: "Swaziland",
+      "value": "+268",
+      "label": "+268 (Swaziland)"
     },
     {
-      value: "+46",
-      label: "Sweden",
+      "value": "+46",
+      "label": "+46 (Sweden)"
     },
     {
-      value: "+41",
-      label: "Switzerland",
+      "value": "+41",
+      "label": "+41 (Switzerland)"
     },
     {
-      value: "+963",
-      label: "Syria",
+      "value": "+963",
+      "label": "+963 (Syria)"
     },
     {
-      value: "+886",
-      label: "Taiwan",
+      "value": "+886",
+      "label": "(Taiwan)"
     },
     {
-      value: "+992",
-      label: "Tajikistan",
+      "value": "+992",
+      "label": "(Tajikistan)"
     },
     {
-      value: "+255",
-      label: "Tanzania",
+      "value": "+255",
+      "label": "(Tanzania)"
     },
     {
-      value: "+66",
-      label: "Thailand",
+      "value": "+66",
+      "label": "(Thailand)"
     },
     {
-      value: "+670",
-      label: "Timor Leste",
+      "value": "+670",
+      "label": "(Timor Leste)"
     },
     {
-      value: "+228",
-      label: "Togo",
+      "value": "+228",
+      "label": "(Togo)"
     },
     {
-      value: "+690",
-      label: "Tokelau",
+      "value": "+690",
+      "label": "(Tokelau)"
     },
     {
-      value: "+676",
-      label: "Tonga",
+      "value": "+676",
+      "label": "(Tonga)"
     },
     {
-      value: "+1 868",
-      label: "Trinidad and Tobago",
+      "value": "+1 868",
+      "label": "(Trinidad and Tobago)"
     },
     {
-      value: "+216",
-      label: "Tunisia",
+      "value": "+216",
+      "label": "(Tunisia)"
     },
     {
-      value: "+90",
-      label: "Turkey",
+      "value": "+90",
+      "label": "(Turkey)"
     },
     {
-      value: "+993",
-      label: "Turkmenistan",
+      "value": "+993",
+      "label": "(Turkmenistan)"
     },
     {
-      value: "+1 649",
-      label: "Turks and Caicos Islands",
+      "value": "+1 649",
+      "label": "(Turks and Caicos Islands)"
     },
     {
-      value: "+688",
-      label: "Tuvalu",
+      "value": "+688",
+      "label": "(Tuvalu)"
     },
     {
-      value: "+1 340",
-      label: "U.S. Virgin Islands",
+      "value": "+1 340",
+      "label": "(U.S. Virgin Islands)"
     },
     {
-      value: "+256",
-      label: "Uganda",
+      "value": "+256",
+      "label": "(Uganda)"
     },
     {
-      value: "+380",
-      label: "Ukraine",
+      "value": "+380",
+      "label": "(Ukraine)"
     },
     {
-      value: "+971",
-      label: "United Arab Emirates",
+      "value": "+971",
+      "label": "(United Arab Emirates)"
     },
     {
-      value: "+44",
-      label: "United Kingdom",
+      "value": "+44",
+      "label": "(United Kingdom)"
     },
     {
-      value: "+1",
-      label: "United States",
+      "value": "+1",
+      "label": "(United States)"
     },
     {
-      value: "+598",
-      label: "Uruguay",
+      "value": "+598",
+      "label": "(Uruguay)"
     },
     {
-      value: "+998",
-      label: "Uzbekistan",
+      "value": "+998",
+      "label": "(Uzbekistan)"
     },
     {
-      value: "+678",
-      label: "Vanuatu",
+      "value": "+678",
+      "label": "(Vanuatu)"
     },
     {
-      value: "+58",
-      label: "Venezuela",
+      "value": "+58",
+      "label": "(Venezuela)"
     },
     {
-      value: "+84",
-      label: "Vietnam",
+      "value": "+84",
+      "label": "(Vietnam)"
     },
     {
-      value: "+1 808",
-      label: "Wake Island",
+      "value": "+1 808",
+      "label": "(Wake Island)"
     },
     {
-      value: "+681",
-      label: "Wallis and Futuna",
+      "value": "+681",
+      "label": "(Wallis and Futuna)"
     },
     {
-      value: "+967",
-      label: "Yemen",
+      "value": "+967",
+      "label": "(Yemen)"
     },
     {
-      value: "+260",
-      label: "Zambia",
+      "value": "+260",
+      "label": "(Zambia)"
     },
     {
-      value: "+255",
-      label: "Zanzibar",
+      "value": "+255",
+      "label": "(Zanzibar)"
     },
     {
-      value: "+263",
-      label: "Zimbabwe",
-    },
-
+      "value": "+263",
+      "label": "+263 (Zimbabwe)"
+    }
     // Add more country codes as needed
   ];
 
@@ -1392,6 +1384,14 @@ const Home = () => {
       message: "",
     });
   };
+  const location = useLocation();
+
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+ 
   return (
     <div>
       <>
@@ -1457,11 +1457,56 @@ const Home = () => {
                           END HEADER
     ==================================================================================*/}
 
+ <div className="marquee" style={{ marginTop: "94px", marginBottom: "19px" }}>
+  <marquee>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <span
+        style={{
+          fontSize: '14px',
+          color: 'blue',
+          fontWeight: '700', // Bold font
+        }}
+      >
+      Experience innovation on the go. Grab your app download today!
+      </span>
+      &nbsp;&nbsp;&nbsp;
+      <button
+        onClick={handleDownload}
+        style={{
+          backgroundColor: 'yellow',
+          color: 'black',
+          padding: '10px',
+          borderRadius: '10px',
+          fontSize: '16px',
+          fontWeight: '700',
+          textAlign: 'center',
+          marginRight: '20px', // Adjust the margin as needed
+        }}
+      >
+        Download APK
+      </button>
+      <span
+        style={{
+          fontSize: '14px',
+          color: 'blue',
+          fontWeight: '700', // Bold font
+        }}
+      >
+        Unlock endless possibilities with our cutting-edge mobile app. Download now!
+      </span>
+    </div>
+  </marquee>
+</div>
+
         {/*================================================================================= 
                           START 5* APP HOME
     ==================================================================================*/}
+    
         <section id="education-home" className="banner-area theme-bg-gradient">
+       
+
           <div className="container">
+      
             <div className="row">
               <div className="col-lg-4 col-sm-4">
                 <div className="banner-device">
@@ -1502,7 +1547,7 @@ const Home = () => {
                     <div className="single-media">
                       <a
                         className="popup-vedio"
-                        href="https://www.youtube.com/watch?v=0fp60iHV7Rk"
+                        // href="https://www.youtube.com/watch?v=0fp60iHV7Rk"
                       >
                         <FaPlay />
                         <div className="circle circle-1" />
@@ -1515,7 +1560,7 @@ const Home = () => {
                         {" "}
                         <FaGraduationCap />
                       </a>
-                      <p className="color-7">Start Learn Courses Now</p>
+                      <p className="color-7">Start Learning Courses Now</p>
                     </div>
                     <div className="single-media">
                       <a data-toggle="modal" data-target="#education-contact">
@@ -2653,7 +2698,7 @@ const Home = () => {
     ==================================================================================*/}
         <section
           className=" testimonials__area-2 fix p-relative pt-120 pb-120  "
-          id="education-testimonial"
+          id="education-testmonial"
           style={{ marginTop: "86px" }}
         >
           <div className="testimonials__shape"></div>
@@ -2879,10 +2924,12 @@ const Home = () => {
         <div
           className="text-center wow fadeIn"
           data-wow-duration="2s"
+          id="education-blog"
           style={{
             visibility: "visible",
             animationDuration: "2s",
             animationName: "fadeIn",
+       
          
           }}
         >
@@ -2954,22 +3001,7 @@ const Home = () => {
         {/*================================================================================= 
                           END BLOG
     ==================================================================================*/}
-        <button
-          onClick={handleDownload}
-          style={{
-            backgroundColor: "yellow",
-            color: "black",
-            padding: "10px",
-            borderRadius: "10px",
-            fontSize: "16px",
-            fontWeight: "700",
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          Download APK
-        </button>
+        
         {/*================================================================================= 
                           START FOOTER  
     ==================================================================================*/}
@@ -3015,7 +3047,7 @@ const Home = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
-                    <p> Email: Edufusiontutor@gmail.com</p>
+                    <p> Email: edufusiontutor@gmail.com</p>
                   </a>
                 </div>
               </div>

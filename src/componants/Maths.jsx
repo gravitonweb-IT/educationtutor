@@ -10,8 +10,17 @@ import WhatsAppButton from "../componants/WhatsAppButton";
 import WhatsAppButton1 from "../componants/WhatsAppButton1";
 import logo3 from "../componants/assets/images/logo3.jpg";
 import { IoIosArrowUp } from "react-icons/io";
+import { useLocation } from 'react-router-dom';
 import { FaInstagram } from "react-icons/fa";
 const Maths = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top when the route changes
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const openPopup = () => {
     setIsPopupOpen(true);
@@ -138,6 +147,7 @@ const Maths = () => {
     animateCounter(setRegisteredCount, 100);
     animateCounter(setCountryCount, 15);
   }, []);
+  
   return (
     <>
       <header>
@@ -1448,8 +1458,7 @@ const Maths = () => {
 
                   <a href="mailto:inquiries@edufusion.co.in" className="mb90">
                     <p>Email: Inquiries@edufusion.co.in</p>
-                    <p> Email: Edufusiontutor@gmail.com
-</p>
+                    <p> Email: edufusiontutor@gmail.com</p>
                   </a>
                 </div>
               </div>
