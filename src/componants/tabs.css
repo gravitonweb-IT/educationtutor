@@ -611,7 +611,7 @@ button:not(:disabled) {
     color: #474747;
   }
   .course-step-container[data-v-eb8371ae] {
-    min-width: 360px;
+    /* min-width: 360px; */
     height: 357px;
     background: #fff;
     border: 1px solid #cce7ff;
@@ -624,7 +624,7 @@ button:not(:disabled) {
   }
   @media screen and (max-width: 441px) {
   .course-step-container[data-v-eb8371ae] {
-    margin-left: 11px;
+    /* margin-left: 11px; */
   }
 }
   .course-step-inner-container[data-v-eb8371ae] {

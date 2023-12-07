@@ -1,9 +1,16 @@
+
+
 .brand-logo img {
   left: 0;
   position: absolute;
   min-width: 168px;
   margin-top: -8px;
 }
+option {
+  background: #4a4a45;
+  color: white;
+}
+
 
 /* header li:hover > a {
   color: #00cad6 !important;
@@ -1524,7 +1531,12 @@ a:focus {
   float: left;
   width: 33.33%;
 }
+@media only screen and (max-width: 375px) {
+  .banner-area .banner-txt {
+margin-top: 47px;
+}
 
+}
 .banner-area .banner-txt .app-media .single-media a {
   width: 80px;
   height: 80px;
@@ -2372,7 +2384,7 @@ a:focus {
   top: 0;
   box-shadow: none;
   border-radius: 0px 10px 10px 0px;
-  background-color: #fff;
+  /* background-color: #fff; */
   width: 150px;
   height: 50px;
 }
@@ -2573,7 +2585,7 @@ a:focus {
   height: 29px;
   height: 1.8125rem;
   content: "";
-  background-color: #ededef;
+  /* background-color: #ededef; */
 }
 
 .section-signup .has-icon-left:after {
@@ -2639,7 +2651,7 @@ a:focus {
 }
 
 .section-signup .form-control {
-  background-color: #fff;
+  /* background-color: #fff; */
   background-image: none;
   border: 1px solid #e0e0e5;
   border-radius: 0;

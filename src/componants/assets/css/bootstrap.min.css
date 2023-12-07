@@ -1616,7 +1616,7 @@ pre code {
 }
 .row {
   margin-left: -1px;
-  margin-right: -15px;
+  /* margin-right: -15px; */
 }
 .col-xs-1,
 .col-sm-1,

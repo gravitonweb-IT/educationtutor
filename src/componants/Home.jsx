@@ -1521,7 +1521,7 @@ const Home = () => {
                       <a data-toggle="modal" data-target="#education-contact">
                         <FaRegQuestionCircle />
                       </a>
-                      <p className="color-7">Do You have Any qustions?</p>
+                      <p className="color-7">Do You have Any questions?</p>
                     </div>
                   </div>
                 </div>
@@ -2861,6 +2861,8 @@ const Home = () => {
                   </div>
                 </div>
                 {/* 4th */}
+
+                
               </Slider>
             </div>
             {/*  */}
@@ -2873,7 +2875,7 @@ const Home = () => {
         {/*================================================================================= 
                           START BLOG  
     ==================================================================================*/}
-
+<div>
         <div
           className="text-center wow fadeIn"
           data-wow-duration="2s"
@@ -2881,7 +2883,7 @@ const Home = () => {
             visibility: "visible",
             animationDuration: "2s",
             animationName: "fadeIn",
-            marginTop: "140px",
+         
           }}
         >
           <div className="subtitle">A modern and unique style</div>
@@ -2892,20 +2894,30 @@ const Home = () => {
           </div>
           <div className="spliter mb40" />
         </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          {cardContents.map((card, index) => (
-            <div
-              key={index}
-              style={{
-                flex: 1,
-                border: `1px solid ${
-                  expandedCardIndex === index ? "blue" : "black"
-                }`,
-                padding: "10px",
-                margin: "10px",
-                transition: "border 0.3s ease",
-              }}
-            >
+        <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+  {cardContents.map((card, index) => (
+    <div
+      key={index}
+      style={{
+        flex: "1 0 30%",  // Adjust the percentage as needed for larger screens
+        maxWidth: "300px", // Set a max width if necessary
+        border: `1px solid ${expandedCardIndex === index ? "blue" : "black"}`,
+        padding: "10px",
+        margin: "10px",
+        transition: "border 0.3s ease",
+        boxSizing: "border-box", // Ensure padding and border are included in the width
+        ...(window.innerWidth <= 768 && {
+          flex: "1 0 100%", // Make each card take up the full width in mobile view
+          maxWidth: "none", // Remove the max width in mobile view if necessary
+          margin: 0, // Remove margin for better spacing in mobile view
+        }),
+        ...(window.innerWidth <= 480 && {
+          display: "grid",
+          gridTemplateColumns: "1fr", // Display one column in grid for smaller screens
+          gap: "10px", // Add some gap between grid items for better spacing
+        }),
+      }}
+    >
               <img
                 src={card.imageSrc}
                 alt={`Image for ${card.title}`}
@@ -2937,6 +2949,7 @@ const Home = () => {
               </button>
             </div>
           ))}
+        </div>
         </div>
         {/*================================================================================= 
                           END BLOG
@@ -3193,7 +3206,8 @@ const Home = () => {
                             Phone Number
                           </label>
                           <input
-                            className="form-control form-control-lg"
+                            className="form-control fo.section-subscribe-st .btn {
+                              rm-control-lg"
                             name="phone"
                             id="phone"
                             placeholder="Enter phone number"
