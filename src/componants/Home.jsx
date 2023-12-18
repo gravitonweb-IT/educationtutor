@@ -3039,7 +3039,7 @@ const Home = () => {
                       className="text-white lheight-30 pb40  "
                       style={{ color: "white" }}
                     >
-                      Phone1: +91-8735820099
+                      Phone1: +91-8401420099
                       <br />
                       Phone2: +91-6006474119
                     </p>
@@ -3075,6 +3075,10 @@ const Home = () => {
                     <label htmlFor="mc-email" />
                     <div id="subscribe-result" />
                   </form>
+                  <p className="mb90">
+                  <p>  <Link to='/privacy'>privacy</Link></p>
+                   <p> <Link to='/term'>Term</Link> </p>
+                  </p>
                 </div>
               </div>
               {/* Start Social icons */}
@@ -3298,6 +3302,7 @@ const Home = () => {
                           </button>
                         </div>
                       </div>
+                    
                       <div className="col-md-12">
                         <p className="submit-btn-bottom-text">
                           Your email is safe with us and we hate spam as much as

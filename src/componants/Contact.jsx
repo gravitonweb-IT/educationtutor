@@ -1552,7 +1552,7 @@ const Contact = () => {
                     className="text-white lheight-30 pb40  "
                     style={{ color: "white" }}
                   >
-                    Phone1: +91-8735820099
+                    Phone1: +91-8401420099
                     <br />
                     Phone2: +91-6006474119
                   </p>

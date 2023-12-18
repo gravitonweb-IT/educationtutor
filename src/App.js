@@ -12,6 +12,8 @@ import Blog from "./componants/Blog";
 import Facts from "./componants/Facts"
 import Contact from "./componants/Contact";
 import Testmonial from "./componants/Testmonial";
+import PrivacyPolicy from "./componants/PrivacyPolicy";
+import TermsAndConditions from "./componants/TermAndConditon";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/Blog" element={<Blog/>} />
           <Route path="/Facts" element={<Facts/>} />
           <Route path="/Contact" element={<Contact/>} />
+          <Route path="/privacy" element={<PrivacyPolicy/>}/>
+          <Route path="/term" element={<TermsAndConditions/>}/>
         </Routes>
       </div>
     </>

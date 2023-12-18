@@ -2,7 +2,7 @@ import React from "react";
 import whatsappIcon from "../componants/assets/whats.png"
 
 const WhatsAppButton = () => {
-  const phoneNumber = "+91873582009";
+  const phoneNumber = "+918401420099";
 
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
