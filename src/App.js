@@ -1,8 +1,8 @@
 import "./App.css";
 // import Home from './componants/Home';
-import React from "react";
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { Route, Routes } from "react-router-dom";
-
 import Home from "./componants/Home";
 import Maths from "./componants/Maths";
 import Coding from "./componants/Coding";
@@ -16,6 +16,10 @@ import PrivacyPolicy from "./componants/PrivacyPolicy";
 import TermsAndConditions from "./componants/TermAndConditon";
 
 function App() {
+  useEffect(() => {
+    ReactGA.initialize('UA-296651907-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <>
     

@@ -61,7 +61,16 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import emailjs from "@emailjs/browser";
 import Marquee from "react-fast-marquee";
+import ReactGA from 'react-ga';
 const Home = () => {
+  const handleDropdownLinkClick = (category, label) => {
+    // Google Analytics event tracking code
+    ReactGA.event({
+      category,
+      action: 'Click',
+      label,
+    });
+  };
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
 
   const toggleText = (index) => {
@@ -1423,16 +1432,23 @@ const Home = () => {
                   <li className="active">
                     <Link to="/">Home</Link>
                   </li>
-                  <li class="dropdown">
-                    <a href="#education-courses">Courses</a>
-                    <div class="dropdown-content">
-                      <Link to="/Maths">Maths</Link>
-                      <Link to="/Science">Science</Link>
-                      <Link to="/Coding">Coding</Link>
-                      <Link to="/Competative">Competitive Exam</Link>
-                    </div>
-                  </li>
-
+                  <li className="dropdown">
+          <a href="#education-courses">Courses</a>
+          <div className="dropdown-content">
+            <Link to="/Maths" onClick={() => handleDropdownLinkClick('Courses', 'Maths')}>
+              Maths
+            </Link>
+            <Link to="/Science" onClick={() => handleDropdownLinkClick('Courses', 'Science')}>
+              Science
+            </Link>
+            <Link to="/Coding" onClick={() => handleDropdownLinkClick('Courses', 'Coding')}>
+              Coding
+            </Link>
+            <Link to="/Competative" onClick={() => handleDropdownLinkClick('Courses', 'Competitive Exam')}>
+              Competitive Exam
+            </Link>
+          </div>
+        </li>
                   <li>
                     <a href="#education-testmonial">Testimonial</a>
                   </li>
