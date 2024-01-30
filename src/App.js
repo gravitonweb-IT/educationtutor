@@ -14,6 +14,8 @@ import Contact from "./componants/Contact";
 import Testmonial from "./componants/Testmonial";
 import PrivacyPolicy from "./componants/PrivacyPolicy";
 import TermsAndConditions from "./componants/TermAndConditon";
+import CookieBanner from "./componants/CookieBanner";
+
 
 function App() {
   useEffect(() => {
@@ -37,7 +39,10 @@ function App() {
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/privacy" element={<PrivacyPolicy/>}/>
           <Route path="/term" element={<TermsAndConditions/>}/>
+          <Route path="/cookes" element={<CookieBanner/>}/>
+
         </Routes>
+      
       </div>
     </>
   );

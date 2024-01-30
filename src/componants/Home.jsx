@@ -62,6 +62,8 @@ import PhoneInput from "react-phone-number-input";
 import emailjs from "@emailjs/browser";
 import Marquee from "react-fast-marquee";
 import ReactGA from 'react-ga';
+import CookieBanner from "./CookieBanner";
+
 const Home = () => {
   const handleDropdownLinkClick = (category, label) => {
     // Google Analytics event tracking code
@@ -3017,7 +3019,8 @@ const Home = () => {
         {/*================================================================================= 
                           END BLOG
     ==================================================================================*/}
-        
+
+   <CookieBanner/>
         {/*================================================================================= 
                           START FOOTER  
     ==================================================================================*/}
@@ -3156,6 +3159,7 @@ const Home = () => {
           <IoIosArrowUp style={{ marginTop: "6px" }} />
         </a>
         {/* End Scroll to top */}
+        
 
         {/* whats app */}
         <WhatsAppButton1 />
@@ -3334,10 +3338,15 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div>
+         
+        </div>
 
         {/*  */}
+
       </>
     </div>
+    
   );
 };
 
